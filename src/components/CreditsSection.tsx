@@ -1,7 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Cpu, ShieldCheck, Sparkles, Award, UserCheck } from 'lucide-react';
 import { soundFX } from '../utils/audio';
 import { RevealOnScroll } from './RevealOnScroll';
+
+interface TiltCardProps {
+  children: React.ReactNode;
+  className?: string;
+  onMouseEnter?: () => void;
+}
+
+const TiltCard: React.FC<TiltCardProps> = ({ children, className = '', onMouseEnter }) => {
+  const [transform, setTransform] = useState('perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)');
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const card = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - card.left;
+    const y = e.clientY - card.top;
+    const centerX = card.width / 2;
+    const centerY = card.height / 2;
+    
+    const rotateX = ((y - centerY) / centerY) * -8;
+    const rotateY = ((x - centerX) / centerX) * 8;
+
+    setTransform(`perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`);
+  };
+
+  const handleMouseLeave = () => {
+    setTransform('perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)');
+  };
+
+  return (
+    <div
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      onMouseEnter={onMouseEnter}
+      style={{ transform, transition: 'transform 0.15s ease-out' }}
+      className={`will-change-transform ${className}`}
+    >
+      {children}
+    </div>
+  );
+};
 
 export const CreditsSection: React.FC = () => {
   const coreMembers = [
@@ -32,9 +71,9 @@ export const CreditsSection: React.FC = () => {
 
       {/* Hero Card for Valenite Electrion */}
       <RevealOnScroll delayMs={150}>
-        <div 
+        <TiltCard 
           onMouseEnter={() => soundFX.playHover()}
-          className="p-8 sm:p-12 rounded-3xl bg-[#09090e] border border-white/10 hover:border-zinc-700 transition-all duration-300 relative overflow-hidden shadow-xl group"
+          className="p-8 sm:p-12 rounded-3xl bg-[#09090e] border border-white/10 hover:border-zinc-700 transition-all duration-300 relative overflow-hidden shadow-xl group cursor-pointer"
         >
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 relative z-10">
             
@@ -76,7 +115,7 @@ export const CreditsSection: React.FC = () => {
             </div>
 
           </div>
-        </div>
+        </TiltCard>
       </RevealOnScroll>
 
       {/* Core Executive Leadership Grid */}
@@ -90,9 +129,9 @@ export const CreditsSection: React.FC = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {coreMembers.map((member, idx) => (
               <RevealOnScroll key={member.name + idx} variant="3d-dock" delayMs={idx * 100}>
-                <div 
+                <TiltCard 
                   onMouseEnter={() => soundFX.playHover()}
-                  className="p-5 rounded-2xl bg-[#09090e] border border-zinc-800 hover:border-zinc-700 transition-all flex flex-col justify-between h-full"
+                  className="p-5 rounded-2xl bg-[#09090e] border border-zinc-800 hover:border-zinc-700 transition-all flex flex-col justify-between h-full cursor-pointer"
                 >
                   <div>
                     <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider block mb-1">
@@ -108,7 +147,7 @@ export const CreditsSection: React.FC = () => {
                     </span>
                     <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
                   </div>
-                </div>
+                </TiltCard>
               </RevealOnScroll>
             ))}
           </div>
