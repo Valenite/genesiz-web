@@ -89,26 +89,27 @@ export const CreditsSection: React.FC = () => {
           
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {coreMembers.map((member, idx) => (
-              <div 
-                key={member.name + idx}
-                onMouseEnter={() => soundFX.playHover()}
-                className="p-5 rounded-2xl bg-[#09090e] border border-zinc-800 hover:border-zinc-700 transition-all flex flex-col justify-between"
-              >
-                <div>
-                  <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider block mb-1">
-                    0{idx + 1} // LEADERSHIP
-                  </span>
-                  <div className="text-lg font-bold text-white tracking-tight">
-                    {member.name}
+              <RevealOnScroll key={member.name + idx} variant="3d-dock" delayMs={idx * 100}>
+                <div 
+                  onMouseEnter={() => soundFX.playHover()}
+                  className="p-5 rounded-2xl bg-[#09090e] border border-zinc-800 hover:border-zinc-700 transition-all flex flex-col justify-between h-full"
+                >
+                  <div>
+                    <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider block mb-1">
+                      0{idx + 1} // LEADERSHIP
+                    </span>
+                    <div className="text-lg font-bold text-white tracking-tight">
+                      {member.name}
+                    </div>
+                  </div>
+                  <div className="mt-4 pt-3 border-t border-zinc-800/80 flex items-center justify-between">
+                    <span className="text-xs font-mono text-zinc-300 font-semibold">
+                      {member.role}
+                    </span>
+                    <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
                   </div>
                 </div>
-                <div className="mt-4 pt-3 border-t border-zinc-800/80 flex items-center justify-between">
-                  <span className="text-xs font-mono text-zinc-300 font-semibold">
-                    {member.role}
-                  </span>
-                  <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-                </div>
-              </div>
+              </RevealOnScroll>
             ))}
           </div>
         </div>

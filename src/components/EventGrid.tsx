@@ -126,7 +126,7 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
           const Icon = iconMap[event.iconName] || Sparkles;
 
           return (
-            <RevealOnScroll key={event.id} delayMs={(idx % 2) * 150}>
+            <RevealOnScroll key={event.id} variant={idx % 2 === 0 ? 'swipe-left' : 'swipe-right'} delayMs={100}>
               <div
                 onMouseEnter={() => soundFX.playHover()}
                 onClick={() => {
