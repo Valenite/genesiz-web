@@ -28,14 +28,14 @@ export const FAQSection: React.FC = () => {
       
       {/* Header */}
       <div className="space-y-4 mb-12">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/30 text-xs font-mono text-violet-300">
-          <Sparkles className="w-3.5 h-3.5 text-violet-400" />
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-white/10 text-xs font-mono text-zinc-400">
+          <Sparkles className="w-3.5 h-3.5 text-zinc-300" />
           <span>[ 05 ] // FREQUENT INQUIRIES & PROTOCOLS</span>
         </div>
         <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-gradient-silver">
           Everything you need to know.
         </h2>
-        <p className="text-sm text-zinc-300 font-light max-w-xl leading-relaxed">
+        <p className="text-sm text-zinc-400 font-normal max-w-xl leading-relaxed">
           Comprehensive directives on delegate accreditation, 4-day CipherQuest schedules, on-site hardware allocations, and credential validation.
         </p>
       </div>
@@ -52,8 +52,8 @@ export const FAQSection: React.FC = () => {
               }}
               className={`px-4 py-1.5 rounded-full text-xs font-mono transition-all whitespace-nowrap cursor-pointer ${
                 activeCategory === cat
-                  ? 'bg-white text-black font-bold shadow-lg shadow-white/10'
-                  : 'bg-zinc-950/90 text-zinc-400 hover:text-white border border-zinc-800'
+                  ? 'bg-white text-black font-bold shadow-sm'
+                  : 'bg-zinc-950 text-zinc-400 hover:text-white border border-zinc-800'
               }`}
             >
               {cat}
@@ -62,13 +62,13 @@ export const FAQSection: React.FC = () => {
         </div>
 
         <div className="relative w-full sm:w-60">
-          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-zinc-400" />
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-zinc-500" />
           <input
             type="text"
             placeholder="Search inquiries..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-9 pr-4 py-2 bg-zinc-950 border border-zinc-800 rounded-full text-xs font-mono text-white placeholder-zinc-500 focus:outline-none focus:border-violet-500"
+            className="w-full pl-9 pr-4 py-2 bg-zinc-950 border border-zinc-800 rounded-full text-xs font-mono text-white placeholder-zinc-500 focus:outline-none focus:border-zinc-500"
           />
         </div>
       </div>
@@ -81,7 +81,7 @@ export const FAQSection: React.FC = () => {
             <div
               key={idx}
               className={`rounded-3xl bg-[#09090e] border transition-all overflow-hidden ${
-                isOpen ? 'border-violet-500/40 shadow-[0_0_20px_rgba(139,92,246,0.1)]' : 'border-zinc-800/80 hover:border-zinc-700'
+                isOpen ? 'border-white/20' : 'border-zinc-800/80 hover:border-zinc-700'
               }`}
             >
               <button
@@ -90,7 +90,7 @@ export const FAQSection: React.FC = () => {
                 className="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none cursor-pointer"
               >
                 <div className="flex items-center gap-3.5">
-                  <div className="w-6 h-6 rounded-full bg-violet-950/60 border border-violet-800/40 flex items-center justify-center text-[10px] font-mono text-violet-300 font-bold shrink-0">
+                  <div className="w-6 h-6 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-[10px] font-mono text-zinc-300 font-bold shrink-0">
                     0{idx + 1}
                   </div>
                   <span className="font-semibold text-sm sm:text-base text-white">
@@ -99,13 +99,13 @@ export const FAQSection: React.FC = () => {
                 </div>
 
                 <ChevronDown className={`w-4 h-4 text-zinc-400 shrink-0 transition-transform duration-200 ${
-                  isOpen ? 'transform rotate-180 text-violet-400' : ''
+                  isOpen ? 'transform rotate-180 text-white' : ''
                 }`} />
               </button>
 
               {isOpen && (
-                <div className="px-6 pb-6 pt-1 text-xs sm:text-sm text-zinc-300 font-light leading-relaxed border-t border-zinc-800/60 flex items-start gap-3">
-                  <HelpCircle className="w-4 h-4 text-violet-400 shrink-0 mt-0.5" />
+                <div className="px-6 pb-6 pt-1 text-xs sm:text-sm text-zinc-400 font-normal leading-relaxed border-t border-zinc-800/60 flex items-start gap-3">
+                  <HelpCircle className="w-4 h-4 text-zinc-400 shrink-0 mt-0.5" />
                   <p>{faq.answer}</p>
                 </div>
               )}

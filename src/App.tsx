@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { ParticleCanvas } from './components/ParticleCanvas';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { CipherSandbox } from './components/CipherSandbox';
@@ -28,10 +27,10 @@ export function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#030305] text-zinc-100 font-sans selection:bg-violet-500 selection:text-white">
+    <div className="relative min-h-screen bg-[#050507] text-zinc-100 font-sans selection:bg-indigo-500 selection:text-white">
       
-      {/* Background Interactive Particle Constellation */}
-      <ParticleCanvas />
+      {/* Precision Tech Grid Texture Overlay */}
+      <div className="fixed inset-0 bg-tech-grid opacity-25 pointer-events-none z-0"></div>
 
       {/* Floating Modern Navbar */}
       <Navbar

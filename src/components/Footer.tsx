@@ -1,6 +1,7 @@
 import React from 'react';
 import { Bot, ArrowUp, MessageSquare } from 'lucide-react';
 import { soundFX } from '../utils/audio';
+import genesizLogo from '../assets/genesiz-logo-transparent.png';
 
 interface FooterProps {
   onOpenChatbot: () => void;
@@ -24,18 +25,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenChatbot, onOpenRegister })
           
           <div className="space-y-3 max-w-sm">
             <div className="flex items-center gap-2.5">
-              <div className="w-6 h-6 rounded bg-white text-black font-extrabold flex items-center justify-center text-xs">
-                G
-              </div>
-              <span className="font-extrabold text-lg tracking-widest text-white">
-                GENESIZ <span className="text-zinc-500 font-normal text-xs">2026</span>
-              </span>
+              <img src={genesizLogo} alt="GENESIZ Logo" className="h-6 w-auto object-contain" />
+              <span className="text-zinc-500 font-mono text-xs">2026</span>
             </div>
-            <p className="text-xs text-zinc-400 font-light leading-relaxed">
-              Inter-institutional technology convocation uniting algorithmic engineering, multi-day cryptographic intelligence, tactical esports, and software sprints.
+            <p className="text-xs text-zinc-400 font-normal leading-relaxed">
+              Inter-institutional technology summit bringing together competitive coding, cryptographic hunts, esports, and software hackathons.
             </p>
-            <div className="text-xs font-mono text-zinc-400">
-              Conceived & Powered by <span className="text-white font-medium">Valenite Electrion</span>
+            <div className="text-xs font-mono text-zinc-500">
+              Conceived & Powered by <span className="text-zinc-300 font-medium">Valenite Electrion</span>
             </div>
           </div>
 
@@ -70,8 +67,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenChatbot, onOpenRegister })
                   </a>
                 </li>
                 <li>
-                  <button onClick={onOpenChatbot} className="hover:text-violet-400 flex items-center gap-1 cursor-pointer">
-                    <Bot className="w-3 h-3 text-violet-400" /> AI Assistant
+                  <button onClick={onOpenChatbot} className="hover:text-white flex items-center gap-1 cursor-pointer">
+                    <Bot className="w-3 h-3 text-zinc-300" /> AI Assistant
                   </button>
                 </li>
                 <li>

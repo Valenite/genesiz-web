@@ -8,6 +8,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { soundFX } from '../utils/audio';
+import genesizLogo from '../assets/genesiz-logo-transparent.png';
 
 interface NavbarProps {
   onOpenRegister: () => void;
@@ -41,23 +42,20 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header className="fixed top-0 left-0 right-0 z-40 py-3.5 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto flex items-center justify-between px-5 py-2.5 rounded-full bg-[#08080c]/85 backdrop-blur-2xl border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.8)]">
         
-        {/* Brand Logo */}
+        {/* Official Brand Logo */}
         <a 
           href="#" 
           onClick={() => soundFX.playClick()}
           className="flex items-center gap-2.5 group cursor-pointer"
         >
-          <div className="w-7 h-7 rounded-lg bg-white text-black font-extrabold flex items-center justify-center text-xs tracking-tighter transition-transform group-hover:scale-105 shadow-md">
-            G
-          </div>
-          <div className="flex items-baseline gap-1.5">
-            <span className="font-extrabold text-base sm:text-lg tracking-widest text-white">
-              GENESIZ
-            </span>
-            <span className="text-[10px] font-mono text-violet-400 font-semibold">
-              '26
-            </span>
-          </div>
+          <img 
+            src={genesizLogo} 
+            alt="GENESIZ Logo" 
+            className="h-6 sm:h-7 w-auto object-contain group-hover:scale-105 transition-transform"
+          />
+          <span className="text-[10px] font-mono text-zinc-400 font-semibold">
+            '26
+          </span>
         </a>
 
         {/* Desktop Nav Links */}
@@ -86,7 +84,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             title={isMuted ? 'Enable Sound Synthesis' : 'Mute Sound'}
             className="p-2 rounded-full text-zinc-400 hover:text-white hover:bg-white/5 transition-colors cursor-pointer"
           >
-            {isMuted ? <VolumeX className="w-4 h-4 text-zinc-600" /> : <Volume2 className="w-4 h-4 text-violet-400" />}
+            {isMuted ? <VolumeX className="w-4 h-4 text-zinc-600" /> : <Volume2 className="w-4 h-4 text-zinc-300" />}
           </button>
 
           {/* AI Chatbot Trigger */}
@@ -96,9 +94,9 @@ export const Navbar: React.FC<NavbarProps> = ({
               onOpenChatbot();
             }}
             onMouseEnter={() => soundFX.playHover()}
-            className="px-3.5 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 hover:border-violet-500/50 text-zinc-300 hover:text-white text-xs font-mono flex items-center gap-1.5 transition-all cursor-pointer shadow-sm"
+            className="px-3.5 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-300 hover:text-white text-xs font-mono flex items-center gap-1.5 transition-all cursor-pointer shadow-sm"
           >
-            <Bot className="w-3.5 h-3.5 text-violet-400" />
+            <Bot className="w-3.5 h-3.5 text-zinc-300" />
             <span>AI Assistant</span>
           </button>
 
@@ -109,7 +107,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               onOpenRegister();
             }}
             onMouseEnter={() => soundFX.playHover()}
-            className="px-5 py-2 rounded-full bg-white hover:bg-zinc-100 text-black font-bold text-xs transition-all flex items-center gap-1.5 group cursor-pointer shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+            className="px-5 py-2 rounded-full bg-white hover:bg-zinc-200 text-black font-bold text-xs transition-all flex items-center gap-1.5 group cursor-pointer shadow-md"
           >
             <span>Accreditation</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
@@ -122,7 +120,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={toggleAudio}
             className="p-1.5 text-zinc-400"
           >
-            {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 text-violet-400" />}
+            {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 text-zinc-300" />}
           </button>
           <button
             onClick={() => {
@@ -166,7 +164,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               }}
               className="w-full py-2.5 rounded-xl bg-zinc-900 text-zinc-300 font-mono text-xs flex items-center justify-center gap-2"
             >
-              <Bot className="w-4 h-4 text-violet-400" />
+              <Bot className="w-4 h-4 text-zinc-400" />
               GENESIZ AI ASSISTANT
             </button>
             <button

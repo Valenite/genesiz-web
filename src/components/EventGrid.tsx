@@ -71,26 +71,26 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
       {/* Section Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
         <div className="space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/30 text-xs font-mono text-violet-300">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-white/10 text-xs font-mono text-zinc-400">
             <span>[ 01 ] // COMPETITIVE ARENAS</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-gradient-silver">
             Eight Flagship Disciplines.
           </h2>
-          <p className="text-sm text-zinc-300 font-light max-w-xl leading-relaxed">
-            Select your battlefield. From 4-day cryptographic investigations and high-speed algorithmic trials to live 240Hz LAN esports and mobile hackathons.
+          <p className="text-sm text-zinc-400 font-normal max-w-xl leading-relaxed">
+            Select your arena. From 4-day cryptographic investigations and high-speed algorithmic trials to live 240Hz LAN esports and mobile software sprints.
           </p>
         </div>
 
         {/* Search Input */}
         <div className="relative w-full md:w-72">
-          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400" />
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
           <input
             type="text"
             placeholder="Search disciplines or tags..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 bg-zinc-950/80 border border-zinc-800 rounded-full text-xs font-mono text-white placeholder-zinc-500 focus:outline-none focus:border-violet-500 transition-all shadow-inner"
+            className="w-full pl-10 pr-4 py-2.5 bg-zinc-950 border border-zinc-800 rounded-full text-xs font-mono text-white placeholder-zinc-500 focus:outline-none focus:border-zinc-500 transition-all"
           />
         </div>
       </div>
@@ -106,8 +106,8 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
             }}
             className={`px-4 py-2 rounded-full text-xs font-mono transition-all whitespace-nowrap cursor-pointer ${
               activeCategory === cat
-                ? 'bg-white text-black font-bold shadow-lg shadow-white/10'
-                : 'bg-zinc-950/90 text-zinc-400 hover:text-white border border-zinc-800/80 hover:border-zinc-700'
+                ? 'bg-white text-black font-bold shadow-sm'
+                : 'bg-zinc-950 text-zinc-400 hover:text-white border border-zinc-800'
             }`}
           >
             {cat}
@@ -138,22 +138,22 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
                 {/* Card Top Row */}
                 <div className="flex items-center justify-between pt-1">
                   <div className="flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 group-hover:text-violet-300 group-hover:border-violet-500/40 transition-colors">
+                    <div className="w-7 h-7 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-white transition-colors">
                       <Icon className="w-3.5 h-3.5" />
                     </div>
-                    <span className="text-xs font-mono text-violet-400 uppercase tracking-wider font-medium">
+                    <span className="text-xs font-mono text-zinc-400 uppercase tracking-wider font-medium">
                       {event.category}
                     </span>
                   </div>
 
-                  <span className="font-mono text-xs text-zinc-500">
+                  <span className="font-mono text-xs text-zinc-600">
                     0{idx + 1}
                   </span>
                 </div>
 
                 {/* Title & Tagline */}
                 <div>
-                  <h3 className="text-2xl font-bold text-white group-hover:text-violet-200 transition-colors">
+                  <h3 className="text-2xl font-bold text-white group-hover:text-zinc-200 transition-colors">
                     {event.name}
                   </h3>
                   <p className="text-xs text-zinc-400 mt-1 font-mono">
@@ -162,7 +162,7 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
                 </div>
 
                 {/* Description */}
-                <p className="text-xs text-zinc-300 leading-relaxed font-light line-clamp-2">
+                <p className="text-xs text-zinc-400 leading-relaxed font-normal line-clamp-2">
                   {event.shortDesc}
                 </p>
 
@@ -171,18 +171,18 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
               {/* Card Bottom Strip */}
               <div className="pt-5 mt-5 border-t border-zinc-800/80 flex items-center justify-between">
                 <div className="flex items-center gap-3 text-xs font-mono text-zinc-400">
-                  <span className="text-zinc-200 font-medium flex items-center gap-1.5">
-                    <Clock className="w-3.5 h-3.5 text-violet-400" />
+                  <span className="text-zinc-300 font-medium flex items-center gap-1.5">
+                    <Clock className="w-3.5 h-3.5 text-zinc-400" />
                     {event.duration}
                   </span>
-                  <span className="text-zinc-700">•</span>
-                  <span className="flex items-center gap-1.5">
+                  <span className="text-zinc-800">•</span>
+                  <span className="flex items-center gap-1.5 text-zinc-500">
                     <Users className="w-3.5 h-3.5 text-zinc-500" />
                     {event.teamSize}
                   </span>
                 </div>
 
-                <div className="flex items-center gap-1.5 text-xs font-mono text-violet-300 group-hover:text-white transition-colors">
+                <div className="flex items-center gap-1.5 text-xs font-mono text-zinc-300 group-hover:text-white transition-colors">
                   <span>Specification</span>
                   <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </div>
@@ -194,7 +194,7 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
       </div>
 
       {filteredEvents.length === 0 && (
-        <div className="text-center py-16 bg-zinc-950/80 rounded-3xl border border-zinc-900 p-8 space-y-3">
+        <div className="text-center py-16 bg-zinc-950 rounded-3xl border border-zinc-900 p-8 space-y-3">
           <p className="font-mono text-zinc-400 text-xs">NO DISCIPLINES MATCHING SEARCH QUERY.</p>
           <button
             onClick={() => {
