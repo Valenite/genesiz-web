@@ -43,13 +43,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
         
         {/* Top Tagline Badge */}
         <RevealOnScroll delayMs={100}>
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-900/80 border border-white/10 text-zinc-300 font-mono text-xs shadow-md backdrop-blur-xl hover:border-white/20 transition-all">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-900/80 border border-white/10 text-zinc-300 font-mono text-xs shadow-md backdrop-blur-xl hover:border-white/20 transition-all hover:scale-105">
             <Sparkles className="w-3.5 h-3.5 text-indigo-400 animate-pulse" />
             <span className="font-semibold text-white tracking-wider">OCTOBER 05, 2026</span>
           </div>
         </RevealOnScroll>
 
-        {/* Pure Transparent Official Logo Emblem with Floating Animation */}
+        {/* Pure Transparent Official Logo Emblem with Levitating Float */}
         <RevealOnScroll delayMs={200}>
           <div className="py-2 flex justify-center">
             <div className="relative animate-float">
@@ -58,7 +58,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
               <img 
                 src={genesizLogoTransparent} 
                 alt="GENESIZ Official Emblem" 
-                className="h-28 sm:h-36 md:h-40 w-auto object-contain select-none drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]"
+                className="h-28 sm:h-36 md:h-40 w-auto object-contain select-none drop-shadow-[0_0_25px_rgba(255,255,255,0.25)] hover:scale-105 transition-transform duration-500"
               />
             </div>
           </div>
@@ -76,7 +76,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
             </p>
 
             <div className="pt-1">
-              <span className="inline-block px-3.5 py-1 rounded-full bg-zinc-950/90 border border-white/10 text-[11px] font-mono text-zinc-400">
+              <span className="inline-block px-3.5 py-1.5 rounded-full bg-zinc-950/90 border border-white/10 text-[11px] font-mono text-zinc-400 hover:border-zinc-700 transition-colors">
                 Conceived & Powered by <strong className="text-white font-semibold">VALENITE ELECTRION</strong> <span className="text-zinc-500 font-normal">(Bhavya Aggarwal)</span>
               </span>
             </div>
@@ -95,7 +95,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
               ].map((item, idx) => (
                 <div key={item.label} className="flex items-center gap-3 sm:gap-6">
                   <div className="text-center">
-                    <div className="font-mono font-bold text-2xl sm:text-3xl text-white tracking-tight">
+                    <div className="font-mono font-bold text-2xl sm:text-3xl text-white tracking-tight hover:scale-110 transition-transform">
                       {String(item.val).padStart(2, '0')}
                     </div>
                     <div className="text-[9px] font-mono text-zinc-500 tracking-widest mt-0.5 font-semibold">
@@ -118,7 +118,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
                 onOpenRegister();
               }}
               onMouseEnter={() => soundFX.playHover()}
-              className="px-7 py-3 rounded-full bg-white hover:bg-zinc-200 text-black font-bold text-xs sm:text-sm transition-all flex items-center gap-2 group cursor-pointer shadow-md hover:scale-105"
+              className="px-7 py-3 rounded-full bg-white hover:bg-zinc-200 text-black font-bold text-xs sm:text-sm transition-all flex items-center gap-2 group cursor-pointer shadow-md hover:scale-105 active:scale-95"
             >
               <span>Register Now</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -130,7 +130,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
               rel="noreferrer"
               onClick={() => soundFX.playClick()}
               onMouseEnter={() => soundFX.playHover()}
-              className="px-5 py-3 rounded-full bg-[#5865F2] hover:bg-[#4752C4] text-white text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer shadow-md hover:scale-105"
+              className="px-5 py-3 rounded-full bg-[#5865F2] hover:bg-[#4752C4] text-white text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer shadow-md hover:scale-105 active:scale-95"
             >
               <MessageSquare className="w-4 h-4" />
               <span>Join Discord HQ</span>
@@ -140,7 +140,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
               href="#events"
               onClick={() => soundFX.playClick()}
               onMouseEnter={() => soundFX.playHover()}
-              className="px-5 py-3 rounded-full bg-zinc-900 hover:bg-zinc-800 text-zinc-200 hover:text-white text-xs sm:text-sm font-medium border border-zinc-800 transition-all cursor-pointer hover:border-zinc-600"
+              className="px-5 py-3 rounded-full bg-zinc-900 hover:bg-zinc-800 text-zinc-200 hover:text-white text-xs sm:text-sm font-medium border border-zinc-800 transition-all cursor-pointer hover:border-zinc-600 hover:scale-105 active:scale-95"
             >
               Explore 8 Competitions
             </a>
@@ -151,7 +151,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
                 onOpenChatbot();
               }}
               onMouseEnter={() => soundFX.playHover()}
-              className="px-4 py-3 rounded-full bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 text-xs font-mono flex items-center gap-2 transition-all cursor-pointer hover:border-zinc-600"
+              className="px-4 py-3 rounded-full bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 text-xs font-mono flex items-center gap-2 transition-all cursor-pointer hover:border-zinc-600 hover:scale-105 active:scale-95"
               title="Ask GENESIZ AI Assistant"
             >
               <Bot className="w-4 h-4 text-indigo-400" />
@@ -163,7 +163,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
         {/* Clean 3-Column Key Information Ticker */}
         <RevealOnScroll delayMs={600}>
           <div className="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-3.5 max-w-3xl mx-auto border-t border-zinc-800/60 text-left">
-            <div className="p-4 rounded-2xl bg-zinc-950/70 border border-zinc-900 hover:border-zinc-700 transition-colors">
+            <div className="p-4 rounded-2xl bg-zinc-950/70 border border-zinc-900 hover:border-zinc-700 hover:bg-zinc-900/40 transition-all duration-300 hover:-translate-y-1">
               <div className="flex items-center gap-2 text-[9px] font-mono text-zinc-500 uppercase tracking-wider mb-0.5">
                 <Shield className="w-3 h-3 text-zinc-400" />
                 <span>ELIGIBILITY</span>
@@ -172,7 +172,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
               <div className="text-[10px] font-mono text-zinc-500">Open to Students Nationwide</div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-zinc-950/70 border border-zinc-900 hover:border-zinc-700 transition-colors">
+            <div className="p-4 rounded-2xl bg-zinc-950/70 border border-zinc-900 hover:border-zinc-700 hover:bg-zinc-900/40 transition-all duration-300 hover:-translate-y-1">
               <div className="flex items-center gap-2 text-[9px] font-mono text-zinc-500 uppercase tracking-wider mb-0.5">
                 <Cpu className="w-3.5 h-3 text-zinc-400" />
                 <span>EVENTS</span>
@@ -181,7 +181,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
               <div className="text-[10px] font-mono text-zinc-500">Coding, Esports & Hackathons</div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-zinc-950/70 border border-zinc-900 hover:border-zinc-700 transition-colors">
+            <div className="p-4 rounded-2xl bg-zinc-950/70 border border-zinc-900 hover:border-zinc-700 hover:bg-zinc-900/40 transition-all duration-300 hover:-translate-y-1">
               <div className="flex items-center gap-2 text-[9px] font-mono text-zinc-500 uppercase tracking-wider mb-0.5">
                 <Radio className="w-3 h-3 text-emerald-400 animate-pulse" />
                 <span>COMMUNITY</span>

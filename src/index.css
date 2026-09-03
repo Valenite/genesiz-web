@@ -49,27 +49,26 @@
     linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
 }
 
-/* Executive Matte Card */
+/* Executive Spotlight Card */
 .spotlight-card {
   position: relative;
   background: rgba(12, 12, 16, 0.85);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .spotlight-card:hover {
-  border-color: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.22);
   background: rgba(18, 18, 24, 0.95);
-  transform: translateY(-2px);
-  box-shadow: 0 16px 32px -12px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
 }
 
 /* Clean Ambient Glow */
 .ambient-glow {
   background: radial-gradient(
-    ellipse 650px 350px at 50% 25%,
-    rgba(99, 102, 241, 0.06),
+    ellipse 700px 380px at 50% 25%,
+    rgba(99, 102, 241, 0.07),
     transparent 70%
   );
 }
@@ -80,12 +79,28 @@
     transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(-8px) rotate(1deg);
+    transform: translateY(-10px) rotate(1deg);
   }
 }
 
 .animate-float {
   animation: float 5s ease-in-out infinite;
+}
+
+/* Shimmer Border Light Effect */
+@keyframes borderShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.shimmer-border {
+  background: linear-gradient(90deg, rgba(255,255,255,0.05), rgba(255,255,255,0.25), rgba(255,255,255,0.05));
+  background-size: 200% 100%;
+  animation: borderShimmer 4s linear infinite;
 }
 
 /* Pulse Portal Emerging Animation */
