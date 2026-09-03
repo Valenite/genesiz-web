@@ -109,7 +109,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             onMouseEnter={() => soundFX.playHover()}
             className="px-5 py-2 rounded-full bg-white hover:bg-zinc-200 text-black font-bold text-xs transition-all flex items-center gap-1.5 group cursor-pointer shadow-md"
           >
-            <span>Accreditation</span>
+            <span>Register</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
           </button>
         </div>
@@ -175,7 +175,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               }}
               className="w-full py-2.5 rounded-xl bg-white text-black font-bold text-xs flex items-center justify-center gap-2 shadow-lg"
             >
-              DELEGATE ACCREDITATION
+              REGISTER NOW
             </button>
           </div>
         </div>

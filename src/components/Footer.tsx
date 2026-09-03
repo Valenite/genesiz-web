@@ -29,7 +29,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenChatbot, onOpenRegister })
               <span className="text-zinc-500 font-mono text-xs">2026</span>
             </div>
             <p className="text-xs text-zinc-400 font-normal leading-relaxed">
-              Inter-institutional technology summit bringing together competitive coding, cryptographic hunts, esports, and software hackathons.
+              National technology summit bringing together competitive coding, cryptographic hunts, esports, and software hackathons.
             </p>
             <div className="text-xs font-mono text-zinc-500">
               Conceived & Powered by <span className="text-zinc-300 font-medium">Valenite Electrion</span>
@@ -73,7 +73,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenChatbot, onOpenRegister })
                 </li>
                 <li>
                   <button onClick={onOpenRegister} className="hover:text-white cursor-pointer">
-                    Accreditation Pass
+                    Register / Get Pass
                   </button>
                 </li>
               </ul>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, ChevronDown, Bot, MessageSquare, Sparkles, Shield, Cpu, Radio } from 'lucide-react';
 import { soundFX } from '../utils/audio';
 import genesizLogoTransparent from '../assets/genesiz-logo-transparent.png';
+import { RevealOnScroll } from './RevealOnScroll';
 
 interface HeroSectionProps {
   onOpenRegister: () => void;
@@ -40,147 +41,156 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
 
       <div className="max-w-5xl mx-auto text-center relative z-10 space-y-6">
         
-        {/* Top Tagline Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-900/80 border border-white/10 text-zinc-300 font-mono text-xs shadow-md backdrop-blur-xl">
-          <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
-          <span className="font-semibold text-white tracking-wider">OCTOBER 05, 2026</span>
-          <span className="text-zinc-600">/</span>
-          <span className="text-zinc-300 uppercase tracking-wide font-medium">INTER-INSTITUTIONAL TECH SUMMIT</span>
-        </div>
+        {/* Top Tagline Badge - Inter-institutional text removed per request */}
+        <RevealOnScroll delayMs={100}>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-900/80 border border-white/10 text-zinc-300 font-mono text-xs shadow-md backdrop-blur-xl">
+            <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
+            <span className="font-semibold text-white tracking-wider">OCTOBER 05, 2026</span>
+          </div>
+        </RevealOnScroll>
 
         {/* Pure Transparent Official Logo Emblem */}
-        <div className="py-2 flex justify-center">
-          <div className="relative">
-            {/* Ambient soft glow */}
-            <div className="absolute inset-0 bg-white/10 blur-3xl rounded-full pointer-events-none"></div>
-            
-            <img 
-              src={genesizLogoTransparent} 
-              alt="GENESIZ Official Emblem" 
-              className="h-28 sm:h-36 md:h-40 w-auto object-contain select-none drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]"
-            />
+        <RevealOnScroll delayMs={200}>
+          <div className="py-2 flex justify-center">
+            <div className="relative">
+              <div className="absolute inset-0 bg-white/10 blur-3xl rounded-full pointer-events-none"></div>
+              
+              <img 
+                src={genesizLogoTransparent} 
+                alt="GENESIZ Official Emblem" 
+                className="h-28 sm:h-36 md:h-40 w-auto object-contain select-none drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]"
+              />
+            </div>
           </div>
-        </div>
+        </RevealOnScroll>
 
         {/* Big Premium GENESIZ Title */}
-        <div className="space-y-3 -mt-2">
-          <h1 className="font-extrabold text-5xl sm:text-7xl md:text-8xl tracking-tighter uppercase select-none text-gradient-silver leading-none">
-            GENESIZ
-          </h1>
+        <RevealOnScroll delayMs={300}>
+          <div className="space-y-3 -mt-2">
+            <h1 className="font-extrabold text-5xl sm:text-7xl md:text-8xl tracking-tighter uppercase select-none text-gradient-silver leading-none">
+              GENESIZ
+            </h1>
 
-          <p className="max-w-2xl mx-auto text-sm sm:text-base text-zinc-400 font-normal leading-relaxed pt-1">
-            The premier student technology summit bringing together <strong className="text-white font-semibold">competitive coding</strong>, <strong className="text-white font-semibold">cryptographic hunts</strong>, <strong className="text-white font-semibold">esports</strong>, and <strong className="text-white font-semibold">hackathons</strong>.
-          </p>
+            <p className="max-w-2xl mx-auto text-sm sm:text-base text-zinc-400 font-normal leading-relaxed pt-1">
+              The premier student technology summit bringing together <strong className="text-white font-semibold">competitive coding</strong>, <strong className="text-white font-semibold">cryptographic hunts</strong>, <strong className="text-white font-semibold">esports</strong>, and <strong className="text-white font-semibold">hackathons</strong>.
+            </p>
 
-          <div className="pt-1">
-            <span className="inline-block px-3.5 py-1 rounded-full bg-zinc-950/90 border border-white/10 text-[11px] font-mono text-zinc-400">
-              Conceived & Powered by <strong className="text-white font-semibold">VALENITE ELECTRION</strong>
-            </span>
+            <div className="pt-1">
+              <span className="inline-block px-3.5 py-1 rounded-full bg-zinc-950/90 border border-white/10 text-[11px] font-mono text-zinc-400">
+                Conceived & Powered by <strong className="text-white font-semibold">VALENITE ELECTRION</strong>
+              </span>
+            </div>
           </div>
-        </div>
+        </RevealOnScroll>
 
         {/* Minimalist Executive Countdown Timer */}
-        <div className="py-1">
-          <div className="inline-flex items-center gap-3 sm:gap-6 px-6 sm:px-8 py-3 rounded-2xl bg-zinc-950/90 border border-white/10 backdrop-blur-xl">
-            {[
-              { label: 'DAYS', val: timeLeft.days },
-              { label: 'HOURS', val: timeLeft.hours },
-              { label: 'MINUTES', val: timeLeft.minutes },
-              { label: 'SECONDS', val: timeLeft.seconds },
-            ].map((item, idx) => (
-              <div key={item.label} className="flex items-center gap-3 sm:gap-6">
-                <div className="text-center">
-                  <div className="font-mono font-bold text-2xl sm:text-3xl text-white tracking-tight">
-                    {String(item.val).padStart(2, '0')}
+        <RevealOnScroll delayMs={400}>
+          <div className="py-1">
+            <div className="inline-flex items-center gap-3 sm:gap-6 px-6 sm:px-8 py-3 rounded-2xl bg-zinc-950/90 border border-white/10 backdrop-blur-xl">
+              {[
+                { label: 'DAYS', val: timeLeft.days },
+                { label: 'HOURS', val: timeLeft.hours },
+                { label: 'MINUTES', val: timeLeft.minutes },
+                { label: 'SECONDS', val: timeLeft.seconds },
+              ].map((item, idx) => (
+                <div key={item.label} className="flex items-center gap-3 sm:gap-6">
+                  <div className="text-center">
+                    <div className="font-mono font-bold text-2xl sm:text-3xl text-white tracking-tight">
+                      {String(item.val).padStart(2, '0')}
+                    </div>
+                    <div className="text-[9px] font-mono text-zinc-500 tracking-widest mt-0.5 font-semibold">
+                      {item.label}
+                    </div>
                   </div>
-                  <div className="text-[9px] font-mono text-zinc-500 tracking-widest mt-0.5 font-semibold">
-                    {item.label}
-                  </div>
+                  {idx < 3 && <span className="text-zinc-800 text-xl font-mono hidden sm:inline">:</span>}
                 </div>
-                {idx < 3 && <span className="text-zinc-800 text-xl font-mono hidden sm:inline">:</span>}
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        </RevealOnScroll>
 
         {/* Action Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-3 pt-1">
-          <button
-            onClick={() => {
-              soundFX.playWarp();
-              onOpenRegister();
-            }}
-            onMouseEnter={() => soundFX.playHover()}
-            className="px-7 py-3 rounded-full bg-white hover:bg-zinc-200 text-black font-bold text-xs sm:text-sm transition-all flex items-center gap-2 group cursor-pointer shadow-md"
-          >
-            <span>Get Pass / Register</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
+        <RevealOnScroll delayMs={500}>
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-1">
+            <button
+              onClick={() => {
+                soundFX.playWarp();
+                onOpenRegister();
+              }}
+              onMouseEnter={() => soundFX.playHover()}
+              className="px-7 py-3 rounded-full bg-white hover:bg-zinc-200 text-black font-bold text-xs sm:text-sm transition-all flex items-center gap-2 group cursor-pointer shadow-md"
+            >
+              <span>Register Now</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
 
-          <a
-            href={DISCORD_URL}
-            target="_blank"
-            rel="noreferrer"
-            onClick={() => soundFX.playClick()}
-            onMouseEnter={() => soundFX.playHover()}
-            className="px-5 py-3 rounded-full bg-[#5865F2] hover:bg-[#4752C4] text-white text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer shadow-md"
-          >
-            <MessageSquare className="w-4 h-4" />
-            <span>Join Discord HQ</span>
-          </a>
+            <a
+              href={DISCORD_URL}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => soundFX.playClick()}
+              onMouseEnter={() => soundFX.playHover()}
+              className="px-5 py-3 rounded-full bg-[#5865F2] hover:bg-[#4752C4] text-white text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer shadow-md"
+            >
+              <MessageSquare className="w-4 h-4" />
+              <span>Join Discord HQ</span>
+            </a>
 
-          <a
-            href="#events"
-            onClick={() => soundFX.playClick()}
-            onMouseEnter={() => soundFX.playHover()}
-            className="px-5 py-3 rounded-full bg-zinc-900 hover:bg-zinc-800 text-zinc-200 hover:text-white text-xs sm:text-sm font-medium border border-zinc-800 transition-all cursor-pointer"
-          >
-            Explore 8 Competitions
-          </a>
+            <a
+              href="#events"
+              onClick={() => soundFX.playClick()}
+              onMouseEnter={() => soundFX.playHover()}
+              className="px-5 py-3 rounded-full bg-zinc-900 hover:bg-zinc-800 text-zinc-200 hover:text-white text-xs sm:text-sm font-medium border border-zinc-800 transition-all cursor-pointer"
+            >
+              Explore 8 Competitions
+            </a>
 
-          <button
-            onClick={() => {
-              soundFX.playWarp();
-              onOpenChatbot();
-            }}
-            onMouseEnter={() => soundFX.playHover()}
-            className="px-4 py-3 rounded-full bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 text-xs font-mono flex items-center gap-2 transition-all cursor-pointer"
-            title="Ask GENESIZ AI Assistant"
-          >
-            <Bot className="w-4 h-4 text-indigo-400" />
-            <span className="hidden sm:inline">AI Chat</span>
-          </button>
-        </div>
+            <button
+              onClick={() => {
+                soundFX.playWarp();
+                onOpenChatbot();
+              }}
+              onMouseEnter={() => soundFX.playHover()}
+              className="px-4 py-3 rounded-full bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 text-xs font-mono flex items-center gap-2 transition-all cursor-pointer"
+              title="Ask GENESIZ AI Assistant"
+            >
+              <Bot className="w-4 h-4 text-indigo-400" />
+              <span className="hidden sm:inline">AI Chat</span>
+            </button>
+          </div>
+        </RevealOnScroll>
 
         {/* Clean 3-Column Key Information Ticker */}
-        <div className="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-3.5 max-w-3xl mx-auto border-t border-zinc-800/60 text-left">
-          <div className="p-4 rounded-2xl bg-zinc-950/70 border border-zinc-900 hover:border-zinc-700 transition-colors">
-            <div className="flex items-center gap-2 text-[9px] font-mono text-zinc-500 uppercase tracking-wider mb-0.5">
-              <Shield className="w-3 h-3 text-zinc-400" />
-              <span>ELIGIBILITY</span>
+        <RevealOnScroll delayMs={600}>
+          <div className="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-3.5 max-w-3xl mx-auto border-t border-zinc-800/60 text-left">
+            <div className="p-4 rounded-2xl bg-zinc-950/70 border border-zinc-900 hover:border-zinc-700 transition-colors">
+              <div className="flex items-center gap-2 text-[9px] font-mono text-zinc-500 uppercase tracking-wider mb-0.5">
+                <Shield className="w-3 h-3 text-zinc-400" />
+                <span>ELIGIBILITY</span>
+              </div>
+              <div className="text-base sm:text-lg font-bold text-white">All Colleges</div>
+              <div className="text-[10px] font-mono text-zinc-500">Open to Students Nationwide</div>
             </div>
-            <div className="text-base sm:text-lg font-bold text-white">All Colleges</div>
-            <div className="text-[10px] font-mono text-zinc-500">Open to Students Nationwide</div>
-          </div>
 
-          <div className="p-4 rounded-2xl bg-zinc-950/70 border border-zinc-900 hover:border-zinc-700 transition-colors">
-            <div className="flex items-center gap-2 text-[9px] font-mono text-zinc-500 uppercase tracking-wider mb-0.5">
-              <Cpu className="w-3 h-3 text-zinc-400" />
-              <span>EVENTS</span>
+            <div className="p-4 rounded-2xl bg-zinc-950/70 border border-zinc-900 hover:border-zinc-700 transition-colors">
+              <div className="flex items-center gap-2 text-[9px] font-mono text-zinc-500 uppercase tracking-wider mb-0.5">
+                <Cpu className="w-3 h-3 text-zinc-400" />
+                <span>EVENTS</span>
+              </div>
+              <div className="text-base sm:text-lg font-bold text-white">8 Competitions</div>
+              <div className="text-[10px] font-mono text-zinc-500">Coding, Esports & Hackathons</div>
             </div>
-            <div className="text-base sm:text-lg font-bold text-white">8 Competitions</div>
-            <div className="text-[10px] font-mono text-zinc-500">Coding, Esports & Hackathons</div>
-          </div>
 
-          <div className="p-4 rounded-2xl bg-zinc-950/70 border border-zinc-900 hover:border-zinc-700 transition-colors">
-            <div className="flex items-center gap-2 text-[9px] font-mono text-zinc-500 uppercase tracking-wider mb-0.5">
-              <Radio className="w-3 h-3 text-emerald-400 animate-pulse" />
-              <span>COMMUNITY</span>
+            <div className="p-4 rounded-2xl bg-zinc-950/70 border border-zinc-900 hover:border-zinc-700 transition-colors">
+              <div className="flex items-center gap-2 text-[9px] font-mono text-zinc-500 uppercase tracking-wider mb-0.5">
+                <Radio className="w-3 h-3 text-emerald-400 animate-pulse" />
+                <span>COMMUNITY</span>
+              </div>
+              <div className="text-base sm:text-lg font-bold text-white">Discord Server</div>
+              <div className="text-[10px] font-mono text-zinc-500">Live Updates & Squad Matchmaking</div>
             </div>
-            <div className="text-base sm:text-lg font-bold text-white">Discord Server</div>
-            <div className="text-[10px] font-mono text-zinc-500">Live Updates & Squad Matchmaking</div>
           </div>
-        </div>
+        </RevealOnScroll>
 
       </div>
 

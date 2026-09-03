@@ -266,42 +266,42 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
             </div>
           </div>
 
-          {/* Squad Members */}
+          {/* Team Members List */}
           <div className="space-y-3 pt-2">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-mono text-violet-400 uppercase font-semibold">3. Co-Delegates & Team Members (Optional)</span>
+              <label className="text-[11px] font-mono text-zinc-400 uppercase">Squad Roster (Optional)</label>
               {teamMembers.length < 4 && (
                 <button
                   type="button"
                   onClick={addTeamMember}
-                  className="text-xs font-mono text-violet-400 hover:underline flex items-center gap-1 cursor-pointer"
+                  className="text-xs font-mono text-zinc-300 hover:text-white flex items-center gap-1 cursor-pointer"
                 >
-                  <Plus className="w-3.5 h-3.5" /> Add Co-Delegate
+                  <Plus className="w-3.5 h-3.5" />
+                  <span>Add Member</span>
                 </button>
               )}
             </div>
 
             {teamMembers.map((member, idx) => (
-              <div key={idx} className="flex items-center gap-2 bg-zinc-950 p-2.5 rounded-xl border border-zinc-900">
-                <span className="text-xs font-mono text-zinc-500 w-5">#{idx + 2}</span>
+              <div key={idx} className="flex items-center gap-2">
                 <input
                   type="text"
-                  placeholder="Co-Delegate Name"
+                  placeholder={`Member ${idx + 1} Name`}
                   value={member.name}
                   onChange={(e) => updateTeamMember(idx, 'name', e.target.value)}
-                  className="flex-1 px-3 py-1.5 bg-zinc-900 border border-zinc-800 rounded-lg text-xs text-white focus:outline-none"
+                  className="w-1/2 px-3 py-2 bg-zinc-950 border border-zinc-800 rounded-lg text-xs text-white placeholder-zinc-600 focus:outline-none"
                 />
                 <input
                   type="text"
-                  placeholder="Discord / Email"
+                  placeholder={`Member ${idx + 1} Contact`}
                   value={member.tag}
                   onChange={(e) => updateTeamMember(idx, 'tag', e.target.value)}
-                  className="flex-1 px-3 py-1.5 bg-zinc-900 border border-zinc-800 rounded-lg text-xs text-white focus:outline-none"
+                  className="w-1/2 px-3 py-2 bg-zinc-950 border border-zinc-800 rounded-lg text-xs text-white placeholder-zinc-600 focus:outline-none"
                 />
                 <button
                   type="button"
                   onClick={() => removeTeamMember(idx)}
-                  className="p-1 text-zinc-500 hover:text-red-400 cursor-pointer"
+                  className="p-2 text-zinc-500 hover:text-rose-400 cursor-pointer"
                 >
                   <Trash2 className="w-3.5 h-3.5" />
                 </button>
@@ -314,9 +314,9 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
             <button
               type="submit"
               onMouseEnter={() => soundFX.playHover()}
-              className="w-full py-4 rounded-full bg-white hover:bg-zinc-100 text-black font-bold text-xs tracking-wider uppercase transition-all flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(255,255,255,0.25)] cursor-pointer"
+              className="w-full py-4 rounded-full bg-white hover:bg-zinc-100 text-black font-bold text-xs tracking-wider uppercase transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer"
             >
-              <span>Authorize Accreditation & Issue Credential</span>
+              <span>Confirm Registration & Issue Pass</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
