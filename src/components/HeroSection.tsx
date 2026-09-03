@@ -77,7 +77,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
 
             <div className="pt-1">
               <span className="inline-block px-3.5 py-1 rounded-full bg-zinc-950/90 border border-white/10 text-[11px] font-mono text-zinc-400">
-                Conceived & Powered by <strong className="text-white font-semibold">VALENITE ELECTRION</strong>
+                Conceived & Powered by <strong className="text-white font-semibold">VALENITE ELECTRION</strong> <span className="text-zinc-500 font-normal">(Bhavya Aggarwal)</span>
               </span>
             </div>
           </div>
