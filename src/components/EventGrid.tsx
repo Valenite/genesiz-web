@@ -49,6 +49,7 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const [swipeOffset, setSwipeOffset] = useState<number>(0);
   const [isSwiping, setIsSwiping] = useState<boolean>(false);
+  const [dragMoved, setDragMoved] = useState<boolean>(false);
 
   const categories = [
     'All',
@@ -85,6 +86,7 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
     soundFX.playWarp();
     setCurrentIndex((prev) => (prev + 1) % totalFiltered);
     setSwipeOffset(0);
+    setDragMoved(false);
   };
 
   const handlePrev = () => {
@@ -92,6 +94,7 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
     soundFX.playWarp();
     setCurrentIndex((prev) => (prev - 1 + totalFiltered) % totalFiltered);
     setSwipeOffset(0);
+    setDragMoved(false);
   };
 
   // Touch Swipe Handlers
@@ -99,21 +102,25 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
     const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
     setTouchStartX(clientX);
     setIsSwiping(true);
+    setDragMoved(false);
   };
 
   const handleTouchMove = (e: React.TouchEvent | React.MouseEvent) => {
     if (touchStartX === null || !isSwiping) return;
     const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
     const diff = clientX - touchStartX;
+    if (Math.abs(diff) > 5) {
+      setDragMoved(true);
+    }
     setSwipeOffset(diff);
   };
 
   const handleTouchEnd = () => {
     if (!isSwiping) return;
     setIsSwiping(false);
-    if (swipeOffset < -60) {
+    if (swipeOffset < -50) {
       handleNext();
-    } else if (swipeOffset > 60) {
+    } else if (swipeOffset > 50) {
       handlePrev();
     } else {
       setSwipeOffset(0);
@@ -220,7 +227,7 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
                   CARD {String(safeIndex + 1).padStart(2, '0')} / {String(totalFiltered).padStart(2, '0')}
                 </span>
                 <span className="text-zinc-700 text-xs font-mono">•</span>
-                <span className="text-xs font-mono text-zinc-500">Swipe or use arrows</span>
+                <span className="text-xs font-mono text-zinc-500">Swipe card or tap arrows</span>
               </div>
 
               <div className="flex items-center gap-2">
@@ -257,7 +264,7 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
               {/* Stacked Preview Card Behind */}
               {totalFiltered > 1 && (
                 <div 
-                  className="absolute inset-0 rounded-3xl bg-[#08080c] border border-zinc-800/60 pointer-events-none transition-all duration-300 transform translate-y-4 scale-95 opacity-50 z-0"
+                  className="absolute inset-0 rounded-3xl bg-[#08080c] border border-zinc-800/60 pointer-events-none transition-all duration-300 transform translate-y-3 scale-95 opacity-50 z-0"
                 />
               )}
 
@@ -269,16 +276,10 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
                 return (
                   <div
                     style={{
-                      transform: `translateX(${swipeOffset}px) rotate(${swipeOffset * 0.05}deg)`,
-                      transition: isSwiping ? 'none' : 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
+                      transform: `translateX(${swipeOffset}px) rotate(${swipeOffset * 0.04}deg)`,
+                      transition: isSwiping ? 'none' : 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
                     }}
-                    onClick={() => {
-                      if (Math.abs(swipeOffset) < 10) {
-                        soundFX.playWarp();
-                        onSelectEvent(event);
-                      }
-                    }}
-                    className="relative z-10 spotlight-card p-6 sm:p-8 rounded-3xl cursor-pointer flex flex-col justify-between min-h-[460px] sm:min-h-[480px] shadow-2xl border border-white/15 bg-[#0a0a0f] hover:border-white/30 transition-colors"
+                    className="relative z-10 spotlight-card p-6 sm:p-8 rounded-3xl flex flex-col justify-between min-h-[460px] sm:min-h-[480px] shadow-2xl border border-white/15 bg-[#0a0a0f] transition-colors"
                   >
                     <div className="space-y-5">
                       {/* Visual Banner Artwork */}
@@ -330,10 +331,21 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
                         </span>
                       </div>
 
-                      <div className="flex items-center gap-1.5 text-xs font-mono text-white font-semibold">
-                        <span>Click to Open Dossier</span>
-                        <ArrowUpRight className="w-4 h-4" />
-                      </div>
+                      {/* Explicit Open Modal Button */}
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          if (!dragMoved) {
+                            soundFX.playWarp();
+                            onSelectEvent(event);
+                          }
+                        }}
+                        onMouseEnter={() => soundFX.playHover()}
+                        className="px-4 py-2 rounded-full bg-white hover:bg-zinc-200 text-black font-bold text-xs flex items-center gap-1.5 transition-all cursor-pointer shadow-md"
+                      >
+                        <span>Open Specification</span>
+                        <ArrowUpRight className="w-3.5 h-3.5" />
+                      </button>
                     </div>
                   </div>
                 );
@@ -361,7 +373,7 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
         </RevealOnScroll>
       )}
 
-      {/* GRID VIEW MODE (Optional toggle) */}
+      {/* GRID VIEW MODE */}
       {viewMode === 'grid' && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredEvents.map((event, idx) => {

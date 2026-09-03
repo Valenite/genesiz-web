@@ -74,6 +74,42 @@
   );
 }
 
+/* Levitating Float Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* Pulse Portal Emerging Animation */
+@keyframes portalEmergence {
+  0% {
+    opacity: 0;
+    transform: scale(0.7) translateY(20px);
+    filter: blur(8px);
+  }
+  60% {
+    transform: scale(1.03) translateY(-2px);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0px);
+  }
+}
+
+.animate-portal {
+  animation: portalEmergence 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 /* Fade-in animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }

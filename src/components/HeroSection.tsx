@@ -41,18 +41,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
 
       <div className="max-w-5xl mx-auto text-center relative z-10 space-y-6">
         
-        {/* Top Tagline Badge - Inter-institutional text removed per request */}
+        {/* Top Tagline Badge */}
         <RevealOnScroll delayMs={100}>
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-900/80 border border-white/10 text-zinc-300 font-mono text-xs shadow-md backdrop-blur-xl">
-            <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-900/80 border border-white/10 text-zinc-300 font-mono text-xs shadow-md backdrop-blur-xl hover:border-white/20 transition-all">
+            <Sparkles className="w-3.5 h-3.5 text-indigo-400 animate-pulse" />
             <span className="font-semibold text-white tracking-wider">OCTOBER 05, 2026</span>
           </div>
         </RevealOnScroll>
 
-        {/* Pure Transparent Official Logo Emblem */}
+        {/* Pure Transparent Official Logo Emblem with Floating Animation */}
         <RevealOnScroll delayMs={200}>
           <div className="py-2 flex justify-center">
-            <div className="relative">
+            <div className="relative animate-float">
               <div className="absolute inset-0 bg-white/10 blur-3xl rounded-full pointer-events-none"></div>
               
               <img 
@@ -83,10 +83,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
           </div>
         </RevealOnScroll>
 
-        {/* Minimalist Executive Countdown Timer */}
-        <RevealOnScroll delayMs={400}>
-          <div className="py-1">
-            <div className="inline-flex items-center gap-3 sm:gap-6 px-6 sm:px-8 py-3 rounded-2xl bg-zinc-950/90 border border-white/10 backdrop-blur-xl">
+        {/* Countdown Timer with Emerging Portal Animation */}
+        <RevealOnScroll variant="zoom-in" delayMs={400}>
+          <div className="py-2 flex justify-center">
+            <div className="inline-flex items-center gap-3 sm:gap-6 px-6 sm:px-8 py-3.5 rounded-2xl bg-zinc-950/90 border border-white/15 backdrop-blur-xl shadow-2xl animate-portal">
               {[
                 { label: 'DAYS', val: timeLeft.days },
                 { label: 'HOURS', val: timeLeft.hours },
@@ -102,7 +102,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
                       {item.label}
                     </div>
                   </div>
-                  {idx < 3 && <span className="text-zinc-800 text-xl font-mono hidden sm:inline">:</span>}
+                  {idx < 3 && <span className="text-zinc-700 text-xl font-mono hidden sm:inline">:</span>}
                 </div>
               ))}
             </div>
@@ -118,7 +118,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
                 onOpenRegister();
               }}
               onMouseEnter={() => soundFX.playHover()}
-              className="px-7 py-3 rounded-full bg-white hover:bg-zinc-200 text-black font-bold text-xs sm:text-sm transition-all flex items-center gap-2 group cursor-pointer shadow-md"
+              className="px-7 py-3 rounded-full bg-white hover:bg-zinc-200 text-black font-bold text-xs sm:text-sm transition-all flex items-center gap-2 group cursor-pointer shadow-md hover:scale-105"
             >
               <span>Register Now</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -130,7 +130,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
               rel="noreferrer"
               onClick={() => soundFX.playClick()}
               onMouseEnter={() => soundFX.playHover()}
-              className="px-5 py-3 rounded-full bg-[#5865F2] hover:bg-[#4752C4] text-white text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer shadow-md"
+              className="px-5 py-3 rounded-full bg-[#5865F2] hover:bg-[#4752C4] text-white text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer shadow-md hover:scale-105"
             >
               <MessageSquare className="w-4 h-4" />
               <span>Join Discord HQ</span>
@@ -140,7 +140,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
               href="#events"
               onClick={() => soundFX.playClick()}
               onMouseEnter={() => soundFX.playHover()}
-              className="px-5 py-3 rounded-full bg-zinc-900 hover:bg-zinc-800 text-zinc-200 hover:text-white text-xs sm:text-sm font-medium border border-zinc-800 transition-all cursor-pointer"
+              className="px-5 py-3 rounded-full bg-zinc-900 hover:bg-zinc-800 text-zinc-200 hover:text-white text-xs sm:text-sm font-medium border border-zinc-800 transition-all cursor-pointer hover:border-zinc-600"
             >
               Explore 8 Competitions
             </a>
@@ -151,7 +151,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
                 onOpenChatbot();
               }}
               onMouseEnter={() => soundFX.playHover()}
-              className="px-4 py-3 rounded-full bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 text-xs font-mono flex items-center gap-2 transition-all cursor-pointer"
+              className="px-4 py-3 rounded-full bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 text-xs font-mono flex items-center gap-2 transition-all cursor-pointer hover:border-zinc-600"
               title="Ask GENESIZ AI Assistant"
             >
               <Bot className="w-4 h-4 text-indigo-400" />
@@ -174,7 +174,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
 
             <div className="p-4 rounded-2xl bg-zinc-950/70 border border-zinc-900 hover:border-zinc-700 transition-colors">
               <div className="flex items-center gap-2 text-[9px] font-mono text-zinc-500 uppercase tracking-wider mb-0.5">
-                <Cpu className="w-3 h-3 text-zinc-400" />
+                <Cpu className="w-3.5 h-3 text-zinc-400" />
                 <span>EVENTS</span>
               </div>
               <div className="text-base sm:text-lg font-bold text-white">8 Competitions</div>
