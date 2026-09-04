@@ -49,7 +49,7 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const [swipeOffset, setSwipeOffset] = useState<number>(0);
   const [isSwiping, setIsSwiping] = useState<boolean>(false);
-  const [dragMoved, setDragMoved] = useState<boolean>(false);
+  const [animatingDir, setAnimatingDir] = useState<'left' | 'right' | null>(null);
 
   const categories = [
     'All',
@@ -81,47 +81,50 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
   const totalFiltered = filteredEvents.length;
   const safeIndex = Math.min(currentIndex, Math.max(0, totalFiltered - 1));
 
-  const handleNext = () => {
-    if (totalFiltered === 0) return;
+  const triggerSwipeLeft = () => {
+    if (totalFiltered === 0 || animatingDir !== null) return;
     soundFX.playWarp();
-    setCurrentIndex((prev) => (prev + 1) % totalFiltered);
-    setSwipeOffset(0);
-    setDragMoved(false);
+    setAnimatingDir('left');
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev + 1) % totalFiltered);
+      setSwipeOffset(0);
+      setAnimatingDir(null);
+    }, 220);
   };
 
-  const handlePrev = () => {
-    if (totalFiltered === 0) return;
+  const triggerSwipeRight = () => {
+    if (totalFiltered === 0 || animatingDir !== null) return;
     soundFX.playWarp();
-    setCurrentIndex((prev) => (prev - 1 + totalFiltered) % totalFiltered);
-    setSwipeOffset(0);
-    setDragMoved(false);
+    setAnimatingDir('right');
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev - 1 + totalFiltered) % totalFiltered);
+      setSwipeOffset(0);
+      setAnimatingDir(null);
+    }, 220);
   };
 
   // Touch Swipe Handlers
   const handleTouchStart = (e: React.TouchEvent | React.MouseEvent) => {
+    if (animatingDir !== null) return;
     const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
     setTouchStartX(clientX);
     setIsSwiping(true);
-    setDragMoved(false);
   };
 
   const handleTouchMove = (e: React.TouchEvent | React.MouseEvent) => {
-    if (touchStartX === null || !isSwiping) return;
+    if (touchStartX === null || !isSwiping || animatingDir !== null) return;
     const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
     const diff = clientX - touchStartX;
-    if (Math.abs(diff) > 5) {
-      setDragMoved(true);
-    }
     setSwipeOffset(diff);
   };
 
   const handleTouchEnd = () => {
-    if (!isSwiping) return;
+    if (!isSwiping || animatingDir !== null) return;
     setIsSwiping(false);
-    if (swipeOffset < -50) {
-      handleNext();
-    } else if (swipeOffset > 50) {
-      handlePrev();
+    if (swipeOffset < -45) {
+      triggerSwipeLeft();
+    } else if (swipeOffset > 45) {
+      triggerSwipeRight();
     } else {
       setSwipeOffset(0);
     }
@@ -227,22 +230,22 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
                   CARD {String(safeIndex + 1).padStart(2, '0')} / {String(totalFiltered).padStart(2, '0')}
                 </span>
                 <span className="text-zinc-700 text-xs font-mono">•</span>
-                <span className="text-xs font-mono text-zinc-500">Swipe card or tap arrows</span>
+                <span className="text-xs font-mono text-zinc-500">Swipe card or use arrows</span>
               </div>
 
               <div className="flex items-center gap-2">
                 <button
-                  onClick={handlePrev}
+                  onClick={triggerSwipeRight}
                   onMouseEnter={() => soundFX.playHover()}
-                  className="p-2.5 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white hover:border-zinc-600 transition-all cursor-pointer shadow-md"
+                  className="p-2.5 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white hover:border-zinc-600 transition-all cursor-pointer shadow-md active:scale-95"
                   title="Previous Card"
                 >
                   <ChevronLeft className="w-4 h-4" />
                 </button>
                 <button
-                  onClick={handleNext}
+                  onClick={triggerSwipeLeft}
                   onMouseEnter={() => soundFX.playHover()}
-                  className="p-2.5 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white hover:border-zinc-600 transition-all cursor-pointer shadow-md"
+                  className="p-2.5 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white hover:border-zinc-600 transition-all cursor-pointer shadow-md active:scale-95"
                   title="Next Card"
                 >
                   <ChevronRight className="w-4 h-4" />
@@ -252,7 +255,7 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
 
             {/* Interactive Card Deck Stack Container */}
             <div 
-              className="relative min-h-[460px] sm:min-h-[480px] touch-pan-y select-none cursor-grab active:cursor-grabbing"
+              className="relative min-h-[460px] sm:min-h-[480px] touch-pan-y select-none cursor-grab active:cursor-grabbing overflow-hidden rounded-3xl"
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
@@ -264,7 +267,7 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
               {/* Stacked Preview Card Behind */}
               {totalFiltered > 1 && (
                 <div 
-                  className="absolute inset-0 rounded-3xl bg-[#08080c] border border-zinc-800/60 pointer-events-none transition-all duration-300 transform translate-y-3 scale-95 opacity-50 z-0"
+                  className="absolute inset-0 rounded-3xl bg-[#08080c] border border-zinc-800/60 pointer-events-none transition-all duration-300 transform translate-y-3 scale-95 opacity-40 z-0"
                 />
               )}
 
@@ -273,13 +276,26 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
                 const event = filteredEvents[safeIndex];
                 const Icon = iconMap[event.iconName] || Sparkles;
 
+                // Compute smooth card transform during drag or animation
+                let cardTransform = `translateX(${swipeOffset}px) rotate(${swipeOffset * 0.03}deg)`;
+                let cardOpacity = 1;
+
+                if (animatingDir === 'left') {
+                  cardTransform = `translateX(-120%) rotate(-12deg)`;
+                  cardOpacity = 0;
+                } else if (animatingDir === 'right') {
+                  cardTransform = `translateX(120%) rotate(12deg)`;
+                  cardOpacity = 0;
+                }
+
                 return (
                   <div
                     style={{
-                      transform: `translateX(${swipeOffset}px) rotate(${swipeOffset * 0.04}deg)`,
-                      transition: isSwiping ? 'none' : 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                      transform: cardTransform,
+                      opacity: cardOpacity,
+                      transition: isSwiping ? 'none' : 'transform 0.28s ease-out, opacity 0.28s ease-out',
                     }}
-                    className="relative z-10 spotlight-card p-6 sm:p-8 rounded-3xl flex flex-col justify-between min-h-[460px] sm:min-h-[480px] shadow-2xl border border-white/15 bg-[#0a0a0f] transition-colors"
+                    className="relative z-10 spotlight-card p-6 sm:p-8 rounded-3xl flex flex-col justify-between min-h-[460px] sm:min-h-[480px] shadow-2xl border border-white/15 bg-[#0a0a0f]"
                   >
                     <div className="space-y-5">
                       {/* Visual Banner Artwork */}
@@ -335,13 +351,11 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
-                          if (!dragMoved) {
-                            soundFX.playWarp();
-                            onSelectEvent(event);
-                          }
+                          soundFX.playWarp();
+                          onSelectEvent(event);
                         }}
                         onMouseEnter={() => soundFX.playHover()}
-                        className="px-4 py-2 rounded-full bg-white hover:bg-zinc-200 text-black font-bold text-xs flex items-center gap-1.5 transition-all cursor-pointer shadow-md"
+                        className="px-4 py-2 rounded-full bg-white hover:bg-zinc-200 text-black font-bold text-xs flex items-center gap-1.5 transition-all cursor-pointer shadow-md hover:scale-105 active:scale-95"
                       >
                         <span>Open Specification</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />
