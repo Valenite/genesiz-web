@@ -67,7 +67,6 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
   const [cardRotationY, setCardRotationY] = useState<number>(0);
   const [isFlipped, setIsFlipped] = useState<boolean>(false);
   const [isSpinning, setIsSpinning] = useState<boolean>(false);
-  const [hasTransitioned, setHasTransitioned] = useState<boolean>(false);
   
   // Drag rotation tracking
   const [dragStartX, setDragStartX] = useState<number | null>(null);
@@ -115,21 +114,19 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
     setCardRotationY(newFlipped ? 180 : 0);
   };
 
-  // Full 360 Degree Spin to NEXT Card
+  // Full 360 Degree Spin Left -> NEXT Card
   const handle360SpinNext = () => {
     if (totalFiltered <= 1 || isSpinning) return;
     soundFX.playWarp();
     setIsSpinning(true);
-    setHasTransitioned(false);
     setIsFlipped(false);
 
-    // Spin card 360 degrees
-    setCardRotationY(360);
+    // Spin card -360 degrees leftwards
+    setCardRotationY(-360);
 
-    // Midway swap content at 240ms when card edge is hidden
+    // Midway swap content at 240ms when card edge is turned away
     setTimeout(() => {
       setCurrentIndex((prev) => (prev + 1) % totalFiltered);
-      setHasTransitioned(true);
     }, 240);
 
     // Reset rotation position cleanly at 500ms after completion
@@ -139,19 +136,18 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
     }, 500);
   };
 
-  // Full 360 Degree Spin to PREVIOUS Card
+  // Full 360 Degree Spin Right -> PREVIOUS Card
   const handle360SpinPrev = () => {
     if (totalFiltered <= 1 || isSpinning) return;
     soundFX.playWarp();
     setIsSpinning(true);
-    setHasTransitioned(false);
     setIsFlipped(false);
 
-    setCardRotationY(-360);
+    // Spin card +360 degrees rightwards
+    setCardRotationY(360);
 
     setTimeout(() => {
       setCurrentIndex((prev) => (prev - 1 + totalFiltered) % totalFiltered);
-      setHasTransitioned(true);
     }, 240);
 
     setTimeout(() => {
@@ -173,19 +169,18 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
     const deltaX = x - dragStartX;
     const newRotation = cardRotationY + deltaX * 0.45;
 
-    // Check if user rotated past 180 degrees via dragging to trigger card swap
-    if (newRotation > 160 && !hasTransitioned) {
+    // Check if user rotated past threshold via dragging to trigger card swap in that direction
+    if (deltaX < -70 && !isSpinning) {
       handle360SpinNext();
       setDragStartX(null);
       return;
-    } else if (newRotation < -160 && !hasTransitioned) {
+    } else if (deltaX > 70 && !isSpinning) {
       handle360SpinPrev();
       setDragStartX(null);
       return;
     }
 
     setCardRotationY(newRotation);
-    setDragStartX(x);
   };
 
   const handleDragEnd = () => {
@@ -219,7 +214,7 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
               Eight Flagship Arenas.
             </h2>
             <p className="text-sm text-zinc-400 font-normal max-w-xl leading-relaxed">
-              Drag to spin the card 360°. As it completes a full 360° rotation, it seamlessly transitions into the next arena with ambient color morphing.
+              Drag left to spin to Next arena, drag right for Previous arena. Ambient lighting morphs smoothly with each card!
             </p>
           </div>
 
@@ -308,42 +303,34 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
                   ARENA {String(safeIndex + 1).padStart(2, '0')} / {String(totalFiltered).padStart(2, '0')}
                 </span>
                 <span className="text-zinc-700 text-xs font-mono">•</span>
-                <span className="text-xs font-mono text-zinc-400">Spin 360° to transition arena</span>
+                <span className="text-xs font-mono text-zinc-400">Drag Left/Right to spin arenas</span>
               </div>
 
               <div className="flex items-center gap-2">
                 <button
-                  onClick={handle360SpinNext}
-                  onMouseEnter={() => soundFX.playHover()}
-                  className="px-3.5 py-1.5 rounded-full bg-white hover:bg-zinc-200 text-black text-xs font-mono font-bold flex items-center gap-1.5 transition-all cursor-pointer shadow-md active:scale-95"
-                  title="Spin 360° to Next Arena"
-                >
-                  <RotateCw className={`w-3.5 h-3.5 ${isSpinning ? 'animate-spin' : ''}`} />
-                  <span>360° Spin Next</span>
-                </button>
-
-                <button
                   onClick={handle360SpinPrev}
                   onMouseEnter={() => soundFX.playHover()}
-                  className="p-2 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white hover:border-zinc-600 transition-all cursor-pointer shadow-md active:scale-95"
-                  title="Previous Arena"
+                  className="p-2.5 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white hover:border-zinc-600 transition-all cursor-pointer shadow-md active:scale-95 flex items-center gap-1 text-xs font-mono"
+                  title="Previous Arena (Spin Right)"
                 >
                   <ChevronLeft className="w-4 h-4" />
+                  <span className="hidden sm:inline">Prev</span>
                 </button>
                 <button
                   onClick={handle360SpinNext}
                   onMouseEnter={() => soundFX.playHover()}
-                  className="p-2 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white hover:border-zinc-600 transition-all cursor-pointer shadow-md active:scale-95"
-                  title="Next Arena"
+                  className="px-4 py-2 rounded-full bg-white hover:bg-zinc-200 text-black font-bold text-xs font-mono flex items-center gap-1.5 transition-all cursor-pointer shadow-md active:scale-95"
+                  title="Next Arena (Spin Left)"
                 >
+                  <span>Next Arena</span>
                   <ChevronRight className="w-4 h-4" />
                 </button>
               </div>
             </div>
 
-            {/* 360-DEGREE ROTATING CARD FRAME WITH PERFECT 1:1 FACE STACKING */}
+            {/* 360-DEGREE ROTATING CARD FRAME WITH EXACT PERFECT 1:1 FACE STACKING & NO OVERFLOW */}
             <div 
-              className="relative h-[500px] sm:h-[520px] w-full select-none cursor-grab active:cursor-grabbing [perspective:1200px]"
+              className="relative h-[530px] sm:h-[550px] w-full select-none cursor-grab active:cursor-grabbing [perspective:1200px]"
               onMouseDown={handleDragStart}
               onMouseMove={handleDragMove}
               onMouseUp={handleDragEnd}
@@ -375,17 +362,17 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
                         backfaceVisibility: 'hidden',
                         WebkitBackfaceVisibility: 'hidden',
                       }}
-                      className="absolute inset-0 w-full h-full spotlight-card p-6 sm:p-8 rounded-3xl flex flex-col justify-between border border-white/20 bg-[#0a0a0f] z-20"
+                      className="absolute inset-0 w-full h-full spotlight-card p-6 sm:p-7 rounded-3xl flex flex-col justify-between border border-white/20 bg-[#0a0a0f] z-20 overflow-hidden"
                     >
-                      <div className="space-y-5">
+                      <div className="space-y-4">
                         {/* Visual Banner Artwork */}
                         <EventVisual eventId={event.id} />
 
                         {/* Top Meta Info */}
                         <div className="flex items-center justify-between pt-1">
                           <div className="flex items-center gap-2.5">
-                            <div className="w-8 h-8 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300">
-                              <Icon className="w-4 h-4" />
+                            <div className="w-7 h-7 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300">
+                              <Icon className="w-3.5 h-3.5" />
                             </div>
                             <span className="text-xs font-mono text-zinc-300 uppercase tracking-wider font-semibold">
                               {event.category}
@@ -399,10 +386,10 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
 
                         {/* Title & Tagline */}
                         <div>
-                          <h3 className="text-3xl font-extrabold text-white">
+                          <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
                             {event.name}
                           </h3>
-                          <p className="text-xs text-zinc-400 mt-1 font-mono">
+                          <p className="text-xs text-zinc-400 mt-0.5 font-mono">
                             {event.tagline}
                           </p>
                         </div>
@@ -414,7 +401,7 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
                       </div>
 
                       {/* Bottom Strip Controls */}
-                      <div className="pt-4 border-t border-zinc-800/80 flex items-center justify-between">
+                      <div className="pt-3 border-t border-zinc-800/80 flex items-center justify-between">
                         <div className="flex items-center gap-4 text-xs font-mono text-zinc-400">
                           <span className="text-white font-medium flex items-center gap-1.5">
                             <Clock className="w-3.5 h-3.5 text-zinc-400" />
@@ -438,21 +425,21 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
                       </div>
                     </div>
 
-                    {/* BACK FACE OF THE CARD (EXACTLY ALIGNED 1:1 FLIPPED 180°) */}
+                    {/* BACK FACE OF THE CARD (EXACTLY ALIGNED 1:1 INSIDE CARD FRAME) */}
                     <div 
                       style={{ 
                         backfaceVisibility: 'hidden',
                         WebkitBackfaceVisibility: 'hidden',
                         transform: 'rotateY(180deg)',
                       }}
-                      className="absolute inset-0 w-full h-full spotlight-card p-6 sm:p-8 rounded-3xl flex flex-col justify-between border border-white/20 bg-[#09090e] z-10"
+                      className="absolute inset-0 w-full h-full spotlight-card p-6 sm:p-7 rounded-3xl flex flex-col justify-between border border-white/20 bg-[#09090e] z-10 overflow-hidden"
                     >
-                      <div className="space-y-4">
+                      <div className="space-y-3.5 overflow-hidden">
                         {/* Header */}
-                        <div className="flex items-center justify-between border-b border-zinc-800 pb-3">
+                        <div className="flex items-center justify-between border-b border-zinc-800 pb-2.5">
                           <div className="flex items-center gap-2">
                             <Zap className="w-4 h-4 text-amber-400" />
-                            <h4 className="text-sm sm:text-base font-bold text-white uppercase font-mono">
+                            <h4 className="text-sm font-bold text-white uppercase font-mono tracking-tight">
                               {event.name} // BACK SPECIFICATIONS
                             </h4>
                           </div>
@@ -463,30 +450,30 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
                         </div>
 
                         {/* Rules Breakdown */}
-                        <div className="space-y-2">
+                        <div className="space-y-1.5">
                           <div className="flex items-center gap-2 text-xs font-mono text-zinc-300 font-semibold uppercase">
                             <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
                             <span>COMPETITION DIRECTIVES</span>
                           </div>
-                          <ul className="space-y-1.5 text-xs text-zinc-300 leading-relaxed font-normal">
+                          <ul className="space-y-1.5 text-xs text-zinc-300 leading-tight font-normal">
                             {event.rules.slice(0, 3).map((rule, rIdx) => (
-                              <li key={rIdx} className="flex items-start gap-2 bg-zinc-950/90 p-2.5 rounded-xl border border-zinc-900">
+                              <li key={rIdx} className="flex items-start gap-2 bg-zinc-950/90 p-2 rounded-xl border border-zinc-900">
                                 <span className="text-zinc-600 font-mono text-[10px] mt-0.5">•</span>
-                                <span>{rule}</span>
+                                <span className="line-clamp-2">{rule}</span>
                               </li>
                             ))}
                           </ul>
                         </div>
 
                         {/* Rounds Preview */}
-                        <div className="space-y-2">
+                        <div className="space-y-1.5">
                           <div className="flex items-center gap-2 text-xs font-mono text-zinc-300 font-semibold uppercase">
                             <ListOrdered className="w-3.5 h-3.5 text-indigo-400" />
                             <span>PHASE TIMELINE</span>
                           </div>
                           <div className="grid grid-cols-2 gap-2">
                             {event.rounds.slice(0, 2).map((rnd, rIdx) => (
-                              <div key={rIdx} className="p-2.5 rounded-xl bg-zinc-950 border border-zinc-900">
+                              <div key={rIdx} className="p-2 rounded-xl bg-zinc-950 border border-zinc-900">
                                 <div className="text-xs font-bold text-white truncate">{rnd.title}</div>
                                 <div className="text-[10px] font-mono text-zinc-500 mt-0.5">{rnd.duration}</div>
                               </div>
@@ -495,8 +482,8 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
                         </div>
                       </div>
 
-                      {/* Back Bottom Actions */}
-                      <div className="pt-4 border-t border-zinc-800/80 flex items-center justify-between">
+                      {/* Back Bottom Actions (Padded neatly at exact bottom inside card) */}
+                      <div className="pt-3 border-t border-zinc-800/80 flex items-center justify-between shrink-0">
                         <button
                           onClick={handleFlipCard}
                           onMouseEnter={() => soundFX.playHover()}
