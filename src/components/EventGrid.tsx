@@ -272,7 +272,7 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
 
             {/* 3D STACKED COVERFLOW STAGE CONTAINER */}
             <div 
-              className="relative h-[540px] sm:h-[560px] w-full select-none cursor-grab active:cursor-grabbing [perspective:1400px] flex items-center justify-center overflow-visible"
+              className="relative h-[560px] sm:h-[580px] w-full select-none cursor-grab active:cursor-grabbing [perspective:1200px] flex items-center justify-center overflow-visible"
               onMouseDown={handleDragStart}
               onMouseMove={handleDragMove}
               onMouseUp={handleDragEnd}
@@ -288,7 +288,7 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
 
                 if (Math.abs(diff) > 2) return null;
 
-                const normalizedDrag = isDragging ? dragDeltaX / 380 : 0;
+                const normalizedDrag = isDragging ? dragDeltaX / 360 : 0;
                 const clampedDrag = Math.max(-1, Math.min(1, normalizedDrag));
                 
                 const totalOffset = diff + clampedDrag;
@@ -296,13 +296,13 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
 
                 const Icon = iconMap[event.iconName] || Sparkles;
 
-                // Pixel-based offset so cards space correctly regardless of card width
-                const CARD_STEP_PX = 380;
+                // Smooth coverflow spacing
+                const CARD_STEP_PX = 320;
                 let translateXpx = totalOffset * CARD_STEP_PX;
-                let rotateY = totalOffset * 26;
-                let scale = Math.max(0.75, 1 - Math.abs(totalOffset) * 0.14);
-                let translateZ = -Math.abs(totalOffset) * 100;
-                let opacity = Math.max(0, 1 - Math.abs(totalOffset) * 0.48);
+                let rotateY = totalOffset * -20;
+                let scale = Math.max(0.78, 1 - Math.abs(totalOffset) * 0.12);
+                let translateZ = -Math.abs(totalOffset) * 120;
+                let opacity = Math.max(0, 1 - Math.abs(totalOffset) * 0.45);
                 let zIndex = 30 - Math.round(Math.abs(totalOffset) * 10);
 
                 return (
@@ -318,77 +318,79 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
                       }
                     }}
                     style={{
-                      transform: `translateX(${translateXpx}px) rotateY(${rotateY}deg) scale(${scale}) translateZ(${translateZ}px)`,
+                      transform: `translate3d(${translateXpx}px, 0px, ${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`,
                       transformStyle: 'preserve-3d',
                       WebkitTransformStyle: 'preserve-3d',
                       opacity,
                       zIndex,
-                      width: '460px',
-                      maxWidth: '90vw',
                       transition: isDragging 
                         ? 'none' 
                         : 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease',
                       pointerEvents: 'auto',
                     }}
-                    className={`absolute h-[520px] sm:h-[540px] rounded-3xl shadow-2xl spotlight-card p-6 sm:p-7 flex flex-col justify-between border border-white/20 bg-[#0a0a0f] overflow-hidden ${
-                      isActive 
-                        ? 'ring-1 ring-white/20' 
-                        : 'cursor-pointer hover:brightness-125'
-                    }`}
+                    className="absolute top-1/2 left-1/2 -ml-[170px] sm:-ml-[200px] md:-ml-[220px] -mt-[250px] sm:-mt-[260px] w-[340px] sm:w-[400px] md:w-[440px] h-[500px] sm:h-[520px]"
                   >
-                    <div className="space-y-4">
-                      {/* Visual Banner Artwork */}
-                      <EventVisual eventId={event.id} />
+                    <div 
+                      className={`w-full h-full rounded-3xl shadow-2xl spotlight-card p-6 sm:p-7 flex flex-col justify-between border border-white/20 bg-[#0a0a0f] overflow-hidden ${
+                        isActive 
+                          ? 'ring-1 ring-white/20' 
+                          : 'cursor-pointer hover:brightness-125'
+                      }`}
+                    >
+                      <div className="space-y-4">
+                        {/* Visual Banner Artwork */}
+                        <EventVisual eventId={event.id} />
 
-                      {/* Top Meta Info */}
-                      <div className="flex items-center justify-between pt-1">
-                        <div className="flex items-center gap-2.5">
-                          <div className="w-7 h-7 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300">
-                            <Icon className="w-3.5 h-3.5" />
+                        {/* Top Meta Info */}
+                        <div className="flex items-center justify-between pt-1">
+                          <div className="flex items-center gap-2.5">
+                            <div className="w-7 h-7 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300">
+                              <Icon className="w-3.5 h-3.5" />
+                            </div>
+                            <span className="text-xs font-mono text-zinc-300 uppercase tracking-wider font-semibold">
+                              {event.category}
+                            </span>
                           </div>
-                          <span className="text-xs font-mono text-zinc-300 uppercase tracking-wider font-semibold">
-                            {event.category}
+
+                          <span className="font-mono text-xs text-zinc-500 font-bold">
+                            ARENA 0{idx + 1}
                           </span>
                         </div>
 
-                        <span className="font-mono text-xs text-zinc-500 font-bold">
-                          ARENA 0{idx + 1}
-                        </span>
-                      </div>
+                        {/* Title & Tagline */}
+                        <div>
+                          <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
+                            {event.name}
+                          </h3>
+                          <p className="text-xs text-zinc-400 mt-0.5 font-mono">
+                            {event.tagline}
+                          </p>
+                        </div>
 
-                      {/* Title & Tagline */}
-                      <div>
-                        <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
-                          {event.name}
-                        </h3>
-                        <p className="text-xs text-zinc-400 mt-0.5 font-mono">
-                          {event.tagline}
+                        {/* Short Description */}
+                        <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal">
+                          {event.shortDesc}
                         </p>
                       </div>
 
-                      {/* Short Description */}
-                      <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal">
-                        {event.shortDesc}
-                      </p>
-                    </div>
+                      {/* Bottom Strip */}
+                      <div className="pt-3 border-t border-zinc-800/80 flex items-center justify-between">
+                        <div className="flex items-center gap-4 text-xs font-mono text-zinc-400">
+                          <span className="text-white font-medium flex items-center gap-1.5">
+                            <Clock className="w-3.5 h-3.5 text-zinc-400" />
+                            {event.duration}
+                          </span>
+                          <span className="text-zinc-800">•</span>
+                          <span className="flex items-center gap-1.5 text-zinc-400">
+                            <Users className="w-3.5 h-3.5 text-zinc-500" />
+                            {event.teamSize}
+                          </span>
+                        </div>
 
-                    {/* Bottom Strip */}
-                    <div className="pt-3 border-t border-zinc-800/80 flex items-center justify-between">
-                      <div className="flex items-center gap-4 text-xs font-mono text-zinc-400">
-                        <span className="text-white font-medium flex items-center gap-1.5">
-                          <Clock className="w-3.5 h-3.5 text-zinc-400" />
-                          {event.duration}
-                        </span>
-                        <span className="text-zinc-800">•</span>
-                        <span className="flex items-center gap-1.5 text-zinc-400">
-                          <Users className="w-3.5 h-3.5 text-zinc-500" />
-                          {event.teamSize}
-                        </span>
-                      </div>
-
-                      <div className="px-4 py-2 rounded-full bg-white hover:bg-zinc-200 text-black font-bold text-xs flex items-center gap-1.5 transition-all cursor-pointer shadow-md hover:scale-105">
-                        <span>View Dossier</span>
-                        <ArrowUpRight className="w-3.5 h-3.5" />
+                        <div className="px-4 py-2 rounded-full bg-white hover:bg-zinc-200 text-black font-bold text-xs flex items-center gap-1.5 transition-all cursor-pointer shadow-md hover:scale-105">
+                          <span>View Dossier</span>
+                          <ArrowUpRight className="w-3.5 h-3.5" />
+                        </div>
                       </div>
                     </div>
                   </div>
