@@ -9,7 +9,7 @@ export const EventVisual: React.FC<EventVisualProps> = ({ eventId, className = '
   switch (eventId) {
     case 'cipherquest':
       return (
-        <div className={`relative w-full h-44 sm:h-52 rounded-2xl overflow-hidden bg-[#0a0a0f] border border-white/10 flex items-center justify-center transition-all ${className}`}>
+        <div className={`relative w-full h-36 sm:h-44 rounded-2xl overflow-hidden bg-[#0a0a0f] border border-white/10 flex items-center justify-center transition-all ${className}`}>
           {/* Subtle Grid */}
           <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
           
@@ -49,7 +49,7 @@ export const EventVisual: React.FC<EventVisualProps> = ({ eventId, className = '
 
     case 'algoarena':
       return (
-        <div className={`relative w-full h-44 sm:h-52 rounded-2xl overflow-hidden bg-[#080a0f] border border-white/10 flex items-center justify-center transition-all ${className}`}>
+        <div className={`relative w-full h-36 sm:h-44 rounded-2xl overflow-hidden bg-[#080a0f] border border-white/10 flex items-center justify-center transition-all ${className}`}>
           <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
           <div className="relative w-44 h-32 flex flex-col justify-between items-center py-2">
@@ -90,7 +90,7 @@ export const EventVisual: React.FC<EventVisualProps> = ({ eventId, className = '
 
     case 'valorant':
       return (
-        <div className={`relative w-full h-44 sm:h-52 rounded-2xl overflow-hidden bg-[#0d0707] border border-white/10 flex items-center justify-center transition-all ${className}`}>
+        <div className={`relative w-full h-36 sm:h-44 rounded-2xl overflow-hidden bg-[#0d0707] border border-white/10 flex items-center justify-center transition-all ${className}`}>
           <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
           <div className="relative w-36 h-36 flex items-center justify-center">
@@ -123,7 +123,7 @@ export const EventVisual: React.FC<EventVisualProps> = ({ eventId, className = '
 
     case 'bedwarz':
       return (
-        <div className={`relative w-full h-44 sm:h-52 rounded-2xl overflow-hidden bg-[#060c0a] border border-white/10 flex items-center justify-center transition-all ${className}`}>
+        <div className={`relative w-full h-36 sm:h-44 rounded-2xl overflow-hidden bg-[#060c0a] border border-white/10 flex items-center justify-center transition-all ${className}`}>
           <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
           <div className="relative w-36 h-36 flex items-center justify-center">
@@ -145,7 +145,7 @@ export const EventVisual: React.FC<EventVisualProps> = ({ eventId, className = '
 
     case 'brainbyte':
       return (
-        <div className={`relative w-full h-44 sm:h-52 rounded-2xl overflow-hidden bg-[#0b0710] border border-white/10 flex items-center justify-center transition-all ${className}`}>
+        <div className={`relative w-full h-36 sm:h-44 rounded-2xl overflow-hidden bg-[#0b0710] border border-white/10 flex items-center justify-center transition-all ${className}`}>
           <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
           <div className="relative w-40 h-32 flex flex-col items-center justify-center gap-3">
@@ -183,7 +183,7 @@ export const EventVisual: React.FC<EventVisualProps> = ({ eventId, className = '
 
     case 'appforge':
       return (
-        <div className={`relative w-full h-44 sm:h-52 rounded-2xl overflow-hidden bg-[#070b10] border border-white/10 flex items-center justify-center transition-all ${className}`}>
+        <div className={`relative w-full h-36 sm:h-44 rounded-2xl overflow-hidden bg-[#070b10] border border-white/10 flex items-center justify-center transition-all ${className}`}>
           <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
           <div className="relative w-28 h-36 rounded-2xl bg-zinc-950 border border-zinc-700 p-2 flex flex-col justify-between shadow-md">
@@ -214,7 +214,7 @@ export const EventVisual: React.FC<EventVisualProps> = ({ eventId, className = '
 
     case 'webx':
       return (
-        <div className={`relative w-full h-44 sm:h-52 rounded-2xl overflow-hidden bg-[#070710] border border-white/10 flex items-center justify-center transition-all ${className}`}>
+        <div className={`relative w-full h-36 sm:h-44 rounded-2xl overflow-hidden bg-[#070710] border border-white/10 flex items-center justify-center transition-all ${className}`}>
           <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
           <div className="relative w-40 h-32 flex items-center justify-center">
@@ -246,7 +246,7 @@ export const EventVisual: React.FC<EventVisualProps> = ({ eventId, className = '
     case 'surprise':
     default:
       return (
-        <div className={`relative w-full h-44 sm:h-52 rounded-2xl overflow-hidden bg-[#0c0710] border border-white/10 flex items-center justify-center transition-all ${className}`}>
+        <div className={`relative w-full h-36 sm:h-44 rounded-2xl overflow-hidden bg-[#0c0710] border border-white/10 flex items-center justify-center transition-all ${className}`}>
           <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
           <div className="relative w-36 h-36 flex items-center justify-center">

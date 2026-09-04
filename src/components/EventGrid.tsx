@@ -345,44 +345,44 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
                     className="absolute top-1/2 left-1/2 -ml-[170px] sm:-ml-[200px] md:-ml-[220px] -mt-[250px] sm:-mt-[260px] w-[340px] sm:w-[400px] md:w-[440px] h-[500px] sm:h-[520px]"
                   >
                     <div 
-                      className={`w-full h-full rounded-3xl shadow-2xl spotlight-card p-6 sm:p-7 flex flex-col justify-between border border-white/20 bg-[#0a0a0f] overflow-hidden ${
+                      className={`w-full h-full rounded-3xl shadow-2xl spotlight-card p-5 sm:p-6 flex flex-col justify-between border border-white/20 bg-[#0a0a0f] overflow-hidden ${
                         isActive 
                           ? 'ring-1 ring-white/20' 
                           : 'cursor-pointer hover:brightness-125'
                       }`}
                     >
-                      <div className="space-y-4">
+                      <div className="space-y-3">
                         {/* Visual Banner Artwork */}
                         <EventVisual eventId={event.id} />
 
                         {/* Top Meta Info */}
-                        <div className="flex items-center justify-between pt-1">
-                          <div className="flex items-center gap-2.5">
-                            <div className="w-7 h-7 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300">
+                        <div className="flex items-center justify-between pt-0.5">
+                          <div className="flex items-center gap-2">
+                            <div className="w-6 h-6 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300">
                               <Icon className="w-3.5 h-3.5" />
                             </div>
-                            <span className="text-xs font-mono text-zinc-300 uppercase tracking-wider font-semibold">
+                            <span className="text-[11px] font-mono text-zinc-300 uppercase tracking-wider font-semibold">
                               {event.category}
                             </span>
                           </div>
 
-                          <span className="font-mono text-xs text-zinc-500 font-bold">
+                          <span className="font-mono text-[11px] text-zinc-500 font-bold">
                             ARENA 0{idx + 1}
                           </span>
                         </div>
 
                         {/* Title & Tagline */}
                         <div>
-                          <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
+                          <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
                             {event.name}
                           </h3>
-                          <p className="text-xs text-zinc-400 mt-0.5 font-mono">
+                          <p className="text-xs text-zinc-400 mt-0.5 font-mono line-clamp-1">
                             {event.tagline}
                           </p>
                         </div>
 
                         {/* Short Description */}
-                        <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal">
+                        <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal line-clamp-3">
                           {event.shortDesc}
                         </p>
                       </div>
