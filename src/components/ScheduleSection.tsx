@@ -24,7 +24,7 @@ export const ScheduleSection: React.FC = () => {
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-white/10 text-xs font-mono text-zinc-400">
               <Sparkles className="w-3.5 h-3.5 text-zinc-300" />
-              <span>[ 02 ] // EXECUTIVE TIMELINE</span>
+              <span>[ 02 ] EXECUTIVE TIMELINE</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-gradient-silver">
               October 05 – 14, 2026.

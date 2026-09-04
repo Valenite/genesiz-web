@@ -39,7 +39,7 @@ export const EventVisual: React.FC<EventVisualProps> = ({ eventId, className = '
           </div>
 
           <div className="absolute top-3 left-3 px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-[9px] font-mono text-zinc-300">
-            SHA-256 // OSINT
+            SHA-256 - OSINT
           </div>
           <div className="absolute bottom-3 right-3 px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-[9px] font-mono text-zinc-400">
             4-DAY SPRINT
@@ -259,7 +259,7 @@ export const EventVisual: React.FC<EventVisualProps> = ({ eventId, className = '
           </div>
 
           <div className="absolute top-3 left-3 px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-[9px] font-mono text-zinc-300">
-            TOP SECRET // BLACKBOX
+            TOP SECRET - BLACKBOX
           </div>
           <div className="absolute bottom-3 right-3 px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-[9px] font-mono text-zinc-400">
             LIVE DISCLOSURE

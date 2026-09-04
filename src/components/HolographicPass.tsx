@@ -45,7 +45,7 @@ export const HolographicPass: React.FC<HolographicPassProps> = ({ passData, onCl
 
     ctx.font = '14px monospace';
     ctx.fillStyle = '#a1a1aa';
-    ctx.fillText('OFFICIAL ACCREDITATION CREDENTIAL // ARCHITECT: VALENITE ELECTRION', 60, 130);
+    ctx.fillText('OFFICIAL ACCREDITATION CREDENTIAL - ARCHITECT: VALENITE ELECTRION', 60, 130);
 
     // ID
     ctx.font = '14px monospace';

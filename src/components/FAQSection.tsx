@@ -32,7 +32,7 @@ export const FAQSection: React.FC = () => {
         <div className="space-y-4 mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-white/10 text-xs font-mono text-zinc-400">
             <Sparkles className="w-3.5 h-3.5 text-zinc-300" />
-            <span>[ 05 ] // FREQUENT INQUIRIES & PROTOCOLS</span>
+            <span>[ 05 ] FREQUENT INQUIRIES & PROTOCOLS</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-gradient-silver">
             Everything you need to know.

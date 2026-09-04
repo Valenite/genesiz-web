@@ -164,7 +164,7 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-white/10 text-xs font-mono text-zinc-400">
-              <span>[ 01 ] // COMPETITIVE ARENAS</span>
+              <span>[ 01 ] COMPETITIVE ARENAS</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-gradient-silver">
               Eight Flagship Arenas.

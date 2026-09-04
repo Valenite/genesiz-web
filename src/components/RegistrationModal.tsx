@@ -188,7 +188,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
               </h2>
             </div>
             <p className="text-xs font-mono text-zinc-400 mt-0.5">
-              GENESIZ 2026 // Official Inter-Institutional Registration
+              GENESIZ 2026 - Official Inter-Institutional Registration
             </p>
           </div>
 

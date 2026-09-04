@@ -43,7 +43,7 @@ export const AdminVaultModal: React.FC<AdminVaultModalProps> = ({ onClose }) => 
             <div className="flex items-center gap-2">
               <Shield className="w-5 h-5 text-indigo-400" />
               <h2 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
-                GENESIZ 2026 // Registration Vault
+                GENESIZ 2026 - Registration Vault
               </h2>
             </div>
             <p className="text-xs font-mono text-zinc-400 mt-0.5">
