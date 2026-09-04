@@ -1,3 +1,5 @@
+import { syncRegistrationToSupabase } from './supabaseClient';
+
 export interface TeamMemberRecord {
   name: string;
   email: string;
@@ -77,6 +79,22 @@ export const registerNewTeam = (data: {
 
   records.push(newRecord);
   saveRegistrations(records);
+
+  // Sync to Cloud Supabase for Discord Bot validation
+  syncRegistrationToSupabase({
+    id: newRecord.id,
+    leader_name: newRecord.leaderName,
+    leader_email: newRecord.leaderEmail,
+    team_password: newRecord.teamPassword,
+    team_name: newRecord.teamName,
+    institution: newRecord.institution,
+    discord_tag: newRecord.discordTag,
+    selected_events: newRecord.selectedEvents,
+    selected_event_names: newRecord.selectedEventNames,
+    members: newRecord.members,
+    created_at: newRecord.createdAt,
+  });
+
   return newRecord;
 };
 
@@ -115,6 +133,21 @@ export const joinExistingTeam = (data: {
     records[targetIndex] = team;
     saveRegistrations(records);
   }
+
+  // Sync updated team roster to Cloud Supabase for Discord Bot validation
+  syncRegistrationToSupabase({
+    id: team.id,
+    leader_name: team.leaderName,
+    leader_email: team.leaderEmail,
+    team_password: team.teamPassword,
+    team_name: team.teamName,
+    institution: team.institution,
+    discord_tag: team.discordTag,
+    selected_events: team.selectedEvents,
+    selected_event_names: team.selectedEventNames,
+    members: team.members,
+    created_at: team.createdAt,
+  });
 
   return team;
 };
