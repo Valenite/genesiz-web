@@ -62,6 +62,7 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const [dragStartX, setDragStartX] = useState<number | null>(null);
   const [dragDeltaX, setDragDeltaX] = useState<number>(0);
+  const [hasDragged, setHasDragged] = useState<boolean>(false);
 
   const categories = [
     'All',
@@ -117,24 +118,33 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
     setDragStartX(x);
     setDragDeltaX(0);
     setIsDragging(true);
+    setHasDragged(false);
   };
 
   const handleDragMove = (e: React.MouseEvent | React.TouchEvent) => {
     if (dragStartX === null || !isDragging) return;
     const x = 'touches' in e ? e.touches[0].clientX : e.clientX;
-    setDragDeltaX(x - dragStartX);
+    const delta = x - dragStartX;
+    setDragDeltaX(delta);
+    if (Math.abs(delta) > 6) {
+      setHasDragged(true);
+    }
   };
 
   const handleDragEnd = () => {
     if (!isDragging) return;
-    if (dragDeltaX < -70) {
+    const SWIPE_THRESHOLD = 35; // Sensitive 35px threshold for instant smooth rotation
+    if (dragDeltaX < -SWIPE_THRESHOLD) {
       handleNextCard();
-    } else if (dragDeltaX > 70) {
+    } else if (dragDeltaX > SWIPE_THRESHOLD) {
       handlePrevCard();
     }
     setDragStartX(null);
     setDragDeltaX(0);
     setIsDragging(false);
+    setTimeout(() => {
+      setHasDragged(false);
+    }, 60);
   };
 
   return (
@@ -308,7 +318,11 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
                 return (
                   <div
                     key={event.id}
-                    onClick={() => {
+                    onClick={(e) => {
+                      if (hasDragged) {
+                        e.stopPropagation();
+                        return;
+                      }
                       if (isActive) {
                         soundFX.playWarp();
                         onSelectEvent(event);
@@ -387,7 +401,16 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
                           </span>
                         </div>
 
-                        <div className="px-4 py-2 rounded-full bg-white hover:bg-zinc-200 text-black font-bold text-xs flex items-center gap-1.5 transition-all cursor-pointer shadow-md hover:scale-105">
+                        <div 
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            if (!hasDragged) {
+                              soundFX.playWarp();
+                              onSelectEvent(event);
+                            }
+                          }}
+                          className="px-4 py-2 rounded-full bg-white hover:bg-zinc-200 text-black font-bold text-xs flex items-center gap-1.5 transition-all cursor-pointer shadow-md hover:scale-105"
+                        >
                           <span>View Dossier</span>
                           <ArrowUpRight className="w-3.5 h-3.5" />
                         </div>
