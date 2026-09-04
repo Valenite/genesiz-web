@@ -10,6 +10,7 @@ import { CommunitySection } from './components/CommunitySection';
 import { FAQSection } from './components/FAQSection';
 import { Footer } from './components/Footer';
 import { RegistrationModal } from './components/RegistrationModal';
+import { AdminVaultModal } from './components/AdminVaultModal';
 import { GenesizChatbot } from './components/GenesizChatbot';
 import type { EventDetail } from './data/eventsData';
 
@@ -19,6 +20,7 @@ export function App() {
   const [registerInitialEventId, setRegisterInitialEventId] = useState<string | undefined>(undefined);
   const [isChatbotOpen, setIsChatbotOpen] = useState<boolean>(false);
   const [isCipherSandboxOpen, setIsCipherSandboxOpen] = useState<boolean>(false);
+  const [isAdminVaultOpen, setIsAdminVaultOpen] = useState<boolean>(false);
 
   const handleOpenRegister = (eventId?: string) => {
     setRegisterInitialEventId(eventId);
@@ -63,6 +65,7 @@ export function App() {
       <Footer
         onOpenChatbot={() => setIsChatbotOpen(true)}
         onOpenRegister={() => handleOpenRegister()}
+        onOpenAdminVault={() => setIsAdminVaultOpen(true)}
       />
 
       {/* Event Dossier Modal */}
@@ -85,6 +88,11 @@ export function App() {
         />
       )}
 
+      {/* Organizers Registration Vault Admin Modal */}
+      {isAdminVaultOpen && (
+        <AdminVaultModal onClose={() => setIsAdminVaultOpen(false)} />
+      )}
+
       {/* GENESIZ AI Intelligence Chatbot */}
       <GenesizChatbot
         isOpen={isChatbotOpen}
@@ -96,7 +104,7 @@ export function App() {
         }}
       />
 
-      {/* Secret CipherQuest Cryptographic Sandbox (Hidden Modal unlocked via Secret Chatbot Command) */}
+      {/* Secret CipherQuest Cryptographic Sandbox */}
       <CipherSandbox
         isOpen={isCipherSandboxOpen}
         onClose={() => setIsCipherSandboxOpen(false)}
