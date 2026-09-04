@@ -307,19 +307,22 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
                 // Render active card and adjacent cards in 3D stack
                 if (Math.abs(diff) > 2) return null;
 
-                const normalizedDrag = isDragging ? dragDeltaX / 320 : 0;
-                const effectiveDiff = diff - normalizedDrag;
+                const normalizedDrag = isDragging ? dragDeltaX / 340 : 0;
+                const clampedDrag = Math.max(-1, Math.min(1, normalizedDrag));
+                
+                // Unified offset ensuring all cards rotate and slide in perfect 1:1 sync with drag direction
+                const totalOffset = diff + clampedDrag;
                 const isActive = diff === 0;
 
                 const Icon = iconMap[event.iconName] || Sparkles;
 
                 // Calculate exact 3D transformations for each card in Coverflow space
-                let translateX = effectiveDiff * 62;
-                let rotateY = effectiveDiff * -28;
-                let scale = Math.max(0.72, 1 - Math.abs(effectiveDiff) * 0.18);
-                let translateZ = -Math.abs(effectiveDiff) * 140;
-                let opacity = Math.max(0, 1 - Math.abs(effectiveDiff) * 0.55);
-                let zIndex = 30 - Math.abs(diff) * 10;
+                let translateX = totalOffset * 66;
+                let rotateY = totalOffset * 28;
+                let scale = Math.max(0.72, 1 - Math.abs(totalOffset) * 0.16);
+                let translateZ = -Math.abs(totalOffset) * 120;
+                let opacity = Math.max(0, 1 - Math.abs(totalOffset) * 0.5);
+                let zIndex = 30 - Math.round(Math.abs(totalOffset) * 10);
 
                 if (isActive && isFlipped) {
                   rotateY += 180;
