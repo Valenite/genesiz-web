@@ -27,10 +27,13 @@ export const ScheduleSection: React.FC = () => {
               <span>[ 02 ] // EXECUTIVE TIMELINE</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-gradient-silver">
-              October 05, 2026.
+              October 05 – 14, 2026.
             </h2>
             <p className="text-sm text-zinc-400 font-normal max-w-lg leading-relaxed">
               A synchronized sequence of hackathons, algorithmic jury trials, live auditorium showdowns, and championship series.
+            </p>
+            <p className="text-xs font-mono text-indigo-400 font-medium">
+              * Schedule updates, prompt releases, & further operational details will be provided on Discord.
             </p>
           </div>
 

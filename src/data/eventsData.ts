@@ -38,37 +38,37 @@ export const EVENTS_DATA: EventDetail[] = [
     name: 'CipherQuest',
     category: 'Cryptography',
     tagline: 'Cryptographic Forensics, OSINT & Deep Protocol Analysis.',
-    shortDesc: 'A rigorous 4-day cryptographic marathon challenging analytical acumen across multi-layered ciphers, steganography, audio forensics, and network forensics.',
-    fullDesc: 'CipherQuest is an intensive 96-hour digital investigation symposium designed for analytical strategists and security researchers. Participants unravel complex multi-stage ciphers, hidden network payloads, audio frequency spectrograms, and obscure computational artifacts. Official intelligence bulletins and progressive lead drops are coordinated via the GENESIZ Discord headquarters.',
-    teamSize: '1 - 2 Delegates',
+    shortDesc: 'A 48-hour continuous digital cryptographic hunt challenging analytical acumen across ciphers, steganography, audio forensics, and network analysis.',
+    fullDesc: 'CipherQuest is an intensive 48-hour digital investigation symposium designed for analytical strategists and security researchers. Participants unravel complex multi-stage ciphers, hidden network payloads, audio frequency spectrograms, and obscure computational artifacts. Official intelligence bulletins and progressive lead drops are coordinated via the GENESIZ Discord headquarters.',
+    teamSize: '2 Delegates',
     eligibility: 'Open to all academic delegates and technology scholars',
     format: 'Online 4-Day Hunt',
-    duration: '4 Days (96 Continuous Hours)',
-    date: 'October 5 - 9, 2026',
-    time: 'Commences Oct 5 @ 09:00 AM IST',
+    duration: '48 Continuous Hours',
+    date: 'October 10 - 12, 2026',
+    time: '12:00 AM Oct 10 to 12:00 AM Oct 12 IST',
     venue: 'Discord Intelligence HQ & Secure Portal',
-    badge: '4-DAY DIGITAL SYMPOSIUM',
+    badge: '48-HOUR CRYPTIC HUNT',
     iconName: 'Binary',
     rules: [
       'Each level delivers an encrypted artifact embedded in file metadata, compiled bytecode, network captures, or spatial coordinates.',
       'Submissions must strictly conform to normalized alphanumeric format unless explicitly specified by the challenge schema.',
-      'Automated brute-force attacks and denial-of-service attempts against infrastructure are strictly prohibited and monitored.',
       'Official intelligence releases and contextual hints are dispatched exclusively through the official Discord server.',
+      'Schedule updates and further details will be communicated via official Discord.',
       'Inter-team collusion, credential sharing, and unauthorized disclosure will trigger immediate administrative disqualification.'
     ],
     rounds: [
       {
-        title: 'Phase 1: Open-Source Intelligence & Classical Ciphers (Day 1)',
+        title: 'Phase 1: Open-Source Intelligence & OSINT (Oct 10 12:00 AM)',
         description: 'Digital reconnaissance, layered substitution frameworks, and metadata extraction.',
         duration: 'Tiers 1 - 15'
       },
       {
-        title: 'Phase 2: Deep Forensics & Signal Analysis (Days 2 - 3)',
+        title: 'Phase 2: Deep Forensics & Signal Analysis (Oct 11)',
         description: 'Least-significant-bit steganography, spectral audio breakdown, and packet stream reconstruction.',
         duration: 'Tiers 16 - 35'
       },
       {
-        title: 'Phase 3: Core Cryptanalysis & Algorithmic Vault (Day 4)',
+        title: 'Phase 3: Core Cryptanalysis Vault (Concludes Oct 12 12:00 AM)',
         description: 'Virtual machine bytecode evaluation, lateral logic sequences, and final root key synthesis.',
         duration: 'Tiers 36 - Final'
       }
@@ -79,8 +79,8 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     toolsAndStack: ['CyberChef', 'Wireshark', 'Burp Suite', 'Audacity', 'Python Cryptography', 'ExifTool'],
     faqs: [
-      { q: 'Where are official intelligence releases provided during the 4 days?', a: 'All official bulletins, announcements, and hint drops will be communicated through the GENESIZ Discord server (discord.gg/RUGtbSYUHb).' },
-      { q: 'What is the permitted delegation composition?', a: 'Delegates may participate individually or in collaborative pairings of two.' }
+      { q: 'Where are official intelligence releases provided during the hunt?', a: 'All official bulletins, announcements, and hint drops will be communicated through the GENESIZ Discord server (discord.gg/RUGtbSYUHb).' },
+      { q: 'What is the permitted delegation composition?', a: 'Delegation composition is strictly 2 delegates per team.' }
     ]
   },
   {
@@ -90,32 +90,32 @@ export const EVENTS_DATA: EventDetail[] = [
     tagline: 'High-Performance Algorithmic Engineering & Optimization.',
     shortDesc: 'A competitive programming trial evaluating computational complexity, advanced data structures, dynamic programming, and mathematical proofs.',
     fullDesc: 'AlgoArena evaluates algorithmic precision, asymptotic optimization, and rapid problem decomposition under stringent temporal and spatial bounds. Benchmarked against elite competitive programming conventions, delegates architect robust solutions to sophisticated mathematical and structural problem sets.',
-    teamSize: '1 - 2 Engineers',
+    teamSize: '2 Delegates',
     eligibility: 'Enrolled Academic Delegates',
     format: 'Online & On-Site',
-    duration: '3.5 Hours',
-    date: 'October 5, 2026',
-    time: '10:30 AM - 02:00 PM',
-    venue: 'AlgoLab Computational Arena',
-    badge: 'ICPC-STANDARD BENCHMARK',
+    duration: 'Oct 12 - 13 (6:00 PM IST)',
+    date: 'October 12 - 13, 2026',
+    time: 'Evening from 6:00 PM IST',
+    venue: 'AlgoLab Computational Arena & Discord HQ',
+    badge: '2-PERSON PROGRAMMING ARENA',
     iconName: 'Code2',
     rules: [
       'Standard runtime environments: C++20 (GCC), Python 3.11, Java 17 LTS, Rust, and Go.',
       'Execution enforced within 1.0-second CPU time and 256MB memory allocations.',
       'Standard ICPC penalty paradigm applied for non-accepted compilation verdicts.',
-      'Automated source-code similarity evaluation (MOSS) enforced post-contest.',
+      'Schedule updates and further details will be communicated via official Discord.',
       'Generative AI tooling and external synthesis assistance are strictly prohibited during session hours.'
     ],
     rounds: [
       {
-        title: 'Division Gamma: Foundation Sprint',
-        description: '3 Targeted computational scenarios focusing on two-pointer paradigms, greedy heuristics, and cumulative intervals.',
-        duration: '45 Mins'
+        title: 'Session 1: Foundation Sprint (Oct 12 @ 6:00 PM IST)',
+        description: 'Targeted computational scenarios focusing on two-pointer paradigms, greedy heuristics, and cumulative intervals.',
+        duration: 'Evening Session'
       },
       {
-        title: 'Division Alpha: Advanced Algorithmic Siege',
-        description: '5 Sophisticated problems encompassing multi-dimensional DP, segment tree structures, graph traversal, and combinatorics.',
-        duration: '2 Hours 45 Mins'
+        title: 'Session 2: Advanced Algorithmic Siege (Oct 13 @ 6:00 PM IST)',
+        description: 'Sophisticated problems encompassing multi-dimensional DP, segment tree structures, graph traversal, and combinatorics.',
+        duration: 'Evening Session'
       }
     ],
     judgingCriteria: [
@@ -124,7 +124,7 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     toolsAndStack: ['C++20 (GCC 13)', 'Python 3.11+', 'Java 17 LTS', 'Fast I/O Frameworks', 'Sandboxed Judge Engine'],
     faqs: [
-      { q: 'What development environments are standard on-site?', a: 'Standard development toolchains including VS Code, CLion, and terminal compilers are configured.' }
+      { q: 'Where are contest links & updates posted?', a: 'All contest portal links, problem statements, and real-time updates will be posted on Discord.' }
     ]
   },
   {
@@ -134,37 +134,37 @@ export const EVENTS_DATA: EventDetail[] = [
     tagline: 'Precision Tactical Strategy & Spatial Coordination.',
     shortDesc: 'Premier 5v5 tactical arena tournament. Strategic utility coordination, synchronized execution, and high-caliber competitive FPS play.',
     fullDesc: 'The GENESIZ Valorant Championship is an elite tactical esports competition structured on official VCT competitive guidelines. Featuring dedicated low-latency tournament infrastructure, caster feeds, and spectator analysis, squads execute strategic offensive and defensive playbooks on official competitive map rotations.',
-    teamSize: '5 Active + 1 Reserve',
+    teamSize: '5 + 1 Reserve',
     eligibility: 'Open Division Roster',
     format: 'LAN Arena',
-    duration: 'Full Day Championship',
-    date: 'October 5, 2026',
-    time: '09:30 AM - 07:00 PM',
-    venue: 'Main Esports Arena',
-    badge: 'VCT REGULATION 5V5',
+    duration: 'Oct 5 - 7 (5:00 PM IST)',
+    date: 'October 5 - 7, 2026',
+    time: 'Evening from 5:00 PM IST',
+    venue: 'Main Esports Arena & Discord Tournament Hub',
+    badge: 'VCT REGULATION 5+1',
     iconName: 'Crosshair',
     rules: [
-      'Standard Tournament Configuration enabled with Overtime Win-by-2 protocol.',
+      'Squad composition: 5 Main Active Players + 1 Reserve Player.',
+      'Tournament matches execute daily starting at 5:00 PM IST from Oct 5 to Oct 7.',
       'Active Competitive Map Pool: Ascent, Bind, Haven, Lotus, Sunset, Split, Abyss.',
-      'Official Map Veto Protocol (Toss -> Ban -> Ban -> Pick -> Pick -> Decider).',
-      'Tactical timeouts standard (2 x 60s per map per squad).',
-      'Riot Vanguard anti-cheat active across all tournament machines.'
+      'Official Map Veto Protocol & Tactical timeouts standard.',
+      'Schedule updates and further details will be communicated via official Discord.'
     ],
     rounds: [
       {
-        title: 'Swiss System Group Qualifying',
-        description: 'Best-of-1 series to determine seeded qualification into the Championship Bracket.',
-        duration: 'Morning Session'
+        title: 'Swiss Group Stage (Oct 5 @ 5:00 PM IST)',
+        description: 'BO1 qualifying matches across group lobbies.',
+        duration: 'Evening 5:00 PM'
       },
       {
-        title: 'Championship Bracket Elimination',
+        title: 'Knockout Bracket (Oct 6 @ 5:00 PM IST)',
         description: 'Single-elimination quarterfinal and semifinal series.',
-        duration: 'Afternoon Session'
+        duration: 'Evening 5:00 PM'
       },
       {
-        title: 'Grand Finals (Main Stage Arena)',
-        description: 'Best-of-3 series with custom map drafting and live analytical broadcast.',
-        duration: '04:30 PM - 07:00 PM'
+        title: 'Grand Finals (Oct 7 @ 5:00 PM IST)',
+        description: 'Best-of-3 series with live analytical stream broadcast.',
+        duration: 'Evening 5:00 PM'
       }
     ],
     judgingCriteria: [
@@ -173,7 +173,7 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     toolsAndStack: ['Riot Games Valorant Client', 'High-Refresh 240Hz Monitors', 'Low-Latency LAN Switch'],
     faqs: [
-      { q: 'Are personal peripherals permitted?', a: 'Yes, delegates are permitted to connect personal mice, mechanical keyboards, and headsets.' }
+      { q: 'What is the exact squad roster structure?', a: 'Each roster consists of 5 active players + 1 reserve player (5+1).' }
     ]
   },
   {
@@ -183,32 +183,32 @@ export const EVENTS_DATA: EventDetail[] = [
     tagline: 'Tactical Resource Management & Squad Defense.',
     shortDesc: 'A competitive 4v4 Minecraft tactical tournament. Fast-paced spatial control, resource prioritization, bridging efficiency, and synchronized objective defense.',
     fullDesc: 'Bedwarz delivers high-precision tactical PvP combat within optimized tournament servers. Squads manage resource allocation, generator control, and spatial fortifications across standardized competitive maps with optimized hit registration and low-latency networking.',
-    teamSize: '4 Delegates (Squad)',
+    teamSize: '4 + 1 Reserve',
     eligibility: 'Java Edition Delegates (1.8.9 PvP Mechanics)',
     format: 'LAN Arena',
-    duration: '4 Hours',
-    date: 'October 5, 2026',
-    time: '11:00 AM - 03:00 PM',
-    venue: 'Esports Pods B',
-    badge: '4V4 SQUAD ARENA',
+    duration: 'Oct 8 - 9 (5:00 PM IST)',
+    date: 'October 8 - 9, 2026',
+    time: 'Evening from 5:00 PM IST',
+    venue: 'Esports Pods B & Discord Hub',
+    badge: '4+1 SQUAD PVP',
     iconName: 'Swords',
     rules: [
+      'Squad composition: 4 Main Active Players + 1 Reserve Player.',
+      'Tournament matches execute daily starting at 5:00 PM IST from Oct 8 to Oct 9.',
       'Minecraft Java Edition 1.8.9 client standard (Lunar / Badlion / Verified Vanilla).',
-      'Unmodified client integrity enforced with server-side rate detection.',
-      'Squads must defend their objective core while strategically dismantling opposing fortifications.',
-      'Map selection drawn randomly from the official tournament rotation.',
+      'Schedule updates and further details will be communicated via official Discord.',
       'Unsportsmanlike stalling or unauthorized teaming will incur immediate forfeiture.'
     ],
     rounds: [
       {
-        title: 'Phase 1: Double Elimination Brackets',
-        description: '16 Squads compete across multi-team qualifying lobbies to determine final seeds.',
-        duration: '2 Hours'
+        title: 'Phase 1: Double Elimination Brackets (Oct 8 @ 5:00 PM IST)',
+        description: 'Qualifying squad lobbies to determine final bracket seeds.',
+        duration: 'Evening 5:00 PM'
       },
       {
-        title: 'Phase 2: Championship Showcase',
-        description: 'Final 4 squads duel in high-stakes Best-of-3 championship arenas.',
-        duration: '2 Hours'
+        title: 'Phase 2: Championship Final (Oct 9 @ 5:00 PM IST)',
+        description: 'Final squads duel in high-stakes BO3 championship arenas.',
+        duration: 'Evening 5:00 PM'
       }
     ],
     judgingCriteria: [
@@ -217,7 +217,7 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     toolsAndStack: ['Minecraft Java 1.8.9', 'Custom High-Tick Match Server', 'Anti-Cheat Enforcement Node'],
     faqs: [
-      { q: 'Which client modifications are permissible?', a: 'Standard performance clients including Lunar, Badlion, and Vanilla with OptiFine are authorized.' }
+      { q: 'What is the squad size required?', a: 'Each team comprises 4 active players + 1 reserve player (4+1).' }
     ]
   },
   {
@@ -227,36 +227,31 @@ export const EVENTS_DATA: EventDetail[] = [
     tagline: 'High-Velocity Technical Acumen & Cross-Domain Intelligence.',
     shortDesc: 'A premier live buzzer symposium covering computational history, advanced artificial intelligence, cryptography, system architecture, and tech culture.',
     fullDesc: 'Brainbyte is a high-speed intellectual duel designed to evaluate depth, speed, and breadth of technical comprehension. Featuring rapid-fire qualifying stages, negative-marking buzzer rounds, cross-domain connection matrices, and strategic pounce mechanisms, delegates compete on the grand stage.',
-    teamSize: '2 Quiz Delegates',
+    teamSize: '1 Delegate',
     eligibility: 'Open to All Enrolled Delegates',
     format: 'Live Stage',
-    duration: '3 Hours',
-    date: 'October 5, 2026',
-    time: '02:00 PM - 05:00 PM',
+    duration: 'Oct 10 (5:00 PM IST)',
+    date: 'October 10, 2026',
+    time: 'Evening @ 5:00 PM IST',
     venue: 'Main Auditorium Stage',
-    badge: 'LIVE STAGE BUZZER',
+    badge: 'SOLO STAGE QUIZ',
     iconName: 'Brain',
     rules: [
-      'Preliminary digital assessment will select the top 6 delegate pairings for the stage arena.',
-      'Live stage buzzer rounds enforce a 10-second response window with negative marking for incorrect attempts.',
-      'Pounce and pass mechanics active on designated specialized question sets.',
-      'The Quizmaster ruling is authoritative and final on all interpretive inquiries.',
-      'Smart devices and external reference materials are strictly prohibited on stage.'
+      'Participation is strictly individual (1 delegate per registration).',
+      'Commences Oct 10 in the evening at 5:00 PM IST.',
+      'Prelims digital screening followed by live stage buzzer final.',
+      'Schedule updates and further details will be communicated via official Discord.',
+      'Smart devices and external reference materials are strictly prohibited during competition.'
     ],
     rounds: [
       {
-        title: 'Prelims: Digital Assessment Screening',
+        title: 'Prelims: Digital Assessment Screening (5:00 PM IST)',
         description: '30 Inter-disciplinary questions spanning AI architecture, cybersecurity history, and computer science pioneers.',
         duration: '45 Mins'
       },
       {
-        title: 'Semifinals: The Connection Matrix',
-        description: 'Top 6 pairings analyze visual clues, audio forensics snippets, and multi-layered thematic connections.',
-        duration: '1 Hour'
-      },
-      {
-        title: 'Grand Finale: High-Velocity Buzzer Showdown',
-        description: 'High-stakes rapid-fire buzzer phase with progressive scoring multipliers.',
+        title: 'Stage Finale: High-Velocity Buzzer Showdown',
+        description: 'High-stakes rapid-fire buzzer phase with progressive scoring multipliers on the main auditorium stage.',
         duration: '1 Hour 15 Mins'
       }
     ],
@@ -265,7 +260,7 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     toolsAndStack: ['Hardware Wireless Buzzers', 'Auditorium Display HUD', 'Synchronized Visual Feeds'],
     faqs: [
-      { q: 'What domains of knowledge are tested?', a: 'Domains include theoretical computer science, machine learning, cryptography, internet history, hardware architecture, and tech culture.' }
+      { q: 'Is this an individual or team quiz?', a: 'Brainbyte is a solo event (1 delegate).' }
     ]
   },
   {
@@ -273,50 +268,50 @@ export const EVENTS_DATA: EventDetail[] = [
     name: 'AppForge',
     category: 'App Dev',
     tagline: 'Next-Generation Mobile Engineering & System Architecture.',
-    shortDesc: 'A rigorous 6-hour mobile application engineering hackathon. Architect scalable, responsive, and innovative native or cross-platform applications.',
+    shortDesc: 'A mobile application engineering hackathon. Architect scalable, responsive, and innovative native or cross-platform applications.',
     fullDesc: 'AppForge challenges software engineers and UI/UX designers to conceptualize, architect, and deploy high-performance mobile applications within a condensed time window. Solutions demonstrate robust state management, offline-first reliability, AI integration, and fluid micro-interactions using industry-standard mobile stacks.',
-    teamSize: '2 - 4 Engineers',
+    teamSize: '1 Delegate',
     eligibility: 'Software Developers & UI/UX Designers',
     format: 'Hybrid Sprint',
-    duration: '6-Hour Development Sprint',
-    date: 'October 5, 2026',
-    time: '09:00 AM - 03:00 PM',
-    venue: 'Innovation Hub Alpha',
-    badge: 'MOBILE SPRINT',
+    duration: 'Oct 10 Eve - Oct 11 Night',
+    date: 'October 10 - 11, 2026',
+    time: 'Prompt released Oct 10 Eve (Discord) | Deadline Oct 11 Night',
+    venue: 'Innovation Hub & Discord Headquarters',
+    badge: 'SOLO MOBILE HACKATHON',
     iconName: 'Smartphone',
     rules: [
-      'The official problem statement and thematic constraints are disclosed at 09:00 AM on contest day.',
-      'All source code must be developed during the event window and maintained in a public repository with an initial commit at 09:00 AM.',
-      'Open-source frameworks, third-party libraries, and public APIs are authorized with proper attribution.',
-      'Final submission mandates a deployable binary (APK/IPA/Web preview), live emulator demonstration, and technical documentation.',
-      'Pre-authored complete solutions will be disqualified upon source inspection.'
+      'Participation is individual (1 delegate).',
+      'The official problem prompt is released on Oct 10 in the evening (exact time announced on Discord).',
+      'Final project submission deadline is Oct 11 at night.',
+      'Schedule updates and further details will be communicated via official Discord.',
+      'All source code must be developed during the hackathon window in a public repository.'
     ],
     rounds: [
       {
-        title: 'Sprint 1: Architecture, Data Models & UI Scaffolding',
-        description: 'System design, API integrations, and core interaction framework.',
-        duration: '09:00 AM - 12:00 PM'
+        title: 'Prompt Release & Kickoff (Oct 10 Evening)',
+        description: 'Thematic prompt disclosed on Discord. Delegates begin architectural design.',
+        duration: 'Oct 10 Eve'
       },
       {
-        title: 'Sprint 2: Logic Hardening, Edge Cases & Polish',
-        description: 'State persistence, background workers, animations, and final optimization.',
-        duration: '12:00 PM - 03:00 PM'
+        title: 'Development & Build Window (Oct 11)',
+        description: 'State persistence, API integrations, micro-interactions, and documentation.',
+        duration: 'Full Day Oct 11'
       },
       {
-        title: 'Phase 3: Executive Technical Demonstrations',
-        description: '3-Minute live presentation and architectural review before the jury.',
-        duration: '03:30 PM - 05:00 PM'
+        title: 'Final Submission Deadline (Oct 11 Night)',
+        description: 'Repository link, demo video, and deployable build submitted on portal.',
+        duration: 'Oct 11 Night'
       }
     ],
     judgingCriteria: [
       { metric: 'Technical Complexity & Architecture', weight: '35%', detail: 'Code modularity, state management robustness, and API efficiency.' },
       { metric: 'UI/UX Polish & Fluidity', weight: '30%', detail: 'Design ergonomics, responsiveness, and seamless micro-interactions.' },
       { metric: 'Innovation & Problem Alignment', weight: '25%', detail: 'Practical efficacy and originality of the solution.' },
-      { metric: 'Presentation & Technical Defense', weight: '10%', detail: 'Clarity of presentation and technical rationale during judge evaluation.' }
+      { metric: 'Presentation & Technical Defense', weight: '10%', detail: 'Clarity of documentation and demo video.' }
     ],
     toolsAndStack: ['Flutter / Dart', 'React Native / Expo', 'Kotlin / Jetpack Compose', 'Swift / SwiftUI', 'Firebase / Supabase'],
     faqs: [
-      { q: 'Are both native and cross-platform frameworks accepted?', a: 'Yes, applications built with native tools (Swift, Kotlin) and cross-platform frameworks (Flutter, React Native) are evaluated equally based on execution.' }
+      { q: 'When will the problem prompt be released?', a: 'The prompt will be released on Oct 10 in the evening on our official Discord server.' }
     ]
   },
   {
@@ -326,37 +321,37 @@ export const EVENTS_DATA: EventDetail[] = [
     tagline: 'Modern Web Architecture, 3D Rendering & UI Engineering.',
     shortDesc: 'A state-of-the-art web engineering hackathon. Build immersive, high-performance web applications leveraging WebGL, responsive design, and fluid animation.',
     fullDesc: 'WebX serves as the premier stage for modern web artisans and frontend engineers. Delegates transcend conventional web interfaces to construct immersive digital experiences utilizing WebGL, modern component frameworks, responsive design systems, and fluid physics-based motion design.',
-    teamSize: '2 - 3 Web Architects',
+    teamSize: '1 Delegate',
     eligibility: 'Frontend & Full-Stack Developers',
     format: 'Hybrid Sprint',
-    duration: '6-Hour Engineering Sprint',
-    date: 'October 5, 2026',
-    time: '09:00 AM - 03:00 PM',
-    venue: 'Web Architecture Lab Beta',
-    badge: 'WEB ARCHITECTURE',
+    duration: 'Oct 10 Eve - Oct 11 Night',
+    date: 'October 10 - 11, 2026',
+    time: 'Prompt released Oct 10 Eve (Discord) | Deadline Oct 11 Night',
+    venue: 'Web Architecture Lab & Discord Headquarters',
+    badge: 'SOLO WEB ARCHITECTURE',
     iconName: 'Globe',
     rules: [
-      'Specific thematic requirements and required interactive capabilities are unveiled at 09:00 AM.',
-      'Production deployment on edge hosting platforms (Vercel, Netlify, Cloudflare) is mandatory by the submission deadline.',
-      'Lighthouse performance and accessibility scores will be evaluated on the production build.',
-      'Codebases must be maintained in a public repository initiated at the event launch.',
-      'Novelty of design, bespoke interactions, and smooth performance heavily influence scoring.'
+      'Participation is individual (1 delegate).',
+      'The official problem prompt is released on Oct 10 in the evening (exact time announced on Discord).',
+      'Final web deployment and repository submission deadline is Oct 11 at night.',
+      'Schedule updates and further details will be communicated via official Discord.',
+      'Production deployment on edge hosting platforms (Vercel, Netlify) is mandatory.'
     ],
     rounds: [
       {
-        title: 'Phase 1: Layout Scaffold & Visual Canvas Integration',
-        description: 'Core DOM structure, responsive typography, and interactive canvas components.',
-        duration: '09:00 AM - 12:00 PM'
+        title: 'Prompt Release & Architecture Kickoff (Oct 10 Evening)',
+        description: 'Requirements unveiled on Discord. Delegates initiate repository & design scaffolding.',
+        duration: 'Oct 10 Eve'
       },
       {
-        title: 'Phase 2: Full-Stack Integration & Motion Design Polish',
+        title: 'Full-Stack Integration & Motion Polish (Oct 11)',
         description: 'Endpoint connectivity, persistent state, transition choreography, and cross-device optimization.',
-        duration: '12:00 PM - 03:00 PM'
+        duration: 'Full Day Oct 11'
       },
       {
-        title: 'Phase 3: Performance Audit & Live Showcase',
-        description: 'Comprehensive performance audit and technical showcase before the jury.',
-        duration: '03:30 PM - 05:00 PM'
+        title: 'Deployment & Final Submission (Oct 11 Night)',
+        description: 'Live URL deployment, repository submission, and documentation drop.',
+        duration: 'Oct 11 Night'
       }
     ],
     judgingCriteria: [
@@ -367,7 +362,7 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     toolsAndStack: ['React / Next.js', 'Vue / Nuxt', 'Three.js / WebGL', 'Tailwind CSS', 'Framer Motion', 'TypeScript'],
     faqs: [
-      { q: 'Are modern UI component frameworks allowed?', a: 'Yes, component libraries are permitted, with extra evaluation credit awarded to custom design systems.' }
+      { q: 'Where will prompt details be shared?', a: 'All prompt details and submission guidelines will be dispatched via Discord on Oct 10 evening.' }
     ]
   },
   {
@@ -377,37 +372,37 @@ export const EVENTS_DATA: EventDetail[] = [
     tagline: 'Unclassified Challenge. Rapid Technical Adaptation.',
     shortDesc: 'A confidential wildcard challenge with zero advance briefing. Tests technical intuition, composure under pressure, and rapid problem-solving.',
     fullDesc: 'Surprise?!?!?!! is a confidential challenge unveiled only minutes prior to launch. From reverse engineering unfamiliar architectures to real-time crisis simulations and algorithmic speed runs, delegates must rely entirely on raw technical intuition, adaptability, and fundamental engineering principles.',
-    teamSize: '1 - 2 Delegates',
+    teamSize: '2 Delegates',
     eligibility: 'Open to All Confirmed Delegates',
     format: 'Live Stage',
-    duration: '2 Hours of Rapid Problem Solving',
-    date: 'October 5, 2026',
-    time: '04:00 PM - 06:00 PM',
-    venue: 'Blackbox Auditorium Stage',
-    badge: 'CLASSIFIED / ON-SITE',
+    duration: 'Commences Oct 14',
+    date: 'Commences October 14, 2026',
+    time: 'Intel & Timings released via Discord',
+    venue: 'Blackbox Auditorium Stage & Discord HQ',
+    badge: 'CLASSIFIED / 2 DELEGATES',
     iconName: 'Sparkles',
     rules: [
-      'Mission directives and challenge constraints are revealed precisely 60 seconds before commencement.',
-      'External assistance and unapproved network access are strictly forbidden.',
-      'Evaluators may introduce dynamic constraints and bonus challenges during active competition.',
-      'Delegates demonstrating the highest composure, analytical agility, and robust execution will prevail.',
-      'Expect shifting parameters throughout the session.'
+      'Team structure: 2 Delegates per team.',
+      'Commences on October 14, 2026.',
+      'Mission directives, exact timing, and briefing constraints are revealed on Discord.',
+      'Schedule updates and further details will be communicated via official Discord.',
+      'Delegates demonstrating the highest composure, analytical agility, and robust execution will prevail.'
     ],
     rounds: [
       {
-        title: 'Phase Alpha: Initial Directives',
+        title: 'Phase Alpha: Classified Briefing (Oct 14)',
         description: 'Directive disclosure followed by the first wave of rapid analytical problems.',
-        duration: '40 Mins'
+        duration: 'Oct 14'
       },
       {
         title: 'Phase Beta: Dynamic Constraint Shift',
         description: 'Introduction of novel rules and real-time operational hurdles.',
-        duration: '40 Mins'
+        duration: 'Live Session'
       },
       {
         title: 'Phase Omega: The Final Synthesis',
         description: 'High-intensity conclusive sprint demanding rapid execution.',
-        duration: '40 Mins'
+        duration: 'Live Session'
       }
     ],
     judgingCriteria: [
@@ -417,7 +412,7 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     toolsAndStack: ['Classified Toolset', 'Stage Telemetry Display', 'Analytical Intuition'],
     faqs: [
-      { q: 'How should delegates prepare for this event?', a: 'Preparation relies on fundamental computer science intuition, problem-solving speed, and mental agility.' }
+      { q: 'Where will timing details be released?', a: 'All timing and secret briefing guidelines will be released on Discord.' }
     ]
   }
 ];
