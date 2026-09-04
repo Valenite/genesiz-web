@@ -14,8 +14,12 @@ import {
   Clock,
   ChevronLeft,
   ChevronRight,
+  RotateCw,
   LayoutGrid,
-  Layers
+  Layers,
+  CheckCircle2,
+  ListOrdered,
+  Zap
 } from 'lucide-react';
 import { EVENTS_DATA } from '../data/eventsData';
 import type { EventDetail } from '../data/eventsData';
@@ -39,16 +43,15 @@ const iconMap: Record<string, React.FC<{ className?: string }>> = {
   Sparkles,
 };
 
-// Signature ambient color glow map for each competition
 const eventColorGlowMap: Record<string, string> = {
-  cipherquest: 'rgba(16, 185, 129, 0.16)', // Emerald
-  algoarena: 'rgba(99, 102, 241, 0.16)',   // Indigo
-  valorant: 'rgba(244, 63, 94, 0.16)',     // Crimson Red
-  bedwarz: 'rgba(245, 158, 11, 0.16)',     // Amber Gold
-  brainbyte: 'rgba(168, 85, 247, 0.16)',   // Purple
-  appforge: 'rgba(6, 182, 212, 0.16)',     // Cyan
-  webx: 'rgba(14, 165, 233, 0.16)',        // Sky Blue
-  surprise: 'rgba(244, 114, 182, 0.16)',   // Rose Pink
+  cipherquest: 'rgba(16, 185, 129, 0.16)',
+  algoarena: 'rgba(99, 102, 241, 0.16)',
+  valorant: 'rgba(244, 63, 94, 0.16)',
+  bedwarz: 'rgba(245, 158, 11, 0.16)',
+  brainbyte: 'rgba(168, 85, 247, 0.16)',
+  appforge: 'rgba(6, 182, 212, 0.16)',
+  webx: 'rgba(14, 165, 233, 0.16)',
+  surprise: 'rgba(244, 114, 182, 0.16)',
 };
 
 const defaultGlow = 'rgba(99, 102, 241, 0.12)';
@@ -59,11 +62,13 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [viewMode, setViewMode] = useState<'deck' | 'grid'>('deck');
   
-  // Touch / Drag swipe state
-  const [touchStartX, setTouchStartX] = useState<number | null>(null);
-  const [swipeOffset, setSwipeOffset] = useState<number>(0);
-  const [isSwiping, setIsSwiping] = useState<boolean>(false);
-  const [animatingDir, setAnimatingDir] = useState<'left' | 'right' | null>(null);
+  // 360 Degree Card Rotation State
+  const [cardRotationY, setCardRotationY] = useState<number>(0);
+  const [isFlipped, setIsFlipped] = useState<boolean>(false);
+  const [isSpinning, setIsSpinning] = useState<boolean>(false);
+  
+  // Drag rotation tracking
+  const [dragStartX, setDragStartX] = useState<number | null>(null);
 
   const categories = [
     'All',
@@ -95,64 +100,61 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
   const totalFiltered = filteredEvents.length;
   const safeIndex = Math.min(currentIndex, Math.max(0, totalFiltered - 1));
 
-  // Current active event and its signature ambient glow
   const currentActiveEvent = filteredEvents[safeIndex];
   const activeGlowColor = currentActiveEvent 
     ? (eventColorGlowMap[currentActiveEvent.id] || defaultGlow) 
     : defaultGlow;
 
-  // Next card in stack
-  const nextCardIndex = (safeIndex + 1) % Math.max(1, totalFiltered);
-  const nextEvent = filteredEvents[nextCardIndex];
-
-  const triggerSwipeLeft = () => {
-    if (totalFiltered <= 1 || animatingDir !== null) return;
+  // 180 / 360 Degree Flip Handler
+  const handleFlipCard = () => {
     soundFX.playWarp();
-    setAnimatingDir('left');
-    setTimeout(() => {
-      setCurrentIndex((prev) => (prev + 1) % totalFiltered);
-      setSwipeOffset(0);
-      setAnimatingDir(null);
-    }, 240);
+    const newFlipped = !isFlipped;
+    setIsFlipped(newFlipped);
+    setCardRotationY(newFlipped ? 180 : 0);
   };
 
-  const triggerSwipeRight = () => {
-    if (totalFiltered <= 1 || animatingDir !== null) return;
+  // Full 360 Degree Spin Handler
+  const handleSpin360 = () => {
     soundFX.playWarp();
-    setAnimatingDir('right');
+    setIsSpinning(true);
+    setCardRotationY((prev) => prev + 360);
     setTimeout(() => {
-      setCurrentIndex((prev) => (prev - 1 + totalFiltered) % totalFiltered);
-      setSwipeOffset(0);
-      setAnimatingDir(null);
-    }, 240);
+      setIsSpinning(false);
+    }, 600);
   };
 
-  // Touch Swipe Handlers
-  const handleTouchStart = (e: React.TouchEvent | React.MouseEvent) => {
-    if (animatingDir !== null) return;
-    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
-    setTouchStartX(clientX);
-    setIsSwiping(true);
+  const handleNextCard = () => {
+    if (totalFiltered <= 1) return;
+    soundFX.playWarp();
+    setIsFlipped(false);
+    setCardRotationY(0);
+    setCurrentIndex((prev) => (prev + 1) % totalFiltered);
   };
 
-  const handleTouchMove = (e: React.TouchEvent | React.MouseEvent) => {
-    if (touchStartX === null || !isSwiping || animatingDir !== null) return;
-    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
-    const diff = clientX - touchStartX;
-    setSwipeOffset(diff);
+  const handlePrevCard = () => {
+    if (totalFiltered <= 1) return;
+    soundFX.playWarp();
+    setIsFlipped(false);
+    setCardRotationY(0);
+    setCurrentIndex((prev) => (prev - 1 + totalFiltered) % totalFiltered);
   };
 
-  const handleTouchEnd = () => {
-    if (!isSwiping || animatingDir !== null) return;
-    setIsSwiping(false);
-    if (swipeOffset < -60) {
-      triggerSwipeLeft();
-    } else if (swipeOffset > 60) {
-      triggerSwipeRight();
-    } else {
-      setSwipeOffset(0);
-    }
-    setTouchStartX(null);
+  // Mouse / Touch Drag 360 Rotation Handlers
+  const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
+    const x = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    setDragStartX(x);
+  };
+
+  const handleDragMove = (e: React.MouseEvent | React.TouchEvent) => {
+    if (dragStartX === null) return;
+    const x = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    const deltaX = x - dragStartX;
+    setCardRotationY((prev) => prev + deltaX * 0.4);
+    setDragStartX(x);
+  };
+
+  const handleDragEnd = () => {
+    setDragStartX(null);
   };
 
   return (
@@ -178,7 +180,7 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
               Eight Flagship Arenas.
             </h2>
             <p className="text-sm text-zinc-400 font-normal max-w-xl leading-relaxed">
-              Swipe through the 3D arena deck below. The ambient lighting smoothly shifts color as you explore each discipline.
+              Drag to rotate the card 360° or flip it around to inspect full rules, round timelines, and specifications on the back!
             </p>
           </div>
 
@@ -193,6 +195,8 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
                 onChange={(e) => {
                   setSearchQuery(e.target.value);
                   setCurrentIndex(0);
+                  setCardRotationY(0);
+                  setIsFlipped(false);
                 }}
                 className="w-full pl-10 pr-4 py-2 bg-zinc-950/90 border border-zinc-800 rounded-full text-xs font-mono text-white placeholder-zinc-500 focus:outline-none focus:border-zinc-500 transition-all"
               />
@@ -204,7 +208,7 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
                   soundFX.playClick();
                   setViewMode('deck');
                 }}
-                title="Interactive 3D Swipe Deck"
+                title="360° Interactive Card"
                 className={`p-1.5 rounded-full transition-all cursor-pointer ${
                   viewMode === 'deck' ? 'bg-white text-black' : 'text-zinc-500 hover:text-white'
                 }`}
@@ -238,6 +242,8 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
                 soundFX.playClick();
                 setActiveCategory(cat);
                 setCurrentIndex(0);
+                setCardRotationY(0);
+                setIsFlipped(false);
               }}
               className={`px-4 py-2 rounded-full text-xs font-mono transition-all whitespace-nowrap cursor-pointer ${
                 activeCategory === cat
@@ -251,166 +257,223 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
         </div>
       </RevealOnScroll>
 
-      {/* SWIPE DECK MODE (Default Interactive 3D Deck with Ambient Transition) */}
+      {/* 360° INTERACTIVE CARD ROTATION MODE */}
       {viewMode === 'deck' && totalFiltered > 0 && (
         <RevealOnScroll delayMs={150} className="relative z-10">
           <div className="relative max-w-xl mx-auto py-4">
             
-            {/* Navigation Controls */}
+            {/* Top Navigation Controls & 360 Spin Trigger */}
             <div className="flex items-center justify-between mb-4 px-2">
               <div className="flex items-center gap-2">
                 <span className="text-xs font-mono text-zinc-300 font-bold">
-                  CARD {String(safeIndex + 1).padStart(2, '0')} / {String(totalFiltered).padStart(2, '0')}
+                  ARENA {String(safeIndex + 1).padStart(2, '0')} / {String(totalFiltered).padStart(2, '0')}
                 </span>
                 <span className="text-zinc-700 text-xs font-mono">•</span>
-                <span className="text-xs font-mono text-zinc-400">Drag/Swipe card to rotate & reveal next</span>
+                <span className="text-xs font-mono text-zinc-400">Drag sideways to spin 360°</span>
               </div>
 
               <div className="flex items-center gap-2">
                 <button
-                  onClick={triggerSwipeRight}
+                  onClick={handleSpin360}
                   onMouseEnter={() => soundFX.playHover()}
-                  className="p-2.5 rounded-full bg-zinc-950/90 border border-zinc-800 text-zinc-300 hover:text-white hover:border-zinc-600 transition-all cursor-pointer shadow-md active:scale-95"
-                  title="Previous Card"
+                  className="px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white hover:border-zinc-600 text-xs font-mono flex items-center gap-1.5 transition-all cursor-pointer shadow-md"
+                  title="Spin Card 360°"
+                >
+                  <RotateCw className={`w-3.5 h-3.5 ${isSpinning ? 'animate-spin' : ''}`} />
+                  <span>360° Spin</span>
+                </button>
+
+                <button
+                  onClick={handlePrevCard}
+                  onMouseEnter={() => soundFX.playHover()}
+                  className="p-2 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white hover:border-zinc-600 transition-all cursor-pointer shadow-md active:scale-95"
+                  title="Previous Arena"
                 >
                   <ChevronLeft className="w-4 h-4" />
                 </button>
                 <button
-                  onClick={triggerSwipeLeft}
+                  onClick={handleNextCard}
                   onMouseEnter={() => soundFX.playHover()}
-                  className="p-2.5 rounded-full bg-zinc-950/90 border border-zinc-800 text-zinc-300 hover:text-white hover:border-zinc-600 transition-all cursor-pointer shadow-md active:scale-95"
-                  title="Next Card"
+                  className="p-2 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white hover:border-zinc-600 transition-all cursor-pointer shadow-md active:scale-95"
+                  title="Next Arena"
                 >
                   <ChevronRight className="w-4 h-4" />
                 </button>
               </div>
             </div>
 
-            {/* Interactive Card Deck Stack Container */}
+            {/* 360-DEGREE ROTATING CARD CONTAINER WITH PRESERVE-3D */}
             <div 
-              className="relative min-h-[460px] sm:min-h-[480px] touch-pan-y select-none cursor-grab active:cursor-grabbing perspective-1000"
-              onTouchStart={handleTouchStart}
-              onTouchMove={handleTouchMove}
-              onTouchEnd={handleTouchEnd}
-              onMouseDown={handleTouchStart}
-              onMouseMove={handleTouchMove}
-              onMouseUp={handleTouchEnd}
-              onMouseLeave={handleTouchEnd}
+              className="relative min-h-[500px] sm:min-h-[520px] select-none cursor-grab active:cursor-grabbing [perspective:1200px]"
+              onMouseDown={handleDragStart}
+              onMouseMove={handleDragMove}
+              onMouseUp={handleDragEnd}
+              onMouseLeave={handleDragEnd}
+              onTouchStart={handleDragStart}
+              onTouchMove={handleDragMove}
+              onTouchEnd={handleDragEnd}
             >
-              {/* Underlying Card Stack Preview (Scales Up & Rotates Into Place as User Swipes Top Card) */}
-              {totalFiltered > 1 && nextEvent && (() => {
-                const swipeProgress = Math.min(1, Math.abs(swipeOffset) / 200);
-                const underlyingScale = 0.94 + swipeProgress * 0.06;
-                const underlyingTranslateY = 14 - swipeProgress * 14;
-                const underlyingOpacity = 0.5 + swipeProgress * 0.5;
-
-                return (
-                  <div 
-                    style={{
-                      transform: `scale(${underlyingScale}) translateY(${underlyingTranslateY}px)`,
-                      opacity: underlyingOpacity,
-                      transition: isSwiping ? 'none' : 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-                    }}
-                    className="absolute inset-0 rounded-3xl bg-[#09090e] border border-zinc-800/80 pointer-events-none z-0 p-6 sm:p-8 flex flex-col justify-between"
-                  >
-                    <div className="space-y-4 opacity-40">
-                      <EventVisual eventId={nextEvent.id} />
-                      <div className="text-2xl font-bold text-white">{nextEvent.name}</div>
-                    </div>
-                  </div>
-                );
-              })()}
-
-              {/* Active Top Foreground Card (Rotates & Slides Away smoothly on Drag/Swipe) */}
               {currentActiveEvent && (() => {
                 const event = currentActiveEvent;
                 const Icon = iconMap[event.iconName] || Sparkles;
 
-                // Calculate realistic 3D deck card rotation based on swipe displacement
-                let transformString = `translateX(${swipeOffset}px) rotateZ(${swipeOffset * 0.06}deg) rotateY(${swipeOffset * 0.04}deg)`;
-                let opacityVal = 1;
-
-                if (animatingDir === 'left') {
-                  transformString = `translateX(-130%) rotateZ(-16deg) rotateY(-20deg)`;
-                  opacityVal = 0;
-                } else if (animatingDir === 'right') {
-                  transformString = `translateX(130%) rotateZ(16deg) rotateY(20deg)`;
-                  opacityVal = 0;
-                }
-
                 return (
                   <div
                     style={{
-                      transform: transformString,
-                      opacity: opacityVal,
-                      transition: isSwiping ? 'none' : 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                      transform: `rotateY(${cardRotationY}deg)`,
+                      transformStyle: 'preserve-3d',
+                      transition: isSpinning ? 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)' : 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
                     }}
-                    className="relative z-10 spotlight-card p-6 sm:p-8 rounded-3xl flex flex-col justify-between min-h-[460px] sm:min-h-[480px] shadow-2xl border border-white/20 bg-[#0a0a0f]"
+                    className="relative w-full min-h-[500px] sm:min-h-[520px] shadow-2xl rounded-3xl"
                   >
-                    <div className="space-y-5">
-                      {/* Visual Banner Artwork */}
-                      <EventVisual eventId={event.id} />
+                    
+                    {/* FRONT FACE OF THE 3D CARD */}
+                    <div 
+                      style={{ backfaceVisibility: 'hidden' }}
+                      className="absolute inset-0 spotlight-card p-6 sm:p-8 rounded-3xl flex flex-col justify-between border border-white/20 bg-[#0a0a0f] z-20"
+                    >
+                      <div className="space-y-5">
+                        {/* Visual Banner Artwork */}
+                        <EventVisual eventId={event.id} />
 
-                      {/* Top Meta Info */}
-                      <div className="flex items-center justify-between pt-1">
-                        <div className="flex items-center gap-2.5">
-                          <div className="w-8 h-8 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300">
-                            <Icon className="w-4 h-4" />
+                        {/* Top Meta Info */}
+                        <div className="flex items-center justify-between pt-1">
+                          <div className="flex items-center gap-2.5">
+                            <div className="w-8 h-8 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300">
+                              <Icon className="w-4 h-4" />
+                            </div>
+                            <span className="text-xs font-mono text-zinc-300 uppercase tracking-wider font-semibold">
+                              {event.category}
+                            </span>
                           </div>
-                          <span className="text-xs font-mono text-zinc-300 uppercase tracking-wider font-semibold">
-                            {event.category}
+
+                          <span className="font-mono text-xs text-zinc-500 font-bold">
+                            FRONT SIDE // 01
                           </span>
                         </div>
 
-                        <span className="font-mono text-xs text-zinc-500 font-bold">
-                          {safeIndex + 1} OF {totalFiltered}
-                        </span>
-                      </div>
+                        {/* Title & Tagline */}
+                        <div>
+                          <h3 className="text-3xl font-extrabold text-white">
+                            {event.name}
+                          </h3>
+                          <p className="text-xs text-zinc-400 mt-1 font-mono">
+                            {event.tagline}
+                          </p>
+                        </div>
 
-                      {/* Title & Tagline */}
-                      <div>
-                        <h3 className="text-3xl font-extrabold text-white">
-                          {event.name}
-                        </h3>
-                        <p className="text-xs text-zinc-400 mt-1 font-mono">
-                          {event.tagline}
+                        {/* Short Description */}
+                        <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal">
+                          {event.shortDesc}
                         </p>
                       </div>
 
-                      {/* Short Description */}
-                      <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal">
-                        {event.shortDesc}
-                      </p>
+                      {/* Bottom Strip Controls */}
+                      <div className="pt-5 mt-6 border-t border-zinc-800/80 flex items-center justify-between">
+                        <div className="flex items-center gap-4 text-xs font-mono text-zinc-400">
+                          <span className="text-white font-medium flex items-center gap-1.5">
+                            <Clock className="w-3.5 h-3.5 text-zinc-400" />
+                            {event.duration}
+                          </span>
+                          <span className="text-zinc-800">•</span>
+                          <span className="flex items-center gap-1.5 text-zinc-400">
+                            <Users className="w-3.5 h-3.5 text-zinc-500" />
+                            {event.teamSize}
+                          </span>
+                        </div>
+
+                        <button
+                          onClick={handleFlipCard}
+                          onMouseEnter={() => soundFX.playHover()}
+                          className="px-4 py-2 rounded-full bg-white hover:bg-zinc-200 text-black font-bold text-xs flex items-center gap-1.5 transition-all cursor-pointer shadow-md hover:scale-105 active:scale-95"
+                        >
+                          <RotateCw className="w-3.5 h-3.5" />
+                          <span>Flip to View Back Specs</span>
+                        </button>
+                      </div>
                     </div>
 
-                    {/* Bottom Strip */}
-                    <div className="pt-5 mt-6 border-t border-zinc-800/80 flex items-center justify-between">
-                      <div className="flex items-center gap-4 text-xs font-mono text-zinc-400">
-                        <span className="text-white font-medium flex items-center gap-1.5">
-                          <Clock className="w-3.5 h-3.5 text-zinc-400" />
-                          {event.duration}
-                        </span>
-                        <span className="text-zinc-800">•</span>
-                        <span className="flex items-center gap-1.5 text-zinc-400">
-                          <Users className="w-3.5 h-3.5 text-zinc-500" />
-                          {event.teamSize}
-                        </span>
+                    {/* BACK FACE OF THE 3D CARD (FLIPPED 180°) */}
+                    <div 
+                      style={{ 
+                        backfaceVisibility: 'hidden',
+                        transform: 'rotateY(180deg)',
+                      }}
+                      className="absolute inset-0 spotlight-card p-6 sm:p-8 rounded-3xl flex flex-col justify-between border border-white/20 bg-[#08080d] z-10"
+                    >
+                      <div className="space-y-4">
+                        {/* Header */}
+                        <div className="flex items-center justify-between border-b border-zinc-800 pb-3">
+                          <div className="flex items-center gap-2">
+                            <Zap className="w-4 h-4 text-amber-400" />
+                            <h4 className="text-base font-bold text-white uppercase font-mono">
+                              {event.name} // BACK SPECIFICATIONS
+                            </h4>
+                          </div>
+
+                          <span className="text-xs font-mono text-zinc-500 font-bold">
+                            BACK SIDE // 02
+                          </span>
+                        </div>
+
+                        {/* Rules Breakdown */}
+                        <div className="space-y-2">
+                          <div className="flex items-center gap-2 text-xs font-mono text-zinc-300 font-semibold uppercase">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                            <span>KEY COMPETITION DIRECTIVES</span>
+                          </div>
+                          <ul className="space-y-1.5 text-xs text-zinc-300 leading-relaxed font-normal">
+                            {event.rules.slice(0, 3).map((rule, rIdx) => (
+                              <li key={rIdx} className="flex items-start gap-2 bg-zinc-950/80 p-2 rounded-xl border border-zinc-900">
+                                <span className="text-zinc-600 font-mono text-[10px] mt-0.5">•</span>
+                                <span>{rule}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {/* Rounds Preview */}
+                        <div className="space-y-2">
+                          <div className="flex items-center gap-2 text-xs font-mono text-zinc-300 font-semibold uppercase">
+                            <ListOrdered className="w-3.5 h-3.5 text-indigo-400" />
+                            <span>TOURNAMENT PHASES</span>
+                          </div>
+                          <div className="grid grid-cols-2 gap-2">
+                            {event.rounds.slice(0, 2).map((rnd, rIdx) => (
+                              <div key={rIdx} className="p-2.5 rounded-xl bg-zinc-950 border border-zinc-900">
+                                <div className="text-xs font-bold text-white truncate">{rnd.title}</div>
+                                <div className="text-[10px] font-mono text-zinc-500 mt-0.5">{rnd.duration}</div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                       </div>
 
-                      {/* Explicit Open Modal Button */}
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          soundFX.playWarp();
-                          onSelectEvent(event);
-                        }}
-                        onMouseEnter={() => soundFX.playHover()}
-                        className="px-4 py-2 rounded-full bg-white hover:bg-zinc-200 text-black font-bold text-xs flex items-center gap-1.5 transition-all cursor-pointer shadow-md hover:scale-105 active:scale-95"
-                      >
-                        <span>Open Specification</span>
-                        <ArrowUpRight className="w-3.5 h-3.5" />
-                      </button>
+                      {/* Back Bottom Actions */}
+                      <div className="pt-4 mt-4 border-t border-zinc-800/80 flex items-center justify-between">
+                        <button
+                          onClick={handleFlipCard}
+                          onMouseEnter={() => soundFX.playHover()}
+                          className="px-3.5 py-2 rounded-full bg-zinc-900 text-zinc-300 hover:text-white border border-zinc-800 text-xs font-mono flex items-center gap-1.5 cursor-pointer"
+                        >
+                          <RotateCw className="w-3.5 h-3.5" />
+                          <span>Flip Front</span>
+                        </button>
+
+                        <button
+                          onClick={() => {
+                            soundFX.playWarp();
+                            onSelectEvent(event);
+                          }}
+                          onMouseEnter={() => soundFX.playHover()}
+                          className="px-5 py-2 rounded-full bg-white hover:bg-zinc-200 text-black font-bold text-xs flex items-center gap-1.5 cursor-pointer shadow-md hover:scale-105"
+                        >
+                          <span>Full Dossier</span>
+                          <ArrowUpRight className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
                     </div>
+
                   </div>
                 );
               })()}
@@ -424,11 +487,13 @@ export const EventGrid: React.FC<EventGridProps> = ({ onSelectEvent }) => {
                   onClick={() => {
                     soundFX.playClick();
                     setCurrentIndex(idx);
+                    setCardRotationY(0);
+                    setIsFlipped(false);
                   }}
                   className={`h-2 rounded-full transition-all cursor-pointer ${
                     safeIndex === idx ? 'w-8 bg-white' : 'w-2 bg-zinc-800 hover:bg-zinc-600'
                   }`}
-                  title={`Go to Card ${idx + 1}`}
+                  title={`Go to Arena ${idx + 1}`}
                 />
               ))}
             </div>
