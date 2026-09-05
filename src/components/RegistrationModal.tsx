@@ -13,7 +13,7 @@ import { EVENTS_DATA } from '../data/eventsData';
 import { HolographicPass } from './HolographicPass';
 import type { PassData } from './HolographicPass';
 import { soundFX } from '../utils/audio';
-import { registerNewTeam, joinExistingTeam } from '../utils/registrationStorage';
+import { registerNewTeam, joinExistingTeam, getRegistrations } from '../utils/registrationStorage';
 
 interface RegistrationModalProps {
   initialEventId?: string;
@@ -27,7 +27,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
   // Mode: 'new' (Team Leader / Solo) or 'join' (Team Member)
   const [regMode, setRegMode] = useState<'new' | 'join'>('new');
 
-  // Mode 1: New Team / Solo State
+  // Mode 1: New Team / Solo / Update State
   const [leadName, setLeadName] = useState('');
   const [email, setEmail] = useState('');
   const [teamPassword, setTeamPassword] = useState('');
@@ -37,6 +37,25 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
   const [selectedEvents, setSelectedEvents] = useState<string[]>(
     initialEventId ? [initialEventId] : []
   );
+  const [isUpdating, setIsUpdating] = useState(false);
+
+  // Pre-fill from existing LocalStorage registration on mount
+  React.useEffect(() => {
+    const existing = getRegistrations();
+    if (existing.length > 0) {
+      const lastReg = existing[existing.length - 1];
+      setLeadName(lastReg.leaderName || '');
+      setEmail(lastReg.leaderEmail || '');
+      setTeamPassword(lastReg.teamPassword || '');
+      setTeamName(lastReg.teamName || '');
+      setInstitution(lastReg.institution || '');
+      setDiscordTag(lastReg.discordTag || '');
+      if (lastReg.selectedEvents && lastReg.selectedEvents.length > 0) {
+        setSelectedEvents(lastReg.selectedEvents);
+        setIsUpdating(true);
+      }
+    }
+  }, []);
 
   // Mode 2: Join Team State
   const [memberName, setMemberName] = useState('');
@@ -219,7 +238,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
             }`}
           >
             <UserPlus className="w-4 h-4" />
-            <span>1. Register New Team / Solo</span>
+            <span>1. Register / Update Events</span>
           </button>
 
           <button
@@ -239,6 +258,16 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
             <span>2. Join Existing Team</span>
           </button>
         </div>
+
+        {/* Existing Registration Update Banner */}
+        {isUpdating && regMode === 'new' && (
+          <div className="mx-6 mt-3 p-3 rounded-xl bg-violet-950/60 border border-violet-800/80 text-violet-200 text-xs font-mono flex items-center justify-between">
+            <span className="flex items-center gap-2">
+              <span className="text-sm">🔄</span>
+              <span><strong>Existing Registration Loaded!</strong> Select or deselect disciplines below to update your Operative Pass.</span>
+            </span>
+          </div>
+        )}
 
         {/* Error Notification */}
         {errorMessage && (
