@@ -52,50 +52,74 @@ export const registerNewTeam = (data: {
   selectedEventNames: string[];
 }): RegistrationRecord => {
   const records = getRegistrations();
-  
-  // Generate unique 4-character hex ID (e.g. GSZ-2026-A4F9)
-  let randomHex = Math.floor(1000 + Math.random() * 9000).toString(16).toUpperCase();
-  let operativeId = `GSZ-2026-${randomHex}`;
+  const cleanEmail = data.leaderEmail.trim().toLowerCase();
+  const cleanPass = data.teamPassword.trim();
 
-  // Ensure uniqueness
-  while (records.some((r) => r.id === operativeId)) {
-    randomHex = Math.floor(1000 + Math.random() * 9000).toString(16).toUpperCase();
-    operativeId = `GSZ-2026-${randomHex}`;
+  // Check if an existing team matches this leader email & team password (update mode)
+  const existingIndex = records.findIndex(
+    (r) => r.leaderEmail === cleanEmail && r.teamPassword === cleanPass
+  );
+
+  let recordToSave: RegistrationRecord;
+
+  if (existingIndex !== -1) {
+    // Update existing team registration (Preserve Operative ID and existing members)
+    const existing = records[existingIndex];
+    recordToSave = {
+      ...existing,
+      leaderName: data.leaderName.trim(),
+      teamName: data.teamName.trim() || existing.teamName,
+      institution: data.institution.trim() || existing.institution,
+      discordTag: data.discordTag?.trim() || existing.discordTag,
+      selectedEvents: data.selectedEvents,
+      selectedEventNames: data.selectedEventNames,
+    };
+    records[existingIndex] = recordToSave;
+    console.log(`[Registration Storage] Updated existing Operative Code ${recordToSave.id} with new events:`, data.selectedEvents);
+  } else {
+    // Generate new unique 4-character hex ID (e.g. GSZ-2026-A4F9)
+    let randomHex = Math.floor(1000 + Math.random() * 9000).toString(16).toUpperCase();
+    let operativeId = `GSZ-2026-${randomHex}`;
+
+    while (records.some((r) => r.id === operativeId)) {
+      randomHex = Math.floor(1000 + Math.random() * 9000).toString(16).toUpperCase();
+      operativeId = `GSZ-2026-${randomHex}`;
+    }
+
+    recordToSave = {
+      id: operativeId,
+      leaderName: data.leaderName.trim(),
+      leaderEmail: cleanEmail,
+      teamPassword: cleanPass,
+      teamName: data.teamName.trim() || `${data.leaderName.trim()}'s Squad`,
+      institution: data.institution.trim(),
+      discordTag: data.discordTag?.trim(),
+      selectedEvents: data.selectedEvents,
+      selectedEventNames: data.selectedEventNames,
+      members: [],
+      createdAt: new Date().toISOString(),
+    };
+    records.push(recordToSave);
   }
 
-  const newRecord: RegistrationRecord = {
-    id: operativeId,
-    leaderName: data.leaderName.trim(),
-    leaderEmail: data.leaderEmail.trim().toLowerCase(),
-    teamPassword: data.teamPassword.trim(),
-    teamName: data.teamName.trim() || `${data.leaderName.trim()}'s Squad`,
-    institution: data.institution.trim(),
-    discordTag: data.discordTag?.trim(),
-    selectedEvents: data.selectedEvents,
-    selectedEventNames: data.selectedEventNames,
-    members: [],
-    createdAt: new Date().toISOString(),
-  };
-
-  records.push(newRecord);
   saveRegistrations(records);
 
   // Sync to Cloud Supabase for Discord Bot validation
   syncRegistrationToSupabase({
-    id: newRecord.id,
-    leader_name: newRecord.leaderName,
-    leader_email: newRecord.leaderEmail,
-    team_password: newRecord.teamPassword,
-    team_name: newRecord.teamName,
-    institution: newRecord.institution,
-    discord_tag: newRecord.discordTag,
-    selected_events: newRecord.selectedEvents,
-    selected_event_names: newRecord.selectedEventNames,
-    members: newRecord.members,
-    created_at: newRecord.createdAt,
+    id: recordToSave.id,
+    leader_name: recordToSave.leaderName,
+    leader_email: recordToSave.leaderEmail,
+    team_password: recordToSave.teamPassword,
+    team_name: recordToSave.teamName,
+    institution: recordToSave.institution,
+    discord_tag: recordToSave.discordTag,
+    selected_events: recordToSave.selectedEvents,
+    selected_event_names: recordToSave.selectedEventNames,
+    members: recordToSave.members,
+    created_at: recordToSave.createdAt,
   });
 
-  return newRecord;
+  return recordToSave;
 };
 
 export const joinExistingTeam = (data: {
