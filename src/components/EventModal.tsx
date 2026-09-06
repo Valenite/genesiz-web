@@ -53,7 +53,7 @@ export const EventModal: React.FC<EventModalProps> = ({ event, onClose, onRegist
     { id: 'faq', label: 'Inquiries', icon: HelpCircle },
   ];
 
-  const DISCORD_URL = "https://discord.gg/RUGtbSYUHb";
+  const DISCORD_URL = "https://discord.gg/narNSeybgR";
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto bg-black/85 backdrop-blur-md animate-fadeIn">

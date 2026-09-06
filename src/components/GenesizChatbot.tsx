@@ -104,12 +104,12 @@ export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({
 
     if (lower.includes('discord') || lower.includes('community') || lower.includes('server')) {
       return {
-        reply: 'Join the official GENESIZ Discord server at https://discord.gg/RUGtbSYUHb for live updates, match timings, and CipherQuest puzzle hints!',
+        reply: 'Join the official GENESIZ Discord server at https://discord.gg/narNSeybgR for live updates, match timings, and CipherQuest puzzle hints!',
       };
     }
 
     return {
-      reply: `Thanks for your question about "${userText}"! For info on any of our 8 events, how to register, or the schedule, check the menu on the website or join our Discord (discord.gg/RUGtbSYUHb).`,
+      reply: `Thanks for your question about "${userText}"! For info on any of our 8 events, how to register, or the schedule, check the menu on the website or join our Discord (discord.gg/narNSeybgR).`,
     };
   };
 

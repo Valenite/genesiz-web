@@ -72,7 +72,7 @@ export const TerminalConsole: React.FC<TerminalConsoleProps> = ({
 AVAILABLE COMMANDS:
   events          - List all 8 events
   event <name>    - Get info on a specific event (e.g. "event cipherquest")
-  discord         - Open official Discord server (discord.gg/RUGtbSYUHb)
+  discord         - Open official Discord server (discord.gg/narNSeybgR)
   valenite        - About the creator, Valenite Electrion
   schedule        - Show full timetable for October 5, 2026
   date            - Show countdown to GENESIZ 2026
@@ -87,9 +87,9 @@ AVAILABLE COMMANDS:
       case 'discord':
         newHistory.push({
           type: 'success',
-          text: 'OFFICIAL DISCORD: https://discord.gg/RUGtbSYUHb\n(Join for CipherQuest hints, live schedules, and updates)',
+          text: 'OFFICIAL DISCORD: https://discord.gg/narNSeybgR\n(Join for CipherQuest hints, live schedules, and updates)',
         });
-        window.open('https://discord.gg/RUGtbSYUHb', '_blank');
+        window.open('https://discord.gg/narNSeybgR', '_blank');
         break;
 
       case 'events':

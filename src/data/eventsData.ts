@@ -79,7 +79,7 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     toolsAndStack: ['CyberChef', 'Wireshark', 'Burp Suite', 'Audacity', 'Python Cryptography', 'ExifTool'],
     faqs: [
-      { q: 'Where are official intelligence releases provided during the hunt?', a: 'All official bulletins, announcements, and hint drops will be communicated through the GENESIZ Discord server (discord.gg/RUGtbSYUHb).' },
+      { q: 'Where are official intelligence releases provided during the hunt?', a: 'All official bulletins, announcements, and hint drops will be communicated through the GENESIZ Discord server (discord.gg/narNSeybgR).' },
       { q: 'What is the permitted delegation composition?', a: 'Delegation composition is strictly 2 delegates per team.' }
     ]
   },

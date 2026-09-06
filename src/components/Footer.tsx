@@ -15,7 +15,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenChatbot, onOpenRegister, o
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const DISCORD_URL = "https://discord.gg/RUGtbSYUHb";
+  const DISCORD_URL = "https://discord.gg/narNSeybgR";
 
   return (
     <footer className="relative bg-[#000000] border-t border-zinc-900 pt-16 pb-12">

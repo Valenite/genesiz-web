@@ -43,6 +43,6 @@ export const FAQ_DATA: FAQItem[] = [
   {
     category: 'Discord & Community',
     question: 'How do delegates access the official Discord server?',
-    answer: 'Delegates can join the official Discord server at https://discord.gg/RUGtbSYUHb to access community channels, squad formations, and real-time announcements.'
+    answer: 'Delegates can join the official Discord server at https://discord.gg/narNSeybgR to access community channels, squad formations, and real-time announcements.'
   }
 ];

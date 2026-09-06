@@ -21,7 +21,7 @@ interface HolographicPassProps {
 export const HolographicPass: React.FC<HolographicPassProps> = ({ passData, onClose, onEditRegistration }) => {
   const cardRef = useRef<HTMLDivElement | null>(null);
 
-  const DISCORD_URL = "https://discord.gg/RUGtbSYUHb";
+  const DISCORD_URL = "https://discord.gg/narNSeybgR";
 
   const handleDownload = () => {
     soundFX.playClick();
@@ -103,7 +103,7 @@ export const HolographicPass: React.FC<HolographicPassProps> = ({ passData, onCl
 
     ctx.font = '11px monospace';
     ctx.fillStyle = '#71717a';
-    ctx.fillText('OCTOBER 05, 2026 // CRYPTOGRAPHICALLY VERIFIED // DISCORD: discord.gg/RUGtbSYUHb', 60, 890);
+    ctx.fillText('OCTOBER 05, 2026 // CRYPTOGRAPHICALLY VERIFIED // DISCORD: discord.gg/narNSeybgR', 60, 890);
 
     const link = document.createElement('a');
     link.download = `GENESIZ-CREDENTIAL-${passData.operativeId}.png`;

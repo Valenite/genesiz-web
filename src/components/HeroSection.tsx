@@ -12,7 +12,7 @@ interface HeroSectionProps {
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpenChatbot }) => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
-  const DISCORD_URL = "https://discord.gg/RUGtbSYUHb";
+  const DISCORD_URL = "https://discord.gg/narNSeybgR";
 
   useEffect(() => {
     const target = new Date('2026-10-05T09:00:00+05:30').getTime();

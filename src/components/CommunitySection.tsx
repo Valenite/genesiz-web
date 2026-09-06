@@ -15,7 +15,7 @@ export const CommunitySection: React.FC = () => {
     setEmail('');
   };
 
-  const DISCORD_URL = "https://discord.gg/RUGtbSYUHb";
+  const DISCORD_URL = "https://discord.gg/narNSeybgR";
 
   return (
     <section id="community" className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto border-t border-zinc-900">
@@ -84,7 +84,7 @@ export const CommunitySection: React.FC = () => {
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
               <span className="text-[11px] font-mono text-zinc-500 text-center">
-                discord.gg/RUGtbSYUHb
+                discord.gg/narNSeybgR
               </span>
             </div>
 
