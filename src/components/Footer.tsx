@@ -33,7 +33,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenChatbot, onOpenRegister, o
               National technology symposium bringing together competitive coding, cryptographic hunts, esports, and software hackathons.
             </p>
             <div className="text-xs font-mono text-zinc-500">
-              Conceived & Powered by <span className="text-zinc-300 font-medium">Bhavya & Pratyaksh</span>
+              Conceived & Powered by <span className="text-zinc-300 font-medium">Valenite Electrion</span>
             </div>
           </div>
 
@@ -101,7 +101,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenChatbot, onOpenRegister, o
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-600">
           <div>
-            © 2026 GENESIZ. All Rights Reserved. Leadership: Bhavya & Pratyaksh.
+            © 2026 GENESIZ. All Rights Reserved. Architectural Credits: Valenite Electrion.
           </div>
 
           <button

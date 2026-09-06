@@ -46,7 +46,7 @@ export const HolographicPass: React.FC<HolographicPassProps> = ({ passData, onCl
 
     ctx.font = '14px monospace';
     ctx.fillStyle = '#a1a1aa';
-    ctx.fillText('OFFICIAL ACCREDITATION CREDENTIAL - LEADERSHIP: BHAVYA & PRATYAKSH', 60, 130);
+    ctx.fillText('OFFICIAL ACCREDITATION CREDENTIAL - ARCHITECT: VALENITE ELECTRION', 60, 130);
 
     // ID
     ctx.font = '14px monospace';
@@ -138,7 +138,7 @@ export const HolographicPass: React.FC<HolographicPassProps> = ({ passData, onCl
                 GENESIZ 2026
               </h3>
               <p className="text-[10px] font-mono text-zinc-500">
-                LEADERSHIP: BHAVYA & PRATYAKSH
+                ARCHITECT: VALENITE ELECTRION
               </p>
             </div>
             <div className="w-10 h-10 bg-zinc-900 rounded-lg flex items-center justify-center text-zinc-400">
