@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, ChevronDown, Bot, MessageSquare, Sparkles, Shield, Cpu, Radio } from 'lucide-react';
+import { ArrowRight, ChevronDown, Bot, MessageSquare, Sparkles, Shield, Cpu, Radio, FileText } from 'lucide-react';
 import { soundFX } from '../utils/audio';
 import genesizLogoTransparent from '../assets/genesiz-logo-transparent.png';
 import { RevealOnScroll } from './RevealOnScroll';
@@ -134,6 +134,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
             >
               <MessageSquare className="w-4 h-4" />
               <span>Join Discord HQ</span>
+            </a>
+
+            <a
+              href="https://drive.google.com/drive/folders/1gsJJE2nlQsWQN0oxMUmSzdesrvnAlUf5?usp=sharing"
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => soundFX.playClick()}
+              onMouseEnter={() => soundFX.playHover()}
+              className="px-5 py-3 rounded-full bg-violet-950/70 hover:bg-violet-900/90 text-violet-200 hover:text-white text-xs sm:text-sm font-semibold border border-violet-800/70 transition-all flex items-center gap-2 cursor-pointer shadow-md hover:scale-105 active:scale-95"
+            >
+              <FileText className="w-4 h-4 text-violet-400" />
+              <span>Official Brochure</span>
             </a>
 
             <a

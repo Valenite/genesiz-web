@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bot, ArrowUp, MessageSquare } from 'lucide-react';
+import { Bot, ArrowUp, MessageSquare, FileText } from 'lucide-react';
 import { soundFX } from '../utils/audio';
 import genesizLogo from '../assets/genesiz-logo-transparent.png';
 
@@ -62,6 +62,16 @@ export const Footer: React.FC<FooterProps> = ({ onOpenChatbot, onOpenRegister, o
             <div className="space-y-2 col-span-2 sm:col-span-1">
               <span className="text-zinc-600 block uppercase tracking-wider">Operations</span>
               <ul className="space-y-1 text-zinc-400">
+                <li>
+                  <a 
+                    href="https://drive.google.com/drive/folders/1gsJJE2nlQsWQN0oxMUmSzdesrvnAlUf5?usp=sharing" 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className="hover:text-white flex items-center gap-1 text-violet-300"
+                  >
+                    <FileText className="w-3 h-3 text-violet-400" /> Official Brochure
+                  </a>
+                </li>
                 <li>
                   <a href={DISCORD_URL} target="_blank" rel="noreferrer" className="hover:text-white flex items-center gap-1">
                     <MessageSquare className="w-3 h-3 text-[#5865F2]" /> Discord HQ

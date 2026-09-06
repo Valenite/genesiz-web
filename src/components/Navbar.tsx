@@ -5,7 +5,8 @@ import {
   Bot, 
   Menu, 
   X,
-  ArrowRight
+  ArrowRight,
+  FileText
 } from 'lucide-react';
 import { soundFX } from '../utils/audio';
 import genesizLogo from '../assets/genesiz-logo-transparent.png';
@@ -86,6 +87,19 @@ export const Navbar: React.FC<NavbarProps> = ({
           >
             {isMuted ? <VolumeX className="w-4 h-4 text-zinc-600" /> : <Volume2 className="w-4 h-4 text-zinc-300" />}
           </button>
+
+          {/* Official Brochure Link */}
+          <a
+            href="https://drive.google.com/drive/folders/1gsJJE2nlQsWQN0oxMUmSzdesrvnAlUf5?usp=sharing"
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => soundFX.playClick()}
+            onMouseEnter={() => soundFX.playHover()}
+            className="hidden lg:flex px-3.5 py-1.5 rounded-full bg-violet-950/60 hover:bg-violet-900/80 border border-violet-800/60 text-violet-200 hover:text-white text-xs font-mono items-center gap-1.5 transition-all cursor-pointer shadow-sm"
+          >
+            <FileText className="w-3.5 h-3.5 text-violet-400" />
+            <span>Brochure</span>
+          </a>
 
           {/* AI Chatbot Trigger */}
           <button
