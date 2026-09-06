@@ -15,9 +15,10 @@ export interface PassData {
 interface HolographicPassProps {
   passData: PassData;
   onClose: () => void;
+  onEditRegistration?: () => void;
 }
 
-export const HolographicPass: React.FC<HolographicPassProps> = ({ passData, onClose }) => {
+export const HolographicPass: React.FC<HolographicPassProps> = ({ passData, onClose, onEditRegistration }) => {
   const cardRef = useRef<HTMLDivElement | null>(null);
 
   const DISCORD_URL = "https://discord.gg/RUGtbSYUHb";
@@ -199,26 +200,47 @@ export const HolographicPass: React.FC<HolographicPassProps> = ({ passData, onCl
           </a>
         </div>
 
-        {/* Actions */}
-        <div className="flex items-center gap-3">
-          <button
-            onClick={handleDownload}
-            onMouseEnter={() => soundFX.playHover()}
-            className="flex-1 py-2.5 rounded-full bg-white hover:bg-zinc-200 text-black font-semibold text-xs transition-colors flex items-center justify-center gap-2 shadow-lg"
-          >
-            <Download className="w-4 h-4" />
-            Download Pass (PNG)
-          </button>
+        {/* Sync Status Note */}
+        <div className="p-2.5 rounded-xl bg-violet-950/40 border border-violet-800/40 text-[11px] font-mono text-violet-300 flex items-center justify-between">
+          <span>⚡ Discord roles auto-sync every ~15 sec</span>
+          <span className="text-[10px] text-violet-400 font-bold">LIVE</span>
+        </div>
 
-          <button
-            onClick={() => {
-              soundFX.playClick();
-              onClose();
-            }}
-            className="px-5 py-2.5 rounded-full bg-zinc-900 text-zinc-400 hover:text-white text-xs font-mono border border-zinc-800"
-          >
-            Done
-          </button>
+        {/* Actions */}
+        <div className="space-y-2">
+          {onEditRegistration && (
+            <button
+              type="button"
+              onClick={() => {
+                soundFX.playClick();
+                onEditRegistration();
+              }}
+              className="w-full py-2.5 rounded-full bg-violet-600/30 hover:bg-violet-600/50 border border-violet-500/50 text-violet-200 font-bold text-xs transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
+            >
+              <span>✏️ Change / Update Selected Disciplines</span>
+            </button>
+          )}
+
+          <div className="flex items-center gap-3">
+            <button
+              onClick={handleDownload}
+              onMouseEnter={() => soundFX.playHover()}
+              className="flex-1 py-2.5 rounded-full bg-white hover:bg-zinc-200 text-black font-semibold text-xs transition-colors flex items-center justify-center gap-2 shadow-lg"
+            >
+              <Download className="w-4 h-4" />
+              Download Pass (PNG)
+            </button>
+
+            <button
+              onClick={() => {
+                soundFX.playClick();
+                onClose();
+              }}
+              className="px-5 py-2.5 rounded-full bg-zinc-900 text-zinc-400 hover:text-white text-xs font-mono border border-zinc-800"
+            >
+              Done
+            </button>
+          </div>
         </div>
 
       </div>

@@ -179,7 +179,13 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
   };
 
   if (passData) {
-    return <HolographicPass passData={passData} onClose={onClose} />;
+    return (
+      <HolographicPass 
+        passData={passData} 
+        onClose={onClose} 
+        onEditRegistration={() => setPassData(null)} 
+      />
+    );
   }
 
   return (
