@@ -44,7 +44,7 @@ export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({
     'What events are there?',
     'Tell me about CipherQuest',
     'How do I register?',
-    'Who is Valenite Electrion?',
+    'Who organized GENESIZ?',
     'What is the schedule for Oct 5?',
     'Discord server link',
   ];
@@ -90,9 +90,9 @@ export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({
       };
     }
 
-    if (lower.includes('valenite') || lower.includes('electrion') || lower.includes('architect') || lower.includes('who made') || lower.includes('credit')) {
+    if (lower.includes('valenite') || lower.includes('electrion') || lower.includes('architect') || lower.includes('who made') || lower.includes('who organized') || lower.includes('credit')) {
       return {
-        reply: 'Valenite Electrion is the Founder and Creator of GENESIZ 2026. They built and organized the entire event from the ground up to bring students together through technology and competition.',
+        reply: 'GENESIZ 2026 is organized by Co-Presidents Bhavya & Pratyaksh alongside the executive leadership team. They built and organized the entire event from the ground up to bring students together through technology and competition.',
       };
     }
 

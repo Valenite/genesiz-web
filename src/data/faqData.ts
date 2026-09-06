@@ -7,8 +7,8 @@ export interface FAQItem {
 export const FAQ_DATA: FAQItem[] = [
   {
     category: 'General',
-    question: 'What is GENESIZ and who is the founding architect?',
-    answer: 'GENESIZ is a premier inter-institutional technology symposium, competitive algorithmic arena, and tactical esports summit taking place on October 5, 2026. The symposium was conceived, architected, and powered by Valenite Electrion as a landmark technology convocation.'
+    question: 'What is GENESIZ 2026 and who is organizing it?',
+    answer: 'GENESIZ is a premier technology festival, coding arena, and esports summit taking place on October 5, 2026. The event was conceived, organized, and brought to life by Co-Presidents Bhavya & Pratyaksh alongside the executive leadership team.'
   },
   {
     category: 'General',

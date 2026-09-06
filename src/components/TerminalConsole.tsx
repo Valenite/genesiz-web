@@ -33,7 +33,7 @@ export const TerminalConsole: React.FC<TerminalConsoleProps> = ({
       ].join('\n')
     },
     { type: 'success', text: 'GENESIZ v2.6.0 KERNEL ONLINE // OCTOBER 05, 2026' },
-    { type: 'output', text: 'ARCHITECT: VALENITE ELECTRION // ALL SYSTEMS NORMAL' },
+    { type: 'output', text: 'GENESIZ 2026 // ALL SYSTEMS NORMAL' },
     { type: 'output', text: 'Type "help" for command matrix, or "discord" to connect to HQ.' },
   ]);
   const [isMatrixMode, setIsMatrixMode] = useState(false);
@@ -144,11 +144,11 @@ Description: ${match.fullDesc}
           type: 'success',
           text: `
 ======================================================================
-  ABOUT: VALENITE ELECTRION
+  FOUNDING LEADERSHIP: BHAVYA & PRATYAKSH (CO-PRESIDENTS)
 ======================================================================
-  Founder & Creator of GENESIZ 2026.
-  Built and organized the entire event from the ground up to bring
-  students together through technology and competition.
+  Co-Presidents & Organizers of GENESIZ 2026.
+  Built and organized the entire event alongside the executive team
+  to bring students together through technology and competition.
 ======================================================================
           `.trim(),
         });
@@ -171,7 +171,7 @@ Description: ${match.fullDesc}
           text: `
 OCTOBER 5, 2026 SCHEDULE:
   08:00 AM - Check-in & Verification
-  09:00 AM - Opening Speech (Valenite Electrion)
+  09:00 AM - Opening Address & Keynote
   09:00 AM - CipherQuest 4-Day Hunt Starts (on Discord)
   09:30 AM - AppForge & WebX Sprint Begins
   09:45 AM - Valorant Swiss Qualifier Rounds
