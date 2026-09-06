@@ -18,11 +18,8 @@ interface GenesizChatbotProps {
 }
 
 const SECRET_COMMANDS = [
-  'override://cipher.enigma',
-  '/unlock-cipher-enigma',
-  'cipher_override_2026',
-  '/enigma',
-  'genesis_cipher_unlock',
+  '/anshika060613',
+  'anshika060613',
 ];
 
 export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({

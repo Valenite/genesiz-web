@@ -410,7 +410,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                 onMouseEnter={() => soundFX.playHover()}
                 className="w-full py-4 rounded-full bg-white hover:bg-zinc-100 text-black font-bold text-xs tracking-wider uppercase transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer"
               >
-                <span>Register & Get Your Unique Code</span>
+                <span>Register Team & Issue Unique Operative Code</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
