@@ -31,11 +31,11 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   const navLinks = [
-    { label: 'Disciplines', href: '#events', num: '01' },
-    { label: 'Timeline', href: '#schedule', num: '02' },
-    { label: 'Intelligence HQ', href: '#community', num: '03' },
-    { label: 'Architect', href: '#credits', num: '04' },
-    { label: 'Protocols', href: '#faq', num: '05' },
+    { label: 'Events', href: '#events', num: '01' },
+    { label: 'Schedule', href: '#schedule', num: '02' },
+    { label: 'Community', href: '#community', num: '03' },
+    { label: 'About', href: '#credits', num: '04' },
+    { label: 'FAQ', href: '#faq', num: '05' },
   ];
 
   return (

@@ -203,11 +203,11 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-5 h-5 text-violet-400" />
               <h2 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
-                Delegate Accreditation Portal
+                Team Registration Portal
               </h2>
             </div>
             <p className="text-xs font-mono text-zinc-400 mt-0.5">
-              GENESIZ 2026 - Official Inter-Institutional Registration
+              GENESIZ 2026 - Official Event Registration
             </p>
           </div>
 
@@ -264,7 +264,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
           <div className="mx-6 mt-3 p-3 rounded-xl bg-violet-950/60 border border-violet-800/80 text-violet-200 text-xs font-mono flex items-center justify-between">
             <span className="flex items-center gap-2">
               <span className="text-sm">🔄</span>
-              <span><strong>Existing Registration Loaded!</strong> Select or deselect disciplines below to update your Operative Pass.</span>
+              <span><strong>Your registration was found!</strong> Add or remove events below to update your pass.</span>
             </span>
           </div>
         )}
@@ -283,11 +283,11 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
             
             {/* Primary Details */}
             <div className="space-y-4">
-              <span className="text-xs font-mono text-violet-400 uppercase font-semibold block">Team Leader / Solo Delegate Information</span>
+              <span className="text-xs font-mono text-violet-400 uppercase font-semibold block">Team Leader / Your Details</span>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div>
-                  <label className="block text-xs font-mono text-zinc-400 mb-1.5">Full Legal Name *</label>
+                  <label className="block text-xs font-mono text-zinc-400 mb-1.5">Full Name *</label>
                   <input
                     type="text"
                     required
@@ -299,11 +299,11 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-zinc-400 mb-1.5">Institutional Email *</label>
+                  <label className="block text-xs font-mono text-zinc-400 mb-1.5">Email Address *</label>
                   <input
                     type="email"
                     required
-                    placeholder="delegate@institution.edu"
+                    placeholder="your@email.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="w-full px-4 py-2.5 bg-zinc-950 border border-zinc-800 rounded-xl text-xs text-white focus:outline-none focus:border-violet-500 transition-colors"
@@ -314,7 +314,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div>
                   <label className="block text-xs font-mono text-violet-300 mb-1.5">
-                    Team Security Password * <span className="text-[10px] text-zinc-500 font-normal">(For members to join)</span>
+                    Team Password * <span className="text-[10px] text-zinc-500 font-normal">(Teammates use this to join)</span>
                   </label>
                   <input
                     type="text"
@@ -327,11 +327,11 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-zinc-400 mb-1.5">Affiliated Institution / School *</label>
+                  <label className="block text-xs font-mono text-zinc-400 mb-1.5">School / College *</label>
                   <input
                     type="text"
                     required
-                    placeholder="Institution Name"
+                    placeholder="School or College Name"
                     value={institution}
                     onChange={(e) => setInstitution(e.target.value)}
                     className="w-full px-4 py-2.5 bg-zinc-950 border border-zinc-800 rounded-xl text-xs text-white focus:outline-none focus:border-violet-500 transition-colors"
@@ -341,10 +341,10 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div>
-                  <label className="block text-xs font-mono text-zinc-400 mb-1.5">Squad / Team Name (Optional)</label>
+                  <label className="block text-xs font-mono text-zinc-400 mb-1.5">Team Name (Optional)</label>
                   <input
                     type="text"
-                    placeholder="e.g. Apex Protocol"
+                    placeholder="e.g. Apex Squad"
                     value={teamName}
                     onChange={(e) => setTeamName(e.target.value)}
                     className="w-full px-4 py-2.5 bg-zinc-950 border border-zinc-800 rounded-xl text-xs text-white focus:outline-none focus:border-violet-500 transition-colors"
@@ -352,7 +352,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-zinc-400 mb-1.5">Discord Handle / Phone</label>
+                  <label className="block text-xs font-mono text-zinc-400 mb-1.5">Discord Username / Phone</label>
                   <input
                     type="text"
                     placeholder="username / +91-XXXXXXXXXX"
@@ -364,11 +364,11 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
               </div>
             </div>
 
-            {/* Disciplines Selection */}
+            {/* Events Selection */}
             <div className="space-y-3 pt-2 border-t border-zinc-900">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono text-violet-400 uppercase font-semibold">Select Accredited Disciplines ({selectedEvents.length}/8)</span>
-                <span className="text-[10px] text-zinc-400 font-mono">Multiple entries allowed</span>
+                <span className="text-xs font-mono text-violet-400 uppercase font-semibold">Choose Your Events ({selectedEvents.length}/8)</span>
+                <span className="text-[10px] text-zinc-400 font-mono">You can pick more than one</span>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -410,7 +410,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                 onMouseEnter={() => soundFX.playHover()}
                 className="w-full py-4 rounded-full bg-white hover:bg-zinc-100 text-black font-bold text-xs tracking-wider uppercase transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer"
               >
-                <span>Register Team & Issue Unique Operative Code</span>
+                <span>Register & Get Your Unique Code</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>

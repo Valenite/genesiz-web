@@ -69,17 +69,17 @@ export const TerminalConsole: React.FC<TerminalConsoleProps> = ({
         newHistory.push({
           type: 'output',
           text: `
-AVAILABLE COMMAND DIRECTIVES:
-  events          - List all 8 competitive disciplines
-  event <name>    - Detailed query on a specific discipline (e.g. "event cipherquest")
-  discord         - Access official Discord server (discord.gg/RUGtbSYUHb)
-  valenite        - Display architectural credits for Valenite Electrion
-  schedule        - Show executive timeline for October 5, 2026
-  date            - Show countdown telemetry and symposium timestamp
-  register        - Initiate delegate pass accreditation
-  matrix          - Toggle matrix visual simulation mode
-  clear           - Purge terminal buffer
-  exit            - Disconnect CLI session
+AVAILABLE COMMANDS:
+  events          - List all 8 events
+  event <name>    - Get info on a specific event (e.g. "event cipherquest")
+  discord         - Open official Discord server (discord.gg/RUGtbSYUHb)
+  valenite        - About the creator, Valenite Electrion
+  schedule        - Show full timetable for October 5, 2026
+  date            - Show countdown to GENESIZ 2026
+  register        - Open registration form
+  matrix          - Toggle matrix visual mode
+  clear           - Clear the terminal
+  exit            - Close terminal
           `.trim(),
         });
         break;
@@ -87,7 +87,7 @@ AVAILABLE COMMAND DIRECTIVES:
       case 'discord':
         newHistory.push({
           type: 'success',
-          text: 'OFFICIAL DISCORD HQ: https://discord.gg/RUGtbSYUHb\n(Connect for 4-day CipherQuest intelligence releases, schedules, and operations)',
+          text: 'OFFICIAL DISCORD: https://discord.gg/RUGtbSYUHb\n(Join for CipherQuest hints, live schedules, and updates)',
         });
         window.open('https://discord.gg/RUGtbSYUHb', '_blank');
         break;
@@ -97,24 +97,24 @@ AVAILABLE COMMAND DIRECTIVES:
         newHistory.push({
           type: 'output',
           text: `
-GENESIZ 2026 DISCIPLINE MATRIX:
-  1. CipherQuest          [CRYPTOGRAPHIC FORENSICS]   (4-Day Online Symposium)
-  2. AlgoArena            [ALGORITHMIC ENGINEERING]   (ICPC Benchmark)
-  3. Valorant Championship[TACTICAL FPS ESPORTS]      (LAN Stage)
-  4. Bedwarz              [MINECRAFT SQUAD TACTICS]   (4v4 LAN)
-  5. Brainbyte            [TECHNICAL SYMPOSIUM QUIZ]  (Live Stage Buzzer)
-  6. AppForge             [MOBILE SYSTEMS SPRINT]     (6h Hackathon)
-  7. WebX                 [WEB ARCHITECTURE SPRINT]   (6h Hackathon)
-  8. Surprise?!?!?!!      [CONFIDENTIAL WILDCARD]     (Live Stage)
+GENESIZ 2026 EVENTS:
+  1. CipherQuest          [CRYPTIC HUNT]          (4-Day Online Event)
+  2. AlgoArena            [CODING COMPETITION]    (ICPC Style)
+  3. Valorant Championship[FPS ESPORTS]           (5v5 LAN)
+  4. Bedwarz              [MINECRAFT 4v4]         (LAN)
+  5. Brainbyte            [LIVE QUIZ]             (Stage Buzzer)
+  6. AppForge             [APP BUILDING]          (6h Sprint)
+  7. WebX                 [WEBSITE BUILDING]      (6h Sprint)
+  8. Surprise?!?!?!!      [SECRET EVENT]          (Live Stage)
 
-Type "event <name>" to inspect detailed specifications.
+Type "event <name>" to see full details.
           `.trim(),
         });
         break;
 
       case 'event': {
         if (!arg) {
-          newHistory.push({ type: 'error', text: 'ERROR: Specify discipline identifier. Example: "event cipherquest"' });
+          newHistory.push({ type: 'error', text: 'ERROR: Please specify an event name. Example: "event cipherquest"' });
           break;
         }
         const match = EVENTS_DATA.find(
@@ -124,16 +124,16 @@ Type "event <name>" to inspect detailed specifications.
           newHistory.push({
             type: 'success',
             text: `
-[DISCIPLINE: ${match.name.toUpperCase()}]
+[EVENT: ${match.name.toUpperCase()}]
 Category:    ${match.category}
 Format:      ${match.format} | ${match.duration}
-Delegation:  ${match.teamSize}
+Team Size:   ${match.teamSize}
 Venue:       ${match.venue}
 Description: ${match.fullDesc}
             `.trim(),
           });
         } else {
-          newHistory.push({ type: 'error', text: `ERROR: Discipline "${arg}" not found in database.` });
+          newHistory.push({ type: 'error', text: `ERROR: Event "${arg}" not found.` });
         }
         break;
       }
@@ -144,11 +144,11 @@ Description: ${match.fullDesc}
           type: 'success',
           text: `
 ======================================================================
-  ARCHITECTURAL PROFILE: VALENITE ELECTRION
+  ABOUT: VALENITE ELECTRION
 ======================================================================
-  Founding Architect & Visionary of GENESIZ 2026.
-  Engineered and structured the entire symposium foundation to provide
-  the premier technological and competitive arena for delegates.
+  Founder & Creator of GENESIZ 2026.
+  Built and organized the entire event from the ground up to bring
+  students together through technology and competition.
 ======================================================================
           `.trim(),
         });
@@ -160,7 +160,7 @@ Description: ${match.fullDesc}
         const days = Math.floor((target - now) / (1000 * 60 * 60 * 24));
         newHistory.push({
           type: 'output',
-          text: `SYMPOSIUM TIMESTAMP: October 5, 2026 @ 09:00 AM IST\nCOUNTDOWN TELEMETRY: ${days} DAYS UNTIL GENESIZ CONVOCATION`,
+          text: `EVENT DATE: October 5, 2026 @ 09:00 AM IST\nCOUNTDOWN: ${days} DAYS UNTIL GENESIZ 2026`,
         });
         break;
       }
@@ -169,18 +169,18 @@ Description: ${match.fullDesc}
         newHistory.push({
           type: 'output',
           text: `
-OCTOBER 5, 2026 TIMELINE:
-  08:00 AM - Delegate Accreditation & Verification
-  09:00 AM - Inaugural Address (Valenite Electrion Keynote)
-  09:00 AM - CipherQuest 4-Day Symposium Commences on Discord
-  09:30 AM - AppForge & WebX Engineering Hackathons Kickoff
-  09:45 AM - Valorant Championship Swiss Qualifying
-  10:30 AM - AlgoArena Algorithmic Engineering Trial
-  11:00 AM - Bedwarz Tactical Arena Showdown
-  02:00 PM - Brainbyte High-Velocity Stage Quiz
-  04:00 PM - Surprise?!?!?!! Confidential Arena
-  04:30 PM - Valorant Championship Grand Finals Series
-  07:30 PM - Grand Awards Convocation & Closing Ceremony
+OCTOBER 5, 2026 SCHEDULE:
+  08:00 AM - Check-in & Verification
+  09:00 AM - Opening Speech (Valenite Electrion)
+  09:00 AM - CipherQuest 4-Day Hunt Starts (on Discord)
+  09:30 AM - AppForge & WebX Sprint Begins
+  09:45 AM - Valorant Swiss Qualifier Rounds
+  10:30 AM - AlgoArena Coding Round
+  11:00 AM - Bedwarz 4v4 Minecraft Showdown
+  02:00 PM - Brainbyte Live Quiz
+  04:00 PM - Surprise?!?!?!! Secret Event
+  04:30 PM - Valorant Grand Final
+  07:30 PM - Prize Ceremony & Closing
           `.trim(),
         });
         break;
