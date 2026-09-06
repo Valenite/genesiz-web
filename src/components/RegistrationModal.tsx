@@ -189,7 +189,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto bg-black/85 backdrop-blur-md animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-6 overflow-y-auto bg-black/85 backdrop-blur-md animate-fadeIn">
       
       {/* Backdrop */}
       <div 
@@ -201,18 +201,18 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
       />
 
       {/* Modal Container */}
-      <div className="relative w-full max-w-2xl bg-[#0a0a0f] border border-violet-900/40 rounded-3xl shadow-2xl overflow-hidden z-10 max-h-[92vh] flex flex-col font-sans">
+      <div className="relative w-full max-w-2xl bg-[#0a0a0f] border border-violet-900/40 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden z-10 max-h-[94vh] flex flex-col font-sans">
         
         {/* Header */}
-        <div className="px-6 sm:px-8 py-5 border-b border-zinc-800/80 flex items-center justify-between bg-zinc-950/80">
+        <div className="px-4 sm:px-8 py-3.5 sm:py-5 border-b border-zinc-800/80 flex items-center justify-between bg-zinc-950/80">
           <div>
             <div className="flex items-center gap-2">
-              <ShieldCheck className="w-5 h-5 text-violet-400" />
-              <h2 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
+              <ShieldCheck className="w-4 sm:w-5 h-4 sm:h-5 text-violet-400" />
+              <h2 className="text-lg sm:text-2xl font-extrabold text-white tracking-tight">
                 Team Registration Portal
               </h2>
             </div>
-            <p className="text-xs font-mono text-zinc-400 mt-0.5">
+            <p className="text-[10px] sm:text-xs font-mono text-zinc-400 mt-0.5">
               GENESIZ 2026 - Official Event Registration
             </p>
           </div>
@@ -222,14 +222,14 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
               soundFX.playClick();
               onClose();
             }}
-            className="p-2 rounded-full text-zinc-400 hover:text-white hover:bg-zinc-900 transition-colors cursor-pointer"
+            className="p-1.5 sm:p-2 rounded-full text-zinc-400 hover:text-white hover:bg-zinc-900 transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Mode Switch Tabs */}
-        <div className="grid grid-cols-2 p-2 bg-zinc-950/90 border-b border-zinc-800/80">
+        <div className="grid grid-cols-2 p-1.5 sm:p-2 bg-zinc-950/90 border-b border-zinc-800/80 gap-1">
           <button
             type="button"
             onClick={() => {
@@ -237,14 +237,14 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
               setRegMode('new');
               setErrorMessage(null);
             }}
-            className={`py-2.5 rounded-xl text-xs font-mono font-bold flex items-center justify-center gap-2 transition-all cursor-pointer ${
+            className={`py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-mono font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
               regMode === 'new'
                 ? 'bg-violet-600 text-white shadow-md'
                 : 'text-zinc-400 hover:text-white hover:bg-zinc-900'
             }`}
           >
-            <UserPlus className="w-4 h-4" />
-            <span>1. Register / Update Events</span>
+            <UserPlus className="w-3.5 h-3.5 shrink-0" />
+            <span className="truncate">1. Register / Update</span>
           </button>
 
           <button
@@ -285,7 +285,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
 
         {/* Form Body: MODE 1 (New Team / Solo) */}
         {regMode === 'new' && (
-          <form onSubmit={handleRegisterNewTeam} className="p-6 sm:p-8 overflow-y-auto space-y-6 flex-1 text-zinc-300 text-sm">
+          <form onSubmit={handleRegisterNewTeam} className="p-4 sm:p-8 overflow-y-auto space-y-4 sm:space-y-6 flex-1 text-zinc-300 text-xs sm:text-sm">
             
             {/* Primary Details */}
             <div className="space-y-4">

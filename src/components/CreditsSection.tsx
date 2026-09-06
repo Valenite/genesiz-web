@@ -73,7 +73,7 @@ export const CreditsSection: React.FC = () => {
       <RevealOnScroll delayMs={150}>
         <TiltCard 
           onMouseEnter={() => soundFX.playHover()}
-          className="p-8 sm:p-12 rounded-3xl bg-[#09090e] border border-white/10 hover:border-zinc-700 transition-all duration-300 relative overflow-hidden shadow-xl group cursor-pointer"
+          className="p-5 sm:p-12 rounded-3xl bg-[#09090e] border border-white/10 hover:border-zinc-700 transition-all duration-300 relative overflow-hidden shadow-xl group cursor-pointer"
         >
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 relative z-10">
             

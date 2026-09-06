@@ -170,6 +170,19 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           <div className="pt-2 border-t border-zinc-800 flex flex-col gap-2">
+            <a
+              href="https://drive.google.com/drive/folders/1gsJJE2nlQsWQN0oxMUmSzdesrvnAlUf5?usp=sharing"
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => {
+                soundFX.playClick();
+                setIsMobileMenuOpen(false);
+              }}
+              className="w-full py-2.5 rounded-xl bg-violet-950/80 border border-violet-800/80 text-violet-200 font-mono text-xs flex items-center justify-center gap-2"
+            >
+              <FileText className="w-4 h-4 text-violet-400" />
+              DOWNLOAD OFFICIAL BROCHURE
+            </a>
             <button
               onClick={() => {
                 soundFX.playWarp();
@@ -187,9 +200,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                 setIsMobileMenuOpen(false);
                 onOpenRegister();
               }}
-              className="w-full py-2.5 rounded-xl bg-white text-black font-bold text-xs flex items-center justify-center gap-2 shadow-lg"
+              className="w-full py-3 rounded-xl bg-white text-black font-bold text-xs font-mono uppercase tracking-wider flex items-center justify-center gap-2 shadow-md"
             >
-              REGISTER NOW
+              <span>REGISTER NOW</span>
+              <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>

@@ -108,27 +108,27 @@ export const EventModal: React.FC<EventModalProps> = ({ event, onClose, onRegist
         </div>
 
         {/* Quick Meta Row */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 px-6 sm:px-8 py-3 bg-[#0d0d12] border-b border-zinc-800/80 text-xs font-mono text-zinc-400">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4 px-4 sm:px-8 py-3 bg-[#0d0d12] border-b border-zinc-800/80 text-xs font-mono text-zinc-400">
           <div>
-            <div className="text-[10px] text-zinc-500 uppercase">FORMAT</div>
-            <div className="text-zinc-200 font-semibold mt-0.5">{event.format}</div>
+            <div className="text-[9px] sm:text-[10px] text-zinc-500 uppercase">FORMAT</div>
+            <div className="text-zinc-200 font-semibold mt-0.5 text-[11px] sm:text-xs">{event.format}</div>
           </div>
           <div>
-            <div className="text-[10px] text-zinc-500 uppercase">DURATION</div>
-            <div className="text-violet-300 font-semibold mt-0.5">{event.duration}</div>
+            <div className="text-[9px] sm:text-[10px] text-zinc-500 uppercase">DURATION</div>
+            <div className="text-violet-300 font-semibold mt-0.5 text-[11px] sm:text-xs">{event.duration}</div>
           </div>
           <div>
-            <div className="text-[10px] text-zinc-500 uppercase">DELEGATION</div>
-            <div className="text-zinc-200 font-semibold mt-0.5">{event.teamSize}</div>
+            <div className="text-[9px] sm:text-[10px] text-zinc-500 uppercase">DELEGATION</div>
+            <div className="text-zinc-200 font-semibold mt-0.5 text-[11px] sm:text-xs">{event.teamSize}</div>
           </div>
           <div>
-            <div className="text-[10px] text-zinc-500 uppercase">VENUE / PORTAL</div>
-            <div className="text-zinc-200 font-semibold mt-0.5 truncate">{event.venue}</div>
+            <div className="text-[9px] sm:text-[10px] text-zinc-500 uppercase">VENUE / PORTAL</div>
+            <div className="text-zinc-200 font-semibold mt-0.5 truncate text-[11px] sm:text-xs">{event.venue}</div>
           </div>
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex items-center gap-1.5 px-6 sm:px-8 py-3 border-b border-zinc-800/80 overflow-x-auto scrollbar-none bg-zinc-950/60">
+        <div className="flex items-center gap-1.5 px-4 sm:px-8 py-2.5 sm:py-3 border-b border-zinc-800/80 overflow-x-auto scrollbar-none bg-zinc-950/60">
           {tabs.map((tab) => (
             <button
               key={tab.id}

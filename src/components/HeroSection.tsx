@@ -67,16 +67,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
         {/* Big Premium GENESIZ Title */}
         <RevealOnScroll delayMs={300}>
           <div className="space-y-3 -mt-2">
-            <h1 className="font-extrabold text-5xl sm:text-7xl md:text-8xl tracking-tighter uppercase select-none text-gradient-silver leading-none">
+            <h1 className="font-extrabold text-4xl sm:text-7xl md:text-8xl tracking-tighter uppercase select-none text-gradient-silver leading-none">
               GENESIZ
             </h1>
 
-            <p className="max-w-2xl mx-auto text-sm sm:text-base text-zinc-400 font-normal leading-relaxed pt-1">
+            <p className="max-w-2xl mx-auto text-xs sm:text-base text-zinc-400 font-normal leading-relaxed pt-1 px-2">
               The premier student technology summit bringing together <strong className="text-white font-semibold">competitive coding</strong>, <strong className="text-white font-semibold">cryptographic hunts</strong>, <strong className="text-white font-semibold">esports</strong>, and <strong className="text-white font-semibold">hackathons</strong>.
             </p>
 
             <div className="pt-1">
-              <span className="inline-block px-3.5 py-1.5 rounded-full bg-zinc-950/90 border border-white/10 text-[11px] font-mono text-zinc-400 hover:border-zinc-700 transition-colors">
+              <span className="inline-block px-3 py-1.5 rounded-full bg-zinc-950/90 border border-white/10 text-[10px] sm:text-[11px] font-mono text-zinc-400 hover:border-zinc-700 transition-colors">
                 Conceived & Powered by <strong className="text-white font-semibold">VALENITE ELECTRION</strong> <span className="text-zinc-500 font-normal">(Bhavya Aggarwal)</span>
               </span>
             </div>
@@ -85,24 +85,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
 
         {/* Countdown Timer with Emerging Portal Animation */}
         <RevealOnScroll variant="zoom-in" delayMs={400}>
-          <div className="py-2 flex justify-center">
-            <div className="inline-flex items-center gap-3 sm:gap-6 px-6 sm:px-8 py-3.5 rounded-2xl bg-zinc-950/90 border border-white/15 backdrop-blur-xl shadow-2xl animate-portal">
+          <div className="py-2 flex justify-center w-full">
+            <div className="inline-flex items-center gap-2.5 sm:gap-6 px-3.5 sm:px-8 py-3.5 rounded-2xl bg-zinc-950/90 border border-white/15 backdrop-blur-xl shadow-2xl animate-portal max-w-full overflow-x-auto scrollbar-none">
               {[
                 { label: 'DAYS', val: timeLeft.days },
                 { label: 'HOURS', val: timeLeft.hours },
                 { label: 'MINUTES', val: timeLeft.minutes },
                 { label: 'SECONDS', val: timeLeft.seconds },
               ].map((item, idx) => (
-                <div key={item.label} className="flex items-center gap-3 sm:gap-6">
-                  <div className="text-center">
-                    <div className="font-mono font-bold text-2xl sm:text-3xl text-white tracking-tight hover:scale-110 transition-transform">
+                <div key={item.label} className="flex items-center gap-2.5 sm:gap-6">
+                  <div className="text-center min-w-[50px] sm:min-w-0">
+                    <div className="font-mono font-bold text-xl sm:text-3xl text-white tracking-tight hover:scale-110 transition-transform">
                       {String(item.val).padStart(2, '0')}
                     </div>
-                    <div className="text-[9px] font-mono text-zinc-500 tracking-widest mt-0.5 font-semibold">
+                    <div className="text-[8px] sm:text-[9px] font-mono text-zinc-500 tracking-widest mt-0.5 font-semibold">
                       {item.label}
                     </div>
                   </div>
-                  {idx < 3 && <span className="text-zinc-700 text-xl font-mono hidden sm:inline">:</span>}
+                  {idx < 3 && <span className="text-zinc-700 text-sm sm:text-xl font-mono">:</span>}
                 </div>
               ))}
             </div>

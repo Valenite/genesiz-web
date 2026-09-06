@@ -69,7 +69,7 @@ export const ScheduleSection: React.FC = () => {
                 setHoveredIdx(idx);
               }}
               onMouseLeave={() => setHoveredIdx(null)}
-              className={`p-6 rounded-3xl bg-[#0a0a0e] border transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group relative overflow-hidden ${
+              className={`p-4 sm:p-6 rounded-3xl bg-[#0a0a0e] border transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 group relative overflow-hidden ${
                 item.highlight
                   ? 'border-white/25 bg-zinc-900/70 shadow-lg'
                   : 'border-zinc-800/80 hover:border-zinc-600 hover:bg-zinc-900/40'
