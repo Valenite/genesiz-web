@@ -1,4 +1,8 @@
-import { syncRegistrationToSupabase } from './supabaseClient';
+import { 
+  syncRegistrationToSupabase, 
+  fetchTeamFromSupabase, 
+  fetchTeamByOperativeIdFromSupabase 
+} from './supabaseClient';
 
 export interface TeamMemberRecord {
   name: string;
@@ -122,43 +126,108 @@ export const registerNewTeam = (data: {
   return recordToSave;
 };
 
-export const joinExistingTeam = (data: {
+export const joinExistingTeam = async (data: {
   memberName: string;
   memberEmail: string;
   leaderEmail: string;
   teamPassword: string;
   discordTag?: string;
-}): RegistrationRecord => {
-  const records = getRegistrations();
-  const searchLeaderEmail = data.leaderEmail.trim().toLowerCase();
+}): Promise<RegistrationRecord> => {
+  const searchLeaderInput = data.leaderEmail.trim();
   const searchPass = data.teamPassword.trim();
+  const memberEmailClean = data.memberEmail.trim().toLowerCase();
+  const newMember: TeamMemberRecord = {
+    name: data.memberName.trim(),
+    email: memberEmailClean,
+    discordTag: data.discordTag?.trim(),
+    joinedAt: new Date().toISOString(),
+  };
 
-  const targetIndex = records.findIndex(
-    (r) => r.leaderEmail === searchLeaderEmail && r.teamPassword === searchPass
+  // Step 1: Check Cloud Supabase Database first
+  let cloudTeam = await fetchTeamFromSupabase(searchLeaderInput, searchPass);
+
+  // If not found by email, check if input was an Operative ID (e.g. GSZ-2026-XXXX)
+  if (!cloudTeam && (searchLeaderInput.toUpperCase().startsWith('GSZ-') || searchLeaderInput.length >= 8)) {
+    cloudTeam = await fetchTeamByOperativeIdFromSupabase(searchLeaderInput, searchPass);
+  }
+
+  const localRecords = getRegistrations();
+
+  if (cloudTeam) {
+    const existingMembers: TeamMemberRecord[] = Array.isArray(cloudTeam.members) ? cloudTeam.members : [];
+    const alreadyJoined = existingMembers.some((m) => m.email.toLowerCase() === memberEmailClean);
+
+    const updatedMembers = alreadyJoined 
+      ? existingMembers 
+      : [...existingMembers, newMember];
+
+    const teamRecord: RegistrationRecord = {
+      id: cloudTeam.id,
+      leaderName: cloudTeam.leader_name,
+      leaderEmail: cloudTeam.leader_email,
+      teamPassword: cloudTeam.team_password,
+      teamName: cloudTeam.team_name,
+      institution: cloudTeam.institution,
+      discordTag: cloudTeam.discord_tag,
+      selectedEvents: cloudTeam.selected_events || [],
+      selectedEventNames: cloudTeam.selected_event_names || [],
+      members: updatedMembers,
+      createdAt: cloudTeam.created_at,
+    };
+
+    // Cache updated record locally
+    const existingLocalIdx = localRecords.findIndex(
+      (r) => r.id === teamRecord.id || (r.leaderEmail.toLowerCase() === teamRecord.leaderEmail.toLowerCase() && r.teamPassword === teamRecord.teamPassword)
+    );
+
+    if (existingLocalIdx !== -1) {
+      localRecords[existingLocalIdx] = teamRecord;
+    } else {
+      localRecords.push(teamRecord);
+    }
+    saveRegistrations(localRecords);
+
+    // Sync back to Supabase if a new member joined
+    if (!alreadyJoined) {
+      await syncRegistrationToSupabase({
+        id: teamRecord.id,
+        leader_name: teamRecord.leaderName,
+        leader_email: teamRecord.leaderEmail,
+        team_password: teamRecord.teamPassword,
+        team_name: teamRecord.teamName,
+        institution: teamRecord.institution,
+        discord_tag: teamRecord.discordTag,
+        selected_events: teamRecord.selectedEvents,
+        selected_event_names: teamRecord.selectedEventNames,
+        members: teamRecord.members,
+        created_at: teamRecord.createdAt,
+      });
+    }
+
+    return teamRecord;
+  }
+
+  // Step 2: Fallback to LocalStorage if Supabase offline or team created offline
+  const targetIndex = localRecords.findIndex(
+    (r) =>
+      (r.leaderEmail.toLowerCase() === searchLeaderInput.toLowerCase() || r.id.toLowerCase() === searchLeaderInput.toLowerCase()) &&
+      r.teamPassword === searchPass
   );
 
   if (targetIndex === -1) {
-    throw new Error('No team found matching the Team Leader Email and Team Password provided.');
+    throw new Error('No team found matching the Team Leader Email / Operative Code and Password provided. Please double-check with your Team Captain.');
   }
 
-  const team = records[targetIndex];
+  const team = localRecords[targetIndex];
+  const alreadyJoinedLocal = team.members.some((m) => m.email.toLowerCase() === memberEmailClean);
 
-  // Prevent duplicate member email in team
-  const memberEmailClean = data.memberEmail.trim().toLowerCase();
-  const alreadyJoined = team.members.some((m) => m.email.toLowerCase() === memberEmailClean);
-
-  if (!alreadyJoined) {
-    team.members.push({
-      name: data.memberName.trim(),
-      email: memberEmailClean,
-      discordTag: data.discordTag?.trim(),
-      joinedAt: new Date().toISOString(),
-    });
-    records[targetIndex] = team;
-    saveRegistrations(records);
+  if (!alreadyJoinedLocal) {
+    team.members.push(newMember);
+    localRecords[targetIndex] = team;
+    saveRegistrations(localRecords);
   }
 
-  // Sync updated team roster to Cloud Supabase for Discord Bot validation
+  // Sync to Cloud Supabase
   syncRegistrationToSupabase({
     id: team.id,
     leader_name: team.leaderName,

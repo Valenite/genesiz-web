@@ -66,6 +66,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
 
   const [passData, setPassData] = useState<PassData | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const toggleEventSelection = (eventId: string) => {
     soundFX.playClick();
@@ -133,17 +134,19 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
     }
   };
 
-  const handleJoinExistingTeam = (e: React.FormEvent) => {
+  const handleJoinExistingTeam = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage(null);
 
     if (!memberName.trim() || !memberEmail.trim() || !joinLeaderEmail.trim() || !joinPassword.trim()) {
-      setErrorMessage('Please fill in your name, email, Team Leader Email, and Team Security Password.');
+      setErrorMessage('Please fill in your name, email, Team Leader Email (or Operative ID), and Team Security Password.');
       return;
     }
 
+    setIsSubmitting(true);
+
     try {
-      const record = joinExistingTeam({
+      const record = await joinExistingTeam({
         memberName: memberName.trim(),
         memberEmail: memberEmail.trim(),
         leaderEmail: joinLeaderEmail.trim(),
@@ -174,7 +177,9 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
         registrationDate: new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }),
       });
     } catch (err: any) {
-      setErrorMessage(err.message || 'No registered team found matching that Captain Email and Password.');
+      setErrorMessage(err.message || 'No registered team found matching that Captain Email / Operative ID and Password.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -481,11 +486,11 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div>
-                  <label className="block text-xs font-mono text-zinc-400 mb-1.5">Team Captain Email *</label>
+                  <label className="block text-xs font-mono text-zinc-400 mb-1.5">Team Captain Email / Operative ID *</label>
                   <input
-                    type="email"
+                    type="text"
                     required
-                    placeholder="captain@institution.edu"
+                    placeholder="captain@institution.edu or GSZ-2026-XXXX"
                     value={joinLeaderEmail}
                     onChange={(e) => setJoinLeaderEmail(e.target.value)}
                     className="w-full px-4 py-2.5 bg-zinc-950 border border-emerald-900/60 rounded-xl text-xs text-white focus:outline-none focus:border-emerald-500 transition-colors font-mono"
@@ -510,10 +515,11 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
             <div className="pt-4 border-t border-zinc-800/80">
               <button
                 type="submit"
+                disabled={isSubmitting}
                 onMouseEnter={() => soundFX.playHover()}
-                className="w-full py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-xs tracking-wider uppercase transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer"
+                className="w-full py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 disabled:bg-emerald-800 text-black font-bold text-xs tracking-wider uppercase transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer disabled:cursor-not-allowed"
               >
-                <span>Verify Credentials & Join Team Pass</span>
+                <span>{isSubmitting ? 'Verifying Credentials...' : 'Verify Credentials & Join Team Pass'}</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>

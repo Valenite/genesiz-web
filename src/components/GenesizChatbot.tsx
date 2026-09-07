@@ -113,8 +113,16 @@ export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({
     };
   };
 
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, []);
+
   const handleSendMessage = (textToSend: string) => {
-    if (!textToSend.trim()) return;
+    if (!textToSend.trim() || isTyping) return;
 
     soundFX.playKey();
     const userMsg: Message = {
@@ -124,11 +132,13 @@ export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({
       timestamp: 'Just now',
     };
 
-    setMessages((prev) => [...prev, userMsg]);
+    setMessages((prev) => [...prev.slice(-30), userMsg]);
     setInputVal('');
     setIsTyping(true);
 
-    setTimeout(() => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+
+    timeoutRef.current = setTimeout(() => {
       const { reply, isSecret } = generateBotReply(textToSend);
       setIsTyping(false);
       soundFX.playSuccess();
@@ -141,16 +151,15 @@ export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({
         isSecretUnlock: isSecret,
       };
 
-      setMessages((prev) => [...prev, botMsg]);
+      setMessages((prev) => [...prev.slice(-30), botMsg]);
 
-      // If secret command was triggered, launch the Cryptographic Sandbox modal!
       if (isSecret) {
         setTimeout(() => {
           soundFX.playWarp();
           onLaunchCipherSandbox();
         }, 1200);
       }
-    }, 600);
+    }, 400);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -233,8 +242,9 @@ export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({
           {quickPrompts.map((prompt) => (
             <button
               key={prompt}
+              disabled={isTyping}
               onClick={() => handleSendMessage(prompt)}
-              className="px-3 py-1 rounded-full bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-[10px] font-mono text-zinc-300 hover:text-white whitespace-nowrap cursor-pointer transition-colors"
+              className="px-3 py-1 rounded-full bg-zinc-900 hover:bg-zinc-800 disabled:opacity-50 border border-zinc-800 text-[10px] font-mono text-zinc-300 hover:text-white whitespace-nowrap cursor-pointer disabled:cursor-not-allowed transition-colors"
             >
               {prompt}
             </button>
@@ -246,15 +256,17 @@ export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({
           <input
             ref={inputRef}
             type="text"
+            disabled={isTyping}
             value={inputVal}
             onChange={(e) => setInputVal(e.target.value)}
-            placeholder="Ask anything about GENESIZ 2026..."
-            className="flex-1 px-4 py-2.5 bg-zinc-900 border border-zinc-800 rounded-full text-xs text-white focus:outline-none focus:border-violet-500 placeholder-zinc-500 transition-colors"
+            placeholder={isTyping ? "AI Concierge is processing..." : "Ask anything about GENESIZ 2026..."}
+            className="flex-1 px-4 py-2.5 bg-zinc-900 border border-zinc-800 rounded-full text-xs text-white focus:outline-none focus:border-violet-500 disabled:opacity-50 placeholder-zinc-500 transition-colors"
           />
           <button
             type="submit"
+            disabled={isTyping || !inputVal.trim()}
             onMouseEnter={() => soundFX.playHover()}
-            className="p-2.5 rounded-full bg-white hover:bg-zinc-200 text-black transition-colors cursor-pointer shadow-md"
+            className="p-2.5 rounded-full bg-white hover:bg-zinc-200 disabled:bg-zinc-700 disabled:opacity-50 text-black transition-colors cursor-pointer disabled:cursor-not-allowed shadow-md"
             title="Send Message"
           >
             <Send className="w-4 h-4" />

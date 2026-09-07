@@ -50,3 +50,70 @@ export async function syncRegistrationToSupabase(payload: SupabaseRegistrationPa
     return false;
   }
 }
+
+export async function fetchTeamFromSupabase(
+  leaderEmail: string, 
+  teamPassword: string
+): Promise<SupabaseRegistrationPayload | null> {
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return null;
+
+  try {
+    const cleanEmail = leaderEmail.trim().toLowerCase();
+    const cleanPass = teamPassword.trim();
+    
+    const endpoint = `${SUPABASE_URL.replace(/\/$/, '')}/rest/v1/registrations?leader_email=ilike.${encodeURIComponent(cleanEmail)}&team_password=eq.${encodeURIComponent(cleanPass)}&select=*`;
+    
+    const response = await fetch(endpoint, {
+      method: 'GET',
+      headers: {
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        'Content-Type': 'application/json'
+      }
+    });
+
+    if (!response.ok) {
+      console.error('[GENESIZ Sync] Failed to query Supabase team:', await response.text());
+      return null;
+    }
+
+    const data: SupabaseRegistrationPayload[] = await response.json();
+    if (data && data.length > 0) {
+      return data[0];
+    }
+    return null;
+  } catch (err) {
+    console.error('[GENESIZ Sync] Error fetching team from Supabase:', err);
+    return null;
+  }
+}
+
+export async function fetchTeamByOperativeIdFromSupabase(
+  operativeId: string,
+  teamPassword: string
+): Promise<SupabaseRegistrationPayload | null> {
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return null;
+
+  try {
+    const cleanId = operativeId.trim().toUpperCase();
+    const cleanPass = teamPassword.trim();
+
+    const endpoint = `${SUPABASE_URL.replace(/\/$/, '')}/rest/v1/registrations?id=eq.${encodeURIComponent(cleanId)}&team_password=eq.${encodeURIComponent(cleanPass)}&select=*`;
+
+    const response = await fetch(endpoint, {
+      method: 'GET',
+      headers: {
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        'Content-Type': 'application/json'
+      }
+    });
+
+    if (!response.ok) return null;
+    const data: SupabaseRegistrationPayload[] = await response.json();
+    return data && data.length > 0 ? data[0] : null;
+  } catch (err) {
+    console.error('[GENESIZ Sync] Error fetching team by ID from Supabase:', err);
+    return null;
+  }
+}
