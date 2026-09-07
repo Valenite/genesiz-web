@@ -46,6 +46,7 @@ export const CreditsSection: React.FC = () => {
   const coreMembers = [
     { name: 'Bhavya', role: 'President' },
     { name: 'Pratyaksh', role: 'President' },
+    { name: 'Aarav Sharma', role: 'Vice President' },
     { name: 'Om', role: 'Vice President' },
   ];
 
@@ -125,7 +126,7 @@ export const CreditsSection: React.FC = () => {
             <span>CORE EXECUTIVE COMMITTEE</span>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {coreMembers.map((member, idx) => (
               <RevealOnScroll key={member.name + idx} variant="3d-dock" delayMs={idx * 100}>
                 <TiltCard 
