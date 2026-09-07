@@ -90,7 +90,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Official Brochure Link */}
           <a
-            href="/GENESIZ_OFFICIAL_BROCHURE.pdf"
+            href="/brochure.pdf"
             target="_blank"
             rel="noreferrer"
             onClick={() => soundFX.playClick()}
@@ -171,7 +171,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           <div className="pt-2 border-t border-zinc-800 flex flex-col gap-2">
             <a
-              href="/GENESIZ_OFFICIAL_BROCHURE.pdf"
+              href="/brochure.pdf"
               target="_blank"
               rel="noreferrer"
               onClick={() => {
