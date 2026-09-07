@@ -1,7 +1,6 @@
 import { 
   syncRegistrationToSupabase, 
-  fetchTeamFromSupabase, 
-  fetchTeamByOperativeIdFromSupabase 
+  fetchTeamFromSupabase 
 } from './supabaseClient';
 
 export interface TeamMemberRecord {
@@ -143,13 +142,8 @@ export const joinExistingTeam = async (data: {
     joinedAt: new Date().toISOString(),
   };
 
-  // Step 1: Check Cloud Supabase Database first
-  let cloudTeam = await fetchTeamFromSupabase(searchLeaderInput, searchPass);
-
-  // If not found by email, check if input was an Operative ID (e.g. GSZ-2026-XXXX)
-  if (!cloudTeam && (searchLeaderInput.toUpperCase().startsWith('GSZ-') || searchLeaderInput.length >= 8)) {
-    cloudTeam = await fetchTeamByOperativeIdFromSupabase(searchLeaderInput, searchPass);
-  }
+  // Step 1: Check Cloud Supabase Database first (Fast Single Query)
+  const cloudTeam = await fetchTeamFromSupabase(searchLeaderInput, searchPass);
 
   const localRecords = getRegistrations();
 

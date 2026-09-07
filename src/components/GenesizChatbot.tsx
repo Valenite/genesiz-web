@@ -157,9 +157,9 @@ export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({
         setTimeout(() => {
           soundFX.playWarp();
           onLaunchCipherSandbox();
-        }, 1200);
+        }, 400);
       }
-    }, 400);
+    }, 50);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
