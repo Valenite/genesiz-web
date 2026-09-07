@@ -64,7 +64,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenChatbot, onOpenRegister, o
               <ul className="space-y-1 text-zinc-400">
                 <li>
                   <a 
-                    href="https://drive.google.com/drive/folders/1gsJJE2nlQsWQN0oxMUmSzdesrvnAlUf5?usp=sharing" 
+                    href="/GENESIZ_OFFICIAL_BROCHURE.pdf" 
                     target="_blank" 
                     rel="noreferrer" 
                     className="hover:text-white flex items-center gap-1 text-violet-300"

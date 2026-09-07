@@ -90,7 +90,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Official Brochure Link */}
           <a
-            href="https://drive.google.com/drive/folders/1gsJJE2nlQsWQN0oxMUmSzdesrvnAlUf5?usp=sharing"
+            href="/GENESIZ_OFFICIAL_BROCHURE.pdf"
             target="_blank"
             rel="noreferrer"
             onClick={() => soundFX.playClick()}
@@ -171,7 +171,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           <div className="pt-2 border-t border-zinc-800 flex flex-col gap-2">
             <a
-              href="https://drive.google.com/drive/folders/1gsJJE2nlQsWQN0oxMUmSzdesrvnAlUf5?usp=sharing"
+              href="/GENESIZ_OFFICIAL_BROCHURE.pdf"
               target="_blank"
               rel="noreferrer"
               onClick={() => {

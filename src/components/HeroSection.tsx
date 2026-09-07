@@ -137,7 +137,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
             </a>
 
             <a
-              href="https://drive.google.com/drive/folders/1gsJJE2nlQsWQN0oxMUmSzdesrvnAlUf5?usp=sharing"
+              href="/GENESIZ_OFFICIAL_BROCHURE.pdf"
               target="_blank"
               rel="noreferrer"
               onClick={() => soundFX.playClick()}
@@ -145,7 +145,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
               className="px-5 py-3 rounded-full bg-violet-950/70 hover:bg-violet-900/90 text-violet-200 hover:text-white text-xs sm:text-sm font-semibold border border-violet-800/70 transition-all flex items-center gap-2 cursor-pointer shadow-md hover:scale-105 active:scale-95"
             >
               <FileText className="w-4 h-4 text-violet-400" />
-              <span>Official Brochure</span>
+              <span>Official Brochure (PDF)</span>
             </a>
 
             <a
