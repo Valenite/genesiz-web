@@ -119,6 +119,8 @@ export function UnderPressurePage() {
 }
 
 export function isCipherQuestPath() {
+  const pathname = window.location.pathname.replace(/\/$/, '');
+
   return [
     '/posterchild',
     '/eastofjava',
@@ -126,11 +128,13 @@ export function isCipherQuestPath() {
     '/maude',
     '/mayqueen',
     '/underpressure',
-  ].includes(window.location.pathname);
+  ].includes(pathname);
 }
 
 export function CipherQuestPage() {
-  switch (window.location.pathname) {
+  const pathname = window.location.pathname.replace(/\/$/, '');
+
+  switch (pathname) {
     case '/posterchild':
       return <PosterchildPage />;
     case '/eastofjava':
