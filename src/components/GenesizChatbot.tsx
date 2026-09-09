@@ -68,7 +68,11 @@ export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({
   }, [isOpen]);
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    try {
+      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    } catch {
+      // Fallback
+    }
   }, [messages, isTyping]);
 
   if (!isOpen) return null;
@@ -96,7 +100,7 @@ export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({
 
     if (lower.includes('event') || lower.includes('discipline') || lower.includes('competition') || lower.includes('what are')) {
       return {
-        reply: 'GENESIZ has 8 Events:\n1. CipherQuest (4-Day Cryptic Hunt)\n2. AlgoArena (Coding Competition)\n3. Valorant Championship (5v5)\n4. Bedwarz (4v4 Minecraft)\n5. Brainbyte (Live Quiz)\n6. AppForge (App Building)\n7. WebX (Website Building)\n8. Surprise?!?!?!! (Secret Event)',
+        reply: 'GENESIZ has 8 Events:\n1. CipherQuest (4-Day Cryptic Hunt)\n2. AlgoArena (Coding Competition)\n3. Valorant Championship (5v5)\n4. Bedwarz (4v4 Minecraft)\n5. Brainbyte (Live Quiz)\n6. AppForge (App Building)\n7. WebX (Website Building)\n8. Surprise?!?!?! (Secret Event)',
       };
     }
 
@@ -190,12 +194,18 @@ export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto bg-black/85 backdrop-blur-md animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto bg-black/80 backdrop-blur-sm animate-fadeIn">
       {/* Backdrop */}
-      <div className="fixed inset-0" onClick={onClose}></div>
+      <div
+        className="fixed inset-0"
+        onClick={() => {
+          soundFX.playClick();
+          onClose();
+        }}
+      />
 
       {/* Chatbot Window */}
-      <div className="relative w-full max-w-xl h-[580px] bg-[#0a0a0f] border border-violet-900/50 rounded-3xl shadow-2xl overflow-hidden z-10 flex flex-col">
+      <div className="relative w-full max-w-xl h-[580px] max-h-[90vh] bg-[#0a0a0f] border border-violet-900/50 rounded-3xl shadow-2xl overflow-hidden z-10 flex flex-col font-sans">
         
         {/* Chat Header */}
         <div className="px-6 py-4 bg-zinc-950/90 border-b border-zinc-800/80 flex items-center justify-between">
