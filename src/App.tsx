@@ -12,6 +12,7 @@ import { Footer } from './components/Footer';
 import { RegistrationModal } from './components/RegistrationModal';
 import { AdminVaultModal } from './components/AdminVaultModal';
 import { GenesizChatbot } from './components/GenesizChatbot';
+import { CipherQuestPage, isCipherQuestPath } from './components/CipherQuestPages';
 import type { EventDetail } from './data/eventsData';
 
 export function App() {
@@ -21,6 +22,10 @@ export function App() {
   const [isChatbotOpen, setIsChatbotOpen] = useState<boolean>(false);
   const [isCipherSandboxOpen, setIsCipherSandboxOpen] = useState<boolean>(false);
   const [isAdminVaultOpen, setIsAdminVaultOpen] = useState<boolean>(false);
+
+  if (isCipherQuestPath()) {
+    return <CipherQuestPage />;
+  }
 
   const handleOpenRegister = (eventId?: string) => {
     setRegisterInitialEventId(eventId);

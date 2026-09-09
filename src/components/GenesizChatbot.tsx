@@ -22,6 +22,17 @@ const SECRET_COMMANDS = [
   'anshika060613',
 ];
 
+const CIPHERQUEST_LEVEL_ONE_TRIGGERS = [
+  'cat',
+  'civet',
+  'luwak',
+  'changed names',
+  'old film',
+  'what did the cat become',
+];
+
+const CIPHERQUEST_LEVEL_ONE_REPLY = "Yesterday's fur still sings.\nUsually names do not survive quietly.\nSome old films kept the sound.\nUnder the later name, find the boy.\nForget the woman.";
+
 export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({
   isOpen,
   onClose,
@@ -37,6 +48,7 @@ export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({
   ]);
   const [inputVal, setInputVal] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+  const [hintBeggingCount, setHintBeggingCount] = useState(0);
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
@@ -70,6 +82,10 @@ export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({
         reply: '⚡ [SECURITY OVERRIDE DETECTED]\nAccess Granted: CipherQuest Sandbox Unlocked.\nStarting CipherQuest Level 0 Terminal...',
         isSecret: true,
       };
+    }
+
+    if (CIPHERQUEST_LEVEL_ONE_TRIGGERS.some((trigger) => lower.includes(trigger))) {
+      return { reply: CIPHERQUEST_LEVEL_ONE_REPLY };
     }
 
     if (lower.includes('cipherquest') || lower.includes('cryptic') || lower.includes('hunt') || lower.includes('4 day')) {
@@ -136,10 +152,16 @@ export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({
     setInputVal('');
     setIsTyping(true);
 
+    const isHintBegging = textToSend.toLowerCase().includes('hint');
+    const nextHintBeggingCount = isHintBegging ? hintBeggingCount + 1 : 0;
+    setHintBeggingCount(nextHintBeggingCount);
+
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
 
     timeoutRef.current = setTimeout(() => {
-      const { reply, isSecret } = generateBotReply(textToSend);
+      const { reply, isSecret } = nextHintBeggingCount > 1
+        ? { reply: 'bro google has rent to pay too.', isSecret: false }
+        : generateBotReply(textToSend);
       setIsTyping(false);
       soundFX.playSuccess();
 
