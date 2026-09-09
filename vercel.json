@@ -1,6 +1,4 @@
 {
-  "version": 2,
-  "framework": "vite",
   "rewrites": [
     {
       "source": "/(.*)",
