@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { 
   Volume2, 
   VolumeX, 
-  Bot, 
   Menu, 
   X,
   ArrowRight,
@@ -13,12 +12,10 @@ import genesizLogo from '../assets/genesiz-logo-transparent.png';
 
 interface NavbarProps {
   onOpenRegister: () => void;
-  onOpenChatbot: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ 
   onOpenRegister, 
-  onOpenChatbot
 }) => {
   const [isMuted, setIsMuted] = useState(soundFX.getMuted());
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -101,19 +98,6 @@ export const Navbar: React.FC<NavbarProps> = ({
             <span>Brochure</span>
           </a>
 
-          {/* AI Chatbot Trigger */}
-          <button
-            onClick={() => {
-              soundFX.playWarp();
-              onOpenChatbot();
-            }}
-            onMouseEnter={() => soundFX.playHover()}
-            className="px-3.5 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-300 hover:text-white text-xs font-mono flex items-center gap-1.5 transition-all cursor-pointer shadow-sm"
-          >
-            <Bot className="w-3.5 h-3.5 text-zinc-300" />
-            <span>AI Assistant</span>
-          </button>
-
           {/* Register CTA */}
           <button
             onClick={() => {
@@ -183,17 +167,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               <FileText className="w-4 h-4 text-violet-400" />
               DOWNLOAD OFFICIAL BROCHURE
             </a>
-            <button
-              onClick={() => {
-                soundFX.playWarp();
-                setIsMobileMenuOpen(false);
-                onOpenChatbot();
-              }}
-              className="w-full py-2.5 rounded-xl bg-zinc-900 text-zinc-300 font-mono text-xs flex items-center justify-center gap-2"
-            >
-              <Bot className="w-4 h-4 text-zinc-400" />
-              GENESIZ AI ASSISTANT
-            </button>
             <button
               onClick={() => {
                 soundFX.playWarp();

@@ -194,10 +194,10 @@ export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto bg-black/80 backdrop-blur-sm animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto animate-fadeIn">
       {/* Backdrop */}
       <div
-        className="fixed inset-0"
+        className="fixed inset-0 bg-black/80 backdrop-blur-sm z-0"
         onClick={() => {
           soundFX.playClick();
           onClose();
@@ -205,7 +205,10 @@ export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({
       />
 
       {/* Chatbot Window */}
-      <div className="relative w-full max-w-xl h-[580px] max-h-[90vh] bg-[#0a0a0f] border border-violet-900/50 rounded-3xl shadow-2xl overflow-hidden z-10 flex flex-col font-sans">
+      <div 
+        onClick={(e) => e.stopPropagation()}
+        className="relative z-10 w-full max-w-xl h-[580px] max-h-[90vh] bg-[#0a0a0f] border border-violet-900/50 rounded-3xl shadow-2xl overflow-hidden flex flex-col font-sans"
+      >
         
         {/* Chat Header */}
         <div className="px-6 py-4 bg-zinc-950/90 border-b border-zinc-800/80 flex items-center justify-between">
@@ -227,7 +230,11 @@ export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({
           </div>
 
           <button
-            onClick={onClose}
+            type="button"
+            onClick={() => {
+              soundFX.playClick();
+              onClose();
+            }}
             className="p-1.5 rounded-full text-zinc-400 hover:text-white hover:bg-zinc-900 transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
@@ -274,6 +281,7 @@ export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({
           {quickPrompts.map((prompt) => (
             <button
               key={prompt}
+              type="button"
               disabled={isTyping}
               onClick={() => handleSendMessage(prompt)}
               className="px-3 py-1 rounded-full bg-zinc-900 hover:bg-zinc-800 disabled:opacity-50 border border-zinc-800 text-[10px] font-mono text-zinc-300 hover:text-white whitespace-nowrap cursor-pointer disabled:cursor-not-allowed transition-colors"

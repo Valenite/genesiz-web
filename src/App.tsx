@@ -11,7 +11,6 @@ import { FAQSection } from './components/FAQSection';
 import { Footer } from './components/Footer';
 import { RegistrationModal } from './components/RegistrationModal';
 import { AdminVaultModal } from './components/AdminVaultModal';
-import { GenesizChatbot } from './components/GenesizChatbot';
 import { CipherQuestPage, isCipherQuestPath } from './components/CipherQuestPages';
 import type { EventDetail } from './data/eventsData';
 
@@ -19,7 +18,6 @@ export function App() {
   const [selectedEventForModal, setSelectedEventForModal] = useState<EventDetail | null>(null);
   const [isRegisterOpen, setIsRegisterOpen] = useState<boolean>(false);
   const [registerInitialEventId, setRegisterInitialEventId] = useState<string | undefined>(undefined);
-  const [isChatbotOpen, setIsChatbotOpen] = useState<boolean>(false);
   const [isCipherSandboxOpen, setIsCipherSandboxOpen] = useState<boolean>(false);
   const [isAdminVaultOpen, setIsAdminVaultOpen] = useState<boolean>(false);
 
@@ -42,14 +40,12 @@ export function App() {
       {/* Floating Modern Navbar */}
       <Navbar
         onOpenRegister={() => handleOpenRegister()}
-        onOpenChatbot={() => setIsChatbotOpen(true)}
       />
 
       {/* Main Content */}
       <main className="relative z-10">
         <HeroSection
           onOpenRegister={() => handleOpenRegister()}
-          onOpenChatbot={() => setIsChatbotOpen(true)}
         />
 
         <EventGrid
@@ -68,7 +64,6 @@ export function App() {
 
       {/* Clean Footer */}
       <Footer
-        onOpenChatbot={() => setIsChatbotOpen(true)}
         onOpenRegister={() => handleOpenRegister()}
         onOpenAdminVault={() => setIsAdminVaultOpen(true)}
       />
@@ -97,17 +92,6 @@ export function App() {
       {isAdminVaultOpen && (
         <AdminVaultModal onClose={() => setIsAdminVaultOpen(false)} />
       )}
-
-      {/* GENESIZ AI Intelligence Chatbot */}
-      <GenesizChatbot
-        isOpen={isChatbotOpen}
-        onClose={() => setIsChatbotOpen(false)}
-        onOpenRegister={(eventId) => handleOpenRegister(eventId)}
-        onLaunchCipherSandbox={() => {
-          setIsChatbotOpen(false);
-          setIsCipherSandboxOpen(true);
-        }}
-      />
 
       {/* Secret CipherQuest Cryptographic Sandbox */}
       <CipherSandbox

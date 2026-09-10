@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, ChevronDown, Bot, MessageSquare, Sparkles, Shield, Cpu, Radio, FileText } from 'lucide-react';
+import { ArrowRight, ChevronDown, MessageSquare, Sparkles, Shield, Cpu, Radio, FileText } from 'lucide-react';
 import { soundFX } from '../utils/audio';
 import genesizLogoTransparent from '../assets/genesiz-logo-transparent.png';
 import { RevealOnScroll } from './RevealOnScroll';
 
 interface HeroSectionProps {
   onOpenRegister: () => void;
-  onOpenChatbot: () => void;
 }
 
-export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpenChatbot }) => {
+export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister }) => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   const DISCORD_URL = "https://discord.gg/narNSeybgR";
@@ -156,19 +155,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenRegister, onOpen
             >
               Explore 8 Competitions
             </a>
-
-            <button
-              onClick={() => {
-                soundFX.playWarp();
-                onOpenChatbot();
-              }}
-              onMouseEnter={() => soundFX.playHover()}
-              className="px-4 py-3 rounded-full bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 text-xs font-mono flex items-center gap-2 transition-all cursor-pointer hover:border-zinc-600 hover:scale-105 active:scale-95"
-              title="Ask GENESIZ AI Assistant"
-            >
-              <Bot className="w-4 h-4 text-indigo-400" />
-              <span className="hidden sm:inline">AI Chat</span>
-            </button>
           </div>
         </RevealOnScroll>
 

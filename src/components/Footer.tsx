@@ -1,15 +1,14 @@
 import React from 'react';
-import { Bot, ArrowUp, MessageSquare, FileText } from 'lucide-react';
+import { ArrowUp, MessageSquare, FileText } from 'lucide-react';
 import { soundFX } from '../utils/audio';
 import genesizLogo from '../assets/genesiz-logo-transparent.png';
 
 interface FooterProps {
-  onOpenChatbot: () => void;
   onOpenRegister: () => void;
   onOpenAdminVault: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenChatbot, onOpenRegister, onOpenAdminVault }) => {
+export const Footer: React.FC<FooterProps> = ({ onOpenRegister, onOpenAdminVault }) => {
   const scrollToTop = () => {
     soundFX.playClick();
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -76,11 +75,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenChatbot, onOpenRegister, o
                   <a href={DISCORD_URL} target="_blank" rel="noreferrer" className="hover:text-white flex items-center gap-1">
                     <MessageSquare className="w-3 h-3 text-[#5865F2]" /> Discord HQ
                   </a>
-                </li>
-                <li>
-                  <button onClick={onOpenChatbot} className="hover:text-white flex items-center gap-1 cursor-pointer">
-                    <Bot className="w-3 h-3 text-zinc-300" /> AI Assistant
-                  </button>
                 </li>
                 <li>
                   <button onClick={onOpenRegister} className="hover:text-white cursor-pointer">
