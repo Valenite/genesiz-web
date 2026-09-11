@@ -31,7 +31,7 @@ function getBotReply(text: string, hintCount: number): { reply: string; newHintC
   // Events
   if (lower.includes('event') || lower.includes('discipline') || lower.includes('competition') || lower.includes('what are')) {
     return {
-      reply: 'GENESIZ 2026 has 8 events:\n1. CipherQuest — 4-Day Cryptic Hunt\n2. AlgoArena — Coding Competition\n3. Valorant Championship — 5v5 FPS\n4. Bedwarz — 4v4 Minecraft\n5. Brainbyte — Live Quiz\n6. AppForge — App Building\n7. WebX — Website Building\n8. Surprise?! — Secret Event',
+      reply: 'GENESIZ 2026 has 8 events:\n1. CipherQuest — 48-Hour Cryptic Hunt\n2. AlgoArena — Coding Competition\n3. Valorant Championship — 5v5 FPS\n4. Bedwarz — 4v4 Minecraft\n5. Brainbyte — Live Quiz\n6. AppForge — App Building\n7. WebX — Website Building\n8. Surprise?! — Secret Event',
       newHintCount: hintCount,
     };
   }
@@ -47,15 +47,15 @@ function getBotReply(text: string, hintCount: number): { reply: string; newHintC
   // CipherQuest general
   if (lower.includes('cipherquest') || lower.includes('cryptic') || lower.includes('hunt')) {
     return {
-      reply: 'CipherQuest is a 4-Day Online Cryptic Hunt running Oct 5–9, 2026 (96 hours). Solve puzzles covering OSINT, steganography, audio clues, and code cracking. Join our Discord for hints and updates!',
+      reply: 'CipherQuest is a 48-hour online cryptic hunt running Oct 10–12, 2026. Solve multi-stage puzzles covering OSINT, steganography, audio forensics, and code cracking. Teams of 2. Join our Discord for official hints and updates!',
       newHintCount: hintCount,
     };
   }
 
-  // Schedule
+  // Schedule / dates
   if (lower.includes('schedule') || lower.includes('time') || lower.includes('date') || lower.includes('when') || lower.includes('october')) {
     return {
-      reply: 'GENESIZ is on October 5, 2026:\n• 08:00 AM — Check-in\n• 09:00 AM — Opening Speech\n• 09:00 AM — CipherQuest starts (Discord)\n• 09:30 AM — AppForge & WebX sprint\n• 10:30 AM — AlgoArena coding round\n• 02:00 PM — Brainbyte live quiz\n• 04:30 PM — Valorant grand final\n• 07:30 PM — Prize ceremony',
+      reply: 'GENESIZ 2026 event dates:\n• Valorant: Oct 5–7 (5 PM IST daily)\n• Bedwarz: Oct 8–9 (5 PM IST daily)\n• CipherQuest: Oct 10–12 (48-hour hunt)\n• Brainbyte: Oct 10 (5 PM IST)\n• AppForge & WebX: Oct 10–11\n• AlgoArena: Oct 12–13 (6 PM IST)\n• Surprise?!: Oct 14\n\nAll updates posted on Discord!',
       newHintCount: hintCount,
     };
   }
@@ -136,15 +136,6 @@ export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({ isOpen, onClose 
     }, 400);
   };
 
-  const quickPrompts = [
-    'What events are there?',
-    'How do I register?',
-    'Tell me about CipherQuest',
-    'What is the schedule?',
-    'Discord server link',
-    'Who is Valenite Electrion?',
-  ];
-
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 animate-fadeIn">
       {/* backdrop */}
@@ -153,7 +144,7 @@ export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({ isOpen, onClose 
       {/* window */}
       <div
         className="relative z-10 w-full max-w-lg flex flex-col bg-[#0c0c12] border border-violet-900/40 rounded-2xl shadow-2xl overflow-hidden"
-        style={{ height: 'min(580px, 90vh)' }}
+        style={{ height: 'min(560px, 90vh)' }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* header */}
@@ -206,21 +197,6 @@ export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({ isOpen, onClose 
           <div ref={endRef} />
         </div>
 
-        {/* quick prompts */}
-        <div className="px-4 py-2 bg-zinc-950/50 border-t border-zinc-900/60 flex gap-1.5 overflow-x-auto scrollbar-none shrink-0">
-          {quickPrompts.map((p) => (
-            <button
-              key={p}
-              type="button"
-              disabled={isTyping}
-              onClick={() => send(p)}
-              className="shrink-0 px-2.5 py-1 rounded-full bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-[10px] font-mono text-zinc-400 hover:text-white disabled:opacity-40 whitespace-nowrap cursor-pointer transition-colors"
-            >
-              {p}
-            </button>
-          ))}
-        </div>
-
         {/* input */}
         <form
           onSubmit={(e) => { e.preventDefault(); send(input); }}
@@ -253,7 +229,7 @@ export const ChatbotTriggerButton: React.FC<{ onClick: () => void }> = ({ onClic
   <button
     type="button"
     onClick={onClick}
-    className="fixed bottom-6 right-6 z-40 w-13 h-13 p-3.5 rounded-full bg-violet-600 hover:bg-violet-500 text-white shadow-[0_4px_24px_rgba(139,92,246,0.5)] transition-all hover:scale-110 active:scale-95 cursor-pointer"
+    className="fixed bottom-6 right-6 z-40 p-3.5 rounded-full bg-violet-600 hover:bg-violet-500 text-white shadow-[0_4px_24px_rgba(139,92,246,0.5)] transition-all hover:scale-110 active:scale-95 cursor-pointer"
     title="Open GENESIZ AI Assistant"
     style={{ width: 52, height: 52 }}
   >
