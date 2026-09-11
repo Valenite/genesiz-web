@@ -70,11 +70,8 @@ function getBotReply(text: string, hintCount: number): { reply: string; newHintC
     return { reply: 'bro google has rent to pay too.', newHintCount: hintCount };
   }
 
-  // CipherQuest Level 1 scoped triggers
+  // CipherQuest Level 1 scoped triggers - ALWAYS reply with the poem every time
   if (isLevelOneTrigger(normalized)) {
-    if (hintCount >= 1) {
-      return { reply: 'bro google has rent to pay too.', newHintCount: hintCount + 1 };
-    }
     return { reply: LEVEL_ONE_REPLY, newHintCount: hintCount + 1 };
   }
 
