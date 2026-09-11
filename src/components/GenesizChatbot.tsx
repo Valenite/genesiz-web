@@ -13,15 +13,22 @@ interface GenesizChatbotProps {
   onOpenRegister: (eventId?: string) => void;
 }
 
-const LEVEL_ONE_TRIGGERS = ['cat', 'civet', 'luwak', 'changed names', 'old film', 'what did the cat become'];
+const LEVEL_ONE_PATTERNS = [
+  /\bcat\b/i,
+  /\bcivet\b/i,
+  /\bluwak\b/i,
+  /\bchanged names\b/i,
+  /\bold film\b/i,
+  /\bwhat did the cat become\b/i,
+];
 
 const LEVEL_ONE_REPLY = `Yesterday's fur still sings.\nUsually names do not survive quietly.\nSome old films kept the sound.\nUnder the later name, find the boy.\nForget the woman.`;
 
 function getBotReply(text: string, hintCount: number): { reply: string; newHintCount: number } {
   const lower = text.toLowerCase().trim();
 
-  // CipherQuest Level 1 scoped triggers
-  if (LEVEL_ONE_TRIGGERS.some((t) => lower.includes(t))) {
+  // CipherQuest Level 1 scoped triggers (uses word boundaries so 'location', 'category', 'application' etc. don't trigger 'cat')
+  if (LEVEL_ONE_PATTERNS.some((pattern) => pattern.test(lower))) {
     if (hintCount >= 1) {
       return { reply: 'bro google has rent to pay too.', newHintCount: hintCount + 1 };
     }
