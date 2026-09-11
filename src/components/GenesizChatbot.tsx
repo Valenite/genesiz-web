@@ -147,11 +147,9 @@ export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({ isOpen, onClose 
     },
   ]);
   const [input, setInput] = useState('');
-  const [isTyping, setIsTyping] = useState(false);
   const [hintCount, setHintCount] = useState(0);
   const endRef = useRef<HTMLDivElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
-  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     if (isOpen) setTimeout(() => inputRef.current?.focus(), 100);
@@ -159,28 +157,19 @@ export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({ isOpen, onClose 
 
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages, isTyping]);
-
-  useEffect(() => {
-    return () => { if (timerRef.current) clearTimeout(timerRef.current); };
-  }, []);
+  }, [messages]);
 
   if (!isOpen) return null;
 
   const send = (text: string) => {
-    if (!text.trim() || isTyping) return;
+    if (!text.trim()) return;
     const userMsg: ChatMessage = { id: Date.now().toString(), from: 'user', text: text.trim() };
-    setMessages((prev) => [...prev.slice(-40), userMsg]);
-    setInput('');
-    setIsTyping(true);
+    const { reply, newHintCount } = getBotReply(text, hintCount);
+    const botMsg: ChatMessage = { id: (Date.now() + 1).toString(), from: 'bot', text: reply };
 
-    if (timerRef.current) clearTimeout(timerRef.current);
-    timerRef.current = setTimeout(() => {
-      const { reply, newHintCount } = getBotReply(text, hintCount);
-      setHintCount(newHintCount);
-      setIsTyping(false);
-      setMessages((prev) => [...prev.slice(-40), { id: (Date.now() + 1).toString(), from: 'bot', text: reply }]);
-    }, 400);
+    setHintCount(newHintCount);
+    setMessages((prev) => [...prev.slice(-40), userMsg, botMsg]);
+    setInput('');
   };
 
   return (
@@ -232,15 +221,6 @@ export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({ isOpen, onClose 
               </div>
             </div>
           ))}
-          {isTyping && (
-            <div className="flex justify-start">
-              <div className="px-4 py-2.5 rounded-2xl bg-zinc-900/80 border border-zinc-800 flex gap-1 items-center">
-                <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-bounce" />
-                <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-bounce [animation-delay:0.15s]" />
-                <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-bounce [animation-delay:0.3s]" />
-              </div>
-            </div>
-          )}
           <div ref={endRef} />
         </div>
 
@@ -253,14 +233,13 @@ export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({ isOpen, onClose 
             ref={inputRef}
             type="text"
             value={input}
-            disabled={isTyping}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Ask anything about GENESIZ 2026..."
-            className="flex-1 px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-full text-xs text-white placeholder-zinc-600 focus:outline-none focus:border-violet-500 disabled:opacity-50 transition-colors"
+            className="flex-1 px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-full text-xs text-white placeholder-zinc-600 focus:outline-none focus:border-violet-500 transition-colors"
           />
           <button
             type="submit"
-            disabled={isTyping || !input.trim()}
+            disabled={!input.trim()}
             className="w-9 h-9 rounded-full bg-white hover:bg-zinc-200 disabled:bg-zinc-700 disabled:opacity-40 text-black flex items-center justify-center cursor-pointer disabled:cursor-not-allowed transition-colors shrink-0"
           >
             <Send className="w-3.5 h-3.5" />
