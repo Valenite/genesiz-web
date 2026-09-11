@@ -11,6 +11,7 @@ import { FAQSection } from './components/FAQSection';
 import { Footer } from './components/Footer';
 import { RegistrationModal } from './components/RegistrationModal';
 import { AdminVaultModal } from './components/AdminVaultModal';
+import { GenesizChatbot, ChatbotTriggerButton } from './components/GenesizChatbot';
 import { CipherQuestPage, isCipherQuestPath } from './components/CipherQuestPages';
 import type { EventDetail } from './data/eventsData';
 
@@ -20,6 +21,7 @@ export function App() {
   const [registerInitialEventId, setRegisterInitialEventId] = useState<string | undefined>(undefined);
   const [isCipherSandboxOpen, setIsCipherSandboxOpen] = useState<boolean>(false);
   const [isAdminVaultOpen, setIsAdminVaultOpen] = useState<boolean>(false);
+  const [isChatbotOpen, setIsChatbotOpen] = useState<boolean>(false);
 
   if (isCipherQuestPath()) {
     return <CipherQuestPage />;
@@ -97,6 +99,17 @@ export function App() {
       <CipherSandbox
         isOpen={isCipherSandboxOpen}
         onClose={() => setIsCipherSandboxOpen(false)}
+      />
+
+      {/* GENESIZ AI Chatbot — floating trigger + modal */}
+      {!isChatbotOpen && (
+        <ChatbotTriggerButton onClick={() => setIsChatbotOpen(true)} />
+      )}
+
+      <GenesizChatbot
+        isOpen={isChatbotOpen}
+        onClose={() => setIsChatbotOpen(false)}
+        onOpenRegister={handleOpenRegister}
       />
 
     </div>
