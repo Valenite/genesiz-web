@@ -86,7 +86,7 @@ function getBotReply(text: string, hintCount: number): { reply: string; newHintC
 
   // Default
   return {
-    reply: `Not sure about "${text}" — try asking about events, registration, the schedule, or Discord. I'm here to help!`,
+    reply: `Hmm, I didn't quite get that. Try asking about events, registration, the schedule, or our Discord server!`,
     newHintCount: hintCount,
   };
 }
