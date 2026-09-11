@@ -77,7 +77,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
     );
   };
 
-  const handleRegisterNewTeam = (e: React.FormEvent) => {
+  const handleRegisterNewTeam = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage(null);
 
@@ -97,7 +97,8 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
     });
 
     try {
-      const record = registerNewTeam({
+      setIsSubmitting(true);
+      const record = await registerNewTeam({
         leaderName: leadName.trim(),
         leaderEmail: email.trim(),
         teamPassword: teamPassword.trim(),
@@ -131,6 +132,8 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
       });
     } catch (err: any) {
       setErrorMessage(err.message || 'Registration failed. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 

@@ -44,7 +44,7 @@ export const saveRegistrations = (records: RegistrationRecord[]): void => {
   }
 };
 
-export const registerNewTeam = (data: {
+export const registerNewTeam = async (data: {
   leaderName: string;
   leaderEmail: string;
   teamPassword: string;
@@ -53,7 +53,7 @@ export const registerNewTeam = (data: {
   discordTag?: string;
   selectedEvents: string[];
   selectedEventNames: string[];
-}): RegistrationRecord => {
+}): Promise<RegistrationRecord> => {
   const records = getRegistrations();
   const cleanEmail = data.leaderEmail.trim().toLowerCase();
   const cleanPass = data.teamPassword.trim();
@@ -108,7 +108,7 @@ export const registerNewTeam = (data: {
   saveRegistrations(records);
 
   // Sync to Cloud Supabase for Discord Bot validation
-  syncRegistrationToSupabase({
+  await syncRegistrationToSupabase({
     id: recordToSave.id,
     leader_name: recordToSave.leaderName,
     leader_email: recordToSave.leaderEmail,

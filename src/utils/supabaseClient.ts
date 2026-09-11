@@ -20,14 +20,15 @@ export interface SupabaseRegistrationPayload {
 
 export async function syncRegistrationToSupabase(payload: SupabaseRegistrationPayload): Promise<boolean> {
   if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+    console.warn('[GENESIZ Sync] Missing Supabase URL or Anon Key');
     return false;
   }
 
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 2500);
+    const timeoutId = setTimeout(() => controller.abort(), 10000);
 
-    const endpoint = `${SUPABASE_URL.replace(/\/$/, '')}/rest/v1/registrations`;
+    const endpoint = `${SUPABASE_URL.replace(/\/$/, '')}/rest/v1/registrations?on_conflict=id`;
     const response = await fetch(endpoint, {
       method: 'POST',
       headers: {
@@ -43,12 +44,15 @@ export async function syncRegistrationToSupabase(payload: SupabaseRegistrationPa
     clearTimeout(timeoutId);
 
     if (!response.ok) {
+      const errText = await response.text();
+      console.error('[GENESIZ Sync Error]', response.status, errText);
       return false;
     }
 
-    console.log('[GENESIZ Sync] Synced team registration to Supabase');
+    console.log('[GENESIZ Sync] Synced team registration to Supabase:', payload.id);
     return true;
-  } catch {
+  } catch (err) {
+    console.error('[GENESIZ Sync Catch Error]', err);
     return false;
   }
 }
