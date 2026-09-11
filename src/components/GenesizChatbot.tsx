@@ -13,22 +13,65 @@ interface GenesizChatbotProps {
   onOpenRegister: (eventId?: string) => void;
 }
 
-const LEVEL_ONE_PATTERNS = [
-  /\bcat\b/i,
-  /\bcivet\b/i,
-  /\bluwak\b/i,
-  /\bchanged names\b/i,
-  /\bold film\b/i,
-  /\bwhat did the cat become\b/i,
+const LEVEL_ONE_TRIGGERS = [
+  'cat',
+  'civet',
+  'luwak',
+  'coffee cat',
+  'animal coffee',
+  'expensive animal',
+  'expensive animal water',
+  'changed names',
+  'changed name',
+  'old film',
+  'what did the cat become',
+  'what the cat became',
+  'what did it become',
+  'what became',
+  'meow',
 ];
 
-const LEVEL_ONE_REPLY = `Yesterday's fur still sings.\nUsually names do not survive quietly.\nSome old films kept the sound.\nUnder the later name, find the boy.\nForget the woman.`;
+const HINT_BEGGING_TRIGGERS = [
+  'hint',
+  'help',
+  'stuck',
+  'give answer',
+  'answer pls',
+];
+
+const LEVEL_ONE_REPLY = `Yesterday sang.\nUnder another name.\nSearch credits.\nUse the boy.\nForget her.`;
+
+function isLevelOneTrigger(normalized: string): boolean {
+  return LEVEL_ONE_TRIGGERS.some((trigger) => {
+    if (trigger === 'cat' || trigger === 'civet' || trigger === 'luwak' || trigger === 'meow') {
+      const regex = new RegExp(`\\b${trigger}\\b`, 'i');
+      return regex.test(normalized);
+    }
+    return normalized.includes(trigger);
+  });
+}
+
+function isHintBegging(normalized: string): boolean {
+  return HINT_BEGGING_TRIGGERS.some((trigger) => {
+    if (trigger === 'hint' || trigger === 'help' || trigger === 'stuck') {
+      const regex = new RegExp(`\\b${trigger}\\b`, 'i');
+      return regex.test(normalized);
+    }
+    return normalized.includes(trigger);
+  });
+}
 
 function getBotReply(text: string, hintCount: number): { reply: string; newHintCount: number } {
-  const lower = text.toLowerCase().trim();
+  // Normalize user message: lowercase, trim, collapse repeated spaces, support apostrophes normally
+  const normalized = text.toLowerCase().trim().replace(/\s+/g, ' ');
 
-  // CipherQuest Level 1 scoped triggers (uses word boundaries so 'location', 'category', 'application' etc. don't trigger 'cat')
-  if (LEVEL_ONE_PATTERNS.some((pattern) => pattern.test(lower))) {
+  // Obvious hint begging check
+  if (isHintBegging(normalized)) {
+    return { reply: 'bro google has rent to pay too.', newHintCount: hintCount };
+  }
+
+  // CipherQuest Level 1 scoped triggers
+  if (isLevelOneTrigger(normalized)) {
     if (hintCount >= 1) {
       return { reply: 'bro google has rent to pay too.', newHintCount: hintCount + 1 };
     }
@@ -36,7 +79,7 @@ function getBotReply(text: string, hintCount: number): { reply: string; newHintC
   }
 
   // Events
-  if (lower.includes('event') || lower.includes('discipline') || lower.includes('competition') || lower.includes('what are')) {
+  if (normalized.includes('event') || normalized.includes('discipline') || normalized.includes('competition') || normalized.includes('what are')) {
     return {
       reply: 'GENESIZ 2026 has 8 events:\n1. CipherQuest — 48-Hour Cryptic Hunt\n2. AlgoArena — Coding Competition\n3. Valorant Championship — 5v5 FPS\n4. Bedwarz — 4v4 Minecraft\n5. Brainbyte — Live Quiz\n6. AppForge — App Building\n7. WebX — Website Building\n8. Surprise?! — Secret Event',
       newHintCount: hintCount,
@@ -44,7 +87,7 @@ function getBotReply(text: string, hintCount: number): { reply: string; newHintC
   }
 
   // Register
-  if (lower.includes('register') || lower.includes('sign up') || lower.includes('join') || lower.includes('how to')) {
+  if (normalized.includes('register') || normalized.includes('sign up') || normalized.includes('join') || normalized.includes('how to')) {
     return {
       reply: 'Registration is FREE! Click the Register button in the top menu, fill in your details, choose your events, and get a unique Operative Code. Share it with teammates so they can join your team!',
       newHintCount: hintCount,
@@ -52,7 +95,7 @@ function getBotReply(text: string, hintCount: number): { reply: string; newHintC
   }
 
   // CipherQuest general
-  if (lower.includes('cipherquest') || lower.includes('cryptic') || lower.includes('hunt')) {
+  if (normalized.includes('cipherquest') || normalized.includes('cryptic') || normalized.includes('hunt')) {
     return {
       reply: 'CipherQuest is a 48-hour online cryptic hunt running Oct 10–12, 2026. Solve multi-stage puzzles covering OSINT, steganography, audio forensics, and code cracking. Teams of 2. Join our Discord for official hints and updates!',
       newHintCount: hintCount,
@@ -60,7 +103,7 @@ function getBotReply(text: string, hintCount: number): { reply: string; newHintC
   }
 
   // Schedule / dates
-  if (lower.includes('schedule') || lower.includes('time') || lower.includes('date') || lower.includes('when') || lower.includes('october')) {
+  if (normalized.includes('schedule') || normalized.includes('time') || normalized.includes('date') || normalized.includes('when') || normalized.includes('october')) {
     return {
       reply: 'GENESIZ 2026 event dates:\n• Valorant: Oct 5–7 (5 PM IST daily)\n• Bedwarz: Oct 8–9 (5 PM IST daily)\n• CipherQuest: Oct 10–12 (48-hour hunt)\n• Brainbyte: Oct 10 (5 PM IST)\n• AppForge & WebX: Oct 10–11\n• AlgoArena: Oct 12–13 (6 PM IST)\n• Surprise?!: Oct 14\n\nAll updates posted on Discord!',
       newHintCount: hintCount,
@@ -68,7 +111,7 @@ function getBotReply(text: string, hintCount: number): { reply: string; newHintC
   }
 
   // Discord
-  if (lower.includes('discord') || lower.includes('server') || lower.includes('community')) {
+  if (normalized.includes('discord') || normalized.includes('server') || normalized.includes('community')) {
     return {
       reply: 'Join the official GENESIZ Discord: https://discord.gg/narNSeybgR — get live updates, match times, and CipherQuest hints!',
       newHintCount: hintCount,
@@ -76,7 +119,7 @@ function getBotReply(text: string, hintCount: number): { reply: string; newHintC
   }
 
   // Valenite
-  if (lower.includes('valenite') || lower.includes('creator') || lower.includes('founder') || lower.includes('who made')) {
+  if (normalized.includes('valenite') || normalized.includes('creator') || normalized.includes('founder') || normalized.includes('who made')) {
     return {
       reply: 'GENESIZ 2026 was founded and built by Valenite Electrion (Bhavya Aggarwal) — the Architect behind the entire event.',
       newHintCount: hintCount,
@@ -84,7 +127,7 @@ function getBotReply(text: string, hintCount: number): { reply: string; newHintC
   }
 
   // Brochure
-  if (lower.includes('brochure') || lower.includes('pdf') || lower.includes('details')) {
+  if (normalized.includes('brochure') || normalized.includes('pdf') || normalized.includes('details')) {
     return {
       reply: 'Download the official GENESIZ 2026 Brochure at /brochure.pdf for all event details, rules, and schedule!',
       newHintCount: hintCount,
