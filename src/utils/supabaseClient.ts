@@ -24,37 +24,51 @@ export async function syncRegistrationToSupabase(payload: SupabaseRegistrationPa
     return false;
   }
 
-  try {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 10000);
+  const endpoint = `${SUPABASE_URL.replace(/\/$/, '')}/rest/v1/registrations?on_conflict=id`;
+  const body = JSON.stringify(payload);
+  const headers = {
+    'apikey': SUPABASE_ANON_KEY,
+    'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+    'Content-Type': 'application/json',
+    // return=minimal: Supabase won't try to SELECT back the row (avoids RLS SELECT policy blocks)
+    'Prefer': 'resolution=merge-duplicates,return=minimal',
+  };
 
-    const endpoint = `${SUPABASE_URL.replace(/\/$/, '')}/rest/v1/registrations?on_conflict=id`;
-    const response = await fetch(endpoint, {
-      method: 'POST',
-      headers: {
-        'apikey': SUPABASE_ANON_KEY,
-        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-        'Content-Type': 'application/json',
-        'Prefer': 'resolution=merge-duplicates'
-      },
-      body: JSON.stringify(payload),
-      signal: controller.signal
-    });
+  // Try up to 3 times with increasing delays
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 12000);
 
-    clearTimeout(timeoutId);
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers,
+        body,
+        signal: controller.signal,
+        // keepalive: request survives even if user closes tab mid-registration
+        keepalive: true,
+      });
 
-    if (!response.ok) {
+      clearTimeout(timeoutId);
+
+      if (response.ok || response.status === 201 || response.status === 204) {
+        console.log(`[GENESIZ Sync] ✓ Synced ${payload.id} to Supabase (attempt ${attempt})`);
+        return true;
+      }
+
       const errText = await response.text();
-      console.error('[GENESIZ Sync Error]', response.status, errText);
-      return false;
+      console.warn(`[GENESIZ Sync] Attempt ${attempt} failed: ${response.status}`, errText);
+
+    } catch (err) {
+      console.warn(`[GENESIZ Sync] Attempt ${attempt} network error:`, err);
     }
 
-    console.log('[GENESIZ Sync] Synced team registration to Supabase:', payload.id);
-    return true;
-  } catch (err) {
-    console.error('[GENESIZ Sync Catch Error]', err);
-    return false;
+    // Wait before retry: 1s, 2s
+    if (attempt < 3) await new Promise((r) => setTimeout(r, attempt * 1000));
   }
+
+  console.error('[GENESIZ Sync] All 3 attempts failed for:', payload.id);
+  return false;
 }
 
 export async function fetchTeamFromSupabase(
