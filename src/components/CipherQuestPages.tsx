@@ -7,6 +7,7 @@ export function isCipherQuestPath() {
     '/maude',
     '/mayqueen',
     '/underpressure',
+    '/the-lost-manifest',
   ].includes(pathname);
 }
 
@@ -148,6 +149,27 @@ function renderUnderPressure() {
   );
 }
 
+function renderLostManifest() {
+  writeRawPage(
+    '<!DOCTYPE html>' +
+    '<html>' +
+    '<head><title>the lost manifest</title></head>' +
+    '<body>' +
+    '<!-- she sailed from 40.7128 N 74.0060 W -->' +
+    '<!-- her destination was 44.4056 N 8.9463 E -->' +
+    '<!-- she never arrived -->' +
+    'She was found with the table still set for dinner.' +
+    '<br />' +
+    'The lifeboat was gone. Everything else remained.' +
+    '<br />' +
+    'No one knows why.' +
+    '<br /><br />' +
+    '<a href="https://file.garden/aqFpFUAG_0sBTo_p/manifest.jpg" download="manifest.jpg">[ manifest.jpg ]</a>' +
+    '</body>' +
+    '</html>'
+  );
+}
+
 export function CipherQuestPage() {
   const pathname = window.location.pathname.replace(/\/$/, '');
 
@@ -169,6 +191,9 @@ export function CipherQuestPage() {
       break;
     case '/underpressure':
       renderUnderPressure();
+      break;
+    case '/the-lost-manifest':
+      renderLostManifest();
       break;
   }
 
