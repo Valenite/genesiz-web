@@ -8,6 +8,7 @@ export function isCipherQuestPath() {
     '/mayqueen',
     '/underpressure',
     '/thelostmanifest',
+    '/thebloodcargo',
   ].includes(pathname);
 }
 
@@ -170,6 +171,35 @@ function renderLostManifest() {
   );
 }
 
+function renderTheBloodCargo() {
+  writeRawPage(
+    '<!DOCTYPE html>' +
+    '<html>' +
+    '<head><title>the blood cargo</title></head>' +
+    '<body style="background:#0a0a0a;color:#b0a090;font-family:monospace;padding:40px;line-height:2;">' +
+    '<!-- VII -->' +
+    '<pre>' +
+    'CARGO REGISTRY BRIGANTINE AMAZON NOVEMBER EIGHTEEN NAMED\n' +
+    'SEVENTY TWO OUTBOUND FROM NEW YORK BY\n' +
+    'BOUND FOR GENOA CARRYING OF COMMERCIAL THE\n' +
+    'ONE THOUSAND SEVEN HUNDRED ONE BARRELS DOCTOR\n' +
+    'ALCOHOL CERTIFIED PURE AND SEALED BY OF\n' +
+    'PORT AUTHORITY CAPTAIN BENJAMIN BRIGGS COMMANDING BAKER\n' +
+    'WIFE SARAH ELIZABETH ABOARD ALSO CHILD STREET\n' +
+    'SOPHI PROVISIONS FOR NINETY DAYS LOGGED CREW\n\n' +
+    'SIGNED AND WITNESSED UNDER SEAL OF THE\n' +
+    'PORT OF NEW YORK NOVEMBER EIGHTEEN SEVENTY\n' +
+    'TWO BY HARBOUR AUTHORITY AND CUSTOMS OFFICIAL\n' +
+    'ALL GOODS ACCOUNTED FOR AND DUTY PAID\n' +
+    'CARGO MANIFEST HOLDS LEGAL STANDING UNDER MARITIME\n' +
+    'LAW OF THE UNITED STATES AND CARRIES\n' +
+    'FULL INSURANCE DECLARATION ATTACHED ON SEPARATE DOCUMENT' +
+    '</pre>' +
+    '</body>' +
+    '</html>'
+  );
+}
+
 export function CipherQuestPage() {
   const pathname = window.location.pathname.replace(/\/$/, '');
 
@@ -194,6 +224,9 @@ export function CipherQuestPage() {
       break;
     case '/thelostmanifest':
       renderLostManifest();
+      break;
+    case '/thebloodcargo':
+      renderTheBloodCargo();
       break;
   }
 
