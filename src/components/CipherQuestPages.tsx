@@ -7,7 +7,7 @@ export function isCipherQuestPath() {
     '/maude',
     '/mayqueen',
     '/underpressure',
-    '/the-lost-manifest',
+    '/thelostmanifest',
   ].includes(pathname);
 }
 
@@ -192,7 +192,7 @@ export function CipherQuestPage() {
     case '/underpressure':
       renderUnderPressure();
       break;
-    case '/the-lost-manifest':
+    case '/thelostmanifest':
       renderLostManifest();
       break;
   }
