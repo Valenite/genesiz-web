@@ -165,7 +165,7 @@ function renderLostManifest() {
     '<br />' +
     'No one knows why.' +
     '<br /><br />' +
-    '<a href="https://file.garden/aqFpFUAG_0sBTo_p/manifest.jpg" download="manifest.jpg">[ manifest.jpg ]</a>' +
+    '<a href="https://file.garden/aqlE05Uj5RKrOkO_/manifest.jpg" download="manifest.jpg">[ manifest.jpg ]</a>' +
     '</body>' +
     '</html>'
   );
