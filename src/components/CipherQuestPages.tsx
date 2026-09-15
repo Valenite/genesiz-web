@@ -1,4 +1,4 @@
-export function isCipherQuestPath() {
+﻿export function isCipherQuestPath() {
   const pathname = window.location.pathname.replace(/\/$/, '');
   return [
     '/posterchild',
@@ -9,6 +9,8 @@ export function isCipherQuestPath() {
     '/underpressure',
     '/thelostmanifest',
     '/thebloodcargo',
+    '/thesomertonman',
+    '/therubaiyat',
   ].includes(pathname);
 }
 
@@ -200,6 +202,39 @@ function renderTheBloodCargo() {
   );
 }
 
+function renderTheSomertonMan() {
+  writeRawPage(
+    '<!DOCTYPE html>' +
+    '<html>' +
+    '<head><title>the somerton man</title></head>' +
+    '<body>' +
+    '<!-- sa police file no. 1948-0312 -->' +
+    'A man found dead on a beach. No ID, no labels on his clothes.' +
+    '<br />' +
+    'Just a half-smoked cigarette and a scrap of paper in his pocket.' +
+    '<br /><br />' +
+    '<a href="https://file.garden/aqFpFUAG_0sBTo_p/report.jpg" download="report.jpg">[ report.jpg ]</a>' +
+    '</body>' +
+    '</html>'
+  );
+}
+
+function renderTheRubaiyat() {
+  writeRawPage(
+    '<!DOCTYPE html>' +
+    '<html>' +
+    '<head><title>the rubaiyat</title></head>' +
+    '<body>' +
+    '<!-- omar khayyam would be proud -->' +
+    'The scrap of paper was torn from the final page.' +
+    '<br />' +
+    'But the book itself was found tossed in the back of an unlocked car.' +
+    '<br /><br />' +
+    '<a href="https://file.garden/aqFpFUAG_0sBTo_p/book.jpg" download="book.jpg">[ book.jpg ]</a>' +
+    '</body>' +
+    '</html>'
+  );
+}
 export function CipherQuestPage() {
   const pathname = window.location.pathname.replace(/\/$/, '');
 
@@ -228,8 +263,15 @@ export function CipherQuestPage() {
     case '/thebloodcargo':
       renderTheBloodCargo();
       break;
+    case '/thesomertonman':
+      renderTheSomertonMan();
+      break;
+    case '/therubaiyat':
+      renderTheRubaiyat();
+      break;
   }
 
-  // Return null — document.write already took over the entire page
+  // Return null â€” document.write already took over the entire page
   return null;
 }
+
