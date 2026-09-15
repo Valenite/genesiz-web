@@ -10,8 +10,8 @@
     '/thelostmanifest',
     '/thebloodcargo',
     '/thesomertonman',
-    '/therubaiyat',
-  ].includes(pathname);
+    '/matches-bryantandmay',
+      ].includes(pathname);
 }
 
 function writeRawPage(html: string) {
@@ -206,72 +206,25 @@ function renderTheSomertonMan() {
   writeRawPage(
     '<!DOCTYPE html>' +
     '<html>' +
-    '<head><title>the somerton man</title></head>' +
-    '<body>' +
-    '<!-- sa police file no. 1948-0312 -->' +
-    'A man found dead on a beach. No ID, no labels on his clothes.' +
-    '<br />' +
-    'Just a half-smoked cigarette and a scrap of paper in his pocket.' +
-    '<br /><br />' +
-    '<a href="https://file.garden/aqFpFUAG_0sBTo_p/report.jpg" download="report.jpg">[ report.jpg ]</a>' +
+    '<head><title>API Response</title></head>' +
+    '<body style="background-color: #0d1117; color: #c9d1d9; font-family: monospace; padding: 20px;">' +
+    '<pre>' +
+    '{\n' +
+    '  "case_id": "SA-1948-0312",\n' +
+    '  "status": "unsolved",\n' +
+    '  "victim": "unknown",\n' +
+    '  "evidence_location": "DELETED",\n' +
+    '  "system_note": "The evidence file was accidentally committed to this website\\'s public GitHub repository, then immediately deleted.",\n' +
+    '  "directive": "You must check the git commit history of the genesiz-web repository to find the deleted evidence_1948.txt file."\n' +
+    '}' +
+    '</pre>' +
     '</body>' +
     '</html>'
   );
 }
-
-function renderTheRubaiyat() {
-  writeRawPage(
-    '<!DOCTYPE html>' +
-    '<html>' +
-    '<head><title>the rubaiyat</title></head>' +
-    '<body>' +
-    '<!-- omar khayyam would be proud -->' +
-    'The scrap of paper was torn from the final page.' +
-    '<br />' +
-    'But the book itself was found tossed in the back of an unlocked car.' +
-    '<br /><br />' +
-    '<a href="https://file.garden/aqFpFUAG_0sBTo_p/book.jpg" download="book.jpg">[ book.jpg ]</a>' +
-    '</body>' +
-    '</html>'
-  );
-}
-export function CipherQuestPage() {
-  const pathname = window.location.pathname.replace(/\/$/, '');
-
-  switch (pathname) {
-    case '/posterchild':
-      renderPosterchild();
-      break;
-    case '/eastofjava':
-      renderEastOfJava();
-      break;
-    case '/luwak':
-      renderLuwak();
-      break;
-    case '/maude':
-      renderMaude();
-      break;
-    case '/mayqueen':
-      renderMayQueen();
-      break;
-    case '/underpressure':
-      renderUnderPressure();
-      break;
-    case '/thelostmanifest':
-      renderLostManifest();
-      break;
-    case '/thebloodcargo':
-      renderTheBloodCargo();
-      break;
-    case '/thesomertonman':
-      renderTheSomertonMan();
-      break;
-    case '/therubaiyat':
-      renderTheRubaiyat();
-      break;
-  }
 
   // Return null â€” document.write already took over the entire page
   return null;
 }
+
 
