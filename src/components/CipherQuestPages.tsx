@@ -1,4 +1,4 @@
-export function isCipherQuestPath() {
+﻿export function isCipherQuestPath() {
   const pathname = window.location.pathname.replace(/\/$/, '');
   return [
     '/posterchild',
@@ -128,3 +128,4 @@ export function CipherQuestPage() {
 
   return null;
 }
+
