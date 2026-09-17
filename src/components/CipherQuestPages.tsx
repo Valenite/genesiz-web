@@ -1,5 +1,5 @@
 export function isCipherQuestPath() {
-  const pathname = window.location.pathname.replace(/\/$/, '');
+  const p = window.location.pathname.replace(/\/$/,'');
   return [
     '/posterchild',
     '/eastofjava',
@@ -14,176 +14,33 @@ export function isCipherQuestPath() {
     '/icaruslogistics',
     '/chironmedical',
     '/chirondatabase',
-    '/operationargus'
-  ].includes(pathname);
+    '/operationargus',
+  ].includes(p);
 }
 
-function writeRawPage(html: string) {
+function writeRawPage(enc: string) {
   document.open();
-  document.write(html);
+  document.write(decodeURIComponent(enc));
   document.close();
 }
 
-function renderPosterchild() { writeRawPage(<!DOCTYPE html><html><head><title>posterchild</title></head><body><!-- child support ended here --><!-- 1969 had confidence --><img src="https://file.garden/aqFpFUAG_0sBTo_p/itlies.jpg" /><br />not the child.<br />the poster lied.</body></html>); }
-function renderEastOfJava() { writeRawPage(<!DOCTYPE html><html><head><title>eastofjava</title></head><body><!-- the map is gaslighting you --><!-- language people will overthink this --><!-- coffee people will not --><img src="https://file.garden/aqFpFUAG_0sBTo_p/eeee.jpg" /><br />EAST OF JAVA<br /><br />ok but what if it wasn't.<br /><br />one direction was enough.</body></html>); }
-function renderLuwak() { writeRawPage(<!DOCTYPE html><html><head><title>luwak</title></head><body><!-- civet was framed --><!-- ask the loud box what the cat became --><!-- meow meow capitalism -->LUWAK<br /><br />expensive animal water.<br /><br />the cat changed names before the old film kept singing.</body></html>); }
-function renderMaude() { writeRawPage(<!DOCTYPE html><html><head><title>maude</title></head><body><!-- harold did not stay on land --><!-- captain bait is still bait --><!-- covers are not originals --><!-- token A is the original, uppercase -->MAUDE<br /><br />wrong half.<br /><br />the boy went swimming with a captain.<br /><br />not the captain.<br />not the original.</body></html>); }
-function renderMayQueen() { writeRawPage(<!DOCTYPE html><html><head><title>mayqueen</title></head><body><!-- may is acting like a title now --><!-- flowers are not always romantic --><!-- token B is the band, uppercase --><img src="https://file.garden/aqFpFUAG_0sBTo_p/dreamgoth.webp" /><br />MAY QUEEN<br /><br />not a wedding.<br />not a filter.<br />wrong festival.<br /><br />the crown became louder than the season.</body></html>); }
-function renderUnderPressure() { writeRawPage(<!DOCTYPE html><html><head><title>underpressure</title></head><body><!-- two tokens opened the room --><!-- sample the pressure, don't worship it --><!-- final is the artist, lowercase, no space -->UNDER PRESSURE<br /><br />not them.<br />not the pressure.<br /><br />too cold.<br />too babyish.<br /><br />who made the borrowed pressure famous?</body></html>); }
-function renderLostManifest() { writeRawPage(<!DOCTYPE html><html><head><title>the lost manifest</title></head><body><!-- she sailed from 40.7128 N 74.0060 W --><!-- her destination was 44.4056 N 8.9463 E --><!-- she never arrived -->She was found with the table still set for dinner.<br />The lifeboat was gone. Everything else remained.<br />No one knows why.<br /><br /><a href="https://file.garden/aqlE05Uj5RKrOkO_/manifest.jpg" download="manifest.jpg">[ manifest.jpg ]</a></body></html>); }
-function renderTheBloodCargo() { writeRawPage(<!DOCTYPE html><html><head><title>the blood cargo</title></head><body style="background:#0a0a0a;color:#b0a090;font-family:monospace;padding:40px;line-height:2;"><!-- VII --><pre>CARGO REGISTRY BRIGANTINE AMAZON NOVEMBER EIGHTEEN NAMED\nSEVENTY TWO OUTBOUND FROM NEW YORK BY\nBOUND FOR GENOA CARRYING OF COMMERCIAL THE\nONE THOUSAND SEVEN HUNDRED ONE BARRELS DOCTOR\nALCOHOL CERTIFIED PURE AND SEALED BY OF\nPORT AUTHORITY CAPTAIN BENJAMIN BRIGGS COMMANDING BAKER\nWIFE SARAH ELIZABETH ABOARD ALSO CHILD STREET\nSOPHI PROVISIONS FOR NINETY DAYS LOGGED CREW\n\nSIGNED AND WITNESSED UNDER SEAL OF THE\nPORT OF NEW YORK NOVEMBER EIGHTEEN SEVENTY\nTWO BY HARBOUR AUTHORITY AND CUSTOMS OFFICIAL\nALL GOODS ACCOUNTED FOR AND DUTY PAID\nCARGO MANIFEST HOLDS LEGAL STANDING UNDER MARITIME\nLAW OF THE UNITED STATES AND CARRIES\nFULL INSURANCE DECLARATION ATTACHED ON SEPARATE DOCUMENT</pre></body></html>); }
-function renderTheSomertonMan() { writeRawPage(<!DOCTYPE html><html><head><title>API Response</title></head><body style="background-color: #0d1117; color: #c9d1d9; font-family: monospace; padding: 20px;"><pre>{\n  "case_id": "SA-1948-0312",\n  "status": "unsolved",\n  "victim": "unknown",\n  "evidence_status": "CORRUPTED",\n  "system_note": "The evidence file was damaged during database migration. A fragmented buffer was recovered.",\n  "deleted_buffer": "UkVTVFJJQ1RFRCBBQ0NFU1MgLSBTT1VUSCBBVVNUUkFMSUFOIFBPTElDRQpUaGUgcG9ldHJ5IGJvb2sgd2Fzbid0IHRoZSBvbmx5IHRoaW5nIHRoZSBTb21lcnRvbiBNYW4gY2FycmllZC4KSGUgaGFkIGEgaGFsZi1lbXB0eSBib3ggb2YgbWF0Y2hlcyBpbiBoaXMgcG9ja2V0LgpXaGF0IHdhcyB0aGUgZXhhY3QgYnJhbmQgbmFtZSBvZiB0aG9zZSBtYXRjaGVzPwpOYXZpZ2F0ZSB0byB0aGUgc2hhZG93IGZvcnVtOiAvbWF0Y2hlc2JyeWFudGFuZG1heQoobG93ZXJjYXNlLCBubyBzcGFjZXMsIHVzZSAnYW5kJyBpbnN0ZWFkIG9mICcmJyk="\n}</pre></body></html>); }
-function renderMatchesBryantAndMay() { writeRawPage(<!DOCTYPE html><html><head><title>ShadowBoard 1999</title></head><body style="background-color: #000000; color: #00ff00; font-family: 'Courier New', Courier, monospace; padding: 40px;"><div style="border: 1px solid #00ff00; padding: 20px; max-width: 800px; margin: 0 auto;"><h2 style="text-align: center; border-bottom: 1px dashed #00ff00; padding-bottom: 10px;">GHOST_NET FORUM v1.4</h2><p><strong>POST #3239</strong> | AUTHOR: J.T. (1945)</p><p><strong>SUBJECT: The Final Secret</strong></p><p>They found the poetry book. I had to move the final piece of the puzzle somewhere permanent. Somewhere decentralized.</p><p>Look at the very first block of the chain created by Nakamoto (Block 0).</p><p>Buried in the raw hex data of the coinbase transaction is a newspaper headline.</p><p>The flag is the fourth, fifth, and sixth words of that headline (lowercase, no spaces).</p><br /><p style="text-align: right;"><em>// end of transmission</em></p></div></body></html>); }
-
-function renderIcarusLogistics() {
-  writeRawPage(<!DOCTYPE html>
-<html>
-<head><title>Icarus Logistics | Global Supply</title></head>
-<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f9; color: #333;">
-    <header style="background-color: #002244; color: white; padding: 20px; text-align: center;">
-        <h1 style="margin: 0; font-size: 2.5em; letter-spacing: 2px;">ICARUS LOGISTICS</h1>
-        <p style="margin: 5px 0 0 0; font-style: italic;">We deliver where others cannot.</p>
-    </header>
-    <nav style="background-color: #003366; padding: 10px; text-align: center;">
-        <a href="#" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Home</a>
-        <a href="#" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">About Us</a>
-        <a href="#" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Investors</a>
-        <a href="#" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Contact</a>
-    </nav>
-    <div style="max-width: 1000px; margin: 40px auto; padding: 20px; background: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-        <h2>Corporate History & Mission</h2>
-        <p>Icarus Logistics was founded on the principle of unparalleled global reach. We deliver where others cannot. Our specialized fleets are equipped for extreme environments, ensuring your assets remain completely secure.</p>
-        <p>Innovation drives our core infrastructure. By acquiring cutting edge subsidiaries, we maintain a technological monopoly over the transport sector. The future is built on highly encrypted, decentralized logistics networks.</p>
-        <p>Security is our absolute highest priority. We employ advanced cryptographic protocols and ex-military personnel. When you entrust us with your cargo, it disappears from the public grid until it reaches its final destination.</p>
-        
-        <hr style="margin: 40px 0;">
-        
-        <h2>Investor Relations</h2>
-        <p>Following our successful Series C funding round, we are proud to announce the silent acquisition of a leading bio-research firm. This integration allows us to transport Class-4 biological assets with unprecedented stability.</p>
-        
-        <div style="background-color: #eef; padding: 15px; border-left: 4px solid #002244; margin-top: 30px;">
-            <p><strong>ENCRYPTED ROUTING DIRECTIVE (INTERNAL USE ONLY):</strong></p>
-            <p style="font-family: monospace; letter-spacing: 1px; word-break: break-all;">[1-1-2] // [1-6-2] // [1-1-1] // [1-1-4] // [1-2-2] // [1-4-4] // [1-23-6] // [1-4-6] // [1-4-5] // [1-1-1] // [1-1-2] // [1-1-3] // [1-2-1]</p>
-            <p style="font-size: 0.8em; color: #666;">* Route coordinates format: [Paragraph - Word - Letter]. Access requires manual decoding.</p>
-        </div>
-    </div>
-    <footer style="text-align: center; padding: 20px; background-color: #002244; color: white; margin-top: 40px;">
-        &copy; 2024 Icarus Logistics Corp. All rights reserved. | <a href="#" style="color:#aaa;">Employee Login</a>
-    </footer>
-</body>
-</html>);
-}
-
-function renderChironMedical() {
-  writeRawPage(<!DOCTYPE html>
-<html>
-<head><title>Chiron Medical | Secure Portal</title></head>
-<body style="background-color: #0d1b2a; color: #e0e1dd; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
-    <div style="background-color: #1b263b; padding: 40px; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); width: 400px;">
-        <h2 style="text-align: center; border-bottom: 2px solid #415a77; padding-bottom: 10px; margin-bottom: 30px;">CHIRON MEDICAL DATABASE</h2>
-        
-        <div id="login-form">
-            <p style="font-size: 0.9em; color: #778da9; text-align: justify; margin-bottom: 20px;">
-                <i>Security Notice: Passwords have been reset. Your new password is the name of the protein that allows tardigrades to survive extreme radiation, followed immediately by the exact depth (in meters) of the Challenger Deep as measured by the 2010 UNH-CCOM survey. (Lowercase, no spaces).</i>
-            </p>
-            <input type="text" id="usr" placeholder="Username (Employee ID)" style="width: 100%; padding: 10px; margin-bottom: 15px; border: none; border-radius: 4px; background: #e0e1dd; box-sizing: border-box;">
-            <input type="password" id="pwd" placeholder="Password" style="width: 100%; padding: 10px; margin-bottom: 20px; border: none; border-radius: 4px; background: #e0e1dd; box-sizing: border-box;">
-            <button onclick="checkAuth()" style="width: 100%; padding: 10px; background-color: #415a77; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">AUTHENTICATE</button>
-            <p id="err" style="color: #ef233c; text-align: center; margin-top: 15px; font-weight: bold;"></p>
-        </div>
-    </div>
-
-    <script>
-        function checkAuth() {
-            var u = document.getElementById('usr').value.toLowerCase().trim();
-            var p = document.getElementById('pwd').value.toLowerCase().trim();
-            if (p === "dsup10994") {
-                window.location.href = "/chirondatabase";
-            } else {
-                document.getElementById('err').innerText = "ERROR: INVALID CREDENTIALS.";
-            }
-        }
-    </script>
-</body>
-</html>);
-}
-
-function renderChironDatabase() {
-  writeRawPage(<!DOCTYPE html>
-<html>
-<head><title>Chiron DB | Asset Logs</title></head>
-<body style="background-color: #000; color: #0f0; font-family: 'Courier New', Courier, monospace; padding: 20px;">
-    <h1>CHIRON MEDICAL - DEEP STORAGE LOGS</h1>
-    <hr style="border-color: #0f0;">
-    
-    <h3>LOG ENTRY #001 - ANOMALY CONTAINMENT</h3>
-    <p>The asset recovered from the Amazon Brigantine (1872) remains stable. Cellular regeneration exceeds 400%.</p>
-    
-    <h3>LOG ENTRY #002 - SECURITY PROTOCOL UPDATE</h3>
-    <p>All Vigenere encryption keys have been updated. The current active key is the surname of the mythological figure who ferried souls across the river Styx.</p>
-    
-    <h3>LOG ENTRY #003 - TRANSPORT LOG</h3>
-    <p>Icarus Logistics has confirmed receipt of the asset. It is being moved to the Aegis facility for permanent cold storage.</p>
-    
-    <h3>LOG ENTRY #004 - CORRUPTED TRANSMISSION</h3>
-    <p>The following intercepted packet was heavily encrypted prior to database failure. Analysis indicates Hexadecimal wrapping around Base64, enclosing a Vigenere ciphertext.</p>
-    <div style="background-color: #111; padding: 15px; border: 1px solid #0f0; word-break: break-all;">
-        5132786e656d63676232356f59324a6e646e5a734947463063584a3165694279646d566f61336c6c6169426f645763676457466b637942696143426861485967596e5a7762485232633245676148426d61323067636d74756147736759324e6e6557467264324a774947466f636d676763576468623256765a3264724947357363586c6e61484967626e4e75636e5a7561694232646d6c7649476c6c494768315a79426f6447526a5a6e4a765a576c7a4c6942426353423663484a78636e5575
-    </div>
-</body>
-</html>);
-}
-
-function renderOperationArgus() {
-  writeRawPage(<!DOCTYPE html>
-<html>
-<head><title>AEGIS BLACKSITE TERMINAL</title></head>
-<body style="background-color: #2b0000; color: #ff4d4d; font-family: monospace; text-align: center; padding-top: 100px;">
-    <h1 style="font-size: 3em; margin-bottom: 10px;">AEGIS COMMAND TERMINAL</h1>
-    <h3 style="margin-top: 0;">RESTRICTED MILITARY NETWORK</h3>
-    
-    <div style="margin: 50px auto; max-width: 600px; background-color: #1a0000; padding: 30px; border: 2px solid #ff4d4d;">
-        <p style="font-size: 1.2em; margin-bottom: 30px;">AUTHORIZATION REQUIRED.</p>
-        <p>Enter the name of the ship that served as the command vessel for Task Force 88 during this operation (lowercase, no spaces):</p>
-        <input type="text" id="flag" style="padding: 10px; width: 80%; background: #000; color: #ff4d4d; border: 1px solid #ff4d4d; margin-bottom: 20px; font-size: 1.2em; text-align: center;">
-        <br>
-        <button onclick="verify()" style="padding: 10px 30px; background: #ff4d4d; color: #000; border: none; font-size: 1.2em; cursor: pointer; font-weight: bold;">SUBMIT</button>
-        <p id="res" style="margin-top: 20px; font-weight: bold; font-size: 1.5em;"></p>
-    </div>
-
-    <script>
-        function verify() {
-            var v = document.getElementById('flag').value.toLowerCase().replace(/\s/g, '');
-            if (v === 'ussnortonsound') {
-                document.getElementById('res').style.color = '#00ff00';
-                document.getElementById('res').innerText = "ACCESS GRANTED. FLAG: ussnortonsound";
-            } else {
-                document.getElementById('res').style.color = '#ff4d4d';
-                document.getElementById('res').innerText = "ACCESS DENIED. LETHAL COUNTERMEASURES ENGAGED.";
-            }
-        }
-    </script>
-</body>
-</html>);
-}
-
 export function CipherQuestPage() {
-  const pathname = window.location.pathname.replace(/\/$/, '');
-  switch (pathname) {
-    case '/posterchild': renderPosterchild(); break;
-    case '/eastofjava': renderEastOfJava(); break;
-    case '/luwak': renderLuwak(); break;
-    case '/maude': renderMaude(); break;
-    case '/mayqueen': renderMayQueen(); break;
-    case '/underpressure': renderUnderPressure(); break;
-    case '/thelostmanifest': renderLostManifest(); break;
-    case '/thebloodcargo': renderTheBloodCargo(); break;
-    case '/thesomertonman': renderTheSomertonMan(); break;
-    case '/matchesbryantandmay': renderMatchesBryantAndMay(); break;
-    case '/icaruslogistics': renderIcarusLogistics(); break;
-    case '/chironmedical': renderChironMedical(); break;
-    case '/chirondatabase': renderChironDatabase(); break;
-    case '/operationargus': renderOperationArgus(); break;
+  const p = window.location.pathname.replace(/\/$/,'');
+  switch (p) {
+    case '/posterchild': writeRawPage('%3C%21DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3Eposterchild%3C%2Ftitle%3E%3C%2Fhead%3E%3Cbody%20style%3D%22background%3A%23111%3Bcolor%3A%23ddd%3Bfont-family%3Amonospace%3Bpadding%3A40px%3B%22%3E%3C%21--%20child%20support%20ended%20here%20--%3E%3C%21--%201969%20had%20confidence%20--%3E%3Cimg%20src%3D%22https%3A%2F%2Ffile.garden%2FaqFpFUAG_0sBTo_p%2Fitlies.jpg%22%20style%3D%22max-width%3A400px%3B%22%20%2F%3E%3Cbr%20%2F%3E%3Cbr%20%2F%3Enot%20the%20child.%3Cbr%20%2F%3Ethe%20poster%20lied.%3C%2Fbody%3E%3C%2Fhtml%3E'); break;
+    case '/eastofjava': writeRawPage('%3C%21DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3Eeastofjava%3C%2Ftitle%3E%3C%2Fhead%3E%3Cbody%20style%3D%22background%3A%23111%3Bcolor%3A%23ddd%3Bfont-family%3Amonospace%3Bpadding%3A40px%3B%22%3E%3C%21--%20the%20map%20is%20gaslighting%20you%20--%3E%3C%21--%20language%20people%20will%20overthink%20this%20--%3E%3C%21--%20coffee%20people%20will%20not%20--%3E%3Cimg%20src%3D%22https%3A%2F%2Ffile.garden%2FaqFpFUAG_0sBTo_p%2Feeee.jpg%22%20style%3D%22max-width%3A400px%3B%22%20%2F%3E%3Cbr%20%2F%3E%3Cbr%20%2F%3EEAST%20OF%20JAVA%3Cbr%20%2F%3E%3Cbr%20%2F%3Eok%20but%20what%20if%20it%20wasn%27t.%3Cbr%20%2F%3E%3Cbr%20%2F%3Eone%20direction%20was%20enough.%3C%2Fbody%3E%3C%2Fhtml%3E'); break;
+    case '/luwak': writeRawPage('%3C%21DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3Eluwak%3C%2Ftitle%3E%3C%2Fhead%3E%3Cbody%20style%3D%22background%3A%23111%3Bcolor%3A%23ddd%3Bfont-family%3Amonospace%3Bpadding%3A40px%3B%22%3E%3C%21--%20civet%20was%20framed%20--%3E%3C%21--%20ask%20the%20loud%20box%20what%20the%20cat%20became%20--%3E%3C%21--%20meow%20meow%20capitalism%20--%3ELUWAK%3Cbr%20%2F%3E%3Cbr%20%2F%3Eexpensive%20animal%20water.%3Cbr%20%2F%3E%3Cbr%20%2F%3Ethe%20cat%20changed%20names%20before%20the%20old%20film%20kept%20singing.%3C%2Fbody%3E%3C%2Fhtml%3E'); break;
+    case '/maude': writeRawPage('%3C%21DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3Emaude%3C%2Ftitle%3E%3C%2Fhead%3E%3Cbody%20style%3D%22background%3A%23111%3Bcolor%3A%23ddd%3Bfont-family%3Amonospace%3Bpadding%3A40px%3B%22%3E%3C%21--%20harold%20did%20not%20stay%20on%20land%20--%3E%3C%21--%20captain%20bait%20is%20still%20bait%20--%3E%3C%21--%20covers%20are%20not%20originals%20--%3E%3C%21--%20token%20A%20is%20the%20original%2C%20uppercase%20--%3EMAUDE%3Cbr%20%2F%3E%3Cbr%20%2F%3Ewrong%20half.%3Cbr%20%2F%3E%3Cbr%20%2F%3Ethe%20boy%20went%20swimming%20with%20a%20captain.%3Cbr%20%2F%3E%3Cbr%20%2F%3Enot%20the%20captain.%3Cbr%20%2F%3Enot%20the%20original.%3C%2Fbody%3E%3C%2Fhtml%3E'); break;
+    case '/mayqueen': writeRawPage('%3C%21DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3Emayqueen%3C%2Ftitle%3E%3C%2Fhead%3E%3Cbody%20style%3D%22background%3A%23111%3Bcolor%3A%23ddd%3Bfont-family%3Amonospace%3Bpadding%3A40px%3B%22%3E%3C%21--%20may%20is%20acting%20like%20a%20title%20now%20--%3E%3C%21--%20flowers%20are%20not%20always%20romantic%20--%3E%3C%21--%20token%20B%20is%20the%20band%2C%20uppercase%20--%3E%3Cimg%20src%3D%22https%3A%2F%2Ffile.garden%2FaqFpFUAG_0sBTo_p%2Fdreamgoth.webp%22%20style%3D%22max-width%3A400px%3B%22%20%2F%3E%3Cbr%20%2F%3E%3Cbr%20%2F%3EMAY%20QUEEN%3Cbr%20%2F%3E%3Cbr%20%2F%3Enot%20a%20wedding.%3Cbr%20%2F%3Enot%20a%20filter.%3Cbr%20%2F%3Ewrong%20festival.%3Cbr%20%2F%3E%3Cbr%20%2F%3Ethe%20crown%20became%20louder%20than%20the%20season.%3C%2Fbody%3E%3C%2Fhtml%3E'); break;
+    case '/underpressure': writeRawPage('%3C%21DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3Eunderpressure%3C%2Ftitle%3E%3C%2Fhead%3E%3Cbody%20style%3D%22background%3A%23111%3Bcolor%3A%23ddd%3Bfont-family%3Amonospace%3Bpadding%3A40px%3B%22%3E%3C%21--%20two%20tokens%20opened%20the%20room%20--%3E%3C%21--%20sample%20the%20pressure%2C%20don%27t%20worship%20it%20--%3E%3C%21--%20final%20is%20the%20artist%2C%20lowercase%2C%20no%20space%20--%3EUNDER%20PRESSURE%3Cbr%20%2F%3E%3Cbr%20%2F%3Enot%20them.%3Cbr%20%2F%3Enot%20the%20pressure.%3Cbr%20%2F%3E%3Cbr%20%2F%3Etoo%20cold.%3Cbr%20%2F%3Etoo%20babyish.%3Cbr%20%2F%3E%3Cbr%20%2F%3Ewho%20made%20the%20borrowed%20pressure%20famous%3F%3C%2Fbody%3E%3C%2Fhtml%3E'); break;
+    case '/thelostmanifest': writeRawPage('%3C%21DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3Ethe%20lost%20manifest%3C%2Ftitle%3E%3C%2Fhead%3E%3Cbody%20style%3D%22background%3A%23111%3Bcolor%3A%23ddd%3Bfont-family%3Amonospace%3Bpadding%3A40px%3B%22%3E%3C%21--%20she%20sailed%20from%2040.7128%20N%2074.0060%20W%20--%3E%3C%21--%20her%20destination%20was%2044.4056%20N%208.9463%20E%20--%3E%3C%21--%20she%20never%20arrived%20--%3EShe%20was%20found%20with%20the%20table%20still%20set%20for%20dinner.%3Cbr%20%2F%3EThe%20lifeboat%20was%20gone.%20Everything%20else%20remained.%3Cbr%20%2F%3ENo%20one%20knows%20why.%3Cbr%20%2F%3E%3Cbr%20%2F%3E%3Ca%20href%3D%22https%3A%2F%2Ffile.garden%2FaqlE05Uj5RKrOkO_%2Fmanifest.jpg%22%20download%3D%22manifest.jpg%22%3E%5B%20manifest.jpg%20%5D%3C%2Fa%3E%3C%2Fbody%3E%3C%2Fhtml%3E'); break;
+    case '/thebloodcargo': writeRawPage('%3C%21DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3Ethe%20blood%20cargo%3C%2Ftitle%3E%3C%2Fhead%3E%3Cbody%20style%3D%22background%3A%230a0a0a%3Bcolor%3A%23b0a090%3Bfont-family%3Amonospace%3Bpadding%3A40px%3Bline-height%3A2%3B%22%3E%3C%21--%20VII%20--%3E%3Cpre%3ECARGO%20REGISTRY%20BRIGANTINE%20AMAZON%20NOVEMBER%20EIGHTEEN%20NAMED%0ASEVENTY%20TWO%20OUTBOUND%20FROM%20NEW%20YORK%20BY%0ABOUND%20FOR%20GENOA%20CARRYING%20OF%20COMMERCIAL%20THE%0AONE%20THOUSAND%20SEVEN%20HUNDRED%20ONE%20BARRELS%20DOCTOR%0AALCOHOL%20CERTIFIED%20PURE%20AND%20SEALED%20BY%20OF%0APORT%20AUTHORITY%20CAPTAIN%20BENJAMIN%20BRIGGS%20COMMANDING%20BAKER%0AWIFE%20SARAH%20ELIZABETH%20ABOARD%20ALSO%20CHILD%20STREET%0ASOPHI%20PROVISIONS%20FOR%20NINETY%20DAYS%20LOGGED%20CREW%0A%0ASIGNED%20AND%20WITNESSED%20UNDER%20SEAL%20OF%20THE%0APORT%20OF%20NEW%20YORK%20NOVEMBER%20EIGHTEEN%20SEVENTY%0ATWO%20BY%20HARBOUR%20AUTHORITY%20AND%20CUSTOMS%20OFFICIAL%0AALL%20GOODS%20ACCOUNTED%20FOR%20AND%20DUTY%20PAID%0ACARGO%20MANIFEST%20HOLDS%20LEGAL%20STANDING%20UNDER%20MARITIME%0ALAW%20OF%20THE%20UNITED%20STATES%20AND%20CARRIES%0AFULL%20INSURANCE%20DECLARATION%20ATTACHED%20ON%20SEPARATE%20DOCUMENT%3C%2Fpre%3E%3C%2Fbody%3E%3C%2Fhtml%3E'); break;
+    case '/thesomertonman': writeRawPage('%3C%21DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3EAPI%20Response%3C%2Ftitle%3E%3C%2Fhead%3E%3Cbody%20style%3D%22background-color%3A%20%230d1117%3B%20color%3A%20%23c9d1d9%3B%20font-family%3A%20monospace%3B%20padding%3A%2020px%3B%22%3E%3Cpre%3E%7B%0A%20%20%22case_id%22%3A%20%22SA-1948-0312%22%2C%0A%20%20%22status%22%3A%20%22unsolved%22%2C%0A%20%20%22victim%22%3A%20%22unknown%22%2C%0A%20%20%22evidence_status%22%3A%20%22CORRUPTED%22%2C%0A%20%20%22system_note%22%3A%20%22The%20evidence%20file%20was%20damaged%20during%20database%20migration.%20A%20fragmented%20buffer%20was%20recovered.%22%2C%0A%20%20%22deleted_buffer%22%3A%20%22UkVTVFJJQ1RFRCBBQ0NFU1MgLSBTT1VUSCBBVVNUUkFMSUFOIFBPTElDRQpUaGUgcG9ldHJ5IGJvb2sgd2Fzbid0IHRoZSBvbmx5IHRoaW5nIHRoZSBTb21lcnRvbiBNYW4gY2FycmllZC4KSGUgaGFkIGEgaGFsZi1lbXB0eSBib3ggb2YgbWF0Y2hlcyBpbiBoaXMgcG9ja2V0LgpXaGF0IHdhcyB0aGUgZXhhY3QgYnJhbmQgbmFtZSBvZiB0aG9zZSBtYXRjaGVzPwpOYXZpZ2F0ZSB0byB0aGUgc2hhZG93IGZvcnVtOiAvbWF0Y2hlc2JyeWFudGFuZG1heQoobG93ZXJjYXNlLCBubyBzcGFjZXMsIHVzZSAnYW5kJyBpbnN0ZWFkIG9mICcmJyk%3D%22%0A%7D%3C%2Fpre%3E%3C%2Fbody%3E%3C%2Fhtml%3E'); break;
+    case '/matchesbryantandmay': writeRawPage('%3C%21DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3EShadowBoard%201999%3C%2Ftitle%3E%3C%2Fhead%3E%3Cbody%20style%3D%22background-color%3A%20%23000000%3B%20color%3A%20%2300ff00%3B%20font-family%3A%20monospace%3B%20padding%3A%2040px%3B%22%3E%3Cdiv%20style%3D%22border%3A%201px%20solid%20%2300ff00%3B%20padding%3A%2020px%3B%20max-width%3A%20800px%3B%20margin%3A%200%20auto%3B%22%3E%3Ch2%20style%3D%22text-align%3A%20center%3B%20border-bottom%3A%201px%20dashed%20%2300ff00%3B%20padding-bottom%3A%2010px%3B%22%3EGHOST_NET%20FORUM%20v1.4%3C%2Fh2%3E%3Cp%3E%3Cstrong%3EPOST%20%233239%3C%2Fstrong%3E%20%7C%20AUTHOR%3A%20J.T.%20%281945%29%3C%2Fp%3E%3Cp%3E%3Cstrong%3ESUBJECT%3A%20The%20Final%20Secret%3C%2Fstrong%3E%3C%2Fp%3E%3Cp%3EThey%20found%20the%20poetry%20book.%20I%20had%20to%20move%20the%20final%20piece%20of%20the%20puzzle%20somewhere%20permanent.%20Somewhere%20decentralized.%3C%2Fp%3E%3Cp%3ELook%20at%20the%20very%20first%20block%20of%20the%20chain%20created%20by%20Nakamoto%20%28Block%200%29.%3C%2Fp%3E%3Cp%3EBuried%20in%20the%20raw%20hex%20data%20of%20the%20coinbase%20transaction%20is%20a%20newspaper%20headline.%3C%2Fp%3E%3Cp%3EThe%20flag%20is%20the%20fourth%2C%20fifth%2C%20and%20sixth%20words%20of%20that%20headline%20%28lowercase%2C%20no%20spaces%29.%3C%2Fp%3E%3Cbr%20%2F%3E%3Cp%20style%3D%22text-align%3A%20right%3B%22%3E%3Cem%3E%2F%2F%20end%20of%20transmission%3C%2Fem%3E%3C%2Fp%3E%3C%2Fdiv%3E%3C%2Fbody%3E%3C%2Fhtml%3E'); break;
+    case '/icaruslogistics': writeRawPage('%3C%21DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3EIcarus%20Logistics%20%7C%20Global%20Supply%3C%2Ftitle%3E%3C%2Fhead%3E%3Cbody%20style%3D%22font-family%3A%20Arial%2C%20sans-serif%3B%20margin%3A%200%3B%20background-color%3A%20%23f4f4f9%3B%20color%3A%20%23333%3B%22%3E%3Cheader%20style%3D%22background-color%3A%20%23002244%3B%20color%3A%20white%3B%20padding%3A%2020px%3B%20text-align%3A%20center%3B%22%3E%3Ch1%20style%3D%22margin%3A%200%3B%20font-size%3A%202.5em%3B%20letter-spacing%3A%202px%3B%22%3EICARUS%20LOGISTICS%3C%2Fh1%3E%3Cp%20style%3D%22margin%3A%205px%200%200%200%3B%20font-style%3A%20italic%3B%22%3EWe%20deliver%20where%20others%20cannot.%3C%2Fp%3E%3C%2Fheader%3E%3Cnav%20style%3D%22background-color%3A%20%23003366%3B%20padding%3A%2010px%3B%20text-align%3A%20center%3B%22%3E%3Ca%20href%3D%22%23%22%20style%3D%22color%3Awhite%3Bmargin%3A0%2015px%3Btext-decoration%3Anone%3Bfont-weight%3Abold%3B%22%3EHome%3C%2Fa%3E%20%3Ca%20href%3D%22%23%22%20style%3D%22color%3Awhite%3Bmargin%3A0%2015px%3Btext-decoration%3Anone%3Bfont-weight%3Abold%3B%22%3EAbout%20Us%3C%2Fa%3E%20%3Ca%20href%3D%22%23%22%20style%3D%22color%3Awhite%3Bmargin%3A0%2015px%3Btext-decoration%3Anone%3Bfont-weight%3Abold%3B%22%3EInvestors%3C%2Fa%3E%20%3Ca%20href%3D%22%23%22%20style%3D%22color%3Awhite%3Bmargin%3A0%2015px%3Btext-decoration%3Anone%3Bfont-weight%3Abold%3B%22%3EContact%3C%2Fa%3E%3C%2Fnav%3E%3Cdiv%20style%3D%22max-width%3A1000px%3Bmargin%3A40px%20auto%3Bpadding%3A20px%3Bbackground%3Awhite%3Bbox-shadow%3A0%204px%208px%20rgba%280%2C0%2C0%2C0.1%29%3B%22%3E%3Ch2%3ECorporate%20History%3C%2Fh2%3E%3Cp%3EIcarus%20Logistics%20was%20founded%20on%20the%20principle%20of%20unparalleled%20global%20reach.%20We%20deliver%20where%20others%20cannot.%20Our%20specialized%20fleets%20are%20equipped%20for%20extreme%20environments%2C%20ensuring%20your%20assets%20remain%20completely%20secure.%3C%2Fp%3E%3Cp%3EInnovation%20drives%20our%20core%20infrastructure.%20By%20acquiring%20cutting%20edge%20subsidiaries%2C%20we%20maintain%20a%20technological%20monopoly%20over%20the%20transport%20sector.%20The%20future%20is%20built%20on%20highly%20encrypted%2C%20decentralized%20logistics%20networks.%3C%2Fp%3E%3Cp%3ESecurity%20is%20our%20absolute%20highest%20priority.%20We%20employ%20advanced%20cryptographic%20protocols%20and%20ex-military%20personnel.%20When%20you%20entrust%20us%20with%20your%20cargo%2C%20it%20disappears%20from%20the%20public%20grid%20until%20it%20reaches%20its%20final%20destination.%3C%2Fp%3E%3Chr%20style%3D%22margin%3A40px%200%3B%22%3E%3Ch2%3EInvestor%20Relations%3C%2Fh2%3E%3Cp%3EFollowing%20our%20successful%20Series%20C%20funding%20round%2C%20we%20are%20proud%20to%20announce%20the%20silent%20acquisition%20of%20a%20leading%20bio-research%20firm.%20This%20allows%20us%20to%20transport%20Class-4%20biological%20assets%20with%20unprecedented%20stability.%3C%2Fp%3E%3Cdiv%20style%3D%22background-color%3A%23eef%3Bpadding%3A15px%3Bborder-left%3A4px%20solid%20%23002244%3Bmargin-top%3A30px%3B%22%3E%3Cp%3E%3Cstrong%3EENCRYPTED%20ROUTING%20DIRECTIVE%20%28INTERNAL%20USE%20ONLY%29%3A%3C%2Fstrong%3E%3C%2Fp%3E%3Cp%20style%3D%22font-family%3Amonospace%3Bletter-spacing%3A1px%3Bword-break%3Abreak-all%3B%22%3E%5B1-1-2%5D%20%2F%2F%20%5B1-6-2%5D%20%2F%2F%20%5B1-1-1%5D%20%2F%2F%20%5B1-1-4%5D%20%2F%2F%20%5B1-2-2%5D%20%2F%2F%20%5B1-4-4%5D%20%2F%2F%20%5B1-23-6%5D%20%2F%2F%20%5B1-4-6%5D%20%2F%2F%20%5B1-4-5%5D%20%2F%2F%20%5B1-1-1%5D%20%2F%2F%20%5B1-1-2%5D%20%2F%2F%20%5B1-1-3%5D%20%2F%2F%20%5B1-2-1%5D%3C%2Fp%3E%3Cp%20style%3D%22font-size%3A0.8em%3Bcolor%3A%23666%3B%22%3E%2A%20Route%20coordinates%20format%3A%20%5BParagraph%20-%20Word%20-%20Letter%5D.%20Access%20requires%20manual%20decoding.%3C%2Fp%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cfooter%20style%3D%22text-align%3Acenter%3Bpadding%3A20px%3Bbackground-color%3A%23002244%3Bcolor%3Awhite%3Bmargin-top%3A40px%3B%22%3E%26copy%3B%202024%20Icarus%20Logistics%20Corp.%20All%20rights%20reserved.%3C%2Ffooter%3E%3C%2Fbody%3E%3C%2Fhtml%3E'); break;
+    case '/chironmedical': writeRawPage('%3C%21DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3EChiron%20Medical%20%7C%20Secure%20Portal%3C%2Ftitle%3E%3C%2Fhead%3E%3Cbody%20style%3D%22background-color%3A%230d1b2a%3Bcolor%3A%23e0e1dd%3Bfont-family%3Asans-serif%3Bdisplay%3Aflex%3Bjustify-content%3Acenter%3Balign-items%3Acenter%3Bheight%3A100vh%3Bmargin%3A0%3B%22%3E%3Cdiv%20style%3D%22background-color%3A%231b263b%3Bpadding%3A40px%3Bborder-radius%3A8px%3Bbox-shadow%3A0%2010px%2020px%20rgba%280%2C0%2C0%2C0.5%29%3Bwidth%3A400px%3B%22%3E%3Ch2%20style%3D%22text-align%3Acenter%3Bborder-bottom%3A2px%20solid%20%23415a77%3Bpadding-bottom%3A10px%3Bmargin-bottom%3A30px%3B%22%3ECHIRON%20MEDICAL%20DATABASE%3C%2Fh2%3E%3Cp%20style%3D%22font-size%3A0.9em%3Bcolor%3A%23778da9%3Bmargin-bottom%3A20px%3B%22%3E%3Ci%3ESecurity%20Notice%3A%20Passwords%20have%20been%20reset.%20Your%20new%20password%20is%20the%20name%20of%20the%20protein%20that%20allows%20tardigrades%20to%20survive%20extreme%20radiation%2C%20followed%20immediately%20by%20the%20exact%20depth%20%28in%20meters%29%20of%20the%20Challenger%20Deep%20as%20measured%20by%20the%202010%20UNH-CCOM%20survey.%20%28Lowercase%2C%20no%20spaces%29.%3C%2Fi%3E%3C%2Fp%3E%3Cinput%20type%3D%22text%22%20id%3D%22usr%22%20placeholder%3D%22Username%22%20style%3D%22width%3A100%25%3Bpadding%3A10px%3Bmargin-bottom%3A15px%3Bborder%3Anone%3Bborder-radius%3A4px%3Bbackground%3A%23e0e1dd%3Bbox-sizing%3Aborder-box%3B%22%3E%3Cinput%20type%3D%22password%22%20id%3D%22pwd%22%20placeholder%3D%22Password%22%20style%3D%22width%3A100%25%3Bpadding%3A10px%3Bmargin-bottom%3A20px%3Bborder%3Anone%3Bborder-radius%3A4px%3Bbackground%3A%23e0e1dd%3Bbox-sizing%3Aborder-box%3B%22%3E%3Cbutton%20onclick%3D%22checkAuth%28%29%22%20style%3D%22width%3A100%25%3Bpadding%3A10px%3Bbackground-color%3A%23415a77%3Bcolor%3Awhite%3Bborder%3Anone%3Bborder-radius%3A4px%3Bcursor%3Apointer%3Bfont-weight%3Abold%3B%22%3EAUTHENTICATE%3C%2Fbutton%3E%3Cp%20id%3D%22err%22%20style%3D%22color%3A%23ef233c%3Btext-align%3Acenter%3Bmargin-top%3A15px%3Bfont-weight%3Abold%3B%22%3E%3C%2Fp%3E%3C%2Fdiv%3E%3Cscript%3Efunction%20checkAuth%28%29%7Bvar%20p%3Ddocument.getElementById%28%22pwd%22%29.value.toLowerCase%28%29.trim%28%29%3Bif%28p%3D%3D%3D%22dsup10994%22%29%7Bwindow.location.href%3D%22%2Fchirondatabase%22%3B%7Delse%7Bdocument.getElementById%28%22err%22%29.innerText%3D%22ERROR%3A%20INVALID%20CREDENTIALS.%22%3B%7D%7D%3C%2Fscript%3E%3C%2Fbody%3E%3C%2Fhtml%3E'); break;
+    case '/chirondatabase': writeRawPage('%3C%21DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3EChiron%20DB%20%7C%20Asset%20Logs%3C%2Ftitle%3E%3C%2Fhead%3E%3Cbody%20style%3D%22background-color%3A%23000%3Bcolor%3A%230f0%3Bfont-family%3Amonospace%3Bpadding%3A20px%3B%22%3E%3Ch1%3ECHIRON%20MEDICAL%20-%20DEEP%20STORAGE%20LOGS%3C%2Fh1%3E%3Chr%20style%3D%22border-color%3A%230f0%3B%22%3E%3Ch3%3ELOG%20ENTRY%20%23001%20-%20ANOMALY%20CONTAINMENT%3C%2Fh3%3E%3Cp%3EThe%20asset%20recovered%20from%20the%20Amazon%20Brigantine%20%281872%29%20remains%20stable.%20Cellular%20regeneration%20exceeds%20400%25.%3C%2Fp%3E%3Ch3%3ELOG%20ENTRY%20%23002%20-%20SECURITY%20PROTOCOL%20UPDATE%3C%2Fh3%3E%3Cp%3EAll%20Vigenere%20encryption%20keys%20have%20been%20updated.%20The%20current%20active%20key%20is%20the%20surname%20of%20the%20mythological%20figure%20who%20ferried%20souls%20across%20the%20river%20Styx.%3C%2Fp%3E%3Ch3%3ELOG%20ENTRY%20%23003%20-%20TRANSPORT%20LOG%3C%2Fh3%3E%3Cp%3EIcarus%20Logistics%20has%20confirmed%20receipt%20of%20the%20asset.%20It%20is%20being%20moved%20to%20the%20Aegis%20facility%20for%20permanent%20cold%20storage.%3C%2Fp%3E%3Ch3%3ELOG%20ENTRY%20%23004%20-%20CORRUPTED%20TRANSMISSION%3C%2Fh3%3E%3Cp%3EThe%20following%20intercepted%20packet%20was%20heavily%20encrypted%20prior%20to%20database%20failure.%20Analysis%20indicates%20Hexadecimal%20wrapping%20around%20Base64%2C%20enclosing%20a%20Vigenere%20ciphertext.%3C%2Fp%3E%3Cdiv%20style%3D%22background-color%3A%23111%3Bpadding%3A15px%3Bborder%3A1px%20solid%20%230f0%3Bword-break%3Abreak-all%3B%22%3E5132786e656d63676232356f59324a6e646e5a734947463063584a3165694279646d566f61336c6c6169426f645763676457466b637942696143426861485967596e5a7762485232633245676148426d61323067636d74756147736759324e6e6557467264324a774947466f636d676763576468623256765a3264724947357363586c6e61484967626e4e75636e5a7561694232646d6c7649476c6c494768315a79426f6447526a5a6e4a765a576c7a4c6942426353423663484a78636e5575%3C%2Fdiv%3E%3C%2Fbody%3E%3C%2Fhtml%3E'); break;
+    case '/operationargus': writeRawPage('%3C%21DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3EAEGIS%20BLACKSITE%20TERMINAL%3C%2Ftitle%3E%3C%2Fhead%3E%3Cbody%20style%3D%22background-color%3A%232b0000%3Bcolor%3A%23ff4d4d%3Bfont-family%3Amonospace%3Btext-align%3Acenter%3Bpadding-top%3A100px%3B%22%3E%3Ch1%20style%3D%22font-size%3A3em%3Bmargin-bottom%3A10px%3B%22%3EAEGIS%20COMMAND%20TERMINAL%3C%2Fh1%3E%3Ch3%20style%3D%22margin-top%3A0%3B%22%3ERESTRICTED%20MILITARY%20NETWORK%3C%2Fh3%3E%3Cdiv%20style%3D%22margin%3A50px%20auto%3Bmax-width%3A600px%3Bbackground-color%3A%231a0000%3Bpadding%3A30px%3Bborder%3A2px%20solid%20%23ff4d4d%3B%22%3E%3Cp%20style%3D%22font-size%3A1.2em%3Bmargin-bottom%3A30px%3B%22%3EAUTHORIZATION%20REQUIRED.%3C%2Fp%3E%3Cp%3EEnter%20the%20name%20of%20the%20ship%20that%20served%20as%20the%20command%20vessel%20for%20Task%20Force%2088%20during%20this%20operation%20%28lowercase%2C%20no%20spaces%29%3A%3C%2Fp%3E%3Cinput%20type%3D%22text%22%20id%3D%22flag%22%20style%3D%22padding%3A10px%3Bwidth%3A80%25%3Bbackground%3A%23000%3Bcolor%3A%23ff4d4d%3Bborder%3A1px%20solid%20%23ff4d4d%3Bmargin-bottom%3A20px%3Bfont-size%3A1.2em%3Btext-align%3Acenter%3B%22%3E%3Cbr%3E%3Cbutton%20onclick%3D%22verify%28%29%22%20style%3D%22padding%3A10px%2030px%3Bbackground%3A%23ff4d4d%3Bcolor%3A%23000%3Bborder%3Anone%3Bfont-size%3A1.2em%3Bcursor%3Apointer%3Bfont-weight%3Abold%3B%22%3ESUBMIT%3C%2Fbutton%3E%3Cp%20id%3D%22res%22%20style%3D%22margin-top%3A20px%3Bfont-weight%3Abold%3Bfont-size%3A1.5em%3B%22%3E%3C%2Fp%3E%3C%2Fdiv%3E%3Cscript%3Efunction%20verify%28%29%7Bvar%20v%3Ddocument.getElementById%28%22flag%22%29.value.toLowerCase%28%29.replace%28%2F%5Cs%2Fg%2C%22%22%29%3Bif%28v%3D%3D%3D%22ussnortonsound%22%29%7Bdocument.getElementById%28%22res%22%29.style.color%3D%22%2300ff00%22%3Bdocument.getElementById%28%22res%22%29.innerText%3D%22ACCESS%20GRANTED.%20FLAG%3A%20ussnortonsound%22%3B%7Delse%7Bdocument.getElementById%28%22res%22%29.style.color%3D%22%23ff4d4d%22%3Bdocument.getElementById%28%22res%22%29.innerText%3D%22ACCESS%20DENIED.%20LETHAL%20COUNTERMEASURES%20ENGAGED.%22%3B%7D%7D%3C%2Fscript%3E%3C%2Fbody%3E%3C%2Fhtml%3E'); break;
   }
   return null;
 }

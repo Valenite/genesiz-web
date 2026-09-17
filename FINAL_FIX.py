@@ -69,7 +69,7 @@ pages = {
 }
 
 react_code = """export function isCipherQuestPath() {
-  const pathname = window.location.pathname.replace(/\\/$/, '');
+  const pathname = window.location.pathname.replace(/\/$/, '');
   return [
 """
 for path in pages.keys():
@@ -84,7 +84,7 @@ function writeRawPage(encodedHtml: string) {
 }
 
 export function CipherQuestPage() {
-  const pathname = window.location.pathname.replace(/\\/$/, '');
+  const pathname = window.location.pathname.replace(/\/$/, '');
   switch (pathname) {
 """
 for path, html in pages.items():
@@ -97,3 +97,4 @@ react_code += """  }
 
 with open(r'C:\Users\user\.gemini\antigravity\scratch\genesiz-web\src\components\CipherQuestPages.tsx', 'w', encoding='utf8') as f:
     f.write(react_code)
+print("SUCCESS!")
