@@ -1,4 +1,4 @@
-﻿export function isCipherQuestPath() {
+export function isCipherQuestPath() {
   const pathname = window.location.pathname.replace(/\/$/, '');
   return [
     '/posterchild',
@@ -11,6 +11,9 @@
     '/thebloodcargo',
     '/thesomertonman',
     '/matches-bryantandmay',
+    '/midnight-portal',
+    '/midnight-vault',
+    '/node-77',
   ].includes(pathname);
 }
 
@@ -81,9 +84,9 @@ function renderTheSomertonMan() {
   "case_id": "SA-1948-0312",
   "status": "unsolved",
   "victim": "unknown",
-  "evidence_location": "DELETED",
-  "system_note": "The evidence file was accidentally committed to this website's public GitHub repository, then immediately deleted.",
-  "directive": "You must check the git commit history of the genesiz-web repository to find the deleted evidence_1948.txt file."
+  "evidence_status": "CORRUPTED",
+  "system_note": "The evidence file was damaged during database migration. A fragmented buffer was recovered.",
+  "deleted_buffer": "UkVTVFJJQ1RFRCBBQ0NFU1MgLSBTT1VUSCBBVVNUUkFMSUFOIFBPTElDRQpUaGUgcG9ldHJ5IGJvb2sgd2Fzbid0IHRoZSBvbmx5IHRoaW5nIHRoZSBTb21lcnRvbiBNYW4gY2FycmllZC4KSGUgaGFkIGEgaGFsZi1lbXB0eSBib3ggb2YgbWF0Y2hlcyBpbiBoaXMgcG9ja2V0LgpXaGF0IHdhcyB0aGUgZXhhY3QgYnJhbmQgbmFtZSBvZiB0aG9zZSBtYXRjaGVzPwpOYXZpZ2F0ZSB0byB0aGUgc2hhZG93IGZvcnVtOiAvbWF0Y2hlcy1bYnJhbmRuYW1lXQoobG93ZXJjYXNlLCBubyBzcGFjZXMsIHVzZSAnYW5kJyBpbnN0ZWFkIG9mICcmJyk="
 }
 </pre>
 </body>
@@ -110,6 +113,70 @@ function renderMatchesBryantAndMay() {
 </html>`);
 }
 
+function renderMidnightPortal() {
+  writeRawPage(`<!DOCTYPE html>
+<html>
+<head><title>Midnight Portal</title></head>
+<body style="background:#050505; color:#00ff00; font-family:monospace; padding:50px;">
+<script>
+  if (!document.cookie.includes('role=')) {
+    document.cookie = "role=guest; path=/";
+  }
+  window.onload = function() {
+    if (document.cookie.includes('role=admin')) {
+       document.getElementById('content').innerHTML = "<h2>AUTH ACCEPTED</h2><p>Welcome, Administrator.</p><br/><a href='/midnight-vault' style='color:#000; background:#00ff00; padding:10px 20px; text-decoration:none; font-weight:bold;'>ENTER THE VAULT</a>";
+    } else {
+       document.getElementById('content').innerHTML = "<h2>ACCESS DENIED</h2><p>Current session role: <b style='color:red;'>GUEST</b></p><br/><p>You do not have the required permissions to view this page.<br/>The system administrator must grant you the 'admin' role.</p>";
+    }
+  }
+</script>
+<div id="content">Verifying credentials...</div>
+</body>
+</html>`);
+}
+
+function renderMidnightVault() {
+  writeRawPage(`<!DOCTYPE html>
+<html>
+<head><title>Midnight Vault</title></head>
+<body style="background:#1a0000; color:#ff4444; font-family:monospace; padding:50px; border: 2px solid #ff4444; margin: 20px;">
+<h1 style="text-align:center;">VAULT UNLOCKED</h1>
+<hr style="border-color:#ff4444;">
+<p style="text-align:center; font-size:1.2em;"><strong>WARNING: UNAUTHORIZED ACCESS DETECTED.</strong></p>
+<p style="text-align:center;">The physical asset has been moved to our decentralized sub-node to prevent capture.</p>
+<br/>
+<p style="text-align:center;">Access the node directory at: <a href="/node-77" style="color:#ffffff; text-decoration:underline;">/node-77</a></p>
+</body>
+</html>`);
+}
+
+function renderNode77() {
+  writeRawPage(`<!DOCTYPE html>
+<html>
+<head><title>Index of /node-77</title></head>
+<body style="background:#ffffff; color:#000000; font-family:sans-serif; padding:20px;">
+<script>
+  // INJECT THE FLAG INTO LOCAL STORAGE
+  localStorage.setItem('ARCHON_FLAG', 'persistent_storage_hacker');
+  
+  function showHint() {
+     alert("SECURITY MEMO (12/10/24)\\n\\nReminder to all devs: Do not leave sensitive keys in the page headers or CSS files.\\n\\nThe asset is now stored locally on the client's machine. Check your persistent application storage.");
+  }
+</script>
+<h1>Index of /node-77</h1>
+<hr>
+<ul style="list-style-type:none; padding:0; font-family:monospace; font-size:16px;">
+  <li><a href="/midnight-vault">../</a></li>
+  <li style="margin-top:10px;"><a href="#" onclick="showHint()">security_memo.txt</a></li>
+  <li style="margin-top:10px;"><a href="#" onclick="alert('File corrupted. Error 0x000000F')">system_config.bin</a></li>
+  <li style="margin-top:10px;"><a href="#" onclick="alert('Access restricted. Required clearance not found.')">project_midnight.pdf</a></li>
+</ul>
+<hr>
+<address>Apache/2.4.41 (Ubuntu) Server at node-77 Port 80</address>
+</body>
+</html>`);
+}
+
 export function CipherQuestPage() {
   const pathname = window.location.pathname.replace(/\/$/, '');
 
@@ -124,8 +191,10 @@ export function CipherQuestPage() {
     case '/thebloodcargo': renderTheBloodCargo(); break;
     case '/thesomertonman': renderTheSomertonMan(); break;
     case '/matches-bryantandmay': renderMatchesBryantAndMay(); break;
+    case '/midnight-portal': renderMidnightPortal(); break;
+    case '/midnight-vault': renderMidnightVault(); break;
+    case '/node-77': renderNode77(); break;
   }
 
   return null;
 }
-
