@@ -44999,7 +44999,7 @@ Timestamp,IP_Address,Method,Path,Status,User_Agent
 1999-12-31 23:55:16,75.231.248.165,HEAD,/admin/login.asp,403,Mozilla/4.0 (compatible; MSIE 4.01; Windows NT)
 1999-12-31 23:55:36,90.129.61.72,POST,/index.html,404,Mozilla/4.0 (compatible; MSIE 5.0; Windows 98)
 1999-12-31 23:58:03,49.143.229.115,HEAD,/index.html,200,Mozilla/4.0 (compatible; MSIE 4.01; Windows NT)
-1999-12-31 23:59:59,192.168.0.1,GET,/y2k_blackout_protocol,200,Unknown/Custom-Agent-v1.0
+1999-12-31 23:59:59,192.168.0.1,GET,/y2kblackoutprotocol,200,Unknown/Custom-Agent-v1.0
 2000-01-01 00:00:02,96.8.93.173,OPTIONS,/admin/login.asp,200,Mozilla/4.0 (compatible; MSIE 4.01; Windows NT)
 2000-01-01 00:00:05,156.75.22.221,POST,/favicon.ico,200,Mozilla/4.0 (compatible; MSIE 4.01; Windows NT)
 2000-01-01 00:00:08,167.114.214.230,HEAD,/robots.txt,200,Mozilla/4.0 (compatible; MSIE 4.01; Windows NT)
