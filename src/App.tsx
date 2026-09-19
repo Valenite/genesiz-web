@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { CipherSandbox } from './components/CipherSandbox';
@@ -13,6 +13,7 @@ import { RegistrationModal } from './components/RegistrationModal';
 import { AdminVaultModal } from './components/AdminVaultModal';
 import { GenesizChatbot, ChatbotTriggerButton } from './components/GenesizChatbot';
 import { CipherQuestPage, isCipherQuestPath } from './components/CipherQuestPages';
+import { SurprisePage } from './components/SurprisePage';
 import type { EventDetail } from './data/eventsData';
 
 export function App() {
@@ -22,6 +23,12 @@ export function App() {
   const [isCipherSandboxOpen, setIsCipherSandboxOpen] = useState<boolean>(false);
   const [isAdminVaultOpen, setIsAdminVaultOpen] = useState<boolean>(false);
   const [isChatbotOpen, setIsChatbotOpen] = useState<boolean>(false);
+
+  const p = window.location.pathname.replace(/\/$/, '');
+
+  if (p === '/surprise') {
+    return <SurprisePage />;
+  }
 
   if (isCipherQuestPath()) {
     return <CipherQuestPage />;
