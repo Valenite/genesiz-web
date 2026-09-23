@@ -16,6 +16,8 @@ export function isCipherQuestPath() {
     '/tartarus',
     '/clementine6895baronblood',
     '/operationargus',
+    '/transient',
+    '/akrotiri',
   ].includes(p);
 }
 
