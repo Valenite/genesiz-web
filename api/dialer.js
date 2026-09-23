@@ -16,7 +16,7 @@ export default function handler(req, res) {
 
   // Server-side mapping logic - NOT exposed to client
   if (number === '73190426') {
-    const filePath = path.join(process.cwd(), 'api', 'call.wav');
+    const filePath = path.join(process.cwd(), 'assets', 'call.wav');
     try {
       const stat = fs.statSync(filePath);
       res.writeHead(200, {
