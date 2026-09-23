@@ -14,6 +14,7 @@ import { AdminVaultModal } from './components/AdminVaultModal';
 import { GenesizChatbot, ChatbotTriggerButton } from './components/GenesizChatbot';
 import { CipherQuestPage, isCipherQuestPath } from './components/CipherQuestPages';
 import { SurprisePage } from './components/SurprisePage';
+import { DialerPage } from './components/DialerPage';
 import type { EventDetail } from './data/eventsData';
 
 export function App() {
@@ -25,6 +26,10 @@ export function App() {
   const [isChatbotOpen, setIsChatbotOpen] = useState<boolean>(false);
 
   const p = window.location.pathname.replace(/\/$/, '');
+
+  if (p === '/dialer') {
+    return <DialerPage />;
+  }
 
   if (p === '/surprise') {
     return <SurprisePage />;
