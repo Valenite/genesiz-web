@@ -4,19 +4,21 @@ filepath = r"src\App.tsx"
 with open(filepath, 'r', encoding='utf-8') as f:
     content = f.read()
 
-# Add import
-import_statement = "import { DialerPage } from './components/DialerPage';\n"
-content = content.replace("import type { EventDetail }", import_statement + "import type { EventDetail }")
+import_statement = "import { IcarusLogistics, ChironMedical, ChironDatabase, Tartarus, Clementine } from './components/Level4';\n"
+if "import { IcarusLogistics" not in content:
+    content = content.replace("import { SurprisePage }", import_statement + "import { SurprisePage }")
 
-# Add route
-route_statement = """
-  if (p === '/dialer') {
-    return <DialerPage />;
-  }
+routing_logic = """
+  if (p === '/icaruslogistics') return <IcarusLogistics />;
+  if (p === '/chironmedical') return <ChironMedical />;
+  if (p === '/c5d909a55dd35e1f') return <ChironDatabase />;
+  if (p === '/tartarus') return <Tartarus />;
+  if (p === '/clementine6895baronblood') return <Clementine />;
 """
-content = content.replace("if (p === '/surprise') {", route_statement.strip() + "\n\n  if (p === '/surprise') {")
+
+if "if (p === '/icaruslogistics')" not in content:
+    content = content.replace("  if (p === '/surprise') {\n    return <SurprisePage />;\n  }", "  if (p === '/surprise') {\n    return <SurprisePage />;\n  }\n" + routing_logic)
 
 with open(filepath, 'w', encoding='utf-8') as f:
     f.write(content)
-
 print("Updated App.tsx")
