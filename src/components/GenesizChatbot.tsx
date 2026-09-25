@@ -102,7 +102,17 @@ function getBotReply(text: string, hintCount: number): { reply: string; newHintC
   // Schedule / dates
   if (normalized.includes('schedule') || normalized.includes('time') || normalized.includes('date') || normalized.includes('when') || normalized.includes('october')) {
     return {
-      reply: 'GENESIZ 2026 event dates:\n• Valorant: Oct 5–7 (5 PM IST daily)\n• Bedwarz: Oct 8–9 (5 PM IST daily)\n• CipherQuest: Oct 10–12 (48-hour hunt)\n• Brainbyte: Oct 10 (5 PM IST)\n• AppForge & WebX: Oct 10–11\n• AlgoArena: Oct 12–13 (6 PM IST)\n• Surprise?!: Oct 14\n\nAll updates posted on Discord!',
+      reply: `GENESIZ 2026 event dates:
+• BrainByte: Oct 5 (5-6 PM)
+• AlgoArena: Oct 6-7 (6-9 PM)
+• WebX & AppForge: Oct 8-9 (5-8 PM)
+• CipherQuest: Oct 10-12 (12 AM onwards)
+• BedWarz: Oct 13-14 (5 PM onwards)
+• Valorant: Oct 15-17 (5 PM onwards)
+• Surprise Event: Oct 18 (6-8 PM)
+• Results Out: Oct 20-22
+
+All updates posted on Discord!`,
       newHintCount: hintCount,
     };
   }

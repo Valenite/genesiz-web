@@ -74,7 +74,7 @@ AVAILABLE COMMANDS:
   event <name>    - Get info on a specific event (e.g. "event cipherquest")
   discord         - Open official Discord server (discord.gg/narNSeybgR)
   valenite        - About the creator, Valenite Electrion
-  schedule        - Show full timetable for October 5, 2026
+  schedule        - Show full timetable for GENESIZ 2026
   date            - Show countdown to GENESIZ 2026
   register        - Open registration form
   matrix          - Toggle matrix visual mode
@@ -169,18 +169,15 @@ Description: ${match.fullDesc}
         newHistory.push({
           type: 'output',
           text: `
-OCTOBER 5, 2026 SCHEDULE:
-  08:00 AM - Check-in & Verification
-  09:00 AM - Opening Speech (Valenite Electrion)
-  09:00 AM - CipherQuest 4-Day Hunt Starts (on Discord)
-  09:30 AM - AppForge & WebX Sprint Begins
-  09:45 AM - Valorant Swiss Qualifier Rounds
-  10:30 AM - AlgoArena Coding Round
-  11:00 AM - Bedwarz 4v4 Minecraft Showdown
-  02:00 PM - Brainbyte Live Quiz
-  04:00 PM - Surprise?!?!?!! Secret Event
-  04:30 PM - Valorant Grand Final
-  07:30 PM - Prize Ceremony & Closing
+GENESIZ 2026 TIMELINE:
+    OCT 05 (5 PM - 6 PM)   - BrainByte
+    OCT 06-07 (6 PM-9 PM)  - AlgoArena
+    OCT 08-09 (5 PM-8 PM)  - WebX & AppForge
+    OCT 10-12 (12 AM ON)   - CipherQuest
+    OCT 13-14 (5 PM ON)    - BedWarz
+    OCT 15-17 (5 PM ON)    - Valorant Championship
+    OCT 18 (6 PM - 8 PM)   - Surprise Event
+    OCT 20-22              - Results Out
           `.trim(),
         });
         break;

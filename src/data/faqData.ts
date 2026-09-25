@@ -8,12 +8,12 @@ export const FAQ_DATA: FAQItem[] = [
   {
     category: 'General',
     question: 'What is GENESIZ and who is the founding architect?',
-    answer: 'GENESIZ is a premier inter-institutional technology symposium, competitive algorithmic arena, and tactical esports summit taking place on October 5, 2026. The symposium was conceived, architected, and powered by Valenite Electrion as a landmark technology convocation.'
+    answer: 'GENESIZ is a premier inter-institutional technology symposium, competitive algorithmic arena, and tactical esports summit taking place from October 5 - 22, 2026. The symposium was conceived, architected, and powered by Valenite Electrion as a landmark technology convocation.'
   },
   {
     category: 'General',
     question: 'What is the operational structure of the symposium?',
-    answer: 'GENESIZ operates a hybrid architecture: CipherQuest runs as a 4-day digital symposium via our secure Discord infrastructure (October 5 - 9), while algorithmic engineering, hackathons, quizzes, and esports take place on-site within dedicated computational arenas.'
+    answer: 'GENESIZ operates a hybrid architecture: CipherQuest runs as a 3-day digital symposium via our secure Discord infrastructure (October 10 - 12), while algorithmic engineering, hackathons, quizzes, and esports take place on-site within dedicated computational arenas.'
   },
   {
     category: 'Registration',
@@ -23,7 +23,7 @@ export const FAQ_DATA: FAQItem[] = [
   {
     category: 'Registration',
     question: 'Can delegates participate across multiple disciplines?',
-    answer: 'Yes. Delegates may register for multiple disciplines provided there are no physical schedule conflicts. The 4-day online CipherQuest cryptic hunt is structured to allow concurrent participation alongside any on-site discipline.'
+    answer: 'Yes. Delegates may register for multiple disciplines provided there are no physical schedule conflicts. The 3-day online CipherQuest cryptic hunt is structured to allow concurrent participation alongside any on-site discipline.'
   },
   {
     category: 'Registration',
@@ -33,7 +33,7 @@ export const FAQ_DATA: FAQItem[] = [
   {
     category: 'Events',
     question: 'What is the format and duration of CipherQuest?',
-    answer: 'CipherQuest runs continuously for 4 days (96 consecutive hours), commencing on October 5, 2026 at 09:00 AM IST. Progressive intelligence releases and official lead bulletins will be broadcast on the official Discord server.'
+    answer: 'CipherQuest runs continuously for 3 days (72 consecutive hours), commencing on October 10, 2026 at 12:00 AM IST. Progressive intelligence releases and official lead bulletins will be broadcast on the official Discord server.'
   },
   {
     category: 'Events',

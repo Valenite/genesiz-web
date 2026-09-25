@@ -38,7 +38,7 @@ export const FAQSection: React.FC = () => {
             Everything you need to know.
           </h2>
           <p className="text-sm text-zinc-400 font-normal max-w-xl leading-relaxed">
-            Comprehensive directives on student registration, 4-day CipherQuest schedules, on-site hardware allocations, and pass validation.
+            Comprehensive directives on student registration, 3-day CipherQuest schedules, on-site hardware allocations, and pass validation.
           </p>
         </div>
       </RevealOnScroll>

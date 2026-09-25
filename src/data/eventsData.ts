@@ -63,7 +63,7 @@ export const EVENTS_DATA: EventDetail[] = [
         duration: 'Tiers 1 - 15'
       },
       {
-        title: 'Phase 2: Deep Forensics & Signal Analysis (Oct 11)',
+        title: 'Phase 2: Deep Forensics & Signal Analysis (Oct 9)',
         description: 'Least-significant-bit steganography, spectral audio breakdown, and packet stream reconstruction.',
         duration: 'Tiers 16 - 35'
       },
@@ -93,9 +93,9 @@ export const EVENTS_DATA: EventDetail[] = [
     teamSize: '2 Delegates',
     eligibility: 'Enrolled Academic Delegates',
     format: 'Online & On-Site',
-    duration: 'Oct 12 - 13 (6:00 PM IST)',
-    date: 'October 12 - 13, 2026',
-    time: 'Evening from 6:00 PM IST',
+    duration: 'Oct 6 - 7 (6:00 PM - 9:00 PM)',
+    date: 'October 6 - 7, 2026',
+    time: 'Evening 6:00 PM - 9:00 PM IST',
     venue: 'AlgoLab Computational Arena & Discord HQ',
     badge: '2-PERSON PROGRAMMING ARENA',
     iconName: 'Code2',
@@ -108,12 +108,12 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     rounds: [
       {
-        title: 'Session 1: Foundation Sprint (Oct 12 @ 6:00 PM IST)',
+        title: 'Session 1: Foundation Sprint (Oct 6 @ 6:00 PM IST)',
         description: 'Targeted computational scenarios focusing on two-pointer paradigms, greedy heuristics, and cumulative intervals.',
         duration: 'Evening Session'
       },
       {
-        title: 'Session 2: Advanced Algorithmic Siege (Oct 13 @ 6:00 PM IST)',
+        title: 'Session 2: Advanced Algorithmic Siege (Oct 7 @ 6:00 PM IST)',
         description: 'Sophisticated problems encompassing multi-dimensional DP, segment tree structures, graph traversal, and combinatorics.',
         duration: 'Evening Session'
       }
@@ -137,32 +137,32 @@ export const EVENTS_DATA: EventDetail[] = [
     teamSize: '5 + 1 Reserve',
     eligibility: 'Open Division Roster',
     format: 'LAN Arena',
-    duration: 'Oct 5 - 7 (5:00 PM IST)',
-    date: 'October 5 - 7, 2026',
+    duration: 'Oct 15 - 17 (5:00 PM ONWARDS)',
+    date: 'October 15 - 17, 2026',
     time: 'Evening from 5:00 PM IST',
     venue: 'Main Esports Arena & Discord Tournament Hub',
     badge: 'VCT REGULATION 5+1',
     iconName: 'Crosshair',
     rules: [
       'Squad composition: 5 Main Active Players + 1 Reserve Player.',
-      'Tournament matches execute daily starting at 5:00 PM IST from Oct 5 to Oct 7.',
+      'Tournament matches execute daily starting at 5:00 PM IST from Oct 15 to Oct 17.',
       'Active Competitive Map Pool: Ascent, Bind, Haven, Lotus, Sunset, Split, Abyss.',
       'Official Map Veto Protocol & Tactical timeouts standard.',
       'Schedule updates and further details will be communicated via official Discord.'
     ],
     rounds: [
       {
-        title: 'Swiss Group Stage (Oct 5 @ 5:00 PM IST)',
+        title: 'Swiss Group Stage (Oct 15 @ 5:00 PM IST)',
         description: 'BO1 qualifying matches across group lobbies.',
         duration: 'Evening 5:00 PM'
       },
       {
-        title: 'Knockout Bracket (Oct 6 @ 5:00 PM IST)',
+        title: 'Knockout Bracket (Oct 16 @ 5:00 PM IST)',
         description: 'Single-elimination quarterfinal and semifinal series.',
         duration: 'Evening 5:00 PM'
       },
       {
-        title: 'Grand Finals (Oct 7 @ 5:00 PM IST)',
+        title: 'Grand Finals (Oct 17 @ 5:00 PM IST)',
         description: 'Best-of-3 series with live analytical stream broadcast.',
         duration: 'Evening 5:00 PM'
       }
@@ -186,27 +186,27 @@ export const EVENTS_DATA: EventDetail[] = [
     teamSize: '4 + 1 Reserve',
     eligibility: 'Java Edition Delegates (1.8.9 PvP Mechanics)',
     format: 'LAN Arena',
-    duration: 'Oct 8 - 9 (5:00 PM IST)',
-    date: 'October 8 - 9, 2026',
+    duration: 'Oct 13 - 14 (5:00 PM ONWARDS)',
+    date: 'October 13 - 14, 2026',
     time: 'Evening from 5:00 PM IST',
     venue: 'Esports Pods B & Discord Hub',
     badge: '4+1 SQUAD PVP',
     iconName: 'Swords',
     rules: [
       'Squad composition: 4 Main Active Players + 1 Reserve Player.',
-      'Tournament matches execute daily starting at 5:00 PM IST from Oct 8 to Oct 9.',
+      'Tournament matches execute daily starting at 5:00 PM IST from Oct 13 to Oct 18.',
       'Minecraft Java Edition 1.8.9 client standard (Lunar / Badlion / Verified Vanilla).',
       'Schedule updates and further details will be communicated via official Discord.',
       'Unsportsmanlike stalling or unauthorized teaming will incur immediate forfeiture.'
     ],
     rounds: [
       {
-        title: 'Phase 1: Double Elimination Brackets (Oct 8 @ 5:00 PM IST)',
+        title: 'Phase 1: Double Elimination Brackets (Oct 13 @ 5:00 PM IST)',
         description: 'Qualifying squad lobbies to determine final bracket seeds.',
         duration: 'Evening 5:00 PM'
       },
       {
-        title: 'Phase 2: Championship Final (Oct 9 @ 5:00 PM IST)',
+        title: 'Phase 2: Championship Final (Oct 18 @ 5:00 PM IST)',
         description: 'Final squads duel in high-stakes BO3 championship arenas.',
         duration: 'Evening 5:00 PM'
       }
@@ -230,15 +230,15 @@ export const EVENTS_DATA: EventDetail[] = [
     teamSize: '1 Delegate',
     eligibility: 'Open to All Enrolled Delegates',
     format: 'Live Stage',
-    duration: 'Oct 10 (5:00 PM IST)',
-    date: 'October 10, 2026',
+    duration: 'Oct 5 (5:00 PM - 6:00 PM)',
+    date: 'October 5, 2026',
     time: 'Evening @ 5:00 PM IST',
     venue: 'Main Auditorium Stage',
     badge: 'SOLO STAGE QUIZ',
     iconName: 'Brain',
     rules: [
       'Participation is strictly individual (1 delegate per registration).',
-      'Commences Oct 10 in the evening at 5:00 PM IST.',
+      'Commences Oct 5 in the evening at 5:00 PM IST.',
       'Prelims digital screening followed by live stage buzzer final.',
       'Schedule updates and further details will be communicated via official Discord.',
       'Smart devices and external reference materials are strictly prohibited during competition.'
@@ -273,34 +273,34 @@ export const EVENTS_DATA: EventDetail[] = [
     teamSize: '1 Delegate',
     eligibility: 'Software Developers & UI/UX Designers',
     format: 'Hybrid Sprint',
-    duration: 'Oct 10 Eve - Oct 11 Night',
-    date: 'October 10 - 11, 2026',
-    time: 'Prompt released Oct 10 Eve (Discord) | Deadline Oct 11 Night',
+    duration: 'Oct 8 - 9 (5:00 PM - 8:00 PM)',
+    date: 'October 8 - 9, 2026',
+    time: 'Prompt released Oct 8 (Discord) | Deadline Oct 9',
     venue: 'Innovation Hub & Discord Headquarters',
     badge: 'SOLO MOBILE HACKATHON',
     iconName: 'Smartphone',
     rules: [
       'Participation is individual (1 delegate).',
-      'The official problem prompt is released on Oct 10 in the evening (exact time announced on Discord).',
-      'Final project submission deadline is Oct 11 at night.',
+      'The official problem prompt is released on Oct 8 in the evening (exact time announced on Discord).',
+      'Final project submission deadline is Oct 9 at night.',
       'Schedule updates and further details will be communicated via official Discord.',
       'All source code must be developed during the hackathon window in a public repository.'
     ],
     rounds: [
       {
-        title: 'Prompt Release & Kickoff (Oct 10 Evening)',
+        title: 'Prompt Release & Kickoff (Oct 8 Evening)',
         description: 'Thematic prompt disclosed on Discord. Delegates begin architectural design.',
-        duration: 'Oct 10 Eve'
+        duration: 'Oct 8 Eve'
       },
       {
-        title: 'Development & Build Window (Oct 11)',
+        title: 'Development & Build Window (Oct 9)',
         description: 'State persistence, API integrations, micro-interactions, and documentation.',
-        duration: 'Full Day Oct 11'
+        duration: 'Full Day Oct 9'
       },
       {
-        title: 'Final Submission Deadline (Oct 11 Night)',
+        title: 'Final Submission Deadline (Oct 9 Night)',
         description: 'Repository link, demo video, and deployable build submitted on portal.',
-        duration: 'Oct 11 Night'
+        duration: 'Oct 9 Night'
       }
     ],
     judgingCriteria: [
@@ -311,7 +311,7 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     toolsAndStack: ['Flutter / Dart', 'React Native / Expo', 'Kotlin / Jetpack Compose', 'Swift / SwiftUI', 'Firebase / Supabase'],
     faqs: [
-      { q: 'When will the problem prompt be released?', a: 'The prompt will be released on Oct 10 in the evening on our official Discord server.' }
+      { q: 'When will the problem prompt be released?', a: 'The prompt will be released on Oct 8 in the evening on our official Discord server.' }
     ]
   },
   {
@@ -324,34 +324,34 @@ export const EVENTS_DATA: EventDetail[] = [
     teamSize: '1 Delegate',
     eligibility: 'Frontend & Full-Stack Developers',
     format: 'Hybrid Sprint',
-    duration: 'Oct 10 Eve - Oct 11 Night',
-    date: 'October 10 - 11, 2026',
-    time: 'Prompt released Oct 10 Eve (Discord) | Deadline Oct 11 Night',
+    duration: 'Oct 8 - 9 (5:00 PM - 8:00 PM)',
+    date: 'October 8 - 9, 2026',
+    time: 'Prompt released Oct 8 (Discord) | Deadline Oct 9',
     venue: 'Web Architecture Lab & Discord Headquarters',
     badge: 'SOLO WEB ARCHITECTURE',
     iconName: 'Globe',
     rules: [
       'Participation is individual (1 delegate).',
-      'The official problem prompt is released on Oct 10 in the evening (exact time announced on Discord).',
-      'Final web deployment and repository submission deadline is Oct 11 at night.',
+      'The official problem prompt is released on Oct 8 in the evening (exact time announced on Discord).',
+      'Final web deployment and repository submission deadline is Oct 9 at night.',
       'Schedule updates and further details will be communicated via official Discord.',
       'Production deployment on edge hosting platforms (Vercel, Netlify) is mandatory.'
     ],
     rounds: [
       {
-        title: 'Prompt Release & Architecture Kickoff (Oct 10 Evening)',
+        title: 'Prompt Release & Architecture Kickoff (Oct 8 Evening)',
         description: 'Requirements unveiled on Discord. Delegates initiate repository & design scaffolding.',
-        duration: 'Oct 10 Eve'
+        duration: 'Oct 8 Eve'
       },
       {
-        title: 'Full-Stack Integration & Motion Polish (Oct 11)',
+        title: 'Full-Stack Integration & Motion Polish (Oct 9)',
         description: 'Endpoint connectivity, persistent state, transition choreography, and cross-device optimization.',
-        duration: 'Full Day Oct 11'
+        duration: 'Full Day Oct 9'
       },
       {
-        title: 'Deployment & Final Submission (Oct 11 Night)',
+        title: 'Deployment & Final Submission (Oct 9 Night)',
         description: 'Live URL deployment, repository submission, and documentation drop.',
-        duration: 'Oct 11 Night'
+        duration: 'Oct 9 Night'
       }
     ],
     judgingCriteria: [
@@ -362,7 +362,7 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     toolsAndStack: ['React / Next.js', 'Vue / Nuxt', 'Three.js / WebGL', 'Tailwind CSS', 'Framer Motion', 'TypeScript'],
     faqs: [
-      { q: 'Where will prompt details be shared?', a: 'All prompt details and submission guidelines will be dispatched via Discord on Oct 10 evening.' }
+      { q: 'Where will prompt details be shared?', a: 'All prompt details and submission guidelines will be dispatched via Discord on Oct 8 evening.' }
     ]
   },
   {
@@ -375,24 +375,24 @@ export const EVENTS_DATA: EventDetail[] = [
     teamSize: '2 Delegates',
     eligibility: 'Open to All Confirmed Delegates',
     format: 'Live Stage',
-    duration: 'Commences Oct 14',
-    date: 'Commences October 14, 2026',
+    duration: 'Commences Oct 18 (6:00 PM - 8:00 PM)',
+    date: 'October 18, 2026',
     time: 'Intel & Timings released via Discord',
     venue: 'Blackbox Auditorium Stage & Discord HQ',
     badge: 'CLASSIFIED / 2 DELEGATES',
     iconName: 'Sparkles',
     rules: [
       'Team structure: 2 Delegates per team.',
-      'Commences on October 14, 2026.',
+      'Commences on October 18, 2026.',
       'Mission directives, exact timing, and briefing constraints are revealed on Discord.',
       'Schedule updates and further details will be communicated via official Discord.',
       'Delegates demonstrating the highest composure, analytical agility, and robust execution will prevail.'
     ],
     rounds: [
       {
-        title: 'Phase Alpha: Classified Briefing (Oct 14)',
+        title: 'Phase Alpha: Classified Briefing (Oct 18)',
         description: 'Directive disclosure followed by the first wave of rapid analytical problems.',
-        duration: 'Oct 14'
+        duration: 'Oct 18'
       },
       {
         title: 'Phase Beta: Dynamic Constraint Shift',
