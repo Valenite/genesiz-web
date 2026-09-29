@@ -1,21 +1,26 @@
-import { useEffect } from 'react';
-import { Camera, Drama, Activity, Smile, CheckCircle2, AlertTriangle, PenTool } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Camera, Drama, Activity, Smile, CheckCircle2, AlertTriangle, ShieldAlert, Video } from 'lucide-react';
 
 export function SurprisePage() {
+  const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
     const meta = document.createElement('meta');
     meta.name = 'robots';
     meta.content = 'noindex, nofollow';
     document.head.appendChild(meta);
-    document.title = 'GENESIZ | Operation Chaos';
+    document.title = 'CLASSIFIED | Operation Chaos';
+    setMounted(true);
   }, []);
 
   const tiers = [
     {
-      title: 'Phase I — Easy',
+      title: 'Phase I — Warm-Ups',
       pts: '10 PTS',
       color: 'text-emerald-400',
-      bg: 'bg-emerald-400/10',
+      glow: 'group-hover:shadow-[0_0_15px_rgba(52,211,153,0.3)]',
+      borderHover: 'group-hover:border-emerald-500/50',
+      bg: 'bg-emerald-500/10',
       border: 'border-emerald-500/20',
       icon: <Smile className="w-5 h-5 text-emerald-400" />,
       tasks: [
@@ -29,7 +34,9 @@ export function SurprisePage() {
       title: 'Phase II — Street Operatives',
       pts: '30 PTS',
       color: 'text-amber-400',
-      bg: 'bg-amber-400/10',
+      glow: 'group-hover:shadow-[0_0_15px_rgba(251,191,36,0.3)]',
+      borderHover: 'group-hover:border-amber-500/50',
+      bg: 'bg-amber-500/10',
       border: 'border-amber-500/20',
       icon: <Activity className="w-5 h-5 text-amber-400" />,
       tasks: [
@@ -43,7 +50,9 @@ export function SurprisePage() {
       title: 'Phase III — Chaos Agents',
       pts: '60 PTS',
       color: 'text-orange-400',
-      bg: 'bg-orange-400/10',
+      glow: 'group-hover:shadow-[0_0_15px_rgba(251,146,60,0.3)]',
+      borderHover: 'group-hover:border-orange-500/50',
+      bg: 'bg-orange-500/10',
       border: 'border-orange-500/20',
       icon: <Camera className="w-5 h-5 text-orange-400" />,
       tasks: [
@@ -56,6 +65,8 @@ export function SurprisePage() {
       title: 'Phase IV — Dignity Sacrificed',
       pts: '100 PTS',
       color: 'text-rose-500',
+      glow: 'group-hover:shadow-[0_0_20px_rgba(244,63,94,0.4)]',
+      borderHover: 'group-hover:border-rose-500/50',
       bg: 'bg-rose-500/10',
       border: 'border-rose-500/20',
       icon: <Drama className="w-5 h-5 text-rose-500" />,
@@ -66,56 +77,84 @@ export function SurprisePage() {
     }
   ];
 
+  if (!mounted) return null;
+
   return (
-    <div className="relative min-h-screen bg-[#050507] text-zinc-100 font-sans selection:bg-indigo-500 selection:text-white pb-20">
-      <div className="fixed inset-0 bg-tech-grid opacity-25 pointer-events-none z-0"></div>
-      <div className="absolute top-0 left-0 w-full h-96 bg-indigo-900/10 blur-[120px] pointer-events-none z-0"></div>
+    <div className="relative min-h-screen bg-[#030305] text-zinc-100 font-sans selection:bg-rose-500 selection:text-white pb-24 overflow-hidden">
+      
+      {/* Background FX */}
+      <div className="fixed inset-0 bg-tech-grid opacity-20 pointer-events-none z-0"></div>
+      <div className="absolute top-0 left-0 w-full h-[500px] bg-rose-900/10 blur-[150px] pointer-events-none z-0"></div>
+      
+      {/* Classified Watermark */}
+      <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-0 opacity-[0.03] overflow-hidden select-none">
+        <h1 className="text-[15rem] font-black tracking-tighter text-white rotate-[-30deg] whitespace-nowrap">
+          RESTRICTED
+        </h1>
+      </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 pt-20">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 pt-24">
 
+        {/* Header Section */}
         <header className="mb-16 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold tracking-widest uppercase mb-6">
-            <AlertTriangle className="w-4 h-4" />
-            Classified Field Directives
+          
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-bold tracking-widest uppercase shadow-[0_0_10px_rgba(244,63,94,0.2)]">
+              <ShieldAlert className="w-4 h-4" />
+              Classified Field Directives
+            </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs font-bold tracking-widest uppercase">
+              <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
+              Evidence Required
+            </div>
           </div>
-          <h1 className="text-4xl md:text-5xl font-black tracking-tight text-white mb-4">
-            OPERATION <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">CHAOS</span>
+
+          <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-white mb-6 uppercase drop-shadow-2xl">
+            Operation <span className="text-transparent bg-clip-text bg-gradient-to-br from-rose-400 via-orange-400 to-rose-600 animate-pulse">Chaos</span>
           </h1>
-          <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
-            Night Edition. The city is your arena. Execute these field directives and bring back evidence. Dignity is optional. Points are not.
+          
+          <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed border-l-2 border-rose-500/50 pl-4 text-left">
+            Night Edition. The city is your arena. Execute these field directives and bring back video evidence. <strong className="text-white">Dignity is optional. Points are not.</strong>
           </p>
         </header>
 
-        <div className="space-y-16">
+        {/* Directives List */}
+        <div className="space-y-20">
           {tiers.map((tier, i) => (
             <section key={i} className="relative">
-              <div className="flex items-center justify-between border-b border-zinc-800 pb-4 mb-6">
-                <div className="flex items-center gap-3">
-                  <div className={`p-2 rounded-lg ${tier.bg} ${tier.border} border`}>
+              
+              {/* Tier Header */}
+              <div className="flex items-end justify-between border-b border-zinc-800/80 pb-4 mb-8">
+                <div className="flex items-center gap-4">
+                  <div className={`p-3 rounded-xl ${tier.bg} ${tier.border} border backdrop-blur-sm shadow-lg`}>
                     {tier.icon}
                   </div>
-                  <h2 className="text-xl font-bold text-white tracking-wide">{tier.title}</h2>
+                  <div>
+                    <div className="text-xs font-mono text-zinc-500 mb-1 tracking-widest uppercase">Clearance Level {i + 1}</div>
+                    <h2 className="text-2xl font-black text-white tracking-wide uppercase">{tier.title}</h2>
+                  </div>
                 </div>
-                <div className={`text-sm font-black tracking-widest ${tier.color}`}>
+                <div className={`text-lg font-black tracking-widest ${tier.color} drop-shadow-md`}>
                   {tier.pts}
                 </div>
               </div>
 
-              <div className="grid gap-3">
+              {/* Tasks Grid */}
+              <div className="grid gap-4">
                 {tier.tasks.map((task, j) => (
                   <div
                     key={j}
-                    className="group flex items-start sm:items-center justify-between gap-4 p-4 sm:p-5 rounded-xl bg-zinc-900/40 border border-zinc-800/50 hover:bg-zinc-800/60 hover:border-zinc-700 transition-all duration-300"
+                    className={`group flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-xl bg-zinc-900/50 backdrop-blur-md border border-zinc-800 transition-all duration-300 hover:-translate-y-1 ${tier.borderHover} ${tier.glow}`}
                   >
                     <div className="flex gap-4 items-start">
                       <div className="mt-1 flex-shrink-0">
-                        <CheckCircle2 className="w-5 h-5 text-zinc-700 group-hover:text-indigo-400 transition-colors" />
+                        <Video className="w-5 h-5 text-zinc-600 group-hover:text-white transition-colors" />
                       </div>
-                      <p className="text-zinc-300 group-hover:text-white transition-colors text-[1.05rem] leading-snug">
+                      <p className="text-zinc-300 group-hover:text-white transition-colors text-[1.05rem] leading-relaxed">
                         {task.text}
                       </p>
                     </div>
-                    <div className={`flex-shrink-0 px-3 py-1.5 rounded-md font-bold text-sm ${tier.bg} ${tier.color} border ${tier.border}`}>
+                    <div className={`flex-shrink-0 sm:self-center self-end px-4 py-2 rounded-lg font-black text-sm tracking-wider ${tier.bg} ${tier.color} border ${tier.border} shadow-inner`}>
                       {task.pts} PTS
                     </div>
                   </div>
@@ -125,15 +164,22 @@ export function SurprisePage() {
           ))}
         </div>
 
-        <div className="mt-20 p-6 rounded-2xl bg-zinc-900/50 border border-zinc-800 flex gap-6 items-start">
-          <div className="p-3 rounded-full bg-zinc-800 text-zinc-400">
-            <PenTool className="w-6 h-6" />
-          </div>
-          <div>
-            <h3 className="text-lg font-bold text-white mb-2 uppercase tracking-wide">Rules of Engagement</h3>
-            <p className="text-zinc-400 leading-relaxed">
-              Maintain operational security. Do not harass civilians, obstruct public pathways, or damage property. All directives require raw video or photographic evidence submitted to central command to claim points. Max possible score: 560 points.
-            </p>
+        {/* Warning Footer */}
+        <div className="mt-24 p-8 rounded-2xl bg-rose-950/20 border border-rose-900/50 backdrop-blur-sm relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-rose-500 to-transparent opacity-50"></div>
+          <div className="flex flex-col md:flex-row gap-6 items-start">
+            <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400 flex-shrink-0">
+              <AlertTriangle className="w-8 h-8" />
+            </div>
+            <div>
+              <h3 className="text-xl font-black text-rose-100 mb-2 uppercase tracking-widest drop-shadow-md">Rules of Engagement</h3>
+              <p className="text-rose-200/70 leading-relaxed text-lg">
+                Maintain operational security. Do not harass civilians, obstruct public pathways, or damage property. All directives require raw, unedited video or photographic evidence submitted to central command to claim points.
+              </p>
+              <div className="mt-4 inline-block px-4 py-1 rounded bg-black/50 border border-rose-500/30 text-rose-400 font-mono text-sm font-bold">
+                MAX SCORE: 560 POINTS
+              </div>
+            </div>
           </div>
         </div>
 
