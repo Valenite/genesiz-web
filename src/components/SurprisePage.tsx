@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Camera, Drama, Activity, Smile, CheckCircle2, AlertTriangle, ShieldAlert, Video } from 'lucide-react';
+import { RevealOnScroll } from './RevealOnScroll';
 
 export function SurprisePage() {
   const [mounted, setMounted] = useState(false);
@@ -98,66 +99,79 @@ export function SurprisePage() {
         {/* Header Section */}
         <header className="mb-16 text-center">
           
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-bold tracking-widest uppercase shadow-[0_0_10px_rgba(244,63,94,0.2)]">
-              <ShieldAlert className="w-4 h-4" />
-              Classified Field Directives
+          <RevealOnScroll variant="zoom-in" delayMs={100}>
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-bold tracking-widest uppercase shadow-[0_0_10px_rgba(244,63,94,0.2)]">
+                <ShieldAlert className="w-4 h-4" />
+                Classified Field Directives
+              </div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs font-bold tracking-widest uppercase">
+                <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
+                Evidence Required
+              </div>
             </div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs font-bold tracking-widest uppercase">
-              <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
-              Evidence Required
-            </div>
-          </div>
+          </RevealOnScroll>
 
-          <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-white mb-6 uppercase drop-shadow-2xl">
-            Operation <span className="text-transparent bg-clip-text bg-gradient-to-br from-rose-400 via-orange-400 to-rose-600 animate-pulse">Chaos</span>
-          </h1>
+          <RevealOnScroll variant="fade-up" delayMs={200}>
+            <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-white mb-6 uppercase drop-shadow-2xl">
+              Operation <span className="text-transparent bg-clip-text bg-gradient-to-br from-rose-400 via-orange-400 to-rose-600 animate-pulse">Chaos</span>
+            </h1>
+          </RevealOnScroll>
           
-          <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed border-l-2 border-rose-500/50 pl-4 text-left">
-            Night Edition. The city is your arena. Execute these field directives and bring back video evidence. <strong className="text-white">Dignity is optional. Points are not.</strong>
-          </p>
+          <RevealOnScroll variant="fade-up" delayMs={300}>
+            <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed border-l-2 border-rose-500/50 pl-4 text-left">
+              Night Edition. The city is your arena. Execute these field directives and bring back video evidence. <strong className="text-white">Dignity is optional. Points are not.</strong>
+            </p>
+          </RevealOnScroll>
         </header>
 
         {/* Directives List */}
-        <div className="space-y-20">
+        <div className="space-y-24">
           {tiers.map((tier, i) => (
             <section key={i} className="relative">
               
               {/* Tier Header */}
-              <div className="flex items-end justify-between border-b border-zinc-800/80 pb-4 mb-8">
-                <div className="flex items-center gap-4">
-                  <div className={`p-3 rounded-xl ${tier.bg} ${tier.border} border backdrop-blur-sm shadow-lg`}>
-                    {tier.icon}
+              <RevealOnScroll variant="swipe-left" delayMs={100}>
+                <div className="flex items-end justify-between border-b border-zinc-800/80 pb-4 mb-8">
+                  <div className="flex items-center gap-4">
+                    <div className={`p-3 rounded-xl ${tier.bg} ${tier.border} border backdrop-blur-sm shadow-lg`}>
+                      {tier.icon}
+                    </div>
+                    <div>
+                      <div className="text-xs font-mono text-zinc-500 mb-1 tracking-widest uppercase">Clearance Level {i + 1}</div>
+                      <h2 className="text-2xl font-black text-white tracking-wide uppercase">{tier.title}</h2>
+                    </div>
                   </div>
-                  <div>
-                    <div className="text-xs font-mono text-zinc-500 mb-1 tracking-widest uppercase">Clearance Level {i + 1}</div>
-                    <h2 className="text-2xl font-black text-white tracking-wide uppercase">{tier.title}</h2>
+                  <div className={`text-lg font-black tracking-widest ${tier.color} drop-shadow-md`}>
+                    {tier.pts}
                   </div>
                 </div>
-                <div className={`text-lg font-black tracking-widest ${tier.color} drop-shadow-md`}>
-                  {tier.pts}
-                </div>
-              </div>
+              </RevealOnScroll>
 
               {/* Tasks Grid */}
               <div className="grid gap-4">
                 {tier.tasks.map((task, j) => (
-                  <div
-                    key={j}
-                    className={`group flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-xl bg-zinc-900/50 backdrop-blur-md border border-zinc-800 transition-all duration-300 hover:-translate-y-1 ${tier.borderHover} ${tier.glow}`}
+                  <RevealOnScroll 
+                    key={j} 
+                    variant="3d-dock" 
+                    delayMs={j * 100} // Staggered reveal effect
                   >
-                    <div className="flex gap-4 items-start">
-                      <div className="mt-1 flex-shrink-0">
-                        <Video className="w-5 h-5 text-zinc-600 group-hover:text-white transition-colors" />
+                    <div
+                      className={`group flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-xl bg-zinc-900/50 backdrop-blur-md border border-zinc-800 transition-all duration-300 hover:-translate-y-1 ${tier.borderHover} ${tier.glow}`}
+                    >
+                      <div className="flex gap-4 items-start">
+                        <div className="mt-1 flex-shrink-0">
+                          <Video className="w-5 h-5 text-zinc-600 group-hover:text-white transition-colors" />
+                        </div>
+                        <p className="text-zinc-300 group-hover:text-white transition-colors text-[1.05rem] leading-relaxed">
+                          {task.text}
+                        </p>
                       </div>
-                      <p className="text-zinc-300 group-hover:text-white transition-colors text-[1.05rem] leading-relaxed">
-                        {task.text}
-                      </p>
+                      <div className={`flex-shrink-0 sm:self-center self-end px-4 py-2 rounded-lg font-black text-sm tracking-wider ${tier.bg} ${tier.color} border ${tier.border} shadow-inner`}>
+                        {task.pts} PTS
+                      </div>
                     </div>
-                    <div className={`flex-shrink-0 sm:self-center self-end px-4 py-2 rounded-lg font-black text-sm tracking-wider ${tier.bg} ${tier.color} border ${tier.border} shadow-inner`}>
-                      {task.pts} PTS
-                    </div>
-                  </div>
+                  </RevealOnScroll>
                 ))}
               </div>
             </section>
@@ -165,23 +179,25 @@ export function SurprisePage() {
         </div>
 
         {/* Warning Footer */}
-        <div className="mt-24 p-8 rounded-2xl bg-rose-950/20 border border-rose-900/50 backdrop-blur-sm relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-rose-500 to-transparent opacity-50"></div>
-          <div className="flex flex-col md:flex-row gap-6 items-start">
-            <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400 flex-shrink-0">
-              <AlertTriangle className="w-8 h-8" />
-            </div>
-            <div>
-              <h3 className="text-xl font-black text-rose-100 mb-2 uppercase tracking-widest drop-shadow-md">Rules of Engagement</h3>
-              <p className="text-rose-200/70 leading-relaxed text-lg">
-                Maintain operational security. Do not harass civilians, obstruct public pathways, or damage property. All directives require raw, unedited video or photographic evidence submitted to central command to claim points.
-              </p>
-              <div className="mt-4 inline-block px-4 py-1 rounded bg-black/50 border border-rose-500/30 text-rose-400 font-mono text-sm font-bold">
-                MAX SCORE: 560 POINTS
+        <RevealOnScroll variant="fade-up" delayMs={200}>
+          <div className="mt-28 p-8 rounded-2xl bg-rose-950/20 border border-rose-900/50 backdrop-blur-sm relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-rose-500 to-transparent opacity-50"></div>
+            <div className="flex flex-col md:flex-row gap-6 items-start">
+              <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400 flex-shrink-0">
+                <AlertTriangle className="w-8 h-8" />
+              </div>
+              <div>
+                <h3 className="text-xl font-black text-rose-100 mb-2 uppercase tracking-widest drop-shadow-md">Rules of Engagement</h3>
+                <p className="text-rose-200/70 leading-relaxed text-lg">
+                  Maintain operational security. Do not harass civilians, obstruct public pathways, or damage property. All directives require raw, unedited video or photographic evidence submitted to central command to claim points.
+                </p>
+                <div className="mt-4 inline-block px-4 py-1 rounded bg-black/50 border border-rose-500/30 text-rose-400 font-mono text-sm font-bold">
+                  MAX SCORE: 560 POINTS
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </RevealOnScroll>
 
       </div>
     </div>
