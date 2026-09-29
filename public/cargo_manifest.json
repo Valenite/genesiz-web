@@ -1,0 +1,7002 @@
+[
+  {
+    "cargo_id": "ICR-79X-564",
+    "weight_lbs": 47829,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-39X-129",
+    "weight_lbs": 47501,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-18X-653",
+    "weight_lbs": 37264,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-19X-661",
+    "weight_lbs": 8720,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-37X-729",
+    "weight_lbs": 17123,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-64X-154",
+    "weight_lbs": 8628,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-24X-462",
+    "weight_lbs": 13863,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-34X-663",
+    "weight_lbs": 41105,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-90X-219",
+    "weight_lbs": 47205,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-46X-779",
+    "weight_lbs": 47829,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-27X-278",
+    "weight_lbs": 9791,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-23X-875",
+    "weight_lbs": 36737,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-32X-465",
+    "weight_lbs": 2365,
+    "destination": "Gorgon-Facility",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-95X-689",
+    "weight_lbs": 36722,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-47X-669",
+    "weight_lbs": 46601,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-52X-652",
+    "weight_lbs": 44128,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-79X-904",
+    "weight_lbs": 22182,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-58X-141",
+    "weight_lbs": 5732,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-75X-754",
+    "weight_lbs": 34544,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-62X-604",
+    "weight_lbs": 9684,
+    "destination": "Omega-Station",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-13X-562",
+    "weight_lbs": 23503,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-63X-996",
+    "weight_lbs": 36264,
+    "destination": "Omega-Station",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-25X-772",
+    "weight_lbs": 3590,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-45X-824",
+    "weight_lbs": 5031,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-61X-514",
+    "weight_lbs": 18206,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-80X-358",
+    "weight_lbs": 35954,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-80X-987",
+    "weight_lbs": 25204,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-99X-324",
+    "weight_lbs": 44892,
+    "destination": "Gorgon-Facility",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-87X-244",
+    "weight_lbs": 11820,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-29X-377",
+    "weight_lbs": 45561,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-12X-686",
+    "weight_lbs": 42854,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-57X-189",
+    "weight_lbs": 20159,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-59X-156",
+    "weight_lbs": 40140,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-53X-516",
+    "weight_lbs": 2646,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-52X-387",
+    "weight_lbs": 47531,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-52X-385",
+    "weight_lbs": 12172,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-15X-324",
+    "weight_lbs": 7027,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-85X-363",
+    "weight_lbs": 46855,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-82X-739",
+    "weight_lbs": 12240,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-94X-286",
+    "weight_lbs": 26578,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-12X-858",
+    "weight_lbs": 40689,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-87X-622",
+    "weight_lbs": 49938,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-56X-256",
+    "weight_lbs": 8949,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-21X-227",
+    "weight_lbs": 7264,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-22X-727",
+    "weight_lbs": 11722,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-47X-220",
+    "weight_lbs": 19111,
+    "destination": "Gorgon-Facility",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-34X-355",
+    "weight_lbs": 16825,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-73X-858",
+    "weight_lbs": 7560,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-12X-757",
+    "weight_lbs": 45358,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-94X-238",
+    "weight_lbs": 6931,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-25X-910",
+    "weight_lbs": 38426,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-89X-327",
+    "weight_lbs": 30479,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-24X-347",
+    "weight_lbs": 3374,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-40X-452",
+    "weight_lbs": 41410,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-37X-577",
+    "weight_lbs": 2186,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-19X-754",
+    "weight_lbs": 13385,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-16X-222",
+    "weight_lbs": 14788,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-98X-765",
+    "weight_lbs": 9133,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-13X-735",
+    "weight_lbs": 9752,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-61X-470",
+    "weight_lbs": 35074,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-42X-267",
+    "weight_lbs": 32515,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-36X-564",
+    "weight_lbs": 12928,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-43X-398",
+    "weight_lbs": 2791,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-89X-728",
+    "weight_lbs": 5712,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-54X-844",
+    "weight_lbs": 41667,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-30X-112",
+    "weight_lbs": 1999,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-23X-794",
+    "weight_lbs": 37601,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-34X-619",
+    "weight_lbs": 44632,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-86X-564",
+    "weight_lbs": 47586,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-26X-404",
+    "weight_lbs": 31053,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-76X-506",
+    "weight_lbs": 20443,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-80X-473",
+    "weight_lbs": 36627,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-24X-379",
+    "weight_lbs": 4812,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-71X-641",
+    "weight_lbs": 2488,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-13X-574",
+    "weight_lbs": 10446,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-20X-696",
+    "weight_lbs": 17969,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-61X-894",
+    "weight_lbs": 14398,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-92X-961",
+    "weight_lbs": 45129,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-38X-772",
+    "weight_lbs": 5768,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-81X-676",
+    "weight_lbs": 5749,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-58X-928",
+    "weight_lbs": 4953,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-75X-556",
+    "weight_lbs": 12547,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-29X-370",
+    "weight_lbs": 16346,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-20X-117",
+    "weight_lbs": 39962,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-33X-541",
+    "weight_lbs": 49833,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-55X-797",
+    "weight_lbs": 35804,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-96X-563",
+    "weight_lbs": 32955,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-35X-728",
+    "weight_lbs": 19050,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-97X-111",
+    "weight_lbs": 46434,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-90X-735",
+    "weight_lbs": 32115,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-88X-240",
+    "weight_lbs": 21220,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-94X-869",
+    "weight_lbs": 3227,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-68X-945",
+    "weight_lbs": 3000,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-51X-101",
+    "weight_lbs": 13020,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-27X-554",
+    "weight_lbs": 29195,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-31X-310",
+    "weight_lbs": 8715,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-94X-836",
+    "weight_lbs": 23312,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-86X-406",
+    "weight_lbs": 47074,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-22X-879",
+    "weight_lbs": 37428,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-31X-591",
+    "weight_lbs": 42272,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-97X-728",
+    "weight_lbs": 7380,
+    "destination": "Gorgon-Facility",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-15X-955",
+    "weight_lbs": 25290,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-52X-667",
+    "weight_lbs": 43084,
+    "destination": "Gorgon-Facility",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-92X-347",
+    "weight_lbs": 36001,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-42X-956",
+    "weight_lbs": 3871,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-56X-181",
+    "weight_lbs": 31759,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-16X-805",
+    "weight_lbs": 23405,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-71X-673",
+    "weight_lbs": 36855,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-28X-430",
+    "weight_lbs": 4133,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-61X-273",
+    "weight_lbs": 5521,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-14X-733",
+    "weight_lbs": 43037,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-40X-626",
+    "weight_lbs": 48993,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-36X-481",
+    "weight_lbs": 9403,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-10X-528",
+    "weight_lbs": 31047,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-19X-908",
+    "weight_lbs": 21099,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-93X-338",
+    "weight_lbs": 6313,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-72X-937",
+    "weight_lbs": 6278,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-46X-850",
+    "weight_lbs": 2425,
+    "destination": "Gorgon-Facility",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-73X-776",
+    "weight_lbs": 17262,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-19X-235",
+    "weight_lbs": 20142,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-30X-420",
+    "weight_lbs": 6635,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-10X-137",
+    "weight_lbs": 37327,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-69X-564",
+    "weight_lbs": 24426,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-17X-898",
+    "weight_lbs": 48363,
+    "destination": "Gorgon-Facility",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-91X-740",
+    "weight_lbs": 33579,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-37X-201",
+    "weight_lbs": 36379,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-12X-601",
+    "weight_lbs": 12884,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-29X-756",
+    "weight_lbs": 2278,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-26X-868",
+    "weight_lbs": 22971,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-24X-555",
+    "weight_lbs": 11824,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-58X-260",
+    "weight_lbs": 18699,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-97X-232",
+    "weight_lbs": 36752,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-93X-956",
+    "weight_lbs": 38750,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-22X-316",
+    "weight_lbs": 13374,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-62X-854",
+    "weight_lbs": 1168,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-42X-862",
+    "weight_lbs": 19590,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-25X-660",
+    "weight_lbs": 30257,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-22X-101",
+    "weight_lbs": 14565,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-62X-305",
+    "weight_lbs": 27546,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-79X-710",
+    "weight_lbs": 9503,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-46X-243",
+    "weight_lbs": 47761,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-11X-885",
+    "weight_lbs": 17405,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-80X-120",
+    "weight_lbs": 23267,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-78X-237",
+    "weight_lbs": 4471,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-76X-805",
+    "weight_lbs": 23266,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-51X-612",
+    "weight_lbs": 44149,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-76X-633",
+    "weight_lbs": 26721,
+    "destination": "Omega-Station",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-12X-548",
+    "weight_lbs": 24138,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-50X-413",
+    "weight_lbs": 14160,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-18X-206",
+    "weight_lbs": 33878,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-91X-235",
+    "weight_lbs": 30806,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-56X-690",
+    "weight_lbs": 28463,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-35X-447",
+    "weight_lbs": 35357,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-18X-261",
+    "weight_lbs": 30512,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-10X-415",
+    "weight_lbs": 37823,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-19X-924",
+    "weight_lbs": 19456,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-79X-262",
+    "weight_lbs": 21571,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-27X-995",
+    "weight_lbs": 48466,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-98X-174",
+    "weight_lbs": 18617,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-74X-669",
+    "weight_lbs": 22763,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-82X-514",
+    "weight_lbs": 42531,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-22X-131",
+    "weight_lbs": 47716,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-77X-985",
+    "weight_lbs": 13065,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-94X-799",
+    "weight_lbs": 35889,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-22X-525",
+    "weight_lbs": 8258,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-90X-908",
+    "weight_lbs": 40160,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-66X-370",
+    "weight_lbs": 1258,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-70X-349",
+    "weight_lbs": 20335,
+    "destination": "Gorgon-Facility",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-37X-849",
+    "weight_lbs": 13016,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-11X-310",
+    "weight_lbs": 37268,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-30X-438",
+    "weight_lbs": 9619,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-87X-899",
+    "weight_lbs": 33445,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-41X-566",
+    "weight_lbs": 37419,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-99X-900",
+    "weight_lbs": 20889,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-13X-890",
+    "weight_lbs": 18498,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-26X-272",
+    "weight_lbs": 16258,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-87X-798",
+    "weight_lbs": 15460,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-46X-875",
+    "weight_lbs": 46346,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-10X-592",
+    "weight_lbs": 22739,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-38X-869",
+    "weight_lbs": 41176,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-78X-257",
+    "weight_lbs": 3731,
+    "destination": "Gorgon-Facility",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-92X-821",
+    "weight_lbs": 11972,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-88X-613",
+    "weight_lbs": 13665,
+    "destination": "Omega-Station",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-29X-971",
+    "weight_lbs": 34122,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-99X-640",
+    "weight_lbs": 34202,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-57X-198",
+    "weight_lbs": 46466,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-60X-849",
+    "weight_lbs": 22755,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-13X-732",
+    "weight_lbs": 29283,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-32X-147",
+    "weight_lbs": 4700,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-69X-418",
+    "weight_lbs": 10765,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-85X-645",
+    "weight_lbs": 30987,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-34X-938",
+    "weight_lbs": 40252,
+    "destination": "Omega-Station",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-25X-549",
+    "weight_lbs": 29292,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-38X-905",
+    "weight_lbs": 12741,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-91X-235",
+    "weight_lbs": 3726,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-38X-932",
+    "weight_lbs": 17847,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-48X-377",
+    "weight_lbs": 31689,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-94X-897",
+    "weight_lbs": 27525,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-21X-551",
+    "weight_lbs": 18999,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-38X-137",
+    "weight_lbs": 39529,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-35X-759",
+    "weight_lbs": 32472,
+    "destination": "Gorgon-Facility",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-13X-112",
+    "weight_lbs": 37243,
+    "destination": "Omega-Station",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-74X-595",
+    "weight_lbs": 15064,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-24X-346",
+    "weight_lbs": 16233,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-18X-574",
+    "weight_lbs": 44505,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-59X-365",
+    "weight_lbs": 11022,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-40X-657",
+    "weight_lbs": 22993,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-32X-204",
+    "weight_lbs": 7570,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-10X-967",
+    "weight_lbs": 38640,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-73X-928",
+    "weight_lbs": 48827,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-63X-789",
+    "weight_lbs": 13751,
+    "destination": "Gorgon-Facility",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-67X-727",
+    "weight_lbs": 24397,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-86X-572",
+    "weight_lbs": 33725,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-69X-378",
+    "weight_lbs": 3599,
+    "destination": "Omega-Station",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-97X-949",
+    "weight_lbs": 11390,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-83X-821",
+    "weight_lbs": 13877,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-44X-100",
+    "weight_lbs": 17031,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-25X-738",
+    "weight_lbs": 38692,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-80X-439",
+    "weight_lbs": 25107,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-74X-993",
+    "weight_lbs": 45104,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-55X-604",
+    "weight_lbs": 6518,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-64X-627",
+    "weight_lbs": 41114,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-68X-910",
+    "weight_lbs": 3793,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-90X-722",
+    "weight_lbs": 38558,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-70X-135",
+    "weight_lbs": 39507,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-99X-547",
+    "weight_lbs": 43897,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-83X-272",
+    "weight_lbs": 23118,
+    "destination": "Omega-Station",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-96X-613",
+    "weight_lbs": 3850,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-35X-769",
+    "weight_lbs": 5520,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-65X-709",
+    "weight_lbs": 15046,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-83X-784",
+    "weight_lbs": 21470,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-60X-620",
+    "weight_lbs": 47396,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-70X-454",
+    "weight_lbs": 49019,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-89X-578",
+    "weight_lbs": 34832,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-97X-598",
+    "weight_lbs": 38462,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-94X-975",
+    "weight_lbs": 48569,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-66X-799",
+    "weight_lbs": 39585,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-62X-821",
+    "weight_lbs": 35525,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-39X-282",
+    "weight_lbs": 41503,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-32X-282",
+    "weight_lbs": 48606,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-36X-924",
+    "weight_lbs": 40797,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-28X-652",
+    "weight_lbs": 39687,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-78X-849",
+    "weight_lbs": 37952,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-36X-613",
+    "weight_lbs": 2653,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-91X-102",
+    "weight_lbs": 31078,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-61X-274",
+    "weight_lbs": 4156,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-18X-912",
+    "weight_lbs": 7886,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-73X-375",
+    "weight_lbs": 49422,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-51X-670",
+    "weight_lbs": 25321,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-11X-663",
+    "weight_lbs": 19870,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-72X-545",
+    "weight_lbs": 49250,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-90X-502",
+    "weight_lbs": 24808,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-19X-582",
+    "weight_lbs": 47741,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-43X-390",
+    "weight_lbs": 18509,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-52X-252",
+    "weight_lbs": 22072,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-98X-282",
+    "weight_lbs": 20587,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-25X-913",
+    "weight_lbs": 23736,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-31X-186",
+    "weight_lbs": 42134,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-29X-630",
+    "weight_lbs": 34938,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-35X-874",
+    "weight_lbs": 39022,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-91X-848",
+    "weight_lbs": 46365,
+    "destination": "Omega-Station",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-93X-183",
+    "weight_lbs": 4554,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-56X-736",
+    "weight_lbs": 15624,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-74X-796",
+    "weight_lbs": 48786,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-23X-429",
+    "weight_lbs": 29822,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-54X-562",
+    "weight_lbs": 8333,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-41X-987",
+    "weight_lbs": 48361,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-25X-312",
+    "weight_lbs": 46071,
+    "destination": "Omega-Station",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-32X-651",
+    "weight_lbs": 39099,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-94X-264",
+    "weight_lbs": 30089,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-74X-398",
+    "weight_lbs": 19659,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-46X-561",
+    "weight_lbs": 5670,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-67X-860",
+    "weight_lbs": 3446,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-51X-145",
+    "weight_lbs": 37151,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-59X-643",
+    "weight_lbs": 18262,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-34X-538",
+    "weight_lbs": 24695,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-71X-132",
+    "weight_lbs": 27394,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-42X-689",
+    "weight_lbs": 5327,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-98X-896",
+    "weight_lbs": 47630,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-54X-342",
+    "weight_lbs": 31539,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-29X-139",
+    "weight_lbs": 8706,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-59X-829",
+    "weight_lbs": 29042,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-63X-475",
+    "weight_lbs": 6216,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-21X-337",
+    "weight_lbs": 16044,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-55X-307",
+    "weight_lbs": 47299,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-40X-940",
+    "weight_lbs": 18897,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-93X-295",
+    "weight_lbs": 8520,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-38X-289",
+    "weight_lbs": 31099,
+    "destination": "Omega-Station",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-88X-853",
+    "weight_lbs": 35703,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-21X-371",
+    "weight_lbs": 12181,
+    "destination": "Gorgon-Facility",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-48X-479",
+    "weight_lbs": 41265,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-91X-568",
+    "weight_lbs": 40338,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-46X-205",
+    "weight_lbs": 17600,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-90X-302",
+    "weight_lbs": 8340,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-65X-260",
+    "weight_lbs": 21466,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-11X-177",
+    "weight_lbs": 20481,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-99X-901",
+    "weight_lbs": 11095,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-52X-100",
+    "weight_lbs": 9271,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-82X-319",
+    "weight_lbs": 28682,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-48X-537",
+    "weight_lbs": 10213,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-81X-563",
+    "weight_lbs": 11341,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-28X-455",
+    "weight_lbs": 46813,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-20X-743",
+    "weight_lbs": 9123,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-54X-971",
+    "weight_lbs": 46410,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-98X-954",
+    "weight_lbs": 47983,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-33X-939",
+    "weight_lbs": 22402,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-97X-205",
+    "weight_lbs": 47930,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-14X-773",
+    "weight_lbs": 23958,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-36X-868",
+    "weight_lbs": 13898,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-95X-932",
+    "weight_lbs": 2962,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-68X-785",
+    "weight_lbs": 32797,
+    "destination": "Omega-Station",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-45X-654",
+    "weight_lbs": 17731,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-44X-737",
+    "weight_lbs": 45520,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-77X-264",
+    "weight_lbs": 25122,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-73X-431",
+    "weight_lbs": 44828,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-33X-103",
+    "weight_lbs": 43343,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-82X-296",
+    "weight_lbs": 5778,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-82X-933",
+    "weight_lbs": 5285,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-55X-968",
+    "weight_lbs": 39949,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-51X-647",
+    "weight_lbs": 3788,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-65X-493",
+    "weight_lbs": 20231,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-79X-274",
+    "weight_lbs": 46737,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-91X-446",
+    "weight_lbs": 26174,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-39X-417",
+    "weight_lbs": 26102,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-11X-124",
+    "weight_lbs": 20998,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-72X-561",
+    "weight_lbs": 34360,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-11X-727",
+    "weight_lbs": 9205,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-16X-308",
+    "weight_lbs": 46343,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-28X-891",
+    "weight_lbs": 6617,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-81X-275",
+    "weight_lbs": 36618,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-27X-992",
+    "weight_lbs": 9971,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-64X-911",
+    "weight_lbs": 3273,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-17X-389",
+    "weight_lbs": 27881,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-70X-767",
+    "weight_lbs": 44815,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-86X-693",
+    "weight_lbs": 36083,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-15X-333",
+    "weight_lbs": 45818,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-26X-533",
+    "weight_lbs": 35691,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-27X-394",
+    "weight_lbs": 15207,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-60X-934",
+    "weight_lbs": 45683,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-37X-155",
+    "weight_lbs": 35210,
+    "destination": "Omega-Station",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-23X-281",
+    "weight_lbs": 16804,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-94X-908",
+    "weight_lbs": 21558,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-49X-268",
+    "weight_lbs": 20666,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-45X-256",
+    "weight_lbs": 19910,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-84X-243",
+    "weight_lbs": 20039,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-88X-204",
+    "weight_lbs": 33402,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-33X-655",
+    "weight_lbs": 24741,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-98X-715",
+    "weight_lbs": 24990,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-61X-647",
+    "weight_lbs": 35156,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-50X-131",
+    "weight_lbs": 48401,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-71X-715",
+    "weight_lbs": 47457,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-58X-556",
+    "weight_lbs": 41431,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-55X-429",
+    "weight_lbs": 39007,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-11X-500",
+    "weight_lbs": 38798,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-65X-132",
+    "weight_lbs": 23038,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-99X-892",
+    "weight_lbs": 38423,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-67X-536",
+    "weight_lbs": 23173,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-15X-652",
+    "weight_lbs": 41600,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-69X-447",
+    "weight_lbs": 34102,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-58X-436",
+    "weight_lbs": 34137,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-65X-989",
+    "weight_lbs": 24569,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-19X-519",
+    "weight_lbs": 1254,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-33X-831",
+    "weight_lbs": 37806,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-91X-776",
+    "weight_lbs": 20947,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-43X-718",
+    "weight_lbs": 8931,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-23X-940",
+    "weight_lbs": 15520,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-56X-602",
+    "weight_lbs": 29532,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-99X-753",
+    "weight_lbs": 20292,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-13X-546",
+    "weight_lbs": 49527,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-36X-452",
+    "weight_lbs": 18689,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-77X-182",
+    "weight_lbs": 49078,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-92X-282",
+    "weight_lbs": 1527,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-45X-320",
+    "weight_lbs": 26053,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-68X-931",
+    "weight_lbs": 42213,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-98X-128",
+    "weight_lbs": 27167,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-93X-551",
+    "weight_lbs": 18819,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-94X-757",
+    "weight_lbs": 43795,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-38X-698",
+    "weight_lbs": 1956,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-36X-710",
+    "weight_lbs": 25436,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-81X-172",
+    "weight_lbs": 11518,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-10X-556",
+    "weight_lbs": 26544,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-47X-734",
+    "weight_lbs": 39640,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-10X-466",
+    "weight_lbs": 16791,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-86X-829",
+    "weight_lbs": 41551,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-33X-449",
+    "weight_lbs": 46547,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-86X-412",
+    "weight_lbs": 34553,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-55X-397",
+    "weight_lbs": 15338,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-58X-660",
+    "weight_lbs": 9654,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-41X-901",
+    "weight_lbs": 42651,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-37X-330",
+    "weight_lbs": 43436,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-83X-187",
+    "weight_lbs": 46848,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-25X-291",
+    "weight_lbs": 12346,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-45X-995",
+    "weight_lbs": 10489,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-50X-299",
+    "weight_lbs": 22590,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-30X-565",
+    "weight_lbs": 31925,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-12X-256",
+    "weight_lbs": 1770,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-81X-998",
+    "weight_lbs": 22537,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-92X-910",
+    "weight_lbs": 29791,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-64X-246",
+    "weight_lbs": 6703,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-33X-609",
+    "weight_lbs": 32517,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-39X-970",
+    "weight_lbs": 22761,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-10X-208",
+    "weight_lbs": 26573,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-65X-656",
+    "weight_lbs": 4374,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-50X-964",
+    "weight_lbs": 33854,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-93X-681",
+    "weight_lbs": 48431,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-40X-595",
+    "weight_lbs": 28029,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-82X-455",
+    "weight_lbs": 12952,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-89X-664",
+    "weight_lbs": 21859,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-89X-767",
+    "weight_lbs": 20117,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-56X-517",
+    "weight_lbs": 24179,
+    "destination": "Gorgon-Facility",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-20X-589",
+    "weight_lbs": 20634,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-21X-363",
+    "weight_lbs": 17032,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-44X-667",
+    "weight_lbs": 6706,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-26X-437",
+    "weight_lbs": 48221,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-48X-410",
+    "weight_lbs": 24845,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-39X-370",
+    "weight_lbs": 37169,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-21X-379",
+    "weight_lbs": 47832,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-68X-530",
+    "weight_lbs": 4601,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-27X-803",
+    "weight_lbs": 45487,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-87X-650",
+    "weight_lbs": 25970,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-73X-890",
+    "weight_lbs": 27012,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-73X-698",
+    "weight_lbs": 24759,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-16X-861",
+    "weight_lbs": 1461,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-73X-917",
+    "weight_lbs": 4169,
+    "destination": "Omega-Station",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-73X-217",
+    "weight_lbs": 13124,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-32X-364",
+    "weight_lbs": 2261,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-60X-542",
+    "weight_lbs": 29153,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-86X-412",
+    "weight_lbs": 3329,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-61X-509",
+    "weight_lbs": 41462,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-51X-646",
+    "weight_lbs": 8201,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-90X-964",
+    "weight_lbs": 6250,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-62X-621",
+    "weight_lbs": 29922,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-54X-259",
+    "weight_lbs": 41988,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-48X-587",
+    "weight_lbs": 13124,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-13X-226",
+    "weight_lbs": 1192,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-32X-237",
+    "weight_lbs": 18577,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-24X-864",
+    "weight_lbs": 32356,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-45X-912",
+    "weight_lbs": 5112,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-10X-711",
+    "weight_lbs": 33097,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-47X-175",
+    "weight_lbs": 36522,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-25X-350",
+    "weight_lbs": 49577,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-83X-452",
+    "weight_lbs": 44761,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-94X-603",
+    "weight_lbs": 22631,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-83X-573",
+    "weight_lbs": 44991,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-24X-226",
+    "weight_lbs": 27100,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-47X-172",
+    "weight_lbs": 42837,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-22X-949",
+    "weight_lbs": 5550,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-67X-180",
+    "weight_lbs": 15768,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-76X-606",
+    "weight_lbs": 7007,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-49X-200",
+    "weight_lbs": 38721,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-93X-360",
+    "weight_lbs": 35120,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-96X-172",
+    "weight_lbs": 19647,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-78X-867",
+    "weight_lbs": 17909,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-47X-610",
+    "weight_lbs": 18557,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-80X-757",
+    "weight_lbs": 41655,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-98X-738",
+    "weight_lbs": 43625,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-19X-442",
+    "weight_lbs": 20627,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-77X-395",
+    "weight_lbs": 11544,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-91X-894",
+    "weight_lbs": 45098,
+    "destination": "Gorgon-Facility",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-70X-199",
+    "weight_lbs": 43964,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-35X-749",
+    "weight_lbs": 32885,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-79X-260",
+    "weight_lbs": 42221,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-43X-319",
+    "weight_lbs": 42943,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-69X-272",
+    "weight_lbs": 34748,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-95X-523",
+    "weight_lbs": 25558,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-66X-705",
+    "weight_lbs": 39999,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-56X-396",
+    "weight_lbs": 19530,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-87X-526",
+    "weight_lbs": 27503,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-62X-274",
+    "weight_lbs": 32461,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-96X-261",
+    "weight_lbs": 26711,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-11X-509",
+    "weight_lbs": 15579,
+    "destination": "Omega-Station",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-32X-370",
+    "weight_lbs": 8420,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-87X-889",
+    "weight_lbs": 38435,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-85X-626",
+    "weight_lbs": 5695,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-91X-587",
+    "weight_lbs": 8181,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-47X-102",
+    "weight_lbs": 34151,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-52X-115",
+    "weight_lbs": 27194,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-59X-541",
+    "weight_lbs": 30826,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-61X-629",
+    "weight_lbs": 14020,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-46X-878",
+    "weight_lbs": 36932,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-91X-516",
+    "weight_lbs": 8992,
+    "destination": "Omega-Station",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-74X-878",
+    "weight_lbs": 9813,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-85X-329",
+    "weight_lbs": 21996,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-53X-423",
+    "weight_lbs": 1134,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-48X-139",
+    "weight_lbs": 25210,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-51X-313",
+    "weight_lbs": 40704,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-70X-786",
+    "weight_lbs": 21647,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-28X-729",
+    "weight_lbs": 11230,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-45X-719",
+    "weight_lbs": 32998,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-79X-259",
+    "weight_lbs": 5571,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-90X-670",
+    "weight_lbs": 6545,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-54X-555",
+    "weight_lbs": 41140,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-98X-699",
+    "weight_lbs": 32589,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-23X-705",
+    "weight_lbs": 19266,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-57X-843",
+    "weight_lbs": 49360,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-42X-357",
+    "weight_lbs": 42225,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-62X-801",
+    "weight_lbs": 19075,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-64X-267",
+    "weight_lbs": 46167,
+    "destination": "Gorgon-Facility",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-41X-299",
+    "weight_lbs": 25948,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-19X-822",
+    "weight_lbs": 23336,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-59X-146",
+    "weight_lbs": 20448,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-51X-366",
+    "weight_lbs": 1010,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-38X-939",
+    "weight_lbs": 22069,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-26X-332",
+    "weight_lbs": 4376,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-80X-764",
+    "weight_lbs": 15771,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-61X-627",
+    "weight_lbs": 20110,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-22X-921",
+    "weight_lbs": 45580,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-14X-922",
+    "weight_lbs": 10488,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-80X-782",
+    "weight_lbs": 4570,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-15X-584",
+    "weight_lbs": 23887,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-31X-913",
+    "weight_lbs": 35474,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-25X-612",
+    "weight_lbs": 11685,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-20X-245",
+    "weight_lbs": 25985,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-40X-132",
+    "weight_lbs": 43906,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-23X-734",
+    "weight_lbs": 6115,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-50X-533",
+    "weight_lbs": 24270,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-25X-191",
+    "weight_lbs": 49095,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-65X-581",
+    "weight_lbs": 5155,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-97X-290",
+    "weight_lbs": 41291,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-83X-584",
+    "weight_lbs": 41532,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-39X-669",
+    "weight_lbs": 48675,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-30X-613",
+    "weight_lbs": 14382,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-36X-386",
+    "weight_lbs": 37703,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-88X-866",
+    "weight_lbs": 37091,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-84X-342",
+    "weight_lbs": 46394,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-42X-860",
+    "weight_lbs": 25630,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-23X-657",
+    "weight_lbs": 39963,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-21X-620",
+    "weight_lbs": 46102,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-25X-608",
+    "weight_lbs": 2736,
+    "destination": "Omega-Station",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-58X-874",
+    "weight_lbs": 28191,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-63X-486",
+    "weight_lbs": 25559,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-68X-542",
+    "weight_lbs": 19844,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-87X-744",
+    "weight_lbs": 23429,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-69X-536",
+    "weight_lbs": 15890,
+    "destination": "Gorgon-Facility",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-55X-477",
+    "weight_lbs": 24036,
+    "destination": "Gorgon-Facility",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-60X-759",
+    "weight_lbs": 48990,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-52X-836",
+    "weight_lbs": 18197,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-42X-989",
+    "weight_lbs": 32939,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-53X-326",
+    "weight_lbs": 46008,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-90X-280",
+    "weight_lbs": 13683,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-94X-404",
+    "weight_lbs": 14146,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-99X-127",
+    "weight_lbs": 17302,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-93X-522",
+    "weight_lbs": 19935,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-55X-672",
+    "weight_lbs": 24024,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-36X-267",
+    "weight_lbs": 37939,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-50X-623",
+    "weight_lbs": 30294,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-26X-380",
+    "weight_lbs": 23728,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-14X-909",
+    "weight_lbs": 20310,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-50X-805",
+    "weight_lbs": 14476,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-25X-194",
+    "weight_lbs": 40337,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-78X-797",
+    "weight_lbs": 11931,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-93X-713",
+    "weight_lbs": 39649,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-67X-393",
+    "weight_lbs": 26214,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-39X-647",
+    "weight_lbs": 11373,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-14X-249",
+    "weight_lbs": 36226,
+    "destination": "Gorgon-Facility",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-10X-127",
+    "weight_lbs": 13061,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-57X-394",
+    "weight_lbs": 12413,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-13X-148",
+    "weight_lbs": 13530,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-77X-171",
+    "weight_lbs": 28867,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-66X-842",
+    "weight_lbs": 18990,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-64X-502",
+    "weight_lbs": 10908,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-48X-578",
+    "weight_lbs": 33599,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-20X-787",
+    "weight_lbs": 29899,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-98X-211",
+    "weight_lbs": 24051,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-36X-606",
+    "weight_lbs": 28386,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-28X-751",
+    "weight_lbs": 34194,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-46X-950",
+    "weight_lbs": 49980,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-23X-917",
+    "weight_lbs": 42449,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-67X-594",
+    "weight_lbs": 28554,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-86X-411",
+    "weight_lbs": 46651,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-46X-619",
+    "weight_lbs": 22578,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-15X-971",
+    "weight_lbs": 35072,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-98X-396",
+    "weight_lbs": 31402,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-23X-397",
+    "weight_lbs": 12826,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-81X-923",
+    "weight_lbs": 25457,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-32X-138",
+    "weight_lbs": 25317,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-64X-100",
+    "weight_lbs": 49260,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-58X-473",
+    "weight_lbs": 25859,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-33X-159",
+    "weight_lbs": 47525,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-74X-290",
+    "weight_lbs": 4365,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-46X-521",
+    "weight_lbs": 44860,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-95X-971",
+    "weight_lbs": 35398,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-74X-221",
+    "weight_lbs": 22584,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-76X-949",
+    "weight_lbs": 18216,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-20X-764",
+    "weight_lbs": 17650,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-50X-705",
+    "weight_lbs": 42742,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-17X-131",
+    "weight_lbs": 14239,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-52X-972",
+    "weight_lbs": 21258,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-64X-262",
+    "weight_lbs": 35951,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-23X-560",
+    "weight_lbs": 6870,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-59X-385",
+    "weight_lbs": 33823,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-43X-806",
+    "weight_lbs": 38651,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-97X-995",
+    "weight_lbs": 2511,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-90X-407",
+    "weight_lbs": 18529,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-38X-471",
+    "weight_lbs": 39193,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-50X-837",
+    "weight_lbs": 6104,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-84X-582",
+    "weight_lbs": 1066,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-82X-649",
+    "weight_lbs": 12674,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-41X-770",
+    "weight_lbs": 4460,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-94X-445",
+    "weight_lbs": 47491,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-91X-232",
+    "weight_lbs": 24030,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-83X-415",
+    "weight_lbs": 44886,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-59X-748",
+    "weight_lbs": 14573,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-87X-505",
+    "weight_lbs": 31704,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-26X-431",
+    "weight_lbs": 14749,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-31X-358",
+    "weight_lbs": 3267,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-15X-126",
+    "weight_lbs": 32732,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-20X-916",
+    "weight_lbs": 23043,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-16X-277",
+    "weight_lbs": 6787,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-54X-642",
+    "weight_lbs": 23897,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-25X-197",
+    "weight_lbs": 15248,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-93X-654",
+    "weight_lbs": 15800,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-68X-694",
+    "weight_lbs": 35441,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-29X-405",
+    "weight_lbs": 22005,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-93X-391",
+    "weight_lbs": 28111,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-51X-322",
+    "weight_lbs": 40681,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-61X-701",
+    "weight_lbs": 15947,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-48X-298",
+    "weight_lbs": 26837,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-55X-356",
+    "weight_lbs": 46755,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-44X-328",
+    "weight_lbs": 21943,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-48X-195",
+    "weight_lbs": 9828,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-42X-563",
+    "weight_lbs": 5812,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-38X-597",
+    "weight_lbs": 26534,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-41X-367",
+    "weight_lbs": 40317,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-32X-918",
+    "weight_lbs": 15160,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-15X-255",
+    "weight_lbs": 1017,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-15X-821",
+    "weight_lbs": 8470,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-11X-253",
+    "weight_lbs": 29537,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-34X-235",
+    "weight_lbs": 32396,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-56X-580",
+    "weight_lbs": 4633,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-69X-383",
+    "weight_lbs": 11020,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-75X-682",
+    "weight_lbs": 27130,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-95X-895",
+    "weight_lbs": 41736,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-33X-855",
+    "weight_lbs": 28085,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-77X-901",
+    "weight_lbs": 21200,
+    "destination": "Aegis Blacksite",
+    "status": "IN TRANSIT",
+    "priority": "OMEGA"
+  },
+  {
+    "cargo_id": "ICR-89X-578",
+    "weight_lbs": 16262,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-25X-385",
+    "weight_lbs": 14715,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-87X-848",
+    "weight_lbs": 20903,
+    "destination": "Gorgon-Facility",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-89X-724",
+    "weight_lbs": 34719,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-62X-433",
+    "weight_lbs": 31521,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-67X-308",
+    "weight_lbs": 32813,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-91X-161",
+    "weight_lbs": 31265,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-45X-705",
+    "weight_lbs": 25573,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-45X-331",
+    "weight_lbs": 37640,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-54X-946",
+    "weight_lbs": 1455,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-21X-350",
+    "weight_lbs": 12301,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-19X-444",
+    "weight_lbs": 27163,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-57X-868",
+    "weight_lbs": 14380,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-75X-581",
+    "weight_lbs": 32255,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-63X-818",
+    "weight_lbs": 42997,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-92X-794",
+    "weight_lbs": 38117,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-77X-680",
+    "weight_lbs": 14351,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-36X-290",
+    "weight_lbs": 43927,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-33X-986",
+    "weight_lbs": 16203,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-31X-607",
+    "weight_lbs": 49826,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-85X-376",
+    "weight_lbs": 32010,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-16X-397",
+    "weight_lbs": 36579,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-90X-156",
+    "weight_lbs": 40108,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-69X-186",
+    "weight_lbs": 43611,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-31X-679",
+    "weight_lbs": 49113,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-53X-759",
+    "weight_lbs": 6240,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-11X-512",
+    "weight_lbs": 35899,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-22X-478",
+    "weight_lbs": 21286,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-65X-700",
+    "weight_lbs": 12563,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-89X-657",
+    "weight_lbs": 42447,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-84X-440",
+    "weight_lbs": 31822,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-79X-649",
+    "weight_lbs": 44053,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-48X-602",
+    "weight_lbs": 19426,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-19X-396",
+    "weight_lbs": 21362,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-87X-737",
+    "weight_lbs": 30191,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-15X-291",
+    "weight_lbs": 23162,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-33X-709",
+    "weight_lbs": 37268,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-26X-128",
+    "weight_lbs": 44414,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-38X-104",
+    "weight_lbs": 45268,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-83X-611",
+    "weight_lbs": 22790,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-21X-531",
+    "weight_lbs": 35549,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-90X-752",
+    "weight_lbs": 17144,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-79X-905",
+    "weight_lbs": 47225,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-84X-885",
+    "weight_lbs": 2167,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-52X-299",
+    "weight_lbs": 30289,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-62X-656",
+    "weight_lbs": 16606,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-39X-894",
+    "weight_lbs": 29074,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-40X-128",
+    "weight_lbs": 9913,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-18X-656",
+    "weight_lbs": 23514,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-38X-136",
+    "weight_lbs": 19998,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-40X-879",
+    "weight_lbs": 24189,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-86X-428",
+    "weight_lbs": 6398,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-64X-717",
+    "weight_lbs": 13872,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-34X-720",
+    "weight_lbs": 46766,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-64X-869",
+    "weight_lbs": 4760,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-97X-444",
+    "weight_lbs": 38414,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-90X-766",
+    "weight_lbs": 12842,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-61X-186",
+    "weight_lbs": 40702,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-92X-631",
+    "weight_lbs": 13593,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-49X-833",
+    "weight_lbs": 8251,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-87X-491",
+    "weight_lbs": 3333,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-41X-355",
+    "weight_lbs": 44947,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-13X-852",
+    "weight_lbs": 20661,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-76X-590",
+    "weight_lbs": 24119,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-93X-795",
+    "weight_lbs": 20328,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-50X-799",
+    "weight_lbs": 14142,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-50X-826",
+    "weight_lbs": 22319,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-13X-840",
+    "weight_lbs": 42395,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-52X-923",
+    "weight_lbs": 6860,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-86X-945",
+    "weight_lbs": 6923,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-64X-454",
+    "weight_lbs": 5031,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-18X-844",
+    "weight_lbs": 17247,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-41X-880",
+    "weight_lbs": 29177,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-51X-539",
+    "weight_lbs": 16872,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-28X-873",
+    "weight_lbs": 23399,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-90X-869",
+    "weight_lbs": 24910,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-26X-926",
+    "weight_lbs": 35226,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-59X-510",
+    "weight_lbs": 13293,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-93X-907",
+    "weight_lbs": 20849,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-18X-888",
+    "weight_lbs": 42441,
+    "destination": "Gorgon-Facility",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-94X-886",
+    "weight_lbs": 6572,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-97X-240",
+    "weight_lbs": 24980,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-84X-533",
+    "weight_lbs": 16041,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-55X-873",
+    "weight_lbs": 28390,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-23X-459",
+    "weight_lbs": 38972,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-80X-459",
+    "weight_lbs": 17775,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-74X-510",
+    "weight_lbs": 37345,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-50X-189",
+    "weight_lbs": 17915,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-65X-649",
+    "weight_lbs": 12810,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-29X-141",
+    "weight_lbs": 18453,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-56X-319",
+    "weight_lbs": 31010,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-45X-364",
+    "weight_lbs": 3953,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-14X-282",
+    "weight_lbs": 33175,
+    "destination": "Omega-Station",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-14X-750",
+    "weight_lbs": 37611,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-63X-501",
+    "weight_lbs": 31083,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-76X-712",
+    "weight_lbs": 40138,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-22X-240",
+    "weight_lbs": 33878,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-47X-587",
+    "weight_lbs": 33293,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-91X-873",
+    "weight_lbs": 48927,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-69X-353",
+    "weight_lbs": 20524,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-48X-618",
+    "weight_lbs": 43117,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-70X-407",
+    "weight_lbs": 4968,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-45X-773",
+    "weight_lbs": 31072,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-39X-679",
+    "weight_lbs": 42607,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-51X-655",
+    "weight_lbs": 12063,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-53X-475",
+    "weight_lbs": 47864,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-13X-688",
+    "weight_lbs": 14433,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-53X-831",
+    "weight_lbs": 3143,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-30X-868",
+    "weight_lbs": 33282,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-56X-767",
+    "weight_lbs": 29330,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-42X-341",
+    "weight_lbs": 3191,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-17X-580",
+    "weight_lbs": 38007,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-97X-486",
+    "weight_lbs": 9514,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-21X-145",
+    "weight_lbs": 4214,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-32X-576",
+    "weight_lbs": 22958,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-80X-790",
+    "weight_lbs": 11128,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-71X-952",
+    "weight_lbs": 26467,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-61X-417",
+    "weight_lbs": 9205,
+    "destination": "Omega-Station",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-73X-852",
+    "weight_lbs": 3372,
+    "destination": "Gorgon-Facility",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-16X-691",
+    "weight_lbs": 17358,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-98X-308",
+    "weight_lbs": 10629,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-75X-560",
+    "weight_lbs": 46586,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-42X-932",
+    "weight_lbs": 38259,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-40X-912",
+    "weight_lbs": 18577,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-93X-780",
+    "weight_lbs": 45893,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-77X-761",
+    "weight_lbs": 44013,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-55X-272",
+    "weight_lbs": 36975,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-20X-239",
+    "weight_lbs": 8713,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-95X-845",
+    "weight_lbs": 10494,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-43X-585",
+    "weight_lbs": 7415,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-73X-394",
+    "weight_lbs": 1584,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-10X-962",
+    "weight_lbs": 1971,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-85X-380",
+    "weight_lbs": 8111,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-37X-723",
+    "weight_lbs": 35819,
+    "destination": "Omega-Station",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-65X-628",
+    "weight_lbs": 2484,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-64X-735",
+    "weight_lbs": 16411,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-32X-683",
+    "weight_lbs": 28842,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-61X-520",
+    "weight_lbs": 11126,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-13X-235",
+    "weight_lbs": 38367,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-21X-402",
+    "weight_lbs": 3494,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-98X-421",
+    "weight_lbs": 16203,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-70X-889",
+    "weight_lbs": 24795,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-44X-913",
+    "weight_lbs": 6430,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-81X-222",
+    "weight_lbs": 31761,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-62X-743",
+    "weight_lbs": 23647,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-94X-590",
+    "weight_lbs": 5332,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-13X-382",
+    "weight_lbs": 11442,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-59X-825",
+    "weight_lbs": 9009,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-94X-776",
+    "weight_lbs": 44444,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-82X-631",
+    "weight_lbs": 16164,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-37X-637",
+    "weight_lbs": 10441,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-57X-452",
+    "weight_lbs": 38194,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-83X-692",
+    "weight_lbs": 46655,
+    "destination": "Gorgon-Facility",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-29X-952",
+    "weight_lbs": 9038,
+    "destination": "Omega-Station",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-96X-191",
+    "weight_lbs": 31006,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-52X-387",
+    "weight_lbs": 5388,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-32X-884",
+    "weight_lbs": 16198,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-92X-217",
+    "weight_lbs": 13086,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-33X-763",
+    "weight_lbs": 29824,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-72X-809",
+    "weight_lbs": 48965,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-35X-826",
+    "weight_lbs": 20057,
+    "destination": "Gorgon-Facility",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-20X-682",
+    "weight_lbs": 44063,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-13X-681",
+    "weight_lbs": 11898,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-77X-296",
+    "weight_lbs": 15838,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-88X-251",
+    "weight_lbs": 21928,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-61X-597",
+    "weight_lbs": 16448,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-98X-270",
+    "weight_lbs": 36845,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-19X-798",
+    "weight_lbs": 41653,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-56X-117",
+    "weight_lbs": 8442,
+    "destination": "Gorgon-Facility",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-16X-265",
+    "weight_lbs": 5213,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-19X-248",
+    "weight_lbs": 40530,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-35X-259",
+    "weight_lbs": 33228,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-73X-360",
+    "weight_lbs": 48548,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-95X-261",
+    "weight_lbs": 27995,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-95X-861",
+    "weight_lbs": 31284,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-25X-311",
+    "weight_lbs": 11912,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-28X-255",
+    "weight_lbs": 25260,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-91X-688",
+    "weight_lbs": 32719,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-79X-853",
+    "weight_lbs": 21338,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-47X-738",
+    "weight_lbs": 28871,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-46X-129",
+    "weight_lbs": 48017,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-24X-113",
+    "weight_lbs": 15572,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-18X-297",
+    "weight_lbs": 40302,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-50X-309",
+    "weight_lbs": 30577,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-23X-424",
+    "weight_lbs": 27810,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-25X-265",
+    "weight_lbs": 46716,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-51X-706",
+    "weight_lbs": 23617,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-34X-899",
+    "weight_lbs": 5585,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-93X-195",
+    "weight_lbs": 42029,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-29X-708",
+    "weight_lbs": 1398,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-44X-505",
+    "weight_lbs": 45341,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-18X-709",
+    "weight_lbs": 6110,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-10X-766",
+    "weight_lbs": 29596,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-20X-156",
+    "weight_lbs": 5632,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-35X-398",
+    "weight_lbs": 21585,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-26X-402",
+    "weight_lbs": 29989,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-45X-765",
+    "weight_lbs": 33624,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-70X-989",
+    "weight_lbs": 35485,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-76X-263",
+    "weight_lbs": 16053,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-11X-538",
+    "weight_lbs": 6750,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-91X-732",
+    "weight_lbs": 12330,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-17X-409",
+    "weight_lbs": 49622,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-39X-424",
+    "weight_lbs": 9691,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-50X-689",
+    "weight_lbs": 19569,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-17X-953",
+    "weight_lbs": 5474,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-82X-985",
+    "weight_lbs": 12944,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-17X-801",
+    "weight_lbs": 25723,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-72X-545",
+    "weight_lbs": 37412,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-21X-568",
+    "weight_lbs": 35662,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-89X-348",
+    "weight_lbs": 34995,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-96X-175",
+    "weight_lbs": 45433,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-45X-545",
+    "weight_lbs": 34842,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-64X-621",
+    "weight_lbs": 24705,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-95X-637",
+    "weight_lbs": 3722,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-43X-343",
+    "weight_lbs": 34034,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-53X-686",
+    "weight_lbs": 44297,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-50X-566",
+    "weight_lbs": 13002,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-11X-680",
+    "weight_lbs": 30673,
+    "destination": "Omega-Station",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-18X-295",
+    "weight_lbs": 42305,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-92X-580",
+    "weight_lbs": 43536,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-29X-812",
+    "weight_lbs": 3982,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-66X-135",
+    "weight_lbs": 19599,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-24X-992",
+    "weight_lbs": 42292,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-55X-336",
+    "weight_lbs": 37844,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-50X-564",
+    "weight_lbs": 20104,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-69X-789",
+    "weight_lbs": 9279,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-71X-486",
+    "weight_lbs": 44256,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-92X-559",
+    "weight_lbs": 8642,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-23X-306",
+    "weight_lbs": 36746,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-91X-642",
+    "weight_lbs": 1653,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-74X-617",
+    "weight_lbs": 38690,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-41X-916",
+    "weight_lbs": 36070,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-22X-620",
+    "weight_lbs": 21878,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-93X-175",
+    "weight_lbs": 42265,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-32X-245",
+    "weight_lbs": 37857,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-75X-319",
+    "weight_lbs": 9975,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-85X-823",
+    "weight_lbs": 8599,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-77X-835",
+    "weight_lbs": 8545,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-66X-534",
+    "weight_lbs": 19964,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-90X-285",
+    "weight_lbs": 31823,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-89X-733",
+    "weight_lbs": 16982,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-98X-140",
+    "weight_lbs": 32040,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-65X-879",
+    "weight_lbs": 8806,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-22X-344",
+    "weight_lbs": 31721,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-56X-357",
+    "weight_lbs": 44782,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-70X-368",
+    "weight_lbs": 46150,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-86X-323",
+    "weight_lbs": 14760,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-12X-432",
+    "weight_lbs": 15149,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-64X-254",
+    "weight_lbs": 30744,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-74X-870",
+    "weight_lbs": 37143,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-55X-719",
+    "weight_lbs": 49102,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-24X-419",
+    "weight_lbs": 20340,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-15X-599",
+    "weight_lbs": 25655,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-92X-258",
+    "weight_lbs": 11121,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-15X-537",
+    "weight_lbs": 13268,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-71X-590",
+    "weight_lbs": 18832,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-32X-159",
+    "weight_lbs": 30633,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-30X-892",
+    "weight_lbs": 35544,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-16X-848",
+    "weight_lbs": 26313,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-19X-446",
+    "weight_lbs": 26099,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-40X-524",
+    "weight_lbs": 46581,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-52X-886",
+    "weight_lbs": 3626,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-38X-514",
+    "weight_lbs": 42381,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-17X-794",
+    "weight_lbs": 35599,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-32X-209",
+    "weight_lbs": 10330,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-80X-186",
+    "weight_lbs": 27528,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-69X-819",
+    "weight_lbs": 11654,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-29X-896",
+    "weight_lbs": 38677,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-86X-765",
+    "weight_lbs": 6371,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-41X-676",
+    "weight_lbs": 8359,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-27X-526",
+    "weight_lbs": 3814,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-97X-783",
+    "weight_lbs": 12838,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-47X-288",
+    "weight_lbs": 20792,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-10X-183",
+    "weight_lbs": 6165,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-68X-561",
+    "weight_lbs": 26368,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-66X-606",
+    "weight_lbs": 27365,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-27X-796",
+    "weight_lbs": 37809,
+    "destination": "Gorgon-Facility",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-22X-308",
+    "weight_lbs": 40339,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-67X-907",
+    "weight_lbs": 25097,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-60X-729",
+    "weight_lbs": 41881,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-68X-783",
+    "weight_lbs": 38022,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-86X-413",
+    "weight_lbs": 4331,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-52X-111",
+    "weight_lbs": 42449,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-84X-224",
+    "weight_lbs": 33590,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-94X-403",
+    "weight_lbs": 25417,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-87X-610",
+    "weight_lbs": 43921,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-65X-835",
+    "weight_lbs": 45875,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-35X-508",
+    "weight_lbs": 12177,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-52X-827",
+    "weight_lbs": 30149,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-79X-581",
+    "weight_lbs": 6952,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-80X-493",
+    "weight_lbs": 36032,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-47X-151",
+    "weight_lbs": 12857,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-96X-624",
+    "weight_lbs": 38348,
+    "destination": "Gorgon-Facility",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-17X-940",
+    "weight_lbs": 18865,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-76X-334",
+    "weight_lbs": 3533,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-36X-330",
+    "weight_lbs": 5205,
+    "destination": "Site-Alpha",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-57X-406",
+    "weight_lbs": 6703,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-43X-156",
+    "weight_lbs": 33151,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-24X-470",
+    "weight_lbs": 27150,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-43X-707",
+    "weight_lbs": 12710,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-98X-625",
+    "weight_lbs": 7166,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-61X-869",
+    "weight_lbs": 6852,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-49X-612",
+    "weight_lbs": 10142,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-24X-384",
+    "weight_lbs": 47728,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-48X-948",
+    "weight_lbs": 46062,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-92X-167",
+    "weight_lbs": 28490,
+    "destination": "Gorgon-Facility",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-39X-649",
+    "weight_lbs": 44105,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-97X-199",
+    "weight_lbs": 46593,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-66X-410",
+    "weight_lbs": 47547,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-45X-836",
+    "weight_lbs": 38493,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-91X-234",
+    "weight_lbs": 28720,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-52X-897",
+    "weight_lbs": 47233,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-51X-727",
+    "weight_lbs": 31636,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-58X-155",
+    "weight_lbs": 18465,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-29X-382",
+    "weight_lbs": 21331,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-36X-586",
+    "weight_lbs": 32083,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-25X-219",
+    "weight_lbs": 37857,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-83X-743",
+    "weight_lbs": 18582,
+    "destination": "Gorgon-Facility",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-18X-599",
+    "weight_lbs": 45639,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-85X-511",
+    "weight_lbs": 23075,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-76X-568",
+    "weight_lbs": 41065,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-82X-309",
+    "weight_lbs": 13883,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-58X-999",
+    "weight_lbs": 35852,
+    "destination": "Port Royal",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-57X-592",
+    "weight_lbs": 6454,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-48X-824",
+    "weight_lbs": 22349,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-71X-445",
+    "weight_lbs": 6467,
+    "destination": "Mariana-Trench-Base",
+    "status": "DELIVERED",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-83X-140",
+    "weight_lbs": 35775,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-14X-335",
+    "weight_lbs": 9695,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-35X-108",
+    "weight_lbs": 34994,
+    "destination": "Gorgon-Facility",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-21X-484",
+    "weight_lbs": 4283,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-83X-372",
+    "weight_lbs": 36786,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-93X-442",
+    "weight_lbs": 40773,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-93X-432",
+    "weight_lbs": 31893,
+    "destination": "Omega-Station",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-92X-764",
+    "weight_lbs": 13737,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-37X-531",
+    "weight_lbs": 24969,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-60X-287",
+    "weight_lbs": 36623,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-65X-897",
+    "weight_lbs": 24378,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-17X-932",
+    "weight_lbs": 40421,
+    "destination": "Site-Alpha",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-19X-202",
+    "weight_lbs": 20897,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-45X-365",
+    "weight_lbs": 43936,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-66X-504",
+    "weight_lbs": 37890,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-22X-947",
+    "weight_lbs": 28214,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-33X-322",
+    "weight_lbs": 41782,
+    "destination": "Site-Alpha",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-96X-481",
+    "weight_lbs": 13237,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-36X-651",
+    "weight_lbs": 40274,
+    "destination": "Icarus-HQ",
+    "status": "PENDING",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-44X-137",
+    "weight_lbs": 22499,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-37X-752",
+    "weight_lbs": 11480,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-25X-730",
+    "weight_lbs": 16312,
+    "destination": "Port Royal",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-30X-457",
+    "weight_lbs": 27793,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-63X-930",
+    "weight_lbs": 22786,
+    "destination": "Omega-Station",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-47X-842",
+    "weight_lbs": 2328,
+    "destination": "Mariana-Trench-Base",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-11X-194",
+    "weight_lbs": 42535,
+    "destination": "Gorgon-Facility",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-19X-615",
+    "weight_lbs": 47358,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-25X-530",
+    "weight_lbs": 49669,
+    "destination": "Omega-Station",
+    "status": "LOST",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-50X-160",
+    "weight_lbs": 18111,
+    "destination": "Port Royal",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-48X-857",
+    "weight_lbs": 13845,
+    "destination": "Omega-Station",
+    "status": "IN TRANSIT",
+    "priority": "MEDIUM"
+  },
+  {
+    "cargo_id": "ICR-24X-222",
+    "weight_lbs": 48905,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-28X-328",
+    "weight_lbs": 37452,
+    "destination": "Icarus-HQ",
+    "status": "LOST",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-95X-238",
+    "weight_lbs": 10544,
+    "destination": "Mariana-Trench-Base",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-53X-481",
+    "weight_lbs": 3459,
+    "destination": "Icarus-HQ",
+    "status": "IN TRANSIT",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-66X-732",
+    "weight_lbs": 45679,
+    "destination": "Mariana-Trench-Base",
+    "status": "PENDING",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-50X-621",
+    "weight_lbs": 17723,
+    "destination": "Icarus-HQ",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  },
+  {
+    "cargo_id": "ICR-20X-229",
+    "weight_lbs": 33102,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-95X-269",
+    "weight_lbs": 20033,
+    "destination": "Port Royal",
+    "status": "LOST",
+    "priority": "HIGH"
+  },
+  {
+    "cargo_id": "ICR-36X-638",
+    "weight_lbs": 35281,
+    "destination": "Site-Alpha",
+    "status": "DELIVERED",
+    "priority": "LOW"
+  }
+]

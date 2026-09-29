@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { CipherSandbox } from './components/CipherSandbox';
@@ -32,7 +32,7 @@ export function App() {
     return <DialerPage />;
   }
 
-  if (p === '/surprise') {
+  if (p === '/66e37cc61d26d7e6') {
     return <SurprisePage />;
   }
 
