@@ -45,7 +45,6 @@ const TiltCard: React.FC<TiltCardProps> = ({ children, className = '', onMouseEn
 export const CreditsSection: React.FC = () => {
   const coreMembers = [
     { name: 'Bhavya', role: 'President' },
-    { name: 'Pratyaksh', role: 'President' },
     { name: 'Aarav Sharma', role: 'Vice President' },
     { name: 'Om', role: 'Vice President' },
   ];
@@ -80,16 +79,16 @@ export const CreditsSection: React.FC = () => {
             <div className="space-y-5 max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-950 border border-zinc-800 text-xs font-mono text-zinc-300">
                 <Cpu className="w-3.5 h-3.5 text-zinc-400" />
-                <span className="font-semibold tracking-wider">FOUNDING VISIONARIES & PRESIDENTS</span>
+                <span className="font-semibold tracking-wider">FOUNDING VISIONARY & PRESIDENT</span>
               </div>
 
               <h3 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight flex flex-wrap items-baseline gap-2.5">
-                <span>BHAVYA & PRATYAKSH</span>
-                <span className="text-zinc-500 font-normal text-base sm:text-xl font-mono">(Presidents)</span>
+                <span>BHAVYA</span>
+                <span className="text-zinc-500 font-normal text-base sm:text-xl font-mono">(President)</span>
               </h3>
 
               <p className="text-sm sm:text-base text-zinc-300 font-normal leading-relaxed">
-                GENESIZ was conceived, engineered, and brought to life by Presidents <strong className="text-white font-medium">Bhavya & Pratyaksh</strong> alongside the core leadership team. Created to give student coders, gamers, developers, and problem solvers a world-class platform to showcase their skills, they built the foundation of GENESIZ together.
+                GENESIZ was conceived, engineered, and brought to life by President <strong className="text-white font-medium">Bhavya</strong> alongside the core leadership team. Created to give student coders, gamers, developers, and problem solvers a world-class platform to showcase their skills, they built the foundation of GENESIZ together.
               </p>
 
               <blockquote className="text-xs sm:text-sm font-mono text-zinc-300 italic border-l-2 border-zinc-500 pl-4 py-1.5 bg-zinc-950/60 rounded-r-lg">
