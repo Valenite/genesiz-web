@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Camera, Drama, Activity, Smile, CheckCircle2, AlertTriangle, ShieldAlert, Video } from 'lucide-react';
+import { Camera, Drama, Activity, Smile, AlertTriangle, ShieldAlert, Video } from 'lucide-react';
 import { RevealOnScroll } from './RevealOnScroll';
 
 export function SurprisePage() {
