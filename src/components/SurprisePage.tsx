@@ -90,7 +90,7 @@ export function SurprisePage() {
       {/* Classified Watermark */}
       <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-0 opacity-[0.03] overflow-hidden select-none">
         <h1 className="text-[15rem] font-black tracking-tighter text-white rotate-[-30deg] whitespace-nowrap">
-          RESTRICTED
+          CHAOS
         </h1>
       </div>
 
