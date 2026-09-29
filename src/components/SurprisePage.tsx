@@ -99,8 +99,14 @@ export function SurprisePage() {
         {/* Header Section */}
         <header className="mb-16 text-center">
           
-          <RevealOnScroll variant="zoom-in" delayMs={100}>
-            <div className="flex items-center justify-center gap-4 mb-6">
+          <RevealOnScroll variant="fade-up" delayMs={100}>
+            <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-white mb-6 uppercase drop-shadow-2xl">
+              Operation <span className="text-transparent bg-clip-text bg-gradient-to-br from-rose-400 via-orange-400 to-rose-600 animate-pulse">Chaos</span>
+            </h1>
+          </RevealOnScroll>
+
+          <RevealOnScroll variant="zoom-in" delayMs={200}>
+            <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-bold tracking-widest uppercase shadow-[0_0_10px_rgba(244,63,94,0.2)]">
                 <ShieldAlert className="w-4 h-4" />
                 Classified Field Directives
@@ -110,12 +116,6 @@ export function SurprisePage() {
                 Evidence Required
               </div>
             </div>
-          </RevealOnScroll>
-
-          <RevealOnScroll variant="fade-up" delayMs={200}>
-            <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-white mb-6 uppercase drop-shadow-2xl">
-              Operation <span className="text-transparent bg-clip-text bg-gradient-to-br from-rose-400 via-orange-400 to-rose-600 animate-pulse">Chaos</span>
-            </h1>
           </RevealOnScroll>
           
           <RevealOnScroll variant="fade-up" delayMs={300}>
