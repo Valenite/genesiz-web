@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Camera, Drama, Activity, Smile, AlertTriangle, ShieldAlert, Video } from 'lucide-react';
+import { Camera, Drama, Activity, Smile, AlertTriangle, Video } from 'lucide-react';
 import { RevealOnScroll } from './RevealOnScroll';
 
 export function SurprisePage() {
@@ -105,18 +105,7 @@ export function SurprisePage() {
             </h1>
           </RevealOnScroll>
 
-          <RevealOnScroll variant="zoom-in" delayMs={200}>
-            <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-bold tracking-widest uppercase shadow-[0_0_10px_rgba(244,63,94,0.2)]">
-                <ShieldAlert className="w-4 h-4" />
-                Classified Field Directives
-              </div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs font-bold tracking-widest uppercase">
-                <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
-                Evidence Required
-              </div>
-            </div>
-          </RevealOnScroll>
+
           
           <RevealOnScroll variant="fade-up" delayMs={300}>
             <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed border-l-2 border-rose-500/50 pl-4 text-left">
