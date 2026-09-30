@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 
 // Hash is checked client side against SHA-256 of the dialed number.
 // The correct number and audio filename are never stored as plaintext.
@@ -45,8 +45,27 @@ export function DialerPage() {
         setStatus('');
       };
     } else {
-      setStatus('NUMBER NOT IN SERVICE');
-      setIsCalling(false);
+      try {
+        const res = await fetch(`/api/dial?n=${number}`);
+        if (res.ok) {
+          setStatus('CONNECTED');
+          const blob = await res.blob();
+          const url = URL.createObjectURL(blob);
+          const audio = new Audio(url);
+          audio.play().catch(() => {});
+          audio.onended = () => {
+            setIsCalling(false);
+            setStatus('');
+            URL.revokeObjectURL(url);
+          };
+        } else {
+          setStatus('NUMBER NOT IN SERVICE');
+          setIsCalling(false);
+        }
+      } catch (err) {
+        setStatus('NUMBER NOT IN SERVICE');
+        setIsCalling(false);
+      }
     }
   };
 
