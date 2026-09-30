@@ -180,9 +180,7 @@ export function SurprisePage() {
                 <p className="text-rose-200/70 leading-relaxed text-lg">
                   Maintain operational security. Do not harass civilians, obstruct public pathways, or damage property. All directives require raw, unedited video or photographic evidence submitted to central command to claim points.
                 </p>
-                <div className="mt-4 inline-block px-4 py-1 rounded bg-black/50 border border-rose-500/30 text-rose-400 font-mono text-sm font-bold">
-                  MAX SCORE: 560 POINTS
-                </div>
+  
               </div>
             </div>
           </div>
