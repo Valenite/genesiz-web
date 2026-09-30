@@ -25,7 +25,7 @@ export const SCHEDULE_DATA: ScheduleItem[] = [
     highlight: true
   },
   {
-    time: 'Oct 8 - Oct 9 @ 5:00 PM - 8:00 PM',
+    time: 'Oct 5 (5:00 PM) - Oct 10',
     title: 'WebX & AppForge',
     category: 'Hackathon',
     venue: 'Innovation Hub & Discord HQ',

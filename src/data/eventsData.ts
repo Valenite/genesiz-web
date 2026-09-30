@@ -63,7 +63,7 @@ export const EVENTS_DATA: EventDetail[] = [
         duration: 'Tiers 1 - 15'
       },
       {
-        title: 'Phase 2: Deep Forensics & Signal Analysis (Oct 9)',
+        title: 'Phase 2: Deep Forensics & Signal Analysis (Oct 6 - 9)',
         description: 'Least-significant-bit steganography, spectral audio breakdown, and packet stream reconstruction.',
         duration: 'Tiers 16 - 35'
       },
@@ -273,34 +273,34 @@ export const EVENTS_DATA: EventDetail[] = [
     teamSize: '1 Delegate',
     eligibility: 'Software Developers & UI/UX Designers',
     format: 'Hybrid Sprint',
-    duration: 'Oct 8 - 9 (5:00 PM - 8:00 PM)',
-    date: 'October 8 - 9, 2026',
-    time: 'Prompt released Oct 8 (Discord) | Deadline Oct 9',
+    duration: 'Oct 5 (5:00 PM) - Oct 10',
+    date: 'October 5 - 10, 2026',
+    time: 'Prompt released Oct 5 (Discord) | Deadline Oct 10',
     venue: 'Innovation Hub & Discord Headquarters',
     badge: 'SOLO MOBILE HACKATHON',
     iconName: 'Smartphone',
     rules: [
       'Participation is individual (1 delegate).',
-      'The official problem prompt is released on Oct 8 in the evening (exact time announced on Discord).',
-      'Final project submission deadline is Oct 9 at night.',
+      'The official problem prompt is released on Oct 5 at 5:00 PM sharp (exact time announced on Discord).',
+      'Final project submission deadline is Oct 10.',
       'Schedule updates and further details will be communicated via official Discord.',
       'All source code must be developed during the hackathon window in a public repository.'
     ],
     rounds: [
       {
-        title: 'Prompt Release & Kickoff (Oct 8 Evening)',
+        title: 'Prompt Release & Kickoff (Oct 5, 5:00 PM)',
         description: 'Thematic prompt disclosed on Discord. Delegates begin architectural design.',
-        duration: 'Oct 8 Eve'
+        duration: 'Oct 5'
       },
       {
-        title: 'Development & Build Window (Oct 9)',
+        title: 'Development & Build Window (Oct 6 - 9)',
         description: 'State persistence, API integrations, micro-interactions, and documentation.',
-        duration: 'Full Day Oct 9'
+        duration: 'Oct 6 - 9'
       },
       {
-        title: 'Final Submission Deadline (Oct 9 Night)',
+        title: 'Final Submission Deadline (Oct 10)',
         description: 'Repository link, demo video, and deployable build submitted on portal.',
-        duration: 'Oct 9 Night'
+        duration: 'Oct 10'
       }
     ],
     judgingCriteria: [
@@ -311,7 +311,7 @@ export const EVENTS_DATA: EventDetail[] = [
     ],
     toolsAndStack: ['Flutter / Dart', 'React Native / Expo', 'Kotlin / Jetpack Compose', 'Swift / SwiftUI', 'Firebase / Supabase'],
     faqs: [
-      { q: 'When will the problem prompt be released?', a: 'The prompt will be released on Oct 8 in the evening on our official Discord server.' }
+      { q: 'When will the problem prompt be released?', a: 'The prompt will be released on Oct 5 at 5:00 PM sharp on our official Discord server.' }
     ]
   },
   {
@@ -324,34 +324,34 @@ export const EVENTS_DATA: EventDetail[] = [
     teamSize: '1 Delegate',
     eligibility: 'Frontend & Full-Stack Developers',
     format: 'Hybrid Sprint',
-    duration: 'Oct 8 - 9 (5:00 PM - 8:00 PM)',
-    date: 'October 8 - 9, 2026',
-    time: 'Prompt released Oct 8 (Discord) | Deadline Oct 9',
+    duration: 'Oct 5 (5:00 PM) - Oct 10',
+    date: 'October 5 - 10, 2026',
+    time: 'Prompt released Oct 5 (Discord) | Deadline Oct 10',
     venue: 'Web Architecture Lab & Discord Headquarters',
     badge: 'SOLO WEB ARCHITECTURE',
     iconName: 'Globe',
     rules: [
       'Participation is individual (1 delegate).',
-      'The official problem prompt is released on Oct 8 in the evening (exact time announced on Discord).',
-      'Final web deployment and repository submission deadline is Oct 9 at night.',
+      'The official problem prompt is released on Oct 5 at 5:00 PM sharp (exact time announced on Discord).',
+      'Final web deployment and repository submission deadline is Oct 10.',
       'Schedule updates and further details will be communicated via official Discord.',
       'Production deployment on edge hosting platforms (Vercel, Netlify) is mandatory.'
     ],
     rounds: [
       {
-        title: 'Prompt Release & Architecture Kickoff (Oct 8 Evening)',
+        title: 'Prompt Release & Architecture Kickoff (Oct 5, 5:00 PM)',
         description: 'Requirements unveiled on Discord. Delegates initiate repository & design scaffolding.',
-        duration: 'Oct 8 Eve'
+        duration: 'Oct 5'
       },
       {
-        title: 'Full-Stack Integration & Motion Polish (Oct 9)',
+        title: 'Full-Stack Integration & Motion Polish (Oct 6 - 9)',
         description: 'Endpoint connectivity, persistent state, transition choreography, and cross-device optimization.',
-        duration: 'Full Day Oct 9'
+        duration: 'Oct 6 - 9'
       },
       {
-        title: 'Deployment & Final Submission (Oct 9 Night)',
+        title: 'Deployment & Final Submission (Oct 10)',
         description: 'Live URL deployment, repository submission, and documentation drop.',
-        duration: 'Oct 9 Night'
+        duration: 'Oct 10'
       }
     ],
     judgingCriteria: [
