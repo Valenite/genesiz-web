@@ -22,7 +22,10 @@ export function isCipherQuestPath() {
     '/roundabout',
     '/light',
     '/nevermind',
-    '/runaway'
+    '/runaway',
+    '/crossing',
+    '/bilbo',
+    '/moriarty'
   ].includes(p);
 }
 
@@ -57,6 +60,9 @@ export function CipherQuestPage() {
       case '/light': writeRawPage('%3C%21DOCTYPE%20html%3E%0A%3Chtml%3E%0A%3Chead%3E%3Ctitle%3Elight%3C%2Ftitle%3E%3C%2Fhead%3E%0A%3Cbody%3E2017%0A%0A2019%0A%0A2022%0A%0Asame%20shadow.%3C%21--%20something%20was%20in%20the%20way%20--%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E'); break;
       case '/nevermind': writeRawPage('%3C%21DOCTYPE%20html%3E%0A%3Chtml%3E%0A%3Chead%3E%3Ctitle%3Enevermind%3C%2Ftitle%3E%3C%2Fhead%3E%0A%3Cbody%3E1991%0A%0Awall.%0A%0Athree%20rebels.%0A%0Aanother%20guitar.%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E'); break;
       case '/runaway': writeRawPage('%3C%21DOCTYPE%20html%3E%0A%3Chtml%3E%0A%3Chead%3E%3Ctitle%3Erunaway%3C%2Ftitle%3E%3C%2Fhead%3E%0A%3Cbody%3E1976%0A%0A%F0%9F%92%A3%0A%0Aspace%20borrowed%20it.%0A%0Athe%20park%20kept%20the%20animal.%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E'); break;
+      case '/crossing': writeRawPage('%3C%21DOCTYPE%20html%3E%0A%3Chtml%3E%0A%3Chead%3E%3Ctitle%3Ecrossing%3C%2Ftitle%3E%3C%2Fhead%3E%0A%3Cbody%3E28IF%3Cbr%3E%3Cbr%3E53%3Cbr%3E%3Cbr%3E2005%3Cbr%3E%3Cbr%3Efriday%20changed%20bodies.%3Cbr%3E%3Cbr%3Ethe%20face%20was%20borrowed.%3Cbr%3E%3Cbr%3Ethe%20other%20ear%20sang.%3C%2Fbody%3E%0A%3C%2Fhtml%3E'); break;
+      case '/bilbo': writeRawPage('%3C%21DOCTYPE%20html%3E%0A%3Chtml%3E%0A%3Chead%3E%3Ctitle%3Ebilbo%3C%2Ftitle%3E%3C%2Fhead%3E%0A%3Cbody%3E1937%3Cbr%3E%3Cbr%3E2012%3Cbr%3E%3Cbr%3E42%3Cbr%3E%3Cbr%3E221B%3Cbr%3E%3Cbr%3Ethe%20dragon%20shared%20a%20detective.%3Cbr%3E%3Cbr%3Econsulting%20had%20an%20opposite.%3C%2Fbody%3E%0A%3C%2Fhtml%3E'); break;
+      case '/moriarty': writeRawPage('%3C%21DOCTYPE%20html%3E%0A%3Chtml%3E%0A%3Chead%3E%3Ctitle%3Emoriarty%3C%2Ftitle%3E%3C%2Fhead%3E%0A%3Cbody%3E2019%3Cbr%3E%3Cbr%3EEVE%20outlived%20the%20bridge.%3Cbr%3E%3Cbr%3Eno%20cost%2C%20one%20guy.%3Cbr%3E%3Cbr%3Ethe%20mouth%20wasn%27t%20his%20name.%3C%2Fbody%3E%0A%3C%2Fhtml%3E'); break;
   }
   return null;
 }
