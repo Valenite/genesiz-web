@@ -227,7 +227,17 @@ export const GenesizChatbot: React.FC<GenesizChatbotProps> = ({ isOpen, onClose 
                     : 'bg-zinc-900/80 border border-zinc-800 text-zinc-200 rounded-tl-sm'
                 }`}
               >
-                {msg.text}
+                {msg.text === '__DK_MERITS__' ? (
+                  <a
+                    href="/api/merits?t=mk"
+                    download="merits.xlsx"
+                    className="underline text-emerald-400 hover:text-emerald-300"
+                  >
+                    merits.xlsx
+                  </a>
+                ) : (
+                  msg.text
+                )}
               </div>
             </div>
           ))}

@@ -38,7 +38,7 @@ export function IcarusLogistics() {
         </div>
         <div style={{ marginTop: '60px', borderTop: '1px solid #ccc', paddingTop: '10px', fontSize: '0.7em', color: '#bbb', display: 'flex', justifyContent: 'space-between' }}>
           <span>ICARUS LOGISTICS INC. — ALL CARGO MANIFESTS CLASSIFIED</span>
-          <span data-clearance="ALPHA-7" data-callsign="valenite" style={{ opacity: 0 }}>◈</span>
+          <span style={{ fontFamily: 'monospace', letterSpacing: '1px' }}>DIRECTOR CLEARANCE: 22-1-12-5-14-9-20-5</span>
         </div>
       </div>
     </div>
