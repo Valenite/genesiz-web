@@ -9,7 +9,7 @@ export default function handler(req, res) {
     return;
   }
   try {
-    const filePath = path.join(process.cwd(), 'api', 'merits.xlsx');
+    const filePath = path.join(process.cwd(), 'api', 'merits_file.xlsx');
     const stat = fs.statSync(filePath);
     res.writeHead(200, {
       'Content-Type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
