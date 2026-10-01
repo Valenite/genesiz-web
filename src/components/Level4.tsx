@@ -36,6 +36,10 @@ export function IcarusLogistics() {
             <p>[1-1-2] // [1-6-2] // [1-1-1] // [1-13-1] // [1-22-2] // [1-10-3] // [1-18-5] // [1-15-1] // [1-3-1] // [1-20-4] // [1-8-3] // [1-32-1] // [1-11-2]</p>
           </div>
         </div>
+        <div style={{ marginTop: '60px', borderTop: '1px solid #ccc', paddingTop: '10px', fontSize: '0.7em', color: '#bbb', display: 'flex', justifyContent: 'space-between' }}>
+          <span>ICARUS LOGISTICS INC. — ALL CARGO MANIFESTS CLASSIFIED</span>
+          <span data-clearance="ALPHA-7" data-callsign="valenite" style={{ opacity: 0 }}>◈</span>
+        </div>
       </div>
     </div>
   );
@@ -308,8 +312,8 @@ export function Poseidon() {
             <h4 style={{ margin: '0 0 15px 0' }}>// FINAL VAULT SECURITY MEMO</h4>
             <p>Access to the Aegis Vault requires absolute identification. Two cryptographic keys must be generated.</p>
             <ul style={{ lineHeight: '1.8', color: '#ccc' }}>
-              <li><strong>USERNAME KEY:</strong> Identify the creator/architect of this repository, appended with an underscore, appended with the base-2 binary representation of the decimal number 90.</li>
-              <li><strong>PASSWORD KEY:</strong> Identify the mythological shield of Zeus/Athena, appended with an underscore, appended with the 8-letter English word for 'a sovereign or state having some control over another state that is internally autonomous' (S_ _ _ _ _ _ _ {'->'} O_ _ _ _ _ _ _).</li>
+              <li><strong>USERNAME KEY:</strong> The callsign of the director who sealed this blacksite is embedded somewhere in the logistics terminal. Append an underscore. Append the base-2 representation of the decimal number 90.</li>
+              <li><strong>PASSWORD KEY:</strong> The divine shield carried by Olympus, appended with an underscore, appended with the title held by a sovereign power that controls another nation which governs itself internally.</li>
             </ul>
             <p style={{ color: '#ff4444', marginTop: '20px' }}>MEMORIZE THESE REQUIREMENTS. SYSTEM WILL REDIRECT IN 10 SECONDS.</p>
           </div>
