@@ -62,7 +62,7 @@ export function ChironMedical() {
     
     setTimeout(() => {
       // The hash of "dsup10994"
-      if (hash === 'b3e401b44ecb94a8f95c024d08a54d683709b119101ff6c927f1ce6bc1363403') {
+      if (hash === '182e8207c5044e22e816a56e24773b25ad85ee6a234469c7a6373470f5207040') {
         setStatus('ACCESS GRANTED. ROUTING...');
         setTimeout(() => {
           // Navigates to the hidden route
@@ -150,7 +150,7 @@ export function Tartarus() {
     
     setTimeout(() => {
       // hash of clementine6895baronblood
-      if (hash === '5e2373c4f923dcbc8476d33306db7c2fb24818c3973950cfb63dc4f89fbff249') {
+      if (hash === '80edb82b622117a92d085aebb0592d5d06285f270ef4b755c244cb7953cbb209') {
         setStatus('ECHO RECEIVED. DIVING DEEPER...');
         setTimeout(() => {
           window.location.href = '/clementine6895baronblood';
@@ -207,7 +207,7 @@ export function Clementine() {
     
     setTimeout(() => {
       // hash of operationargus
-      if (hash === '5e6cbf4d8122c222ff47e09ef961e6c46ddddbd6b8c8d8c2d58fb4cd35b88c3a') {
+      if (hash === '64f05a11cfd0f0226fba99b15c5c459ccde60c340d84406ea6bd11a845ccbd5f') {
         setStatus('OPERATION CONFIRMED. ACCESSING TERMINAL...');
         setTimeout(() => {
           window.location.href = '/operationargus';
