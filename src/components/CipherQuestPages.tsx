@@ -25,7 +25,10 @@ export function isCipherQuestPath() {
     '/runaway',
     '/crossing',
     '/bilbo',
-    '/moriarty'
+    '/moriarty',
+    '/bean',
+    '/gambino',
+    '/hobie'
   ].includes(p);
 }
 
