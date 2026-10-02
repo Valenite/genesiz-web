@@ -83,6 +83,17 @@ function getBotReply(text: string, hintCount: number): { reply: string; newHintC
     };
   }
 
+  // FACE TEST — cadiz klemack trigger (do not expose context)
+  {
+    const ck = normalized.replace(/[^a-z]/g, '');
+    if (ck === 'cadizklemack') {
+      return {
+        reply: 'QjhFZHVLdGJWVA==\n\nvoices have rooms.',
+        newHintCount: hintCount,
+      };
+    }
+  }
+
   // Register
   if (normalized.includes('register') || normalized.includes('sign up') || normalized.includes('join') || normalized.includes('how to')) {
     return {
