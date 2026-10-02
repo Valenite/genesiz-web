@@ -28,7 +28,8 @@ export function isCipherQuestPath() {
     '/moriarty',
     '/bean',
     '/gambino',
-    '/hobie'
+    '/hobie',
+    '/shhhdontsharethis'
   ].includes(p);
 }
 
@@ -68,6 +69,7 @@ export function CipherQuestPage() {
       case '/bean': writeRawPage('%3C!DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3Ebean%3C%2Ftitle%3E%3C%2Fhead%3E%3Cbody%3E1994%0A%0A2019%0A%0A6%20%2B%201%0A%0Athe%20king%20replaced%20one%20bird.%0A%0Athe%20child%20kept%20another%20name.%0A%3C%2Fbody%3E%3C%2Fhtml%3E'); break;
       case '/gambino': writeRawPage('%3C!DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3Egambino%3C%2Ftitle%3E%3C%2Fhead%3E%3Cbody%3E2017%0A%0A15M%0A%0Abone%20opened%20the%20door.%0A%0Athe%20place%20sank.%0A%0Atell%20the%20loud%20box%20who%20fell.%0A%3C%2Fbody%3E%3C%2Fhtml%3E'); break;
       case '/hobie': writeRawPage('%3C!DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3Ehobie%3C%2Ftitle%3E%3C%2Fhead%3E%3Cbody%3E2018%0A%0Anot%20this%20prowler.%0A%0Athe%20moon%20got%20the%20picture%20after%20the%20wrong%20land.%0A%0Astone%20made%20the%20letter%20easy.%0A%3C%2Fbody%3E%3C%2Fhtml%3E'); break;
+      case '/shhhdontsharethis': writeRawPage('%3C!DOCTYPE%20html%3E%3Chtml%3E%3Chead%3E%3Ctitle%3Eshhhdontsharethis%3C%2Ftitle%3E%3C%2Fhead%3E%3Cbody%3E1995%0A%3Cbr%3Eseven%0A%3Cbr%3E%3Cbr%3E1999%0A%3Cbr%3Eclub%0A%3Cbr%3E%3Cbr%3E2008%0A%3Cbr%3Ebutton%0A%3Cbr%3E%3Cbr%3Esame%20face.%0A%3Cbr%3E%3Cbr%3Ewrong%20answer.%0A%3Cbr%3E%3Cbr%3Efind%20the%20eye%20behind%20all%20three.%0A%3Cbr%3E%3Cbr%3E%3Cbr%3E%3Cbr%3E%3Cbr%3E2010%0A%3Cbr%3E%3Cbr%3Eno%20friends.%0A%3Cbr%3E%3Cbr%3E2011%0A%3Cbr%3E%3Cbr%3Ethe%20dragon%20chose%20the%20same%20girl.%0A%3Cbr%3E%3Cbr%3Enot%20the%20director.%0A%3C%2Fbody%3E%3C%2Fhtml%3E'); break;
       case '/moriarty': writeRawPage('%3C%21DOCTYPE%20html%3E%0A%3Chtml%3E%0A%3Chead%3E%3Ctitle%3Emoriarty%3C%2Ftitle%3E%3C%2Fhead%3E%0A%3Cbody%3E2019%3Cbr%3E%3Cbr%3EEVE%20outlived%20the%20bridge.%3Cbr%3E%3Cbr%3Eno%20cost%2C%20one%20guy.%3Cbr%3E%3Cbr%3Ethe%20mouth%20wasn%27t%20his%20name.%3C%2Fbody%3E%0A%3C%2Fhtml%3E'); break;
   }
   return null;
