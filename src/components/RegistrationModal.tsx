@@ -196,6 +196,8 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
     );
   }
 
+  const isRegistrationClosed = Date.now() >= new Date('2026-10-04T00:00:00+05:30').getTime();
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-6 overflow-y-auto bg-black/85 backdrop-blur-md animate-fadeIn">
       
@@ -236,6 +238,18 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
           </button>
         </div>
 
+        {isRegistrationClosed ? (
+          <div className="flex-1 flex flex-col items-center justify-center p-8 sm:p-16 text-center space-y-4">
+            <div className="w-16 h-16 rounded-full bg-red-500/20 flex items-center justify-center mb-4">
+              <ShieldCheck className="w-8 h-8 text-red-500" />
+            </div>
+            <h3 className="text-xl sm:text-3xl font-extrabold text-white">REGISTRATIONS CLOSED</h3>
+            <p className="text-sm sm:text-base text-zinc-400 max-w-sm">
+              The official registration window for GENESIZ 2026 has concluded. Thank you to everyone who registered!
+            </p>
+          </div>
+        ) : (
+          <>
         {/* Mode Switch Tabs */}
         <div className="grid grid-cols-2 p-1.5 sm:p-2 bg-zinc-950/90 border-b border-zinc-800/80 gap-1">
           <button
@@ -528,6 +542,8 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
             </div>
 
           </form>
+        )}
+        </>
         )}
 
       </div>
