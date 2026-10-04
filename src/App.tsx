@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { CipherSandbox } from './components/CipherSandbox';
@@ -25,6 +25,27 @@ export function App() {
   const [isCipherSandboxOpen, setIsCipherSandboxOpen] = useState<boolean>(false);
   const [isAdminVaultOpen, setIsAdminVaultOpen] = useState<boolean>(false);
   const [isChatbotOpen, setIsChatbotOpen] = useState<boolean>(false);
+  const [adminOverride, setAdminOverride] = useState<boolean>(false);
+
+  // Secret key sequence — type 'gsz' rapidly to bypass registration closure
+  const keyBuf = useRef('');
+  const keyTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (['INPUT', 'TEXTAREA'].includes((e.target as HTMLElement)?.tagName)) return;
+      keyBuf.current += e.key.toLowerCase();
+      if (keyBuf.current.length > 3) keyBuf.current = keyBuf.current.slice(-3);
+      if (keyTimer.current) clearTimeout(keyTimer.current);
+      keyTimer.current = setTimeout(() => { keyBuf.current = ''; }, 2000);
+      if (keyBuf.current === 'gsz') {
+        setAdminOverride(true);
+        setIsRegisterOpen(true);
+        keyBuf.current = '';
+      }
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, []);
 
   const p = window.location.pathname.replace(/\/$/, '');
 
@@ -103,8 +124,10 @@ export function App() {
       {isRegisterOpen && (
         <RegistrationModal
           initialEventId={registerInitialEventId}
+          adminOverride={adminOverride}
           onClose={() => {
             setIsRegisterOpen(false);
+            setAdminOverride(false);
             setRegisterInitialEventId(undefined);
           }}
         />

@@ -17,11 +17,13 @@ import { registerNewTeam, joinExistingTeam, getRegistrations } from '../utils/re
 
 interface RegistrationModalProps {
   initialEventId?: string;
+  adminOverride?: boolean;
   onClose: () => void;
 }
 
 export const RegistrationModal: React.FC<RegistrationModalProps> = ({ 
   initialEventId, 
+  adminOverride = false,
   onClose 
 }) => {
   // Mode: 'new' (Team Leader / Solo) or 'join' (Team Member)
@@ -196,7 +198,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
     );
   }
 
-  const isRegistrationClosed = Date.now() >= new Date('2026-10-04T00:00:00+05:30').getTime();
+  const isRegistrationClosed = !adminOverride && Date.now() >= new Date('2026-10-04T00:00:00+05:30').getTime();
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-6 overflow-y-auto bg-black/85 backdrop-blur-md animate-fadeIn">
