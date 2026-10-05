@@ -16,6 +16,7 @@ import { CipherQuestPage, isCipherQuestPath } from './components/CipherQuestPage
 import { IcarusLogistics, ChironMedical, ChironDatabase, Tartarus, Poseidon } from './components/Level4';
 import { SurprisePage } from './components/SurprisePage';
 import { DialerPage } from './components/DialerPage';
+import { BrainByteQuiz, BrainByteScores } from './components/BrainByteQuiz';
 import type { EventDetail } from './data/eventsData';
 
 export function App() {
@@ -48,6 +49,9 @@ export function App() {
   }, []);
 
   const p = window.location.pathname.replace(/\/$/, '');
+
+  if (p === '/brainbyte') return <BrainByteQuiz />;
+  if (p === '/bb-scores') return <BrainByteScores />;
 
   if (p === '/dialer') {
     return <DialerPage />;
