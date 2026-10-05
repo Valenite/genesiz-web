@@ -5,11 +5,18 @@ const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJ
 const QUIZ_DURATION = 3600;
 const ADMIN_PIN = 'GSZ2026';
 
+// Standard headers for score reads/inserts
 const sbH = {
   'apikey': SB_KEY,
   'Authorization': `Bearer ${SB_KEY}`,
   'Content-Type': 'application/json',
   'Prefer': 'return=minimal',
+};
+
+// Admin headers — required by RLS policy on bb2_session
+const sbAdmin = {
+  ...sbH,
+  'x-bb-admin': 'GSZ2026-CTRL',
 };
 
 // ─── Questions ────────────────────────────────────────────────────────────────
@@ -96,19 +103,20 @@ async function getSession2() {
 
 async function patchSession(patch: object) {
   await fetch(`${SB_URL}/rest/v1/bb2_session?id=eq.1`,{
-    method:'PATCH', headers:sbH, body:JSON.stringify(patch)
+    method:'PATCH', headers:sbAdmin, body:JSON.stringify(patch)
   });
 }
 
 async function ensureSession() {
   await fetch(`${SB_URL}/rest/v1/bb2_session`,{
     method:'POST',
-    headers:{...sbH,'Prefer':'resolution=ignore-duplicates,return=minimal'},
+    headers:{...sbAdmin,'Prefer':'resolution=ignore-duplicates,return=minimal'},
     body:JSON.stringify({ id:1, status:'waiting' }),
   });
 }
 
-async function submitScore2(name:string, answers:number[], score:number, correct:number) {
+// score + correct_count are intentionally NOT sent — DB trigger calculates them
+async function submitScore2(name:string, answers:number[]) {
   await fetch(`${SB_URL}/rest/v1/bb2_scores`,{
     method:'POST', headers:sbH,
     body:JSON.stringify({ player_name:name, answers, score, correct_count:correct,
@@ -145,10 +153,10 @@ export function BrainByte2Quiz() {
   scoreRef.current   = score;
   correctRef.current = correct;
 
-  const finalSubmit = useCallback(async (ans:number[], sc:number, cor:number) => {
+  const finalSubmit = useCallback(async (ans:number[]) => {
     if (doneRef.current) return;
     doneRef.current = true;
-    await submitScore2(playerName, ans, sc, cor);
+    await submitScore2(playerName, ans);
     setPhase('done');
   }, [playerName]);
 
@@ -161,11 +169,11 @@ export function BrainByte2Quiz() {
       if (s.status === 'active' && s.started_at) {
         const elapsed = Math.floor((Date.now() - new Date(s.started_at).getTime()) / 1000);
         const rem = QUIZ_DURATION - elapsed;
-        if (rem <= 0) { await finalSubmit(answersRef.current, scoreRef.current, correctRef.current); return; }
+        if (rem <= 0) { await finalSubmit(answersRef.current); return; }
         setTimeLeft(rem);
         setPhase('quiz');
       } else if (s.status === 'ended') {
-        await finalSubmit(answersRef.current, scoreRef.current, correctRef.current);
+        await finalSubmit(answersRef.current);
       }
     };
     check();
@@ -180,7 +188,7 @@ export function BrainByte2Quiz() {
       setTimeLeft(prev => {
         if (prev <= 1) {
           clearInterval(t);
-          finalSubmit(answersRef.current, scoreRef.current, correctRef.current);
+          finalSubmit(answersRef.current);
           return 0;
         }
         return prev - 1;
@@ -194,7 +202,7 @@ export function BrainByte2Quiz() {
     if (phase !== 'quiz') return;
     const t = setInterval(async () => {
       const s = await getSession2();
-      if (s?.status === 'ended') finalSubmit(answersRef.current, scoreRef.current, correctRef.current);
+      if (s?.status === 'ended') finalSubmit(answersRef.current);
     }, 5000);
     return () => clearInterval(t);
   }, [phase, finalSubmit]);
@@ -210,7 +218,7 @@ export function BrainByte2Quiz() {
     setAnswers(newAns); setScore(newSc); setCorrect(newCor);
     setSelOpt(null);
     if (qi + 1 >= QUESTIONS.length) {
-      finalSubmit(newAns, newSc, newCor);
+      finalSubmit(newAns);
     } else {
       setQi(qi + 1);
     }
