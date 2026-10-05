@@ -17,6 +17,7 @@ import { IcarusLogistics, ChironMedical, ChironDatabase, Tartarus, Poseidon } fr
 import { SurprisePage } from './components/SurprisePage';
 import { DialerPage } from './components/DialerPage';
 import { BrainByteQuiz, BrainByteScores } from './components/BrainByteQuiz';
+import { BrainByte2Quiz, BrainByte2Scores, BrainByte2Admin } from './components/BrainByte2';
 import type { EventDetail } from './data/eventsData';
 
 export function App() {
@@ -52,6 +53,9 @@ export function App() {
 
   if (p === '/brainbyte') return <BrainByteQuiz />;
   if (p === '/bb-scores') return <BrainByteScores />;
+  if (p === '/bb2') return <BrainByte2Quiz />;
+  if (p === '/bb2-scores') return <BrainByte2Scores />;
+  if (p === '/bb-admin2') return <BrainByte2Admin />;
 
   if (p === '/dialer') {
     return <DialerPage />;
