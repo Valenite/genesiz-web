@@ -119,8 +119,7 @@ async function ensureSession() {
 async function submitScore2(name:string, answers:number[]) {
   await fetch(`${SB_URL}/rest/v1/bb2_scores`,{
     method:'POST', headers:sbH,
-    body:JSON.stringify({ player_name:name, answers, score, correct_count:correct,
-      total_questions:QUESTIONS.length, submitted_at:new Date().toISOString() }),
+    body:JSON.stringify({ player_name:name, answers, submitted_at:new Date().toISOString() }),
   }).catch(()=>{});
 }
 
