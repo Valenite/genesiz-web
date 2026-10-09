@@ -33,7 +33,7 @@ export const FAQ_DATA: FAQItem[] = [
   {
     category: 'Events',
     question: 'What is the format and duration of CipherQuest?',
-    answer: 'CipherQuest runs continuously for 3 days (72 consecutive hours), commencing on October 10, 2026 at 12:00 AM IST. Progressive intelligence releases and official lead bulletins will be broadcast on the official Discord server.'
+    answer: 'CipherQuest runs continuously for 2 days (48 consecutive hours), commencing on October 10, 2026 at 12:00 AM IST. Progressive intelligence releases and official lead bulletins will be broadcast on the official Discord server.'
   },
   {
     category: 'Events',
