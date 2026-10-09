@@ -13,7 +13,6 @@ import { RegistrationModal } from './components/RegistrationModal';
 import { AdminVaultModal } from './components/AdminVaultModal';
 import { GenesizChatbot, ChatbotTriggerButton } from './components/GenesizChatbot';
 import { CipherQuestPage, isCipherQuestPath } from './components/CipherQuestPages';
-import { IcarusLogistics, ChironMedical, ChironDatabase, Tartarus, Poseidon } from './components/Level4';
 import { SurprisePage } from './components/SurprisePage';
 import { DialerPage } from './components/DialerPage';
 import { BrainByteQuiz, BrainByteScores } from './components/BrainByteQuiz';
@@ -64,13 +63,6 @@ export function App() {
   if (p === '/66e37cc61d26d7e6') {
     return <SurprisePage />;
   }
-
-  if (p === '/icaruslogistics') return <IcarusLogistics />;
-  if (p === '/chironmedical') return <ChironMedical />;
-  if (p === '/c5d909a55dd35e1f') return <ChironDatabase />;
-  if (p === '/tartarus') return <Tartarus />;
-  if (p === '/poseidon') return <Poseidon />;
-
 
   if (isCipherQuestPath()) {
     return <CipherQuestPage />;
