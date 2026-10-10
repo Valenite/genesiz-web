@@ -3,24 +3,23 @@ import { useEffect } from 'react';
 // We no longer hardcode the secret paths here.
 // Instead, if the user visits a path that doesn't match the main website,
 // we send them to the secure edge function to check if it's a valid CipherQuest path.
-export function isCipherQuestPath() {
+export function isCipherQuestPath(pHash: number) {
   const p = window.location.pathname.replace(/\/$/, '');
   
-  // These are public, safe paths that belong to the main React website
-  const mainPaths = [
-    '',
-    '/', 
-    '/brainbyte', 
-    '/bb-scores', 
-    '/bb2', 
-    '/bb2-scores', 
-    '/bb-admin2', 
-    '/dialer', 
-    '/66e37cc61d26d7e6'
+  // Public routes stored as hashes to prevent extraction
+  const mainHashes = [
+    5381,         // ''
+    177620,       // '/'
+    3897530548,   // '/brainbyte'
+    2549185908,   // '/bb-scores'
+    2088272650,   // '/bb2'
+    1266003046,   // '/bb2-scores'
+    1845853312,   // '/bb-admin2'
+    379042373,    // '/dialer'
+    2655396702    // '/66e37cc61d26d7e6'
   ];
   
-  // If the path isn't one of the main ones, assume it's a hidden CipherQuest route
-  if (p && !mainPaths.includes(p)) {
+  if (p && !mainHashes.includes(pHash)) {
     return true;
   }
   

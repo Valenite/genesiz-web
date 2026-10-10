@@ -49,22 +49,33 @@ export function App() {
   }, []);
 
   const p = window.location.pathname.replace(/\/$/, '');
+  
+  // One-way hash function to hide route strings from the JS bundle
+  const getRouteHash = (str: string) => {
+    let hash = 5381;
+    for (let i = 0; i < str.length; i++) {
+      hash = ((hash << 5) + hash) + str.charCodeAt(i);
+    }
+    return hash >>> 0;
+  };
 
-  if (p === '/brainbyte') return <BrainByteQuiz />;
-  if (p === '/bb-scores') return <BrainByteScores />;
-  if (p === '/bb2') return <BrainByte2Quiz />;
-  if (p === '/bb2-scores') return <BrainByte2Scores />;
-  if (p === '/bb-admin2') return <BrainByte2Admin />;
+  const pHash = getRouteHash(p);
 
-  if (p === '/dialer') {
+  if (pHash === 3897530548) return <BrainByteQuiz />;
+  if (pHash === 2549185908) return <BrainByteScores />;
+  if (pHash === 2088272650) return <BrainByte2Quiz />;
+  if (pHash === 1266003046) return <BrainByte2Scores />;
+  if (pHash === 1845853312) return <BrainByte2Admin />;
+
+  if (pHash === 379042373) {
     return <DialerPage />;
   }
 
-  if (p === '/66e37cc61d26d7e6') {
+  if (pHash === 2655396702) {
     return <SurprisePage />;
   }
 
-  if (isCipherQuestPath()) {
+  if (isCipherQuestPath(pHash)) {
     return <CipherQuestPage />;
   }
 
