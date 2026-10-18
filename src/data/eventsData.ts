@@ -7,7 +7,7 @@ export interface EventDetail {
   fullDesc: string;
   teamSize: string;
   eligibility: string;
-  format: 'Online 4-Day Hunt' | 'Online & On-Site' | 'LAN Arena' | 'Live Stage' | 'Hybrid Sprint';
+  format: 'Online 4-Day Hunt' | 'Online & On-Site' | 'LAN Arena' | 'Live Stage' | 'Hybrid Sprint' | 'Online';
   duration: string;
   date: string;
   time: string;
@@ -374,25 +374,25 @@ export const EVENTS_DATA: EventDetail[] = [
     fullDesc: 'Surprise?!?!?!! is a confidential challenge unveiled only minutes prior to launch. From reverse engineering unfamiliar architectures to real-time crisis simulations and algorithmic speed runs, delegates must rely entirely on raw technical intuition, adaptability, and fundamental engineering principles.',
     teamSize: '2 Delegates',
     eligibility: 'Open to All Confirmed Delegates',
-    format: 'Live Stage',
-    duration: 'Commences Oct 18 (6:00 PM - 8:00 PM)',
-    date: 'October 18, 2026',
-    time: 'Intel & Timings released via Discord',
-    venue: 'Blackbox Auditorium Stage & Discord HQ',
+    format: 'Online',
+    duration: 'Date & Time TBA (Community Poll)',
+    date: 'TBA',
+    time: 'Decided based on participant poll',
+    venue: 'Online / Discord HQ',
     badge: 'CLASSIFIED / 2 DELEGATES',
     iconName: 'Sparkles',
     rules: [
       'Team structure: 2 Delegates per team.',
-      'Commences on October 18, 2026.',
-      'Mission directives, exact timing, and briefing constraints are revealed on Discord.',
+      'Timing and date decided according to participant availability poll.',
+      'Mission directives and briefing constraints will be dispatched on Discord.',
       'Schedule updates and further details will be communicated via official Discord.',
       'Delegates demonstrating the highest composure, analytical agility, and robust execution will prevail.'
     ],
     rounds: [
       {
-        title: 'Phase Alpha: Classified Briefing (Oct 18)',
+        title: 'Phase Alpha: Classified Briefing',
         description: 'Directive disclosure followed by the first wave of rapid analytical problems.',
-        duration: 'Oct 18'
+        duration: 'Live Online'
       },
       {
         title: 'Phase Beta: Dynamic Constraint Shift',
