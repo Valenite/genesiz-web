@@ -128,7 +128,6 @@ Type "event <name>" to see full details.
 Category:    ${match.category}
 Format:      ${match.format} | ${match.duration}
 Team Size:   ${match.teamSize}
-Venue:       ${match.venue}
 Description: ${match.fullDesc}
             `.trim(),
           });
@@ -176,7 +175,7 @@ GENESIZ 2026 TIMELINE:
     OCT 10-12 (12 AM ON)   - CipherQuest
     OCT 13-14 (5 PM ON)    - BedWarz
     OCT 15-17 (5 PM ON)    - Valorant Championship
-    OCT 18 (6 PM - 8 PM)   - Surprise Event
+    DATE & TIME TBA        - Surprise Event (Community Poll)
     OCT 20-22              - Results Out
           `.trim(),
         });

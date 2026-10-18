@@ -120,7 +120,7 @@ function getBotReply(text: string, hintCount: number): { reply: string; newHintC
 • CipherQuest: Oct 10-12 (12 AM onwards)
 • BedWarz: Oct 13-14 (5 PM onwards)
 • Valorant: Oct 15-17 (5 PM onwards)
-• Surprise Event: Oct 18 (6-8 PM)
+• Surprise Event: Date & Time TBA (Community Poll)
 • Results Out: Oct 20-22
 
 All updates posted on Discord!`,

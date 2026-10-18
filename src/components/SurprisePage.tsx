@@ -180,11 +180,16 @@ export function SurprisePage() {
                 <p className="text-rose-200/70 leading-relaxed text-lg">
                   Maintain operational security. Do not harass civilians, obstruct public pathways, or damage property. All directives require raw, unedited video or photographic evidence submitted to central command to claim points.
                 </p>
-                <div className="mt-5 p-4 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-200 flex items-center gap-3">
-                  <div className="w-2.5 h-2.5 rounded-full bg-rose-500 animate-ping flex-shrink-0" />
-                  <p className="font-mono text-sm uppercase tracking-wider font-bold">
-                    Transmission Directive: Send all proofs and submissions directly to <span className="text-white underline underline-offset-4 decoration-rose-500">valenite in DM</span>.
-                  </p>
+                <div className="mt-5 p-4 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-200 flex items-start gap-3">
+                  <div className="w-2.5 h-2.5 rounded-full bg-rose-500 animate-ping flex-shrink-0 mt-1.5" />
+                  <div className="space-y-1">
+                    <p className="font-mono text-sm uppercase tracking-wider font-bold">
+                      Transmission Directive: Send all proofs and submissions directly to <span className="text-white underline underline-offset-4 decoration-rose-500">valenite in DM</span>.
+                    </p>
+                    <p className="text-xs text-rose-300/80 font-mono">
+                      Upload your unedited video/photo recordings to a <strong className="text-white">Google Drive folder</strong> (ensure link access is set to <span className="text-rose-400 font-semibold">"Anyone with the link can view"</span>) and share the link in the DM.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

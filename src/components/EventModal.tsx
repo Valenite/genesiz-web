@@ -108,7 +108,7 @@ export const EventModal: React.FC<EventModalProps> = ({ event, onClose, onRegist
         </div>
 
         {/* Quick Meta Row */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4 px-4 sm:px-8 py-3 bg-[#0d0d12] border-b border-zinc-800/80 text-xs font-mono text-zinc-400">
+        <div className="grid grid-cols-3 gap-2.5 sm:gap-4 px-4 sm:px-8 py-3 bg-[#0d0d12] border-b border-zinc-800/80 text-xs font-mono text-zinc-400 text-center sm:text-left">
           <div>
             <div className="text-[9px] sm:text-[10px] text-zinc-500 uppercase">FORMAT</div>
             <div className="text-zinc-200 font-semibold mt-0.5 text-[11px] sm:text-xs">{event.format}</div>
@@ -120,10 +120,6 @@ export const EventModal: React.FC<EventModalProps> = ({ event, onClose, onRegist
           <div>
             <div className="text-[9px] sm:text-[10px] text-zinc-500 uppercase">DELEGATION</div>
             <div className="text-zinc-200 font-semibold mt-0.5 text-[11px] sm:text-xs">{event.teamSize}</div>
-          </div>
-          <div>
-            <div className="text-[9px] sm:text-[10px] text-zinc-500 uppercase">VENUE / PORTAL</div>
-            <div className="text-zinc-200 font-semibold mt-0.5 truncate text-[11px] sm:text-xs">{event.venue}</div>
           </div>
         </div>
 
