@@ -73,7 +73,7 @@ export function SurprisePage() {
       icon: <Drama className="w-5 h-5 text-rose-500" />,
       tasks: [
         { text: 'Find a night-shift security guard or an open shop owner. Sit across from them, place your phone recording on the surface, and conduct a dead-serious 60-second mock police interrogation about a completely fictional crime. Stay fully in character throughout.', pts: 100 },
-        { text: '⭐ JACKPOT — The Rarest Find: Search streets and shops near the venue for the most rare, unusual, or unexpected object you can physically get your hands on. Authentication rules: (1) Hold the item clearly in your hand in the photo. (2) Hold a handwritten note next to it with your name and today\'s date. (3) Outdoors only — real-world background, no blank walls or bedrooms. (4) Physical item must be brought back to organizers for verification. Panel judges all entries — rarest item wins 100 pts, runner-up wins 50 pts.', pts: 100 },
+        { text: '⭐ JACKPOT — The Rarest Find: Search your surroundings, streets, and shops for the most rare, unusual, or unexpected object you can physically get your hands on. Authentication rules: (1) Hold the item clearly in your hand in the photo/video. (2) Hold a handwritten note next to it with your name and today\'s date. (3) Outdoors only — real-world background, no blank walls or bedrooms. Panel judges all digital submissions — rarest item wins 100 pts, runner-up wins 50 pts.', pts: 100 },
       ]
     }
   ];
