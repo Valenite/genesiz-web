@@ -57,11 +57,11 @@ export const SCHEDULE_DATA: ScheduleItem[] = [
     highlight: true
   },
   {
-    time: 'Date & Time TBA (Community Poll)',
+    time: 'Oct 18',
     title: 'Surprise Event',
     category: 'Keynote',
     venue: 'Online / Discord HQ',
-    description: 'Expect the Unexpected. Classified rapid-adaptation challenge. Timings decided based on participant availability poll.',
+    description: 'Expect the Unexpected. Classified rapid-adaptation challenge. Exact timings to be decided based on participant availability poll.',
     highlight: true
   },
   {
