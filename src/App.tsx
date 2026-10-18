@@ -71,7 +71,7 @@ export function App() {
     return <DialerPage />;
   }
 
-  if (pHash === 2655396702) {
+  if (pHash === 510601686) {
     return <SurprisePage />;
   }
 

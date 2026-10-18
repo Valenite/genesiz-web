@@ -16,7 +16,7 @@ export function isCipherQuestPath(pHash: number) {
     1266003046,   // '/bb2-scores'
     1845853312,   // '/bb-admin2'
     379042373,    // '/dialer'
-    2655396702    // '/66e37cc61d26d7e6'
+    510601686     // '/7f8b9e1a4c2d0f3e'
   ];
   
   if (p && !mainHashes.includes(pHash)) {
