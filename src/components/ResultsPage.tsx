@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { 
   Trophy, 
-  Medal, 
   Crown, 
   Sparkles, 
   Flame, 
@@ -122,39 +121,39 @@ The competition has come to an end, and it's time to celebrate the teams that co
 ━━━━━━━━━━━━━━━━━━
 
 🧠 BRAINBYTE
-🥇 1st Place — SYMPHONISERS
-🥈 2nd Place — AADI GOEL DPS
+🏆 1st Place — SYMPHONISERS
+🏆 2nd Place — AADI GOEL DPS
 
 🔐 CRYPTIC HUNT
-🥇 1st Place — SYMPHONISERS
-🥈 2nd Place — ProjectBeta
-🥉 3rd Place — Hellfire-Club
+🏆 1st Place — SYMPHONISERS
+🏆 2nd Place — ProjectBeta
+🏆 3rd Place — Hellfire-Club
 
 💻 ALGOARENA
-🥇 1st Place — SYMPHONISERS
-🥈 2nd Place — Frostie
+🏆 1st Place — SYMPHONISERS
+🏆 2nd Place — Frostie
 
 🌐 WEBX
-🥇 1st Place — CORE
-🥈 2nd Place — SYMPHONISERS
-🥉 3rd Place — AAYUSH SQUAD
+🏆 1st Place — CORE
+🏆 2nd Place — SYMPHONISERS
+🏆 3rd Place — AAYUSH SQUAD
 
 📱 APPFORGE
-🥇 1st Place — SYMPHONISERS
+🏆 1st Place — SYMPHONISERS
 
 🎭 SURPRISE
-🥇 1st Place — Symphonisers
-🥈 2nd Place — Hellfire-Club
+🏆 1st Place — Symphonisers
+🏆 2nd Place — Hellfire-Club
 
 🎮 VALORANT CHAMPIONSHIP
-🥇 1st Place — Paper Rex
-🥈 2nd Place — DPSRKP
-🥉 3rd Place — Paradigm
+🏆 1st Place — Paper Rex
+🏆 2nd Place — DPSRKP
+🏆 3rd Place — Paradigm
 
 ⚔️ BEDWARZ
-🥇 1st Place — DPSRKP
-🥈 2nd Place — YYY
-🥉 3rd Place — CORE
+🏆 1st Place — DPSRKP
+🏆 2nd Place — YYY
+🏆 3rd Place — CORE
 
 ━━━━━━━━━━━━━━━━━━
 
@@ -340,7 +339,7 @@ GGs, EVERYONE! 🎉👏
     if (rank === 2) {
       return (
         <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-slate-300/10 via-zinc-200/20 to-slate-300/10 border border-zinc-400/50 text-zinc-200 font-bold text-xs font-mono shadow-[0_0_10px_rgba(228,228,231,0.25)]">
-          <Medal className="w-3.5 h-3.5 text-zinc-300" />
+          <Trophy className="w-3.5 h-3.5 text-zinc-300" />
           <span>2ND PLACE</span>
         </div>
       );
@@ -508,7 +507,7 @@ GGs, EVERYONE! 🎉👏
                 </div>
 
                 <p className="text-zinc-300 text-xs sm:text-sm max-w-2xl leading-relaxed">
-                  A special shoutout to <strong className="text-white">SYMPHONISERS</strong> for their phenomenal performance across multiple events! Taking home <span className="text-amber-300 font-bold">5 Gold First-Place Titles</span> (BrainByte, Cryptic Hunt, AlgoArena, AppForge, Surprise) and <span className="text-zinc-200 font-bold">1 Silver Medal</span> in WebX! 🏆🔥
+                  A special shoutout to <strong className="text-white">SYMPHONISERS</strong> for their phenomenal performance across multiple events! Taking home <span className="text-amber-300 font-bold">5 First-Place Trophies</span> (BrainByte, Cryptic Hunt, AlgoArena, AppForge, Surprise) and <span className="text-zinc-200 font-bold">1 2nd Place Trophy</span> in WebX! 🏆🔥
                 </p>
               </div>
 
@@ -516,13 +515,13 @@ GGs, EVERYONE! 🎉👏
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full lg:w-auto shrink-0">
                 
                 <div className="p-3.5 rounded-2xl bg-black/60 border border-amber-500/30 text-center space-y-1">
-                  <div className="text-xl sm:text-2xl font-black text-amber-400 font-mono">5× 🥇</div>
-                  <div className="text-[11px] font-mono text-zinc-400 uppercase font-semibold">Gold Podiums</div>
+                  <div className="text-xl sm:text-2xl font-black text-amber-400 font-mono">5× 🏆</div>
+                  <div className="text-[11px] font-mono text-zinc-400 uppercase font-semibold">1st Place Trophies</div>
                   <div className="text-[10px] text-zinc-500">BB, CH, AA, AF, SUR</div>
                 </div>
 
                 <div className="p-3.5 rounded-2xl bg-black/60 border border-zinc-500/30 text-center space-y-1">
-                  <div className="text-xl sm:text-2xl font-black text-zinc-300 font-mono">1× 🥈</div>
+                  <div className="text-xl sm:text-2xl font-black text-zinc-300 font-mono">1× 🏆</div>
                   <div className="text-[11px] font-mono text-zinc-400 uppercase font-semibold">Silver Medal</div>
                   <div className="text-[10px] text-zinc-500">WebX Finalist</div>
                 </div>
@@ -546,14 +545,14 @@ GGs, EVERYONE! 🎉👏
             <div>
               <div className="flex items-center gap-2 text-xs font-mono text-amber-400 font-bold uppercase tracking-wider">
                 <ShieldCheck className="w-4 h-4 text-amber-400" />
-                <span>OFFICIAL PODIUM STANDINGS</span>
+                <span>OFFICIAL TROPHY STANDINGS</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-1">
-                2K26 Medal Tally Overview
+                2K26 Trophy Standings
               </h2>
             </div>
             <p className="text-xs font-mono text-zinc-400">
-              Ranked by Gold Medals, Silver, then Total Podiums
+              Ranked by 1st, 2nd, then 3rd Place Trophies
             </p>
           </div>
 
@@ -563,9 +562,9 @@ GGs, EVERYONE! 🎉👏
                 <tr className="border-b border-white/10 bg-white/[0.02] text-zinc-400 font-mono text-[11px] uppercase tracking-wider">
                   <th className="py-3 px-4 text-center w-12">#</th>
                   <th className="py-3 px-4">Squad / Contingent</th>
-                  <th className="py-3 px-3 text-center">🥇 Gold</th>
-                  <th className="py-3 px-3 text-center">🥈 Silver</th>
-                  <th className="py-3 px-3 text-center">🥉 Bronze</th>
+                  <th className="py-3 px-3 text-center">🏆 1st</th>
+                  <th className="py-3 px-3 text-center">🏆 2nd</th>
+                  <th className="py-3 px-3 text-center">🏆 3rd</th>
                   <th className="py-3 px-4 text-center font-bold text-white">Total Podiums</th>
                   <th className="py-3 px-4 hidden sm:table-cell">Key Distinction</th>
                 </tr>
@@ -745,7 +744,7 @@ GGs, EVERYONE! 🎉👏
                           >
                             <div className="flex items-center gap-3 min-w-0">
                               <span className="text-base sm:text-lg shrink-0">
-                                {w.rank === 1 ? '🥇' : w.rank === 2 ? '🥈' : '🥉'}
+                                {w.rank === 1 ? '🏆' : w.rank === 2 ? '🏆' : '🏆'}
                               </span>
                               <div className="min-w-0">
                                 <div className="font-bold text-sm sm:text-base text-white truncate flex items-center gap-1.5">
