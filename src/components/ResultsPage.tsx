@@ -3,7 +3,7 @@ import {
   Trophy,
   Crown,
   Sparkles,
-  Flame,
+  Star,
   ArrowLeft,
   Volume2,
   VolumeX,
@@ -15,28 +15,51 @@ import {
   Gamepad2,
   Swords,
   Zap,
+  Flame,
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { soundFX } from '../utils/audio';
 import genesizLogo from '../assets/genesiz-logo-transparent.png';
 
-// ─── Types ────────────────────────────────────────────────────────────────────
+// ─── Helpers ──────────────────────────────────────────────────────────────────
 
-interface Winner {
-  rank: 1 | 2 | 3;
-  team: string;
+function useReveal(threshold = 0.15) {
+  const [visible, setVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) setVisible(true); },
+      { threshold }
+    );
+    if (ref.current) obs.observe(ref.current);
+    return () => obs.disconnect();
+  }, []);
+  return { ref, visible };
 }
 
+function fadeUp(visible: boolean, delay = 0): React.CSSProperties {
+  return {
+    opacity: visible ? 1 : 0,
+    transform: visible ? 'translateY(0)' : 'translateY(28px)',
+    transition: `opacity 0.65s ease ${delay}ms, transform 0.65s cubic-bezier(0.22,1,0.36,1) ${delay}ms`,
+  };
+}
+
+function scalePop(visible: boolean, delay = 0): React.CSSProperties {
+  return {
+    opacity: visible ? 1 : 0,
+    transform: visible ? 'scale(1)' : 'scale(0.88)',
+    transition: `opacity 0.6s ease ${delay}ms, transform 0.6s cubic-bezier(0.34,1.56,0.64,1) ${delay}ms`,
+  };
+}
+
+// ─── Types ────────────────────────────────────────────────────────────────────
+
+interface Winner { rank: 1 | 2 | 3; team: string; }
 interface EventResult {
-  id: string;
-  name: string;
-  emoji: string;
-  tagline: string;
-  icon: React.ReactNode;
-  accent: string;
-  accentBorder: string;
-  accentText: string;
-  accentBg: string;
+  id: string; name: string; emoji: string; tagline: string;
+  icon: React.ReactNode; accentBorder: string; accentText: string; accentBg: string;
+  glow: string;
   winners: Winner[];
 }
 
@@ -44,371 +67,235 @@ interface EventResult {
 
 const EVENTS: EventResult[] = [
   {
-    id: 'brainbyte',
-    name: 'BRAINBYTE',
-    emoji: '🧠',
-    tagline: 'Tech & Logic Quiz',
-    icon: <Terminal className="w-4 h-4" />,
-    accent: 'from-cyan-400 to-blue-500',
-    accentBorder: 'border-cyan-500/40',
-    accentText: 'text-cyan-400',
-    accentBg: 'bg-cyan-500/8',
-    winners: [
-      { rank: 1, team: 'SYMPHONISERS' },
-      { rank: 2, team: 'AADI GOEL DPS' },
-    ],
+    id: 'brainbyte', name: 'BRAINBYTE', emoji: '🧠', tagline: 'Tech & Logic',
+    icon: <Terminal className="w-3.5 h-3.5" />,
+    accentBorder: 'border-sky-500/35', accentText: 'text-sky-400', accentBg: 'bg-sky-500/8',
+    glow: 'rgba(14,165,233,0.15)',
+    winners: [{ rank: 1, team: 'SYMPHONISERS' }, { rank: 2, team: 'AADI GOEL DPS' }],
   },
   {
-    id: 'cryptic',
-    name: 'CRYPTIC HUNT',
-    emoji: '🔐',
-    tagline: 'CipherQuest & OSINT',
-    icon: <Lock className="w-4 h-4" />,
-    accent: 'from-emerald-400 to-teal-500',
-    accentBorder: 'border-emerald-500/40',
-    accentText: 'text-emerald-400',
-    accentBg: 'bg-emerald-500/8',
-    winners: [
-      { rank: 1, team: 'SYMPHONISERS' },
-      { rank: 2, team: 'ProjectBeta' },
-      { rank: 3, team: 'Hellfire-Club' },
-    ],
+    id: 'cryptic', name: 'CRYPTIC HUNT', emoji: '🔐', tagline: 'CipherQuest',
+    icon: <Lock className="w-3.5 h-3.5" />,
+    accentBorder: 'border-emerald-500/35', accentText: 'text-emerald-400', accentBg: 'bg-emerald-500/8',
+    glow: 'rgba(16,185,129,0.15)',
+    winners: [{ rank: 1, team: 'SYMPHONISERS' }, { rank: 2, team: 'ProjectBeta' }, { rank: 3, team: 'Hellfire-Club' }],
   },
   {
-    id: 'algoarena',
-    name: 'ALGOARENA',
-    emoji: '💻',
-    tagline: 'Competitive Programming',
-    icon: <Code2 className="w-4 h-4" />,
-    accent: 'from-violet-400 to-indigo-500',
-    accentBorder: 'border-violet-500/40',
-    accentText: 'text-violet-400',
-    accentBg: 'bg-violet-500/8',
-    winners: [
-      { rank: 1, team: 'SYMPHONISERS' },
-      { rank: 2, team: 'Frostie' },
-    ],
+    id: 'algoarena', name: 'ALGOARENA', emoji: '💻', tagline: 'Competitive Programming',
+    icon: <Code2 className="w-3.5 h-3.5" />,
+    accentBorder: 'border-violet-500/35', accentText: 'text-violet-400', accentBg: 'bg-violet-500/8',
+    glow: 'rgba(139,92,246,0.15)',
+    winners: [{ rank: 1, team: 'SYMPHONISERS' }, { rank: 2, team: 'Frostie' }],
   },
   {
-    id: 'webx',
-    name: 'WEBX',
-    emoji: '🌐',
-    tagline: 'The Impossible Interface',
-    icon: <Globe className="w-4 h-4" />,
-    accent: 'from-fuchsia-400 to-purple-500',
-    accentBorder: 'border-fuchsia-500/40',
-    accentText: 'text-fuchsia-400',
-    accentBg: 'bg-fuchsia-500/8',
-    winners: [
-      { rank: 1, team: 'CORE' },
-      { rank: 2, team: 'SYMPHONISERS' },
-      { rank: 3, team: 'AAYUSH SQUAD' },
-    ],
+    id: 'webx', name: 'WEBX', emoji: '🌐', tagline: 'Web Innovation',
+    icon: <Globe className="w-3.5 h-3.5" />,
+    accentBorder: 'border-fuchsia-500/35', accentText: 'text-fuchsia-400', accentBg: 'bg-fuchsia-500/8',
+    glow: 'rgba(217,70,239,0.15)',
+    winners: [{ rank: 1, team: 'CORE' }, { rank: 2, team: 'SYMPHONISERS' }, { rank: 3, team: 'AAYUSH SQUAD' }],
   },
   {
-    id: 'appforge',
-    name: 'APPFORGE',
-    emoji: '📱',
-    tagline: 'Mobile App Innovation',
-    icon: <Smartphone className="w-4 h-4" />,
-    accent: 'from-rose-400 to-pink-500',
-    accentBorder: 'border-rose-500/40',
-    accentText: 'text-rose-400',
-    accentBg: 'bg-rose-500/8',
-    winners: [
-      { rank: 1, team: 'SYMPHONISERS' },
-    ],
+    id: 'appforge', name: 'APPFORGE', emoji: '📱', tagline: 'Mobile Innovation',
+    icon: <Smartphone className="w-3.5 h-3.5" />,
+    accentBorder: 'border-rose-500/35', accentText: 'text-rose-400', accentBg: 'bg-rose-500/8',
+    glow: 'rgba(244,63,94,0.15)',
+    winners: [{ rank: 1, team: 'SYMPHONISERS' }],
   },
   {
-    id: 'surprise',
-    name: 'SURPRISE',
-    emoji: '🎭',
-    tagline: 'Operation Chaos',
-    icon: <Zap className="w-4 h-4" />,
-    accent: 'from-amber-400 to-orange-500',
-    accentBorder: 'border-amber-500/40',
-    accentText: 'text-amber-400',
-    accentBg: 'bg-amber-500/8',
-    winners: [
-      { rank: 1, team: 'Symphonisers' },
-      { rank: 2, team: 'Hellfire-Club' },
-    ],
+    id: 'surprise', name: 'SURPRISE', emoji: '🎭', tagline: 'Wildcard Event',
+    icon: <Zap className="w-3.5 h-3.5" />,
+    accentBorder: 'border-amber-500/35', accentText: 'text-amber-400', accentBg: 'bg-amber-500/8',
+    glow: 'rgba(245,158,11,0.15)',
+    winners: [{ rank: 1, team: 'Symphonisers' }, { rank: 2, team: 'Hellfire-Club' }],
   },
   {
-    id: 'valorant',
-    name: 'VALORANT',
-    emoji: '🎮',
-    tagline: 'Tactical FPS Championship',
-    icon: <Gamepad2 className="w-4 h-4" />,
-    accent: 'from-red-400 to-rose-600',
-    accentBorder: 'border-red-500/40',
-    accentText: 'text-red-400',
-    accentBg: 'bg-red-500/8',
-    winners: [
-      { rank: 1, team: 'Paper Rex' },
-      { rank: 2, team: 'DPSRKP' },
-      { rank: 3, team: 'Paradigm' },
-    ],
+    id: 'valorant', name: 'VALORANT', emoji: '🎮', tagline: 'Tactical FPS',
+    icon: <Gamepad2 className="w-3.5 h-3.5" />,
+    accentBorder: 'border-red-500/35', accentText: 'text-red-400', accentBg: 'bg-red-500/8',
+    glow: 'rgba(239,68,68,0.15)',
+    winners: [{ rank: 1, team: 'Paper Rex' }, { rank: 2, team: 'DPSRKP' }, { rank: 3, team: 'Paradigm' }],
   },
   {
-    id: 'bedwarz',
-    name: 'BEDWARZ',
-    emoji: '⚔️',
-    tagline: 'Minecraft Tactical Battle',
-    icon: <Swords className="w-4 h-4" />,
-    accent: 'from-yellow-400 to-amber-500',
-    accentBorder: 'border-yellow-500/40',
-    accentText: 'text-yellow-400',
-    accentBg: 'bg-yellow-500/8',
-    winners: [
-      { rank: 1, team: 'DPSRKP' },
-      { rank: 2, team: 'YYY' },
-      { rank: 3, team: 'CORE' },
-    ],
+    id: 'bedwarz', name: 'BEDWARZ', emoji: '⚔️', tagline: 'Tactical Minecraft',
+    icon: <Swords className="w-3.5 h-3.5" />,
+    accentBorder: 'border-yellow-500/35', accentText: 'text-yellow-400', accentBg: 'bg-yellow-500/8',
+    glow: 'rgba(234,179,8,0.15)',
+    winners: [{ rank: 1, team: 'DPSRKP' }, { rank: 2, team: 'YYY' }, { rank: 3, team: 'CORE' }],
   },
 ];
 
-// ─── Animated rank row ────────────────────────────────────────────────────────
+const RANK_CONFIG = {
+  1: {
+    pill: 'bg-gradient-to-r from-amber-500/25 to-yellow-500/15 border-amber-400/50 text-amber-200',
+    row: 'bg-gradient-to-r from-amber-500/12 to-transparent border-amber-500/40',
+    team: 'text-white font-extrabold',
+    label: '1ST',
+  },
+  2: {
+    pill: 'bg-white/8 border-white/18 text-zinc-300',
+    row: 'bg-white/[0.035] border-white/10',
+    team: 'text-zinc-100 font-bold',
+    label: '2ND',
+  },
+  3: {
+    pill: 'bg-white/5 border-white/10 text-zinc-400',
+    row: 'bg-white/[0.018] border-white/[0.07]',
+    team: 'text-zinc-300 font-semibold',
+    label: '3RD',
+  },
+};
 
-const RankRow: React.FC<{ winner: Winner; accentText: string; delay: number }> = ({
-  winner, accentText, delay,
+// ─── Sub-components ───────────────────────────────────────────────────────────
+
+const WinnerRow: React.FC<{ w: Winner; accentText: string; delay: number; parentVisible: boolean }> = ({
+  w, accentText, delay, parentVisible,
 }) => {
-  const [visible, setVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.2 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
-  const isFirst  = winner.rank === 1;
-  const isSecond = winner.rank === 2;
-
-  const rowBg    = isFirst  ? 'bg-amber-500/10 border-amber-500/50'
-                 : isSecond ? 'bg-white/[0.04] border-white/10'
-                 :            'bg-white/[0.02] border-white/[0.06]';
-
-  const teamColor = isFirst ? 'text-white' : isSecond ? 'text-zinc-100' : 'text-zinc-300';
-
-  const label    = isFirst ? '1st Place' : isSecond ? '2nd Place' : '3rd Place';
-  const labelClr = isFirst
-    ? 'text-amber-300 bg-amber-500/20 border-amber-400/40'
-    : isSecond
-    ? 'text-zinc-300 bg-white/8 border-white/15'
-    : 'text-zinc-400 bg-white/5 border-white/10';
-
+  const cfg = RANK_CONFIG[w.rank];
   return (
     <div
-      ref={ref}
       style={{
-        transitionDelay: `${delay}ms`,
-        transform: visible ? 'translateX(0)' : 'translateX(-24px)',
-        opacity: visible ? 1 : 0,
-        transition: 'transform 0.5s cubic-bezier(0.22,1,0.36,1), opacity 0.5s ease',
+        opacity: parentVisible ? 1 : 0,
+        transform: parentVisible ? 'translateX(0)' : 'translateX(-20px)',
+        transition: `opacity 0.5s ease ${delay}ms, transform 0.5s cubic-bezier(0.22,1,0.36,1) ${delay}ms`,
       }}
-      className={`flex items-center justify-between gap-3 px-4 py-3 rounded-2xl border ${rowBg}`}
+      className={`flex items-center gap-3 px-3.5 py-2.5 rounded-xl border ${cfg.row}`}
     >
-      <div className="flex items-center gap-3 min-w-0">
-        <span className={`shrink-0 ${isFirst ? accentText : isSecond ? 'text-zinc-400' : 'text-zinc-500'}`}>
-          <Trophy className="w-4 h-4" />
-        </span>
-        <span className={`font-bold text-sm truncate font-mono tracking-wide ${teamColor}`}>
-          {winner.team}
-        </span>
-        {isFirst && <Crown className="w-3.5 h-3.5 text-amber-400 shrink-0" />}
-      </div>
-      <span className={`shrink-0 text-[10px] font-mono font-bold px-2.5 py-1 rounded-full border uppercase tracking-widest ${labelClr}`}>
-        {label}
+      {/* Rank pill */}
+      <span className={`shrink-0 text-[10px] font-black font-mono tracking-widest px-2 py-0.5 rounded-md border ${cfg.pill}`}>
+        {cfg.label}
       </span>
+
+      {/* Trophy */}
+      <Trophy className={`shrink-0 w-3.5 h-3.5 ${w.rank === 1 ? accentText : 'text-zinc-600'}`} />
+
+      {/* Team */}
+      <span className={`text-sm tracking-wide truncate font-mono ${cfg.team}`}>
+        {w.team}
+      </span>
+
+      {w.rank === 1 && (
+        <Crown className="shrink-0 ml-auto w-3.5 h-3.5 text-amber-400" />
+      )}
     </div>
   );
 };
 
-// ─── Animated event card ──────────────────────────────────────────────────────
 
 const EventCard: React.FC<{ evt: EventResult; index: number }> = ({ evt, index }) => {
-  const [visible, setVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.1 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
+  const { ref, visible } = useReveal(0.08);
 
   return (
     <div
       ref={ref}
       style={{
-        transitionDelay: `${index * 80}ms`,
-        transform: visible ? 'translateY(0) scale(1)' : 'translateY(32px) scale(0.96)',
         opacity: visible ? 1 : 0,
-        transition: 'transform 0.6s cubic-bezier(0.22,1,0.36,1), opacity 0.6s ease',
+        transform: visible ? 'translateY(0)' : 'translateY(36px)',
+        transition: `opacity 0.6s ease ${index * 70}ms, transform 0.6s cubic-bezier(0.22,1,0.36,1) ${index * 70}ms`,
+        ['--card-glow' as any]: evt.glow,
       }}
-      className={`group relative rounded-3xl overflow-hidden
-                  bg-[#07070c]/90 border ${evt.accentBorder}
-                  hover:border-white/25 hover:shadow-[0_0_40px_-8px_rgba(255,255,255,0.08)]
-                  transition-all duration-300 flex flex-col`}
+      className={`group relative flex flex-col rounded-2xl overflow-hidden
+                  border ${evt.accentBorder} bg-[#07070d]
+                  hover:shadow-[0_8px_32px_-4px_var(--card-glow)]
+                  transition-shadow duration-500`}
     >
-      {/* Glow blob */}
-      <div className={`absolute -top-8 -right-8 w-40 h-40 rounded-full blur-3xl
-                       pointer-events-none ${evt.accentBg}
-                       group-hover:scale-150 transition-transform duration-700 opacity-60`} />
+      {/* Accent top bar */}
+      <div className={`h-0.5 w-full bg-gradient-to-r ${evt.accentBorder.replace('border-', '').replace('/35','')}`}
+           style={{ background: `linear-gradient(to right, transparent, ${evt.glow.replace('0.15','0.8')}, transparent)` }} />
 
-      <div className="relative z-10 flex flex-col h-full p-5 sm:p-6">
-        {/* Card header */}
-        <div className="flex items-start justify-between gap-3 mb-5">
-          <div className="space-y-1">
-            <div className={`inline-flex items-center gap-1.5 text-[10px] font-mono
-                             font-bold uppercase tracking-widest px-2.5 py-1 rounded-full
-                             border ${evt.accentBorder} ${evt.accentText} ${evt.accentBg}`}>
-              {evt.icon}
-              <span>{evt.tagline}</span>
+      {/* Hover glow blob */}
+      <div className={`absolute -top-12 -right-12 w-36 h-36 rounded-full blur-3xl pointer-events-none
+                       opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${evt.accentBg}`} />
+
+      <div className="relative z-10 p-5 flex flex-col gap-4 flex-1">
+        {/* Header */}
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2.5">
+            <span className="text-2xl leading-none">{evt.emoji}</span>
+            <div>
+              <div className={`text-[9px] font-mono font-bold uppercase tracking-[0.18em] ${evt.accentText} mb-0.5`}>
+                {evt.tagline}
+              </div>
+              <h3 className="text-base font-black text-white tracking-tight leading-none">
+                {evt.name}
+              </h3>
             </div>
-            <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight flex items-center gap-2">
-              <span>{evt.emoji}</span>
-              <span>{evt.name}</span>
-            </h3>
           </div>
+          <span className={`p-2 rounded-xl border ${evt.accentBorder} ${evt.accentBg} ${evt.accentText}`}>
+            {evt.icon}
+          </span>
         </div>
 
+        {/* Divider */}
+        <div className="h-px w-full bg-white/5" />
+
         {/* Winners */}
-        <div className="space-y-2 flex-1">
+        <div className="flex flex-col gap-2 flex-1">
           {evt.winners.map((w, i) => (
-            <RankRow
+            <WinnerRow
               key={w.rank}
-              winner={w}
+              w={w}
               accentText={evt.accentText}
-              delay={i * 120}
+              delay={index * 70 + i * 100}
+              parentVisible={visible}
             />
           ))}
         </div>
-
-        {/* Footer */}
-        <div className="mt-5 pt-4 border-t border-white/[0.05]
-                        flex items-center justify-between text-[10px] font-mono text-zinc-600">
-          <span>GENESIZ 2K26</span>
-          <span className={`${evt.accentText} font-semibold`}>Official Podium</span>
-        </div>
       </div>
     </div>
   );
 };
 
-// ─── Animated stat box ────────────────────────────────────────────────────────
 
-const StatBox: React.FC<{ n: string; sub: string; detail: string; delay: number }> = ({ n, sub, detail, delay }) => {
-  const [visible, setVisible] = useState(false);
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLDivElement>(null);
-  const target = parseInt(n, 10);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.5 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
+function CountUp({ target, delay, visible }: { target: number; delay: number; visible: boolean }) {
+  const [val, setVal] = useState(0);
   useEffect(() => {
     if (!visible) return;
-    const duration = 800;
-    const startTime = performance.now();
-    const tick = (now: number) => {
-      const progress = Math.min((now - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.round(eased * target));
-      if (progress < 1) requestAnimationFrame(tick);
-    };
-    const id = setTimeout(() => requestAnimationFrame(tick), delay);
-    return () => clearTimeout(id);
+    const start = performance.now() + delay;
+    let raf: number;
+    function tick(now: number) {
+      if (now < start) { raf = requestAnimationFrame(tick); return; }
+      const p = Math.min((now - start) / 900, 1);
+      const e = 1 - Math.pow(1 - p, 3);
+      setVal(Math.round(e * target));
+      if (p < 1) raf = requestAnimationFrame(tick);
+    }
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
   }, [visible, target, delay]);
-
-  return (
-    <div
-      ref={ref}
-      style={{
-        transitionDelay: `${delay}ms`,
-        transform: visible ? 'translateY(0)' : 'translateY(20px)',
-        opacity: visible ? 1 : 0,
-        transition: 'transform 0.5s cubic-bezier(0.22,1,0.36,1), opacity 0.5s ease',
-      }}
-      className="p-4 sm:p-5 rounded-2xl text-center bg-black/50 border border-amber-500/20 space-y-0.5"
-    >
-      <div className="text-3xl sm:text-4xl font-black text-amber-300 font-mono leading-none">
-        {count}
-      </div>
-      <div className="text-[11px] font-mono text-amber-400 font-bold uppercase tracking-wide">
-        {sub}
-      </div>
-      <div className="text-[10px] text-zinc-500 font-mono">
-        {detail}
-      </div>
-    </div>
-  );
-};
-
-// ─── Floating particle ────────────────────────────────────────────────────────
-
-const Particle: React.FC<{ style: React.CSSProperties }> = ({ style }) => (
-  <div
-    className="absolute w-1 h-1 rounded-full bg-amber-400/30 pointer-events-none"
-    style={style}
-  />
-);
+  return <>{val}</>;
+}
 
 // ─── Main Page ────────────────────────────────────────────────────────────────
 
 export function ResultsPage() {
-  const [isMuted, setIsMuted] = useState(soundFX.getMuted());
-  const [heroVisible, setHeroVisible] = useState(false);
-  const [particles] = useState(() =>
-    Array.from({ length: 18 }, (_, i) => ({
-      id: i,
-      style: {
-        left: `${Math.random() * 100}%`,
-        top: `${Math.random() * 100}%`,
-        animationDuration: `${4 + Math.random() * 6}s`,
-        animationDelay: `${Math.random() * 4}s`,
-        opacity: 0.2 + Math.random() * 0.5,
-        width: `${2 + Math.random() * 3}px`,
-        height: `${2 + Math.random() * 3}px`,
-        animation: `float ${4 + Math.random() * 6}s ease-in-out ${Math.random() * 4}s infinite alternate`,
-      } as React.CSSProperties,
-    }))
-  );
+  const [isMuted, setIsMuted]     = useState(soundFX.getMuted());
+  const [heroIn, setHeroIn]       = useState(false);
+  const mvp                        = useReveal(0.1);
+  const stats                      = useReveal(0.3);
+  const closing                    = useReveal(0.12);
 
   useEffect(() => {
     document.title = '🏆 GENESIZ 2026 — Results';
     window.scrollTo(0, 0);
-    const t = setTimeout(() => setHeroVisible(true), 100);
-    const t1 = setTimeout(shoot, 600);
-    const t2 = setTimeout(sideCannons, 1800);
-    return () => { clearTimeout(t); clearTimeout(t1); clearTimeout(t2); };
+    const t0 = setTimeout(() => setHeroIn(true), 80);
+    const t1 = setTimeout(fireCenter, 700);
+    const t2 = setTimeout(fireSides, 2000);
+    return () => { clearTimeout(t0); clearTimeout(t1); clearTimeout(t2); };
   }, []);
 
-  const shoot = () => {
+  const fireCenter = () => {
     soundFX.playWarp();
-    confetti({ particleCount: 120, spread: 90, origin: { y: 0.5 },
-      colors: ['#FFD700', '#FFA500', '#ffffff', '#6366F1', '#EC4899', '#10B981'] });
+    confetti({ particleCount: 140, spread: 100, startVelocity: 45, origin: { y: 0.45 },
+      colors: ['#FFD700', '#FFA500', '#ffffff', '#818CF8', '#F472B6'] });
   };
 
-  const sideCannons = () => {
+  const fireSides = () => {
     soundFX.playSuccess();
-    const end = Date.now() + 1500;
-    const colors = ['#FFD700', '#E5E7EB', '#6366F1', '#38BDF8'];
+    const end = Date.now() + 1800;
+    const colors = ['#FFD700', '#E5E7EB', '#818CF8', '#38BDF8', '#F472B6'];
     (function frame() {
-      confetti({ particleCount: 6, angle: 60,  spread: 55, origin: { x: 0, y: 0.7 }, colors });
-      confetti({ particleCount: 6, angle: 120, spread: 55, origin: { x: 1, y: 0.7 }, colors });
+      confetti({ particleCount: 7, angle: 55,  spread: 60, origin: { x: 0,   y: 0.65 }, colors });
+      confetti({ particleCount: 7, angle: 125, spread: 60, origin: { x: 1.0, y: 0.65 }, colors });
       if (Date.now() < end) requestAnimationFrame(frame);
     })();
   };
@@ -420,451 +307,330 @@ export function ResultsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#040406] text-zinc-100 font-sans selection:bg-amber-500/80 selection:text-black relative overflow-x-hidden">
+    <div className="min-h-screen bg-[#040406] text-zinc-100 relative overflow-x-hidden">
 
-      {/* ── Grid texture ── */}
-      <div className="fixed inset-0 bg-tech-grid opacity-[0.18] pointer-events-none z-0" />
+      {/* ── Textures & glows ── */}
+      <div className="fixed inset-0 bg-tech-grid opacity-[0.15] pointer-events-none z-0" />
 
-      {/* ── Floating particles ── */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        {particles.map(p => <Particle key={p.id} style={p.style} />)}
-      </div>
+      {/* Top golden aurora */}
+      <div className="fixed top-0 inset-x-0 h-[55vh] pointer-events-none z-0"
+           style={{ background: 'radial-gradient(ellipse 80% 50% at 50% -10%, rgba(245,158,11,0.18) 0%, rgba(99,102,241,0.08) 55%, transparent 100%)' }} />
 
-      {/* ── Ambient glows ── */}
-      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[900px] h-[420px]
-                      bg-gradient-to-b from-amber-500/14 via-violet-600/8 to-transparent
-                      blur-[130px] pointer-events-none z-0 animate-pulse" style={{ animationDuration: '4s' }} />
-      <div className="fixed bottom-0 right-0 w-[500px] h-[350px]
-                      bg-indigo-700/10 blur-[140px] pointer-events-none z-0" />
-      <div className="fixed bottom-1/3 left-0 w-[400px] h-[300px]
-                      bg-emerald-700/6 blur-[120px] pointer-events-none z-0" />
+      {/* Bottom purple */}
+      <div className="fixed bottom-0 right-0 w-[600px] h-[400px] pointer-events-none z-0 blur-[120px]"
+           style={{ background: 'radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%)' }} />
 
-      {/* ══════════════════════════════════════ HEADER */}
-      <header className="sticky top-0 z-50 border-b border-white/[0.07]
-                         bg-[#040406]/80 backdrop-blur-2xl">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5
-                        flex items-center justify-between">
+      {/* Floating particles */}
+      {[...Array(14)].map((_, i) => (
+        <div key={i} className="fixed pointer-events-none z-0 rounded-full"
+             style={{
+               left: `${(i * 7.3 + 5) % 100}%`,
+               top:  `${(i * 11.7 + 8) % 100}%`,
+               width:  `${2 + (i % 3)}px`,
+               height: `${2 + (i % 3)}px`,
+               background: i % 3 === 0 ? 'rgba(245,158,11,0.35)' : i % 3 === 1 ? 'rgba(139,92,246,0.3)' : 'rgba(255,255,255,0.15)',
+               animation: `float ${5 + (i % 4)}s ease-in-out ${i * 0.4}s infinite alternate`,
+             }} />
+      ))}
 
-          {/* Left: back + logo */}
-          <div className="flex items-center gap-4">
+      {/* ══════════ HEADER */}
+      <header className="sticky top-0 z-50 border-b border-white/[0.06] bg-[#040406]/85 backdrop-blur-2xl">
+        <div className="max-w-6xl mx-auto px-4 sm:px-8 py-3 flex items-center justify-between">
+
+          <div className="flex items-center gap-3">
             <a href="/" onClick={() => soundFX.playClick()}
                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full
-                          bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20
-                          text-xs font-mono text-zinc-400 hover:text-white transition-all group">
+                          bg-white/5 hover:bg-white/10 border border-white/8 hover:border-white/18
+                          text-[11px] font-mono text-zinc-400 hover:text-white transition-all group">
               <ArrowLeft className="w-3 h-3 group-hover:-translate-x-0.5 transition-transform" />
-              <span>Back</span>
+              Back
             </a>
-
-            <div className="hidden sm:flex items-center gap-2 border-l border-white/10 pl-4">
-              <img src={genesizLogo} alt="GENESIZ" className="h-5 w-auto object-contain" />
-              <span className="text-[11px] font-mono font-bold tracking-wider
-                               text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded-full
-                               border border-amber-500/25">
-                2K26 RESULTS
+            <div className="hidden sm:flex items-center gap-2 pl-3 border-l border-white/8">
+              <img src={genesizLogo} alt="GENESIZ" className="h-5 w-auto opacity-90" />
+              <span className="text-[10px] font-mono font-black tracking-[0.2em] text-amber-400
+                               bg-amber-500/10 border border-amber-500/20 px-2.5 py-0.5 rounded-full uppercase">
+                2K26 Results
               </span>
             </div>
           </div>
 
-          {/* Right: mute only */}
           <button onClick={toggleAudio}
-                  className="p-2 rounded-full text-zinc-500 hover:text-white hover:bg-white/5 transition-colors cursor-pointer">
-            {isMuted
-              ? <VolumeX className="w-4 h-4" />
-              : <Volume2 className="w-4 h-4 text-zinc-300" />}
+                  className="p-2 rounded-full text-zinc-500 hover:text-white hover:bg-white/5 transition-all cursor-pointer">
+            {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
           </button>
-
         </div>
       </header>
 
-      {/* ══════════════════════════════════════ MAIN */}
-      <main className="relative z-10 max-w-6xl mx-auto
-                       px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20 pb-32 space-y-20">
+      {/* ══════════ MAIN */}
+      <main className="relative z-10 max-w-6xl mx-auto px-4 sm:px-8 pt-16 sm:pt-24 pb-28">
 
-        {/* ── HERO ── */}
-        <section className="text-center space-y-7">
+        {/* ───────────────────────── HERO */}
+        <section className="text-center mb-24 space-y-8">
 
-          {/* Live badge */}
-          <div
-            style={{
-              transform: heroVisible ? 'translateY(0)' : 'translateY(-16px)',
-              opacity: heroVisible ? 1 : 0,
-              transition: 'transform 0.7s cubic-bezier(0.22,1,0.36,1), opacity 0.7s ease',
-            }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full
-                        bg-amber-500/10 border border-amber-400/30
-                        text-amber-300 text-[11px] font-mono font-bold tracking-widest uppercase"
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-ping" />
-            GENESIZ 2K26 · OFFICIAL RESULTS ANNOUNCEMENT
+          {/* Edition badge */}
+          <div style={fadeUp(heroIn, 0)} className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full
+              bg-gradient-to-r from-amber-500/15 via-yellow-500/10 to-amber-500/15
+              border border-amber-400/30 text-amber-300 text-[11px] font-mono font-bold tracking-[0.18em] uppercase">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping" />
+            GENESIZ 2K26 · Grand Winners Revealed
           </div>
 
-          {/* Floating logo */}
-          <div
-            style={{
-              transform: heroVisible ? 'scale(1)' : 'scale(0.7)',
-              opacity: heroVisible ? 1 : 0,
-              transition: 'transform 0.8s cubic-bezier(0.34,1.56,0.64,1) 0.15s, opacity 0.6s ease 0.15s',
-            }}
-            className="flex justify-center py-2"
-          >
+          {/* Logo */}
+          <div style={scalePop(heroIn, 120)} className="flex justify-center">
             <div className="relative animate-float">
-              <div className="absolute inset-0 bg-amber-400/20 blur-3xl rounded-full pointer-events-none animate-pulse" style={{ animationDuration: '3s' }} />
+              <div className="absolute inset-[-20px] rounded-full blur-3xl pointer-events-none"
+                   style={{ background: 'radial-gradient(circle, rgba(245,158,11,0.25) 0%, transparent 70%)', animation: 'pulse 2.5s ease-in-out infinite' }} />
               <img src={genesizLogo} alt="GENESIZ"
-                   className="h-24 sm:h-32 w-auto object-contain select-none
-                              drop-shadow-[0_0_40px_rgba(255,200,60,0.45)]" />
+                   className="h-28 sm:h-36 w-auto select-none relative z-10"
+                   style={{ filter: 'drop-shadow(0 0 36px rgba(245,158,11,0.5))' }} />
             </div>
           </div>
 
           {/* Title */}
-          <div
-            style={{
-              transform: heroVisible ? 'translateY(0)' : 'translateY(24px)',
-              opacity: heroVisible ? 1 : 0,
-              transition: 'transform 0.7s cubic-bezier(0.22,1,0.36,1) 0.25s, opacity 0.7s ease 0.25s',
-            }}
-            className="space-y-3"
-          >
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-none">
-              <span className="text-gradient-silver">GRAND</span>{' '}
-              <span className="text-transparent bg-clip-text
-                               bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-500">
-                WINNERS
+          <div style={fadeUp(heroIn, 220)}>
+            <h1 className="text-5xl sm:text-7xl md:text-8xl font-black tracking-tight leading-[0.92] mb-4">
+              <span className="text-gradient-silver block">THE FINAL</span>
+              <span className="block"
+                    style={{ background: 'linear-gradient(135deg,#FFE066 0%,#F59E0B 40%,#FBBF24 70%,#FFE066 100%)',
+                             WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+                PODIUM
               </span>
             </h1>
-            <p className="text-xs sm:text-sm font-mono text-zinc-500 uppercase tracking-[0.2em]">
-              NATIONAL TECH SYMPOSIUM · 2026 EDITION
+            <p className="text-[11px] font-mono text-zinc-500 tracking-[0.25em] uppercase">
+              National Tech Symposium · 2026 Edition
             </p>
           </div>
 
-          {/* Subtitle */}
-          <p
-            style={{
-              transform: heroVisible ? 'translateY(0)' : 'translateY(24px)',
-              opacity: heroVisible ? 1 : 0,
-              transition: 'transform 0.7s cubic-bezier(0.22,1,0.36,1) 0.38s, opacity 0.7s ease 0.38s',
-            }}
-            className="max-w-2xl mx-auto text-sm sm:text-base text-zinc-400 leading-relaxed"
-          >
-            The competition has come to an end. From cracking cryptic clues to solving coding challenges
-            and dominating the battlefield — these teams proved their skills and earned their place on the podium.
+          {/* Subtext */}
+          <p style={fadeUp(heroIn, 340)}
+             className="max-w-xl mx-auto text-sm sm:text-base text-zinc-400 leading-relaxed">
+            Eight events. Hundreds of competitors. One legendary night.
+            Here are the teams who rose above all and claimed their spot at the top.
           </p>
 
-          {/* CTA */}
-          <div
-            style={{
-              transform: heroVisible ? 'translateY(0)' : 'translateY(24px)',
-              opacity: heroVisible ? 1 : 0,
-              transition: 'transform 0.7s cubic-bezier(0.22,1,0.36,1) 0.48s, opacity 0.7s ease 0.48s',
-            }}
-            className="flex flex-wrap items-center justify-center gap-3 pt-1"
-          >
-            <a href="#events" onClick={() => soundFX.playClick()}
-               className="px-6 py-2.5 rounded-full font-bold text-xs font-mono uppercase tracking-wider
-                          bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-400 hover:to-yellow-300
-                          text-black flex items-center gap-2 shadow-[0_0_24px_rgba(245,158,11,0.4)]
-                          transition-all hover:scale-105 hover:shadow-[0_0_36px_rgba(245,158,11,0.55)]">
-              <Trophy className="w-4 h-4" />
-              See All Winners
+          {/* Scroll CTA */}
+          <div style={fadeUp(heroIn, 460)} className="flex justify-center gap-3 pt-2">
+            <a href="#mvp"
+               className="group px-7 py-3 rounded-full font-black text-xs font-mono uppercase tracking-wider text-black
+                          flex items-center gap-2 transition-all hover:scale-105"
+               style={{ background: 'linear-gradient(135deg,#FBBF24,#F59E0B)', boxShadow: '0 0 28px rgba(245,158,11,0.45)' }}
+               onClick={() => soundFX.playClick()}>
+              <Trophy className="w-3.5 h-3.5" />
+              View Winners
             </a>
-            <a href="#mvp" onClick={() => soundFX.playClick()}
-               className="px-6 py-2.5 rounded-full font-bold text-xs font-mono uppercase tracking-wider
-                          bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20
-                          text-zinc-200 flex items-center gap-2 transition-all">
-              <Crown className="w-4 h-4 text-amber-400" />
-              MVP Spotlight
+            <a href="#events"
+               className="px-7 py-3 rounded-full font-bold text-xs font-mono uppercase tracking-wider
+                          text-zinc-300 hover:text-white bg-white/5 hover:bg-white/8 border border-white/10
+                          hover:border-white/20 flex items-center gap-2 transition-all"
+               onClick={() => soundFX.playClick()}>
+              All Events
             </a>
           </div>
 
+          {/* Decorative horizontal rule */}
+          <div style={fadeUp(heroIn, 560)} className="flex items-center gap-4 pt-4 max-w-sm mx-auto">
+            <div className="flex-1 h-px" style={{ background: 'linear-gradient(to right,transparent,rgba(245,158,11,0.4))' }} />
+            <Star className="w-3.5 h-3.5 text-amber-500" />
+            <div className="flex-1 h-px" style={{ background: 'linear-gradient(to left,transparent,rgba(245,158,11,0.4))' }} />
+          </div>
         </section>
 
-        {/* ── DIVIDER ── */}
-        <div className="flex items-center gap-4">
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-          <Trophy className="w-4 h-4 text-amber-500 shrink-0 animate-pulse" />
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-        </div>
+        {/* ───────────────────────── MVP SPOTLIGHT */}
+        <section id="mvp" className="mb-24">
 
-        {/* ── MVP SPOTLIGHT ── */}
-        <section id="mvp">
-          <MvpCard />
+          {/* Section label */}
+          <div ref={mvp.ref} style={fadeUp(mvp.visible, 0)} className="mb-6 flex items-center gap-3">
+            <Flame className="w-4 h-4 text-amber-400 fill-amber-400 shrink-0" />
+            <p className="text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-amber-400">
+              Outstanding Performer
+            </p>
+            <div className="flex-1 h-px bg-white/5" />
+          </div>
+
+          {/* MVP panel */}
+          <div style={{
+                 ...fadeUp(mvp.visible, 80),
+                 background: 'linear-gradient(135deg, rgba(245,158,11,0.08) 0%, rgba(7,7,13,1) 50%, rgba(99,102,241,0.05) 100%)',
+               }}
+               className="relative rounded-3xl overflow-hidden border-2 border-amber-500/25">
+
+            {/* Shimmer top line */}
+            <div className="absolute top-0 inset-x-0 h-0.5 shimmer-border opacity-60" />
+
+            {/* Glow */}
+            <div className="absolute inset-0 pointer-events-none"
+                 style={{ background: 'radial-gradient(ellipse 60% 50% at 20% 0%, rgba(245,158,11,0.14) 0%, transparent 70%)' }} />
+
+            <div className="relative z-10 p-8 sm:p-12">
+              {/* Team name */}
+              <div style={fadeUp(mvp.visible, 160)} className="mb-8">
+                <p className="text-[10px] font-mono text-zinc-500 tracking-[0.2em] uppercase mb-2">
+                  Tournament Champion
+                </p>
+                <div className="flex items-center gap-4 flex-wrap">
+                  <h2 className="text-4xl sm:text-6xl font-black text-white tracking-tight">
+                    SYMPHONISERS
+                  </h2>
+                  <Crown className="w-10 h-10 text-yellow-400 shrink-0"
+                         style={{ filter: 'drop-shadow(0 0 20px rgba(250,204,21,0.7))' }} />
+                </div>
+                <p className="text-sm text-zinc-400 mt-3 max-w-lg leading-relaxed">
+                  An extraordinary sweep across five disciplines, with additional podium appearances throughout the day.
+                  A performance that redefined what a single team could achieve in a multi-event competition.
+                </p>
+              </div>
+
+              {/* Divider */}
+              <div className="h-px bg-white/6 mb-8" />
+
+              {/* Stats + Tags row */}
+              <div className="flex flex-col sm:flex-row gap-8 items-start">
+                {/* Stats — fixed width boxes, no overflow */}
+                <div ref={stats.ref} className="flex gap-3 shrink-0">
+                  {[
+                    { n: 5, label: '1st Place', sub: 'Wins' },
+                    { n: 1, label: '2nd Place', sub: 'Finish' },
+                    { n: 6, label: 'Podiums',   sub: 'Total' },
+                  ].map(({ n, label, sub }, i) => (
+                    <div key={label}
+                         style={scalePop(stats.visible, i * 120)}
+                         className="w-20 sm:w-24 p-4 rounded-2xl text-center border border-amber-500/18
+                                    bg-black/60 flex-shrink-0">
+                      <div className="text-3xl sm:text-4xl font-black text-amber-300 font-mono leading-none mb-1">
+                        <CountUp target={n} delay={i * 120} visible={stats.visible} />
+                      </div>
+                      <div className="text-[9px] font-mono font-black text-amber-400 uppercase tracking-widest leading-tight">
+                        {label}
+                      </div>
+                      <div className="text-[9px] font-mono text-zinc-600 mt-0.5">
+                        {sub}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Event tags */}
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    'BrainByte 🏆','Cryptic Hunt 🏆','AlgoArena 🏆','AppForge 🏆','Surprise 🏆','WebX 🥈',
+                  ].map((tag, i) => (
+                    <span key={tag}
+                          style={fadeUp(mvp.visible, 200 + i * 65)}
+                          className="text-[11px] font-mono px-3 py-1.5 rounded-full
+                                     border border-amber-400/18 bg-amber-500/8 text-amber-300">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
-        {/* ── EVENT CARDS ── */}
-        <section id="events" className="space-y-8">
-          <SectionHeading />
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
+        {/* ───────────────────────── EVENT RESULTS */}
+        <section id="events" className="mb-24">
+
+          {/* Heading */}
+          <div style={fadeUp(mvp.visible, 0)} className="mb-10 text-center">
+            <p className="text-[10px] font-mono text-zinc-600 tracking-[0.25em] uppercase mb-2">
+              All 8 Disciplines
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+              Event-by-Event Podiums
+            </h2>
+            <p className="text-sm text-zinc-500 mt-2">
+              Every winner, every discipline, every moment — officially recorded.
+            </p>
+          </div>
+
+          {/* Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
             {EVENTS.map((evt, i) => (
               <EventCard key={evt.id} evt={evt} index={i} />
             ))}
           </div>
         </section>
 
-        {/* ── CLOSING ── */}
-        <ClosingSection />
+        {/* ───────────────────────── CLOSING */}
+        <section ref={closing.ref}>
+          <div style={{
+                 ...scalePop(closing.visible, 0),
+                 background: 'linear-gradient(135deg,rgba(99,102,241,0.06) 0%,rgba(7,7,13,1) 40%, rgba(245,158,11,0.06) 100%)',
+               }}
+               className="relative rounded-3xl overflow-hidden border border-white/6 text-center p-12 sm:p-16">
+
+            <div className="absolute inset-0 pointer-events-none"
+                 style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 100%, rgba(99,102,241,0.08) 0%, transparent 70%)' }} />
+
+            <div className="relative z-10 space-y-5">
+              <div style={scalePop(closing.visible, 80)} className="flex justify-center mb-2">
+                <Sparkles className="w-9 h-9 text-amber-400 animate-pulse" style={{ animationDuration: '2s' }} />
+              </div>
+
+              <div style={fadeUp(closing.visible, 120)}>
+                <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-3">
+                  To Every Competitor
+                </h2>
+                <h3 className="text-lg sm:text-2xl font-bold"
+                    style={{ background: 'linear-gradient(90deg,#FBBF24,#F59E0B)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+                  You made GENESIZ 2026 unforgettable. ❤️
+                </h3>
+              </div>
+
+              <p style={fadeUp(closing.visible, 200)}
+                 className="max-w-2xl mx-auto text-sm sm:text-base text-zinc-400 leading-relaxed">
+                Whether you claimed a trophy or pushed your limits on the floor —
+                every participant shaped what this event became.
+                The energy you brought, the problems you solved, the battles you fought —
+                that's the spirit of GENESIZ.
+              </p>
+
+              <p style={fadeUp(closing.visible, 280)}
+                 className="text-xs font-mono text-zinc-600 italic">
+                The scoreboard has closed. The memories haven't.
+                See you at the next one. 🚀
+              </p>
+
+              {/* Sign-off */}
+              <div style={scalePop(closing.visible, 360)}
+                   className="inline-block px-8 py-5 rounded-2xl border border-white/8 bg-white/[0.025] mt-2">
+                <div className="text-xl sm:text-2xl font-black text-amber-300 font-mono">
+                  GGs, Everyone! 🎉
+                </div>
+                <div className="text-xs font-mono text-zinc-600 mt-1">
+                  — Team GENESIZ ❤️
+                </div>
+              </div>
+
+              {/* Back link */}
+              <div style={fadeUp(closing.visible, 440)} className="pt-2">
+                <a href="/"
+                   onClick={() => soundFX.playClick()}
+                   className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-bold text-xs font-mono uppercase tracking-wider
+                              text-black transition-all hover:scale-105"
+                   style={{ background: 'linear-gradient(135deg,#FBBF24,#F59E0B)', boxShadow: '0 0 24px rgba(245,158,11,0.35)' }}>
+                  <ArrowLeft className="w-4 h-4" />
+                  Back to Portal
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
 
       </main>
 
-      {/* ── FOOTER ── */}
-      <footer className="border-t border-zinc-900/80 py-7 px-4 bg-black">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center
-                        justify-between gap-3 text-[11px] font-mono text-zinc-600">
+      {/* ══════════ FOOTER */}
+      <footer className="border-t border-zinc-900 py-6 px-4 bg-black/60 backdrop-blur">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between
+                        gap-2 text-[10px] font-mono text-zinc-700">
           <div className="flex items-center gap-2">
-            <img src={genesizLogo} alt="" className="h-4 w-auto object-contain opacity-50" />
-            <span>GENESIZ 2026 — OFFICIAL RESULTS</span>
+            <img src={genesizLogo} alt="" className="h-4 w-auto opacity-40" />
+            <span>GENESIZ 2026 — Official Results</span>
           </div>
           <span>© 2026 GENESIZ. Powered by Valenite Electrion.</span>
         </div>
       </footer>
 
-    </div>
-  );
-}
-
-// ─── MVP Card (scroll-animated) ───────────────────────────────────────────────
-
-function MvpCard() {
-  const [visible, setVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.15 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div
-      ref={ref}
-      style={{
-        transform: visible ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.97)',
-        opacity: visible ? 1 : 0,
-        transition: 'transform 0.8s cubic-bezier(0.22,1,0.36,1), opacity 0.8s ease',
-      }}
-      className="relative rounded-3xl overflow-hidden
-                  border-2 border-amber-400/30
-                  bg-gradient-to-br from-amber-500/10 via-[#0a0a10] to-[#040406]
-                  shadow-[0_0_60px_-10px_rgba(245,158,11,0.3)]"
-    >
-      <div className="absolute inset-0 shimmer-border opacity-30 pointer-events-none" />
-      <div className="absolute -top-10 -right-10 w-72 h-72
-                      bg-amber-400/10 rounded-full blur-3xl pointer-events-none animate-pulse" style={{ animationDuration: '3s' }} />
-      <div className="absolute -bottom-10 -left-10 w-72 h-72
-                      bg-yellow-500/8 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="relative z-10 p-7 sm:p-10 lg:p-12">
-        <div className="flex items-center gap-2 mb-6">
-          <Flame className="w-4 h-4 text-amber-400 fill-amber-400" />
-          <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-amber-400">
-            Tournament Dominators · 2K26
-          </span>
-        </div>
-
-        <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-16">
-          <div className="flex-1 space-y-4">
-            <h2
-              style={{
-                transitionDelay: '200ms',
-                transform: visible ? 'translateX(0)' : 'translateX(-20px)',
-                opacity: visible ? 1 : 0,
-                transition: 'transform 0.7s cubic-bezier(0.22,1,0.36,1) 0.2s, opacity 0.7s ease 0.2s',
-              }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white
-                         flex items-center gap-4 flex-wrap"
-            >
-              SYMPHONISERS
-              <Crown className="w-9 h-9 text-yellow-400 drop-shadow-[0_0_16px_rgba(250,204,21,0.7)]" />
-            </h2>
-
-            <p className="text-sm sm:text-base text-zinc-300 leading-relaxed max-w-lg">
-              A special shoutout to <strong className="text-white">SYMPHONISERS</strong> for their
-              phenomenal performance across multiple events — taking home{' '}
-              <span className="text-amber-300 font-bold">5 First-Place Trophies</span> and
-              additional podium finishes. Truly unstoppable. 🔥
-            </p>
-
-            <div className="flex flex-wrap gap-2 pt-1">
-              {['BrainByte 🏆', 'Cryptic Hunt 🏆', 'AlgoArena 🏆', 'AppForge 🏆', 'Surprise 🏆', 'WebX 🥈'].map((tag, i) => (
-                <span
-                  key={tag}
-                  style={{
-                    transitionDelay: `${300 + i * 60}ms`,
-                    transform: visible ? 'translateY(0)' : 'translateY(10px)',
-                    opacity: visible ? 1 : 0,
-                    transition: `transform 0.5s cubic-bezier(0.22,1,0.36,1) ${300 + i * 60}ms, opacity 0.5s ease ${300 + i * 60}ms`,
-                  }}
-                  className="text-[11px] font-mono px-2.5 py-1 rounded-full
-                             bg-amber-500/10 border border-amber-400/20 text-amber-300"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="w-full lg:w-auto shrink-0 grid grid-cols-3 gap-3">
-            <StatBox n="5" sub="1st Place" detail="Trophies" delay={200} />
-            <StatBox n="1" sub="2nd Place" detail="Trophy"   delay={350} />
-            <StatBox n="6" sub="Total"     detail="Podiums"  delay={500} />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ─── Section heading (scroll-animated) ───────────────────────────────────────
-
-function SectionHeading() {
-  const [visible, setVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.3 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div
-      ref={ref}
-      style={{
-        transform: visible ? 'translateY(0)' : 'translateY(20px)',
-        opacity: visible ? 1 : 0,
-        transition: 'transform 0.6s cubic-bezier(0.22,1,0.36,1), opacity 0.6s ease',
-      }}
-      className="flex items-center gap-4"
-    >
-      <div>
-        <p className="text-[11px] font-mono text-zinc-500 uppercase tracking-widest mb-1">
-          All 8 Disciplines
-        </p>
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-          Event-By-Event Results
-        </h2>
-      </div>
-    </div>
-  );
-}
-
-// ─── Closing section (scroll-animated) ───────────────────────────────────────
-
-function ClosingSection() {
-  const [visible, setVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.15 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div
-      ref={ref}
-      style={{
-        transform: visible ? 'translateY(0) scale(1)' : 'translateY(40px) scale(0.97)',
-        opacity: visible ? 1 : 0,
-        transition: 'transform 0.8s cubic-bezier(0.22,1,0.36,1), opacity 0.8s ease',
-      }}
-      className="relative rounded-3xl overflow-hidden text-center
-                  border border-white/8 bg-[#06060a]/90
-                  p-10 sm:p-14 space-y-6"
-    >
-      <div className="absolute inset-0 bg-gradient-to-br
-                      from-indigo-500/5 via-transparent to-amber-500/5
-                      pointer-events-none" />
-
-      <div className="relative z-10 space-y-6">
-        <div className="flex justify-center">
-          <Sparkles className="w-8 h-8 text-amber-400 animate-pulse" />
-        </div>
-
-        <h2
-          style={{
-            transitionDelay: '150ms',
-            transform: visible ? 'translateY(0)' : 'translateY(16px)',
-            opacity: visible ? 1 : 0,
-            transition: 'transform 0.6s cubic-bezier(0.22,1,0.36,1) 0.15s, opacity 0.6s ease 0.15s',
-          }}
-          className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight"
-        >
-          Congratulations to All Winners! ❤️🔥
-        </h2>
-
-        <p
-          style={{
-            transitionDelay: '250ms',
-            transform: visible ? 'translateY(0)' : 'translateY(16px)',
-            opacity: visible ? 1 : 0,
-            transition: 'transform 0.6s cubic-bezier(0.22,1,0.36,1) 0.25s, opacity 0.6s ease 0.25s',
-          }}
-          className="max-w-2xl mx-auto text-sm text-zinc-400 leading-relaxed"
-        >
-          To every participant, team mentor, and school contingent — thank you for bringing your
-          talent, creativity, enthusiasm, and competitive spirit to <strong className="text-white">GENESIZ 2026</strong>.
-          You made this unforgettable.
-        </p>
-
-        <p
-          style={{
-            transitionDelay: '350ms',
-            transform: visible ? 'translateY(0)' : 'translateY(16px)',
-            opacity: visible ? 1 : 0,
-            transition: 'transform 0.6s cubic-bezier(0.22,1,0.36,1) 0.35s, opacity 0.6s ease 0.35s',
-          }}
-          className="text-xs font-mono text-zinc-500"
-        >
-          The hunt is over, the matches are done, and the winners have been crowned.
-          Until next time — keep building, keep solving, keep competing! 🚀
-        </p>
-
-        {/* Sign-off card */}
-        <div
-          style={{
-            transitionDelay: '450ms',
-            transform: visible ? 'scale(1)' : 'scale(0.9)',
-            opacity: visible ? 1 : 0,
-            transition: 'transform 0.6s cubic-bezier(0.34,1.56,0.64,1) 0.45s, opacity 0.6s ease 0.45s',
-          }}
-          className="inline-block px-7 py-4 rounded-2xl
-                      bg-white/[0.03] border border-white/8 space-y-0.5 mx-auto"
-        >
-          <div className="text-lg sm:text-2xl font-black text-amber-300 font-mono">
-            GGs, EVERYONE! 🎉👏
-          </div>
-          <div className="text-xs font-mono text-zinc-500">
-            — Team GENESIZ ❤️
-          </div>
-        </div>
-
-        {/* Back button only */}
-        <div
-          style={{
-            transitionDelay: '550ms',
-            transform: visible ? 'translateY(0)' : 'translateY(12px)',
-            opacity: visible ? 1 : 0,
-            transition: 'transform 0.5s cubic-bezier(0.22,1,0.36,1) 0.55s, opacity 0.5s ease 0.55s',
-          }}
-          className="flex items-center justify-center pt-2"
-        >
-          <a href="/" onClick={() => soundFX.playClick()}
-             className="px-7 py-3 rounded-full bg-white hover:bg-zinc-100 text-black
-                        font-bold text-xs font-mono uppercase tracking-wider
-                        flex items-center gap-2 shadow-lg transition-all hover:scale-105">
-            <ArrowLeft className="w-4 h-4" />
-            Back to Portal
-          </a>
-        </div>
-      </div>
     </div>
   );
 }
