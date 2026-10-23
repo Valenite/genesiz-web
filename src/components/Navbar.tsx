@@ -34,6 +34,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { label: 'Community', href: '#community', num: '03' },
     { label: 'About', href: '#credits', num: '04' },
     { label: 'FAQ', href: '#faq', num: '05' },
+    { label: '🏆 Results', href: '/results', num: '06', isExternal: false, highlight: true },
   ];
 
   return (
@@ -64,7 +65,11 @@ export const Navbar: React.FC<NavbarProps> = ({
               href={link.href}
               onMouseEnter={() => soundFX.playHover()}
               onClick={() => soundFX.playClick()}
-              className="text-xs font-mono text-zinc-400 hover:text-white transition-colors flex items-center gap-1.5 cursor-pointer"
+              className={`text-xs font-mono transition-colors flex items-center gap-1.5 cursor-pointer ${
+                (link as { highlight?: boolean }).highlight
+                  ? 'text-amber-400 hover:text-amber-300 font-bold px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 hover:bg-amber-500/20'
+                  : 'text-zinc-400 hover:text-white'
+              }`}
             >
               <span className="text-zinc-600 text-[10px]">{link.num}</span>
               <span>{link.label}</span>
@@ -145,7 +150,11 @@ export const Navbar: React.FC<NavbarProps> = ({
                   soundFX.playClick();
                   setIsMobileMenuOpen(false);
                 }}
-                className="block px-3 py-2 rounded-xl text-sm font-mono text-zinc-300 hover:text-white hover:bg-white/5"
+                className={`block px-3 py-2 rounded-xl text-sm font-mono hover:bg-white/5 ${
+                  (link as { highlight?: boolean }).highlight
+                    ? 'text-amber-400 font-bold'
+                    : 'text-zinc-300 hover:text-white'
+                }`}
               >
                 <span className="text-zinc-600 mr-2">{link.num}</span>
                 {link.label}

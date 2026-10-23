@@ -15,6 +15,7 @@ import { GenesizChatbot, ChatbotTriggerButton } from './components/GenesizChatbo
 import { CipherQuestPage, isCipherQuestPath } from './components/CipherQuestPages';
 import { SurprisePage } from './components/SurprisePage';
 import { DialerPage } from './components/DialerPage';
+import { ResultsPage } from './components/ResultsPage';
 import { BrainByteQuiz, BrainByteScores } from './components/BrainByteQuiz';
 import { BrainByte2Quiz, BrainByte2Scores, BrainByte2Admin } from './components/BrainByte2';
 import type { EventDetail } from './data/eventsData';
@@ -49,6 +50,19 @@ export function App() {
   }, []);
 
   const p = window.location.pathname.replace(/\/$/, '');
+  const normalizedP = p.toLowerCase();
+  const hash = window.location.hash.toLowerCase();
+
+  if (
+    normalizedP === '/results' || 
+    normalizedP === '/results-2026' || 
+    normalizedP === '/results-2k26' || 
+    normalizedP === '/winners' || 
+    hash === '#/results' || 
+    hash === '#results'
+  ) {
+    return <ResultsPage />;
+  }
   
   // One-way hash function to hide route strings from the JS bundle
   const getRouteHash = (str: string) => {

@@ -55,6 +55,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenRegister, onOpenAdminVault
                 <li><a href="#community" className="hover:text-white">Community</a></li>
                 <li><a href="#credits" className="hover:text-white">Credits</a></li>
                 <li><a href="#faq" className="hover:text-white">FAQ</a></li>
+                <li>
+                  <a href="/results" className="hover:text-amber-300 text-amber-400 font-semibold flex items-center gap-1">
+                    🏆 2K26 Results
+                  </a>
+                </li>
               </ul>
             </div>
 
