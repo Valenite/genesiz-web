@@ -1,5 +1,5 @@
-import React from 'react';
-import { ArrowRight, ChevronDown, MessageSquare, Sparkles, Shield, Cpu, FileText, Trophy, Flame } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ChevronDown, MessageSquare, Sparkles, Shield, Cpu, Radio, FileText } from 'lucide-react';
 import { soundFX } from '../utils/audio';
 import genesizLogoTransparent from '../assets/genesiz-logo-transparent.png';
 import { RevealOnScroll } from './RevealOnScroll';
@@ -9,7 +9,28 @@ interface HeroSectionProps {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = () => {
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
   const DISCORD_URL = "https://discord.gg/narNSeybgR";
+
+  useEffect(() => {
+    const target = new Date('2026-10-05T09:00:00+05:30').getTime();
+    const updateTime = () => {
+      const now = new Date().getTime();
+      const diff = target - now;
+      if (diff > 0) {
+        setTimeLeft({
+          days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((diff / 1000 / 60) % 60),
+          seconds: Math.floor((diff / 1000) % 60),
+        });
+      }
+    };
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="relative min-h-[90vh] pt-24 sm:pt-28 pb-12 flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -22,8 +43,8 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
         {/* Top Tagline Badge */}
         <RevealOnScroll delayMs={100}>
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-900/80 border border-white/10 text-zinc-300 font-mono text-xs shadow-md backdrop-blur-xl hover:border-white/20 transition-all hover:scale-105">
-            <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-pulse" />
-            <span className="font-semibold text-white tracking-wider">OCTOBER 05, 2026 · 2K26 EDITION</span>
+            <Sparkles className="w-3.5 h-3.5 text-indigo-400 animate-pulse" />
+            <span className="font-semibold text-white tracking-wider">OCTOBER 05, 2026</span>
           </div>
         </RevealOnScroll>
 
@@ -31,12 +52,12 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
         <RevealOnScroll delayMs={200}>
           <div className="py-2 flex justify-center">
             <div className="relative animate-float">
-              <div className="absolute inset-0 bg-amber-400/10 blur-3xl rounded-full pointer-events-none"></div>
+              <div className="absolute inset-0 bg-white/10 blur-3xl rounded-full pointer-events-none"></div>
               
               <img 
                 src={genesizLogoTransparent} 
                 alt="GENESIZ Official Emblem" 
-                className="h-28 sm:h-36 md:h-40 w-auto object-contain select-none drop-shadow-[0_0_28px_rgba(255,200,60,0.3)] hover:scale-105 transition-transform duration-500"
+                className="h-28 sm:h-36 md:h-40 w-auto object-contain select-none drop-shadow-[0_0_25px_rgba(255,255,255,0.25)] hover:scale-105 transition-transform duration-500"
               />
             </div>
           </div>
@@ -61,59 +82,42 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
           </div>
         </RevealOnScroll>
 
-        {/* ✨ Redesigned Event Status & Podium Showcase Bar */}
+        {/* Sleek, Modern Timer Bar */}
         <RevealOnScroll variant="zoom-in" delayMs={400}>
           <div className="py-2 flex justify-center w-full">
-            <a
-              href="/results"
-              onClick={() => soundFX.playWarp()}
-              className="group relative inline-flex flex-col sm:flex-row items-center gap-3 sm:gap-6 px-5 sm:px-8 py-3.5 sm:py-4 rounded-2xl bg-gradient-to-r from-amber-500/10 via-zinc-950/90 to-amber-500/10 border border-amber-500/30 hover:border-amber-400/60 backdrop-blur-2xl shadow-[0_0_35px_-8px_rgba(245,158,11,0.3)] hover:shadow-[0_0_45px_-4px_rgba(245,158,11,0.5)] transition-all duration-300 hover:scale-[1.02] cursor-pointer"
-            >
-              {/* Shimmer line on top */}
-              <div className="absolute top-0 inset-x-8 h-px bg-gradient-to-r from-transparent via-amber-400/50 to-transparent pointer-events-none" />
-
-              {/* Status Indicator Badge */}
-              <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-400/40 text-amber-300 text-[11px] font-mono font-bold tracking-wider uppercase">
-                <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping shrink-0" />
-                <span>GENESIZ 2K26 CONCLUDED</span>
-              </div>
-
-              {/* Center Divider / Details */}
-              <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm font-mono text-zinc-300">
-                <Trophy className="w-4 h-4 text-amber-400 shrink-0" />
-                <span>Official Podiums & Grand Winners Live</span>
-              </div>
-
-              {/* View Standings Arrow Pill */}
-              <div className="flex items-center gap-1.5 text-xs font-mono font-bold text-amber-300 group-hover:text-amber-200 pl-0 sm:pl-3 sm:border-l sm:border-white/10 transition-colors">
-                <span>View Standings</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </a>
+            <div className="inline-flex items-center px-6 sm:px-9 py-3 rounded-2xl sm:rounded-full bg-zinc-950/85 border border-white/12 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.6),0_0_25px_rgba(255,255,255,0.03)] hover:border-white/20 transition-all max-w-full overflow-x-auto scrollbar-none">
+              {[
+                { label: 'DAYS', val: timeLeft.days },
+                { label: 'HOURS', val: timeLeft.hours },
+                { label: 'MINS', val: timeLeft.minutes },
+                { label: 'SECS', val: timeLeft.seconds },
+              ].map((item, idx) => (
+                <div key={item.label} className="flex items-center">
+                  <div className="text-center px-2.5 sm:px-4">
+                    <div className="font-mono font-bold text-xl sm:text-2xl text-white tracking-tight">
+                      {String(item.val).padStart(2, '0')}
+                    </div>
+                    <div className="text-[8px] sm:text-[9px] font-mono text-zinc-500 tracking-widest uppercase mt-0.5 font-medium">
+                      {item.label}
+                    </div>
+                  </div>
+                  {idx < 3 && <div className="h-6 w-px bg-white/10 shrink-0" />}
+                </div>
+              ))}
+            </div>
           </div>
         </RevealOnScroll>
 
-        {/* Action Buttons — Register button removed! Results CTA added */}
+        {/* Action Buttons — Register Now removed, clean standard summit buttons */}
         <RevealOnScroll delayMs={500}>
           <div className="flex flex-wrap items-center justify-center gap-3 pt-1">
-            <a
-              href="/results"
-              onClick={() => soundFX.playWarp()}
-              onMouseEnter={() => soundFX.playHover()}
-              className="px-7 py-3 rounded-full bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 text-black font-extrabold text-xs sm:text-sm transition-all flex items-center gap-2 group cursor-pointer shadow-[0_0_25px_rgba(245,158,11,0.4)] hover:shadow-[0_0_35px_rgba(245,158,11,0.6)] hover:scale-105 active:scale-95"
-            >
-              <Trophy className="w-4 h-4 text-black" />
-              <span>View 2K26 Results</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
-
             <a
               href={DISCORD_URL}
               target="_blank"
               rel="noreferrer"
               onClick={() => soundFX.playClick()}
               onMouseEnter={() => soundFX.playHover()}
-              className="px-5 py-3 rounded-full bg-[#5865F2] hover:bg-[#4752C4] text-white text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer shadow-md hover:scale-105 active:scale-95"
+              className="px-6 py-3 rounded-full bg-[#5865F2] hover:bg-[#4752C4] text-white text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer shadow-md hover:scale-105 active:scale-95"
             >
               <MessageSquare className="w-4 h-4" />
               <span>Join Discord HQ</span>
@@ -125,7 +129,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
               rel="noreferrer"
               onClick={() => soundFX.playClick()}
               onMouseEnter={() => soundFX.playHover()}
-              className="px-5 py-3 rounded-full bg-violet-950/70 hover:bg-violet-900/90 text-violet-200 hover:text-white text-xs sm:text-sm font-semibold border border-violet-800/70 transition-all flex items-center gap-2 cursor-pointer shadow-md hover:scale-105 active:scale-95"
+              className="px-6 py-3 rounded-full bg-violet-950/70 hover:bg-violet-900/90 text-violet-200 hover:text-white text-xs sm:text-sm font-semibold border border-violet-800/70 transition-all flex items-center gap-2 cursor-pointer shadow-md hover:scale-105 active:scale-95"
             >
               <FileText className="w-4 h-4 text-violet-400" />
               <span>Official Brochure</span>
@@ -135,59 +139,56 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
               href="#events"
               onClick={() => soundFX.playClick()}
               onMouseEnter={() => soundFX.playHover()}
-              className="px-5 py-3 rounded-full bg-zinc-900 hover:bg-zinc-800 text-zinc-200 hover:text-white text-xs sm:text-sm font-medium border border-zinc-800 transition-all cursor-pointer hover:border-zinc-600 hover:scale-105 active:scale-95"
+              className="px-6 py-3 rounded-full bg-zinc-900 hover:bg-zinc-800 text-zinc-200 hover:text-white text-xs sm:text-sm font-medium border border-zinc-800 transition-all cursor-pointer hover:border-zinc-600 hover:scale-105 active:scale-95"
             >
               Explore 8 Competitions
             </a>
           </div>
         </RevealOnScroll>
 
-        {/* Clean 3-Column Key Information Ticker */}
+        {/* Clean 3-Column Key Information Ticker — restored to standard permanent summit info */}
         <RevealOnScroll delayMs={600}>
           <div className="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-3.5 max-w-3xl mx-auto border-t border-zinc-800/60 text-left">
             <div className="p-4 rounded-2xl bg-zinc-950/70 border border-zinc-900 hover:border-zinc-700 hover:bg-zinc-900/40 transition-all duration-300 hover:-translate-y-1">
               <div className="flex items-center gap-2 text-[9px] font-mono text-zinc-500 uppercase tracking-wider mb-0.5">
                 <Shield className="w-3 h-3 text-zinc-400" />
-                <span>STATUS</span>
+                <span>ELIGIBILITY</span>
               </div>
-              <div className="text-base sm:text-lg font-bold text-white">Event Concluded</div>
-              <div className="text-[10px] font-mono text-amber-400 font-semibold">Results Official & Published</div>
+              <div className="text-base sm:text-lg font-bold text-white">All Colleges</div>
+              <div className="text-[10px] font-mono text-zinc-500">Open to Students Nationwide</div>
             </div>
 
             <div className="p-4 rounded-2xl bg-zinc-950/70 border border-zinc-900 hover:border-zinc-700 hover:bg-zinc-900/40 transition-all duration-300 hover:-translate-y-1">
               <div className="flex items-center gap-2 text-[9px] font-mono text-zinc-500 uppercase tracking-wider mb-0.5">
-                <Cpu className="w-3 h-3 text-zinc-400" />
-                <span>DISCIPLINES</span>
+                <Cpu className="w-3.5 h-3 text-zinc-400" />
+                <span>EVENTS</span>
               </div>
-              <div className="text-base sm:text-lg font-bold text-white">8 Arenas</div>
-              <div className="text-[10px] font-mono text-zinc-500">Tech · Hack · Esports · Quiz</div>
+              <div className="text-base sm:text-lg font-bold text-white">8 Competitions</div>
+              <div className="text-[10px] font-mono text-zinc-500">Coding, Esports & Hackathons</div>
             </div>
 
             <div className="p-4 rounded-2xl bg-zinc-950/70 border border-zinc-900 hover:border-zinc-700 hover:bg-zinc-900/40 transition-all duration-300 hover:-translate-y-1">
               <div className="flex items-center gap-2 text-[9px] font-mono text-zinc-500 uppercase tracking-wider mb-0.5">
-                <Flame className="w-3 h-3 text-amber-400" />
-                <span>CHAMPIONS</span>
+                <Radio className="w-3 h-3 text-emerald-400 animate-pulse" />
+                <span>COMMUNITY</span>
               </div>
-              <div className="text-base sm:text-lg font-bold text-white">SYMPHONISERS</div>
-              <div className="text-[10px] font-mono text-amber-400/90 font-semibold">5× 1st Place Trophies</div>
+              <div className="text-base sm:text-lg font-bold text-white">Discord Server</div>
+              <div className="text-[10px] font-mono text-zinc-500">Live Updates & Squad Matchmaking</div>
             </div>
-          </div>
-        </RevealOnScroll>
-
-        {/* Scroll indicator */}
-        <RevealOnScroll delayMs={700}>
-          <div className="pt-8 flex justify-center">
-            <a 
-              href="#events" 
-              onClick={() => soundFX.playClick()}
-              className="text-zinc-600 hover:text-white transition-colors animate-bounce p-2 cursor-pointer"
-            >
-              <ChevronDown className="w-5 h-5" />
-            </a>
           </div>
         </RevealOnScroll>
 
       </div>
+
+      {/* Scroll Indicator */}
+      <a 
+        href="#events" 
+        onClick={() => soundFX.playClick()}
+        className="absolute bottom-3 left-1/2 -translate-x-1/2 text-zinc-600 hover:text-white transition-colors"
+      >
+        <ChevronDown className="w-5 h-5 animate-bounce" />
+      </a>
+
     </section>
   );
 };
