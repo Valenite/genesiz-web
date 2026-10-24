@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { ChevronDown, MessageSquare, Sparkles, Shield, Cpu, Radio, FileText } from 'lucide-react';
 import { soundFX } from '../utils/audio';
 import genesizLogoTransparent from '../assets/genesiz-logo-transparent.png';
@@ -9,28 +9,7 @@ interface HeroSectionProps {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = () => {
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-
   const DISCORD_URL = "https://discord.gg/narNSeybgR";
-
-  useEffect(() => {
-    const target = new Date('2026-10-05T09:00:00+05:30').getTime();
-    const updateTime = () => {
-      const now = new Date().getTime();
-      const diff = target - now;
-      if (diff > 0) {
-        setTimeLeft({
-          days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((diff / 1000 / 60) % 60),
-          seconds: Math.floor((diff / 1000) % 60),
-        });
-      }
-    };
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <section className="relative min-h-[90vh] pt-24 sm:pt-28 pb-12 flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -82,35 +61,9 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
           </div>
         </RevealOnScroll>
 
-        {/* Sleek, Modern Timer Bar */}
-        <RevealOnScroll variant="zoom-in" delayMs={400}>
-          <div className="py-2 flex justify-center w-full">
-            <div className="inline-flex items-center px-6 sm:px-9 py-3 rounded-2xl sm:rounded-full bg-zinc-950/85 border border-white/12 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.6),0_0_25px_rgba(255,255,255,0.03)] hover:border-white/20 transition-all max-w-full overflow-x-auto scrollbar-none">
-              {[
-                { label: 'DAYS', val: timeLeft.days },
-                { label: 'HOURS', val: timeLeft.hours },
-                { label: 'MINS', val: timeLeft.minutes },
-                { label: 'SECS', val: timeLeft.seconds },
-              ].map((item, idx) => (
-                <div key={item.label} className="flex items-center">
-                  <div className="text-center px-2.5 sm:px-4">
-                    <div className="font-mono font-bold text-xl sm:text-2xl text-white tracking-tight">
-                      {String(item.val).padStart(2, '0')}
-                    </div>
-                    <div className="text-[8px] sm:text-[9px] font-mono text-zinc-500 tracking-widest uppercase mt-0.5 font-medium">
-                      {item.label}
-                    </div>
-                  </div>
-                  {idx < 3 && <div className="h-6 w-px bg-white/10 shrink-0" />}
-                </div>
-              ))}
-            </div>
-          </div>
-        </RevealOnScroll>
-
-        {/* Action Buttons — Register Now removed, clean standard summit buttons */}
-        <RevealOnScroll delayMs={500}>
-          <div className="flex flex-wrap items-center justify-center gap-3 pt-1">
+        {/* Action Buttons */}
+        <RevealOnScroll delayMs={400}>
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-3">
             <a
               href={DISCORD_URL}
               target="_blank"
@@ -146,8 +99,8 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
           </div>
         </RevealOnScroll>
 
-        {/* Clean 3-Column Key Information Ticker — restored to standard permanent summit info */}
-        <RevealOnScroll delayMs={600}>
+        {/* Clean 3-Column Key Information Ticker */}
+        <RevealOnScroll delayMs={500}>
           <div className="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-3.5 max-w-3xl mx-auto border-t border-zinc-800/60 text-left">
             <div className="p-4 rounded-2xl bg-zinc-950/70 border border-zinc-900 hover:border-zinc-700 hover:bg-zinc-900/40 transition-all duration-300 hover:-translate-y-1">
               <div className="flex items-center gap-2 text-[9px] font-mono text-zinc-500 uppercase tracking-wider mb-0.5">
