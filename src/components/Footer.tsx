@@ -8,7 +8,7 @@ interface FooterProps {
   onOpenAdminVault: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenRegister, onOpenAdminVault }) => {
+export const Footer: React.FC<FooterProps> = ({ onOpenAdminVault }) => {
   const scrollToTop = () => {
     soundFX.playClick();
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -82,9 +82,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenRegister, onOpenAdminVault
                   </a>
                 </li>
                 <li>
-                  <button onClick={onOpenRegister} className="hover:text-white cursor-pointer">
-                    Register / Get Pass
-                  </button>
+                  <a href="/results" className="hover:text-amber-300 text-amber-400 font-semibold flex items-center gap-1 cursor-pointer">
+                    🏆 2K26 Results
+                  </a>
                 </li>
                 <li>
                   <button onClick={onOpenAdminVault} className="text-indigo-400 hover:text-indigo-300 font-bold cursor-pointer pt-1">
